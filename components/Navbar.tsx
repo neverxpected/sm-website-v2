@@ -180,16 +180,16 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="fixed w-full z-50" style={{ background: "#000000", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
+    <nav className="fixed w-full z-50 backdrop-blur-md" style={{ background: "transparent", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
           <span className="w-9 h-9 rounded-xl flex items-center justify-center text-white text-xs font-black tracking-tight shrink-0 transition-all duration-300 group-hover:scale-110"
             style={{ background: "linear-gradient(135deg, #FF2D78, #9B30FF)" }}>
-            SM
+            HA
           </span>
           <span className="text-base font-bold tracking-tight text-white">
-            Switch Media <span className="text-white/40">Marketing</span>
+            Houston <span className="text-white/40">AI</span>
           </span>
         </Link>
 
@@ -224,7 +224,7 @@ export default function Navbar() {
 
       {/* Mobile menu panel */}
       {mobileOpen && (
-        <div className="md:hidden px-6 pb-6" style={{ background: "#000000", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+        <div className="md:hidden px-6 pb-6" style={{ background: "rgba(11,11,12,0.85)", backdropFilter: "blur(12px)", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
           <MobileAccordion label="Paid Ads" links={paidAdsLinks} onClose={() => setMobileOpen(false)} />
           <MobileAccordion label="AI Automations" links={aiAutomationLinks} onClose={() => setMobileOpen(false)} />
 
