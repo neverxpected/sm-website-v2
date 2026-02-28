@@ -186,10 +186,10 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-3 group">
           <span className="w-9 h-9 rounded-xl flex items-center justify-center text-white text-xs font-black tracking-tight shrink-0 transition-all duration-300 group-hover:scale-110"
             style={{ background: "linear-gradient(135deg, #FF2D78, #9B30FF)" }}>
-            HA
+            SM
           </span>
           <span className="text-base font-bold tracking-tight text-white">
-            Houston <span className="text-white/40">AI</span>
+            Switch Media <span className="text-white/40">Marketing</span>
           </span>
         </Link>
 
