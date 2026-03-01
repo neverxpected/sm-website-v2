@@ -49,13 +49,16 @@ export default function Footer() {
           {/* Brand col */}
           <div className="col-span-2 md:col-span-1 space-y-5">
             <Link href="/" className="flex items-center gap-3 group">
-              <Image
-                src="/images/logo/sm-logo.png"
-                alt="Switch Media Marketing Logo"
-                width={160}
-                height={48}
-                className="h-12 w-auto object-contain"
-              />
+              <span className="rounded-xl flex items-center justify-center shrink-0 p-1 transition-all duration-300 group-hover:scale-110"
+                style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)' }}>
+                <Image
+                  src="/images/logo/sm-logo.png"
+                  alt="Switch Media Marketing Logo"
+                  width={40}
+                  height={40}
+                  className="h-8 w-auto object-contain"
+                />
+              </span>
               <span className="text-base font-bold text-white tracking-tight">Switch Media</span>
             </Link>
 

@@ -190,13 +190,16 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <Image
-            src="/images/logo/sm-logo.png"
-            alt="Switch Media Marketing Logo"
-            width={160}
-            height={48}
-            className="h-12 w-auto object-contain"
-          />
+          <span className="rounded-xl flex items-center justify-center shrink-0 p-1 transition-all duration-300 group-hover:scale-110"
+            style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)' }}>
+            <Image
+              src="/images/logo/sm-logo.png"
+              alt="Switch Media Marketing Logo"
+              width={40}
+              height={40}
+              className="h-8 w-auto object-contain"
+            />
+          </span>
           <span className="text-base font-bold tracking-tight text-white">
             Switch Media <span className="text-white/40">Marketing</span>
           </span>
