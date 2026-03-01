@@ -35,23 +35,25 @@ const team = [
   },
 ];
 
-/* Circuit trace lengths (approximate) so dasharray matches the path */
-const TRACES = [
-  { d: "M10 30 H90 V70 H160 V40 H240 V80 H310 V45 H390", delay: "0s", dur: "3s" },
-  { d: "M10 128 H60 V95  H140 V135 H210 V105 H270 V148 H350 V115 H390", delay: "0.9s", dur: "4s" },
-  { d: "M10 220 H75 V185 H155 V225 H235 V195 H315 V228 H390", delay: "1.8s", dur: "3.5s" },
-  { d: "M90 30  V128 M240 80  V105 M310 45  V148 M160 70  V135", delay: "0.5s", dur: "2.5s" },
-  { d: "M60 128 V220 M270 148 V195 M350 115 V228", delay: "1.3s", dur: "3.2s" },
+/* Deterministic particle layout so SSR and client match */
+const PARTICLES = [
+  { x: 30, y: 230, r: 1.5, dur: "6s", delay: "0s" },
+  { x: 80, y: 210, r: 2.5, dur: "8s", delay: "1s" },
+  { x: 140, y: 240, r: 1, dur: "7s", delay: "2.5s" },
+  { x: 200, y: 220, r: 2, dur: "9s", delay: "0.5s" },
+  { x: 260, y: 245, r: 1.5, dur: "6.5s", delay: "3s" },
+  { x: 320, y: 230, r: 2, dur: "7.5s", delay: "1.5s" },
+  { x: 370, y: 215, r: 1, dur: "8.5s", delay: "4s" },
+  { x: 55, y: 200, r: 2, dur: "9.5s", delay: "2s" },
+  { x: 110, y: 250, r: 1.5, dur: "6s", delay: "0.8s" },
+  { x: 175, y: 205, r: 2.5, dur: "7s", delay: "3.5s" },
+  { x: 235, y: 235, r: 1, dur: "8s", delay: "1.2s" },
+  { x: 290, y: 255, r: 2, dur: "6.5s", delay: "4.5s" },
+  { x: 345, y: 200, r: 1.5, dur: "9s", delay: "0.3s" },
+  { x: 395, y: 240, r: 1, dur: "7.5s", delay: "2.8s" },
 ];
 
-const NODES = [
-  [90, 30], [160, 40], [240, 80], [310, 45],
-  [60, 128], [140, 135], [210, 105], [270, 148], [350, 115],
-  [75, 220], [155, 225], [235, 195], [315, 228],
-  [240, 30], [90, 128], [160, 128],
-];
-
-function CircuitBg({ color }: { color: string }) {
+function ParticleBg({ color }: { color: string }) {
   return (
     <svg
       className="absolute inset-0 w-full h-full pointer-events-none"
@@ -60,55 +62,45 @@ function CircuitBg({ color }: { color: string }) {
       aria-hidden
     >
       <defs>
-        <filter id={`glow-${color.replace('#', '')}`}>
-          <feGaussianBlur stdDeviation="2" result="blur" />
-          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
-        </filter>
+        <radialGradient id={`pg-${color.replace('#', '')}`} cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor={color} stopOpacity="1" />
+          <stop offset="100%" stopColor={color} stopOpacity="0" />
+        </radialGradient>
       </defs>
 
-      {TRACES.map((t, i) => (
-        <path
+      {PARTICLES.map((p, i) => (
+        <circle
           key={i}
-          d={t.d}
-          fill="none"
-          stroke={color}
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          filter={`url(#glow-${color.replace('#', '')})`}
+          cx={p.x}
+          cy={p.y}
+          r={p.r}
+          fill={`url(#pg-${color.replace('#', '')})`}
         >
+          {/* Float upward */}
           <animate
-            attributeName="stroke-dasharray"
-            values="0 1200; 200 1000; 0 1200"
-            dur={t.dur}
-            begin={t.delay}
+            attributeName="cy"
+            values={`${p.y}; ${p.y - 180}; ${p.y}`}
+            dur={p.dur}
+            begin={p.delay}
             repeatCount="indefinite"
+            calcMode="ease"
           />
+          {/* Gentle horizontal drift */}
+          <animate
+            attributeName="cx"
+            values={`${p.x}; ${p.x + (i % 2 === 0 ? 12 : -12)}; ${p.x}`}
+            dur={p.dur}
+            begin={p.delay}
+            repeatCount="indefinite"
+            calcMode="ease"
+          />
+          {/* Fade in, hold, fade out */}
           <animate
             attributeName="opacity"
-            values="0.15; 0.55; 0.15"
-            dur={t.dur}
-            begin={t.delay}
-            repeatCount="indefinite"
-          />
-        </path>
-      ))}
-
-      {NODES.map(([x, y], i) => (
-        <circle key={i} cx={x} cy={y} r="2.5" fill={color}
-          filter={`url(#glow-${color.replace('#', '')})`}>
-          <animate
-            attributeName="opacity"
-            values="0.2; 0.8; 0.2"
-            dur={`${2 + (i % 4) * 0.5}s`}
-            begin={`${(i * 0.25) % 2}s`}
-            repeatCount="indefinite"
-          />
-          <animate
-            attributeName="r"
-            values="2.5; 4; 2.5"
-            dur={`${2 + (i % 4) * 0.5}s`}
-            begin={`${(i * 0.25) % 2}s`}
+            values="0; 0.35; 0.45; 0.35; 0"
+            keyTimes="0; 0.15; 0.5; 0.85; 1"
+            dur={p.dur}
+            begin={p.delay}
             repeatCount="indefinite"
           />
         </circle>
@@ -126,6 +118,7 @@ export default function MeetTheTeam() {
       }} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+
         <div className="text-center mb-16">
           <div className="reveal inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.25em]"
             style={{ background: 'rgba(155,48,255,0.1)', border: '1px solid rgba(155,48,255,0.25)', color: '#9B30FF' }}>
@@ -158,20 +151,20 @@ export default function MeetTheTeam() {
               {/* Photo area */}
               <div
                 className="relative h-64 flex items-center justify-center overflow-hidden"
-                style={{ background: `linear-gradient(135deg, ${member.gradientFrom}10, ${member.gradientTo}10)` }}
+                style={{ background: `linear-gradient(160deg, ${member.gradientFrom}14 0%, ${member.gradientTo}0a 100%)` }}
               >
-                {/* Circuit board animation */}
-                <CircuitBg color={member.accent} />
+                {/* Particle animation */}
+                <ParticleBg color={member.accent} />
 
                 {/* Soft radial glow behind photo */}
                 <div className="absolute inset-0 z-10 pointer-events-none"
-                  style={{ background: `radial-gradient(circle at 50% 50%, ${member.accent}22 0%, transparent 65%)` }} />
+                  style={{ background: `radial-gradient(circle at 50% 55%, ${member.accent}18 0%, transparent 60%)` }} />
 
                 {/* Circular photo */}
                 <div
                   className="relative w-52 h-52 rounded-full overflow-hidden z-20"
                   style={{
-                    boxShadow: `0 0 0 3px ${member.accent}70, 0 0 25px ${member.accent}60, 0 0 60px ${member.accent}30`,
+                    boxShadow: `0 0 0 3px ${member.accent}60, 0 0 25px ${member.accent}50, 0 0 55px ${member.accent}25`,
                   }}
                 >
                   <Image
