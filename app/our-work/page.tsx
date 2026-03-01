@@ -10,21 +10,21 @@ export const metadata: Metadata = {
 const caseStudies = [
   {
     client: "The Oaks Plastic Surgery",
-    revenue: "$450k+",
-    roas: "22x ROAS",
-    scope: "Meta Ads & Search Dominance for Breast Augmentation & Rhinoplasty.",
+    stat: "4,300+",
+    statLabel: "Inquiries Generated",
+    meta: ["2.5+ Years", "Houston, TX", "Plastic Surgery"],
   },
   {
     client: "Radiant Med Spa",
-    revenue: "$286k+",
-    roas: "15x ROAS",
-    scope: "Omnichannel Ads & Funnel Architecture for High-Ticket Aesthetics.",
+    stat: "$700k+",
+    statLabel: "Added Revenue",
+    meta: ["4+ Years", "Olathe, KS", "Med Spa"],
   },
   {
     client: "Illuminate Heights Fitness",
-    revenue: "$180k+",
-    roas: "8x ROAS",
-    scope: "High-Volume Lead Generation & Nurture for 6-Week Challenges.",
+    stat: "2,800+",
+    statLabel: "Inquiries Generated",
+    meta: ["2.5+ Years", "Houston, TX", "Fitness"],
   },
 ];
 
@@ -77,29 +77,29 @@ export default function OurWorkPage() {
                 {study.client}
               </p>
 
-              {/* Highlight numbers */}
-              <div className="flex flex-col gap-2">
+              {/* Primary stat */}
+              <div className="flex flex-col gap-1">
                 <span className="text-4xl font-black tracking-tight text-white">
-                  {study.revenue}
+                  {study.stat}
                 </span>
-                <span className="text-2xl font-black tracking-tight"
-                  style={{
-                    background: 'linear-gradient(90deg, #FF2D78, #9B30FF)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  }}>
-                  {study.roas}
+                <span className="text-sm font-bold uppercase tracking-[0.15em]"
+                  style={{ color: 'rgba(240,244,255,0.45)' }}>
+                  {study.statLabel}
                 </span>
               </div>
 
               {/* Divider */}
               <div style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }} />
 
-              {/* Scope */}
-              <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.45)' }}>
-                {study.scope}
-              </p>
+              {/* Meta tags */}
+              <div className="flex flex-wrap gap-2">
+                {study.meta.map((tag) => (
+                  <span key={tag} className="px-3 py-1 rounded-full text-xs font-bold"
+                    style={{ background: 'rgba(155,48,255,0.1)', border: '1px solid rgba(155,48,255,0.2)', color: 'rgba(240,244,255,0.6)' }}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
