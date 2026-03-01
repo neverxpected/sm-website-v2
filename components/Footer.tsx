@@ -16,9 +16,7 @@ const columns = [
     heading: "AI Solutions",
     links: [
       { label: "AI Receptionist", href: "/services/ai-receptionist" },
-      { label: "Automations", href: "/services/ai-system-integration" },
-      { label: "Lead Nurturing", href: "/services/ai-system-integration" },
-      { label: "Custom AI", href: "/services/ai-system-integration" },
+      { label: "AI Integrations", href: "/services/ai-system-integration" },
     ],
   },
   {
@@ -26,7 +24,6 @@ const columns = [
     links: [
       { label: "About Us", href: "/" },
       { label: "Case Studies", href: "/our-work" },
-      { label: "Pricing", href: "/#contact" },
       { label: "Contact", href: "/#contact" },
     ],
   },
