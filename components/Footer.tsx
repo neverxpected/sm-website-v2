@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 const columns = [
   {
@@ -16,26 +17,23 @@ const columns = [
     heading: "AI Solutions",
     links: [
       { label: "AI Receptionist", href: "/services/ai-receptionist" },
-      { label: "Automations", href: "/services/ai-system-integration" },
-      { label: "Lead Nurturing", href: "/services/ai-system-integration" },
-      { label: "Custom AI", href: "/services/ai-system-integration" },
+      { label: "AI Integrations", href: "/services/ai-system-integration" },
     ],
   },
   {
     heading: "Company",
     links: [
-      { label: "About Us", href: "/" },
+      { label: "About Us", href: "/about" },
       { label: "Case Studies", href: "/our-work" },
-      { label: "Pricing", href: "/#contact" },
-      { label: "Contact", href: "/#contact" },
+      { label: "Contact Us", href: "/contact" },
     ],
   },
   {
     heading: "Legal",
     links: [
-      { label: "Privacy Policy", href: "/" },
-      { label: "Terms of Service", href: "/" },
-      { label: "Cookie Policy", href: "/" },
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Terms of Service", href: "/terms-of-service" },
+      { label: "Cookie Policy", href: "/cookie-policy" },
     ],
   },
 ];
@@ -51,11 +49,15 @@ export default function Footer() {
           {/* Brand col */}
           <div className="col-span-2 md:col-span-1 space-y-5">
             <Link href="/" className="flex items-center gap-3 group">
-              <span className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-110"
+              <span className="rounded-xl flex items-center justify-center shrink-0 p-1 transition-all duration-300 group-hover:scale-110"
                 style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)' }}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={2.5} className="w-4 h-4">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                </svg>
+                <Image
+                  src="/images/logo/sm-logo.png"
+                  alt="Switch Media Marketing Logo"
+                  width={40}
+                  height={40}
+                  className="h-8 w-auto object-contain"
+                />
               </span>
               <span className="text-base font-bold text-white tracking-tight">Switch Media</span>
             </Link>

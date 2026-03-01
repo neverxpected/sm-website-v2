@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
 
 const paidAdsLinks = [
   {
@@ -189,9 +190,15 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <span className="w-9 h-9 rounded-xl flex items-center justify-center text-white text-xs font-black tracking-tight shrink-0 transition-all duration-300 group-hover:scale-110"
-            style={{ background: "linear-gradient(135deg, #FF2D78, #9B30FF)" }}>
-            SM
+          <span className="rounded-xl flex items-center justify-center shrink-0 p-1 transition-all duration-300 group-hover:scale-110"
+            style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)' }}>
+            <Image
+              src="/images/logo/sm-logo.png"
+              alt="Switch Media Marketing Logo"
+              width={40}
+              height={40}
+              className="h-8 w-auto object-contain"
+            />
           </span>
           <span className="text-base font-bold tracking-tight text-white">
             Switch Media <span className="text-white/40">Marketing</span>
@@ -204,6 +211,12 @@ export default function Navbar() {
           <DesktopDropdown label="AI Automations" links={aiAutomationLinks} />
           <Link href="/our-work" className="text-sm font-medium text-white/70 hover:text-white transition-colors">
             Results
+          </Link>
+          <Link href="/about" className="text-sm font-medium text-white/70 hover:text-white transition-colors">
+            About
+          </Link>
+          <Link href="/contact" className="text-sm font-medium text-white/70 hover:text-white transition-colors">
+            Contact
           </Link>
           <Link
             href="https://calendly.com/switchmedia/15min"
@@ -230,18 +243,27 @@ export default function Navbar() {
       {/* Mobile menu panel */}
       {mobileOpen && (
         <div className="md:hidden px-6 pb-6" style={{ background: "rgba(11,11,12,0.85)", backdropFilter: "blur(12px)", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
-          <MobileAccordion label="Paid Ads" links={paidAdsLinks} onClose={() => setMobileOpen(false)} />
-          <MobileAccordion label="AI Automations" links={aiAutomationLinks} onClose={() => setMobileOpen(false)} />
-
-          <div className="border-b border-white/10">
-            <Link
-              href="/our-work"
-              className="flex items-center gap-3 py-4 text-base font-medium text-white/80"
-              onClick={() => setMobileOpen(false)}
-            >
-              Results
-            </Link>
-          </div>
+          {[
+            { label: 'Meta Ads', href: '/services/meta-ads' },
+            { label: 'Google Ads', href: '/services/google-ads' },
+            { label: 'TikTok Ads', href: '/services/tiktok-ads' },
+            { label: 'Bing Ads', href: '/services/digital-advertising' },
+            { label: 'AI Receptionist', href: '/services/ai-receptionist' },
+            { label: 'AI Integrations', href: '/services/ai-system-integration' },
+            { label: 'Results', href: '/our-work' },
+            { label: 'About Us', href: '/about' },
+            { label: 'Contact Us', href: '/contact' },
+          ].map((link) => (
+            <div key={link.href} className="border-b border-white/10">
+              <Link
+                href={link.href}
+                className="flex items-center gap-3 py-4 text-base font-medium text-white/80 hover:text-white transition-colors"
+                onClick={() => setMobileOpen(false)}
+              >
+                {link.label}
+              </Link>
+            </div>
+          ))}
 
           <div className="pt-6">
             <Link
