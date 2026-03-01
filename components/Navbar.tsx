@@ -220,7 +220,7 @@ export default function Navbar() {
           </Link>
           <Link
             href="https://calendly.com/switchmedia/15min"
-            className="relative px-6 py-2.5 text-sm font-bold rounded-full text-white transition-all duration-300 hover:scale-105 overflow-hidden"
+            className="relative px-6 py-2.5 text-sm font-bold rounded-full text-white transition-all duration-300 hover:scale-105 overflow-hidden whitespace-nowrap"
             style={{ background: "linear-gradient(135deg, #FF2D78, #9B30FF)", boxShadow: "0 0 20px rgba(255,45,120,0.35)" }}
           >
             Book a Strategy Call
@@ -268,7 +268,7 @@ export default function Navbar() {
           <div className="pt-6">
             <Link
               href="https://calendly.com/switchmedia/15min"
-              className="block w-full text-center px-6 py-3.5 text-sm font-bold rounded-full text-white transition-all"
+              className="block w-full text-center px-6 py-3.5 text-sm font-bold rounded-full text-white transition-all whitespace-nowrap"
               style={{ background: "linear-gradient(135deg, #FF2D78, #9B30FF)" }}
               onClick={() => setMobileOpen(false)}
             >

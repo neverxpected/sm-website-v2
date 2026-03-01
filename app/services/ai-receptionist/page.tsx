@@ -114,7 +114,7 @@ export default function AiReceptionistPage() {
 
           <Link
             href="#contact"
-            className="inline-flex items-center justify-center px-10 py-4 text-white font-bold text-base rounded-full transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center justify-center px-10 py-4 text-white font-bold text-base rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap"
             style={{ background: 'linear-gradient(135deg, #9B30FF, #00E5FF)', boxShadow: '0 0 30px rgba(155,48,255,0.35)' }}
           >
             Book a Strategy Call
@@ -228,7 +228,7 @@ export default function AiReceptionistPage() {
               href="https://calendly.com/switchmedia/15min"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-10 py-4 text-white font-bold text-base rounded-full transition-all duration-300 hover:scale-105"
+              className="inline-flex items-center justify-center px-10 py-4 text-white font-bold text-base rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap"
               style={{ background: 'linear-gradient(135deg, #9B30FF, #00E5FF)', boxShadow: '0 0 30px rgba(155,48,255,0.35)' }}
             >
               Book a Strategy Call

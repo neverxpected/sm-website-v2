@@ -35,10 +35,83 @@ const team = [
   },
 ];
 
+/* Deterministic particle layout so SSR and client match */
+const PARTICLES = [
+  { x: 30, y: 230, r: 1.5, dur: "6s", delay: "0s" },
+  { x: 80, y: 210, r: 2.5, dur: "8s", delay: "1s" },
+  { x: 140, y: 240, r: 1, dur: "7s", delay: "2.5s" },
+  { x: 200, y: 220, r: 2, dur: "9s", delay: "0.5s" },
+  { x: 260, y: 245, r: 1.5, dur: "6.5s", delay: "3s" },
+  { x: 320, y: 230, r: 2, dur: "7.5s", delay: "1.5s" },
+  { x: 370, y: 215, r: 1, dur: "8.5s", delay: "4s" },
+  { x: 55, y: 200, r: 2, dur: "9.5s", delay: "2s" },
+  { x: 110, y: 250, r: 1.5, dur: "6s", delay: "0.8s" },
+  { x: 175, y: 205, r: 2.5, dur: "7s", delay: "3.5s" },
+  { x: 235, y: 235, r: 1, dur: "8s", delay: "1.2s" },
+  { x: 290, y: 255, r: 2, dur: "6.5s", delay: "4.5s" },
+  { x: 345, y: 200, r: 1.5, dur: "9s", delay: "0.3s" },
+  { x: 395, y: 240, r: 1, dur: "7.5s", delay: "2.8s" },
+];
+
+function ParticleBg({ color }: { color: string }) {
+  return (
+    <svg
+      className="absolute inset-0 w-full h-full pointer-events-none"
+      viewBox="0 0 400 256"
+      preserveAspectRatio="xMidYMid slice"
+      aria-hidden
+    >
+      <defs>
+        <radialGradient id={`pg-${color.replace('#', '')}`} cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor={color} stopOpacity="1" />
+          <stop offset="100%" stopColor={color} stopOpacity="0" />
+        </radialGradient>
+      </defs>
+
+      {PARTICLES.map((p, i) => (
+        <circle
+          key={i}
+          cx={p.x}
+          cy={p.y}
+          r={p.r}
+          fill={`url(#pg-${color.replace('#', '')})`}
+        >
+          {/* Float upward */}
+          <animate
+            attributeName="cy"
+            values={`${p.y}; ${p.y - 180}; ${p.y}`}
+            dur={p.dur}
+            begin={p.delay}
+            repeatCount="indefinite"
+            calcMode="ease"
+          />
+          {/* Gentle horizontal drift */}
+          <animate
+            attributeName="cx"
+            values={`${p.x}; ${p.x + (i % 2 === 0 ? 12 : -12)}; ${p.x}`}
+            dur={p.dur}
+            begin={p.delay}
+            repeatCount="indefinite"
+            calcMode="ease"
+          />
+          {/* Fade in, hold, fade out */}
+          <animate
+            attributeName="opacity"
+            values="0; 0.35; 0.45; 0.35; 0"
+            keyTimes="0; 0.15; 0.5; 0.85; 1"
+            dur={p.dur}
+            begin={p.delay}
+            repeatCount="indefinite"
+          />
+        </circle>
+      ))}
+    </svg>
+  );
+}
+
 export default function MeetTheTeam() {
   return (
     <section className="relative py-24 lg:py-32" style={{ background: '#0A0F1C' }}>
-      {/* Subtle grid */}
       <div className="absolute inset-0 pointer-events-none" style={{
         backgroundImage: 'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
         backgroundSize: '60px 60px',
@@ -46,7 +119,6 @@ export default function MeetTheTeam() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
 
-        {/* Section header */}
         <div className="text-center mb-16">
           <div className="reveal inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.25em]"
             style={{ background: 'rgba(155,48,255,0.1)', border: '1px solid rgba(155,48,255,0.25)', color: '#9B30FF' }}>
@@ -69,7 +141,6 @@ export default function MeetTheTeam() {
           </p>
         </div>
 
-        {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {team.map((member, i) => (
             <div
@@ -77,16 +148,24 @@ export default function MeetTheTeam() {
               className={`reveal reveal-delay-${(i + 2) * 100} card-neon rounded-2xl overflow-hidden flex flex-col`}
               style={{ background: 'rgba(13,21,38,0.85)', border: '1px solid rgba(255,255,255,0.07)', backdropFilter: 'blur(12px)' }}
             >
-              {/* Photo */}
-              <div className="relative h-64 flex items-center justify-center overflow-hidden"
-                style={{ background: `linear-gradient(135deg, ${member.gradientFrom}18, ${member.gradientTo}18)` }}>
-                {/* Ambient glow */}
-                <div className="absolute inset-0 pointer-events-none"
-                  style={{ background: `radial-gradient(circle at 50% 60%, ${member.accent}20 0%, transparent 65%)` }} />
-                {/* Circular photo with neon ring */}
+              {/* Photo area */}
+              <div
+                className="relative h-64 flex items-center justify-center overflow-hidden"
+                style={{ background: `linear-gradient(160deg, ${member.gradientFrom}14 0%, ${member.gradientTo}0a 100%)` }}
+              >
+                {/* Particle animation */}
+                <ParticleBg color={member.accent} />
+
+                {/* Soft radial glow behind photo */}
+                <div className="absolute inset-0 z-10 pointer-events-none"
+                  style={{ background: `radial-gradient(circle at 50% 55%, ${member.accent}18 0%, transparent 60%)` }} />
+
+                {/* Circular photo */}
                 <div
-                  className="relative w-52 h-52 rounded-full overflow-hidden z-10"
-                  style={{ boxShadow: `0 0 40px ${member.accent}55, 0 0 0 3px ${member.accent}40` }}
+                  className="relative w-52 h-52 rounded-full overflow-hidden z-20"
+                  style={{
+                    boxShadow: `0 0 0 3px ${member.accent}60, 0 0 25px ${member.accent}50, 0 0 55px ${member.accent}25`,
+                  }}
                 >
                   <Image
                     src={member.photo}
@@ -113,7 +192,6 @@ export default function MeetTheTeam() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
