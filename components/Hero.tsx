@@ -70,10 +70,10 @@ export default function Hero() {
 
             {/* Headline — Level 1 motion, staggered by line */}
             <h1 className="font-black tracking-tight text-white leading-[0.95] mb-8">
-              <span className="reveal block text-4xl sm:text-5xl lg:text-6xl xl:text-7xl reveal-delay-100">
+              <span className="reveal block text-3xl sm:text-5xl lg:text-6xl xl:text-7xl reveal-delay-100">
                 THE CHEAT CODE
               </span>
-              <span className="reveal block text-4xl sm:text-5xl lg:text-6xl xl:text-7xl reveal-delay-200">
+              <span className="reveal block text-3xl sm:text-5xl lg:text-6xl xl:text-7xl reveal-delay-200">
                 TO{' '}
                 <span style={{
                   background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF)',
@@ -84,7 +84,7 @@ export default function Hero() {
                   DIGITALLY SCALE
                 </span>
               </span>
-              <span className="reveal block text-4xl sm:text-5xl lg:text-6xl xl:text-7xl reveal-delay-300">
+              <span className="reveal block text-3xl sm:text-5xl lg:text-6xl xl:text-7xl reveal-delay-300">
                 YOUR BUSINESS
               </span>
             </h1>
