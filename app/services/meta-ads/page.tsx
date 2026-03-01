@@ -8,9 +8,33 @@ export const metadata: Metadata = {
 };
 
 const caseStudies = [
-  { label: "Plastic Surgery", revenue: "$450k+", roas: "22x ROAS" },
-  { label: "Med Spa", revenue: "$286k+", roas: "15x ROAS" },
-  { label: "Wellness", revenue: "$180k+", roas: "8x ROAS" },
+  {
+    client: "The Oaks Plastic Surgery",
+    location: "Houston, TX",
+    niche: "Plastic Surgery",
+    duration: "2.5+ Years",
+    stat: "4,300+",
+    statLabel: "Inquiries Generated",
+    services: ["Liposuction", "Breast Implants", "Tummy Tucks", "Semaglutide"],
+  },
+  {
+    client: "Radiant Med Spa",
+    location: "Olathe, KS",
+    niche: "Med Spa",
+    duration: "4+ Years",
+    stat: "$700k+",
+    statLabel: "Added Revenue",
+    services: ["Botox", "Lip Filler", "Hydrafacials", "Microneedling"],
+  },
+  {
+    client: "Wellness",
+    location: "Southwest US",
+    niche: "Wellness",
+    duration: "Ongoing",
+    stat: "$180k+",
+    statLabel: "Revenue Generated",
+    services: ["Weight Loss", "IV Therapy", "Aesthetics"],
+  },
 ];
 
 const capabilities = [
@@ -109,21 +133,34 @@ export default function MetaAdsPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {caseStudies.map((s) => (
-              <div key={s.label} className="p-8 rounded-2xl"
+              <div key={s.client} className="p-8 rounded-2xl flex flex-col gap-4"
                 style={{ background: 'rgba(255,45,120,0.06)', border: '1px solid rgba(255,45,120,0.15)' }}>
-                <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: 'rgba(240,244,255,0.4)' }}>
-                  {s.label}
-                </p>
-                <p className="text-4xl font-black mb-1"
-                  style={{ background: 'linear-gradient(90deg, #FF2D78, #9B30FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-                  {s.revenue}
-                </p>
-                <p className="text-sm font-semibold" style={{ color: 'rgba(240,244,255,0.5)' }}>
-                  Revenue Generated
-                </p>
-                <div className="mt-4 inline-flex items-center px-3 py-1 rounded-full text-xs font-bold"
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: 'rgba(240,244,255,0.35)' }}>
+                    {s.niche} &middot; {s.location}
+                  </p>
+                  <p className="text-sm font-bold text-white">{s.client}</p>
+                </div>
+                <div>
+                  <p className="text-4xl font-black"
+                    style={{ background: 'linear-gradient(90deg, #FF2D78, #9B30FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+                    {s.stat}
+                  </p>
+                  <p className="text-xs font-semibold mt-1" style={{ color: 'rgba(240,244,255,0.45)' }}>
+                    {s.statLabel}
+                  </p>
+                </div>
+                <div className="inline-flex items-center gap-1.5 w-fit px-3 py-1 rounded-full text-xs font-bold"
                   style={{ background: 'rgba(155,48,255,0.15)', color: '#9B30FF', border: '1px solid rgba(155,48,255,0.25)' }}>
-                  {s.roas}
+                  {s.duration}
+                </div>
+                <div className="flex flex-wrap gap-1.5 mt-auto pt-2" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+                  {s.services.map((svc) => (
+                    <span key={svc} className="text-xs px-2.5 py-0.5 rounded-full"
+                      style={{ color: 'rgba(240,244,255,0.4)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                      {svc}
+                    </span>
+                  ))}
                 </div>
               </div>
             ))}
