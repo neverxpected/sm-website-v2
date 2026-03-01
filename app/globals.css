@@ -492,6 +492,22 @@ body {
   }
 }
 
+@keyframes ctaGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 16px rgba(163, 230, 53, 0.35), 0 0 40px rgba(163, 230, 53, 0.15);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(163, 230, 53, 0.70), 0 0 70px rgba(163, 230, 53, 0.35);
+  }
+}
+
+.cta-glow-btn {
+  animation: ctaGlow 3s ease-in-out infinite;
+}
+
 .gold-border {
   background: linear-gradient(135deg,
       rgba(163, 230, 53, 0.85) 0%,

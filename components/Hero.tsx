@@ -58,7 +58,7 @@ export default function Hero() {
 
 
         {/* Content */}
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-24 lg:pt-16 pb-16">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-24 lg:pt-0 pb-4 lg:-mt-10">
           <div className="max-w-5xl mx-auto text-center">
 
             {/* Eyebrow */}
@@ -99,9 +99,9 @@ export default function Hero() {
             {/* Stats bar */}
             <div className="reveal reveal-delay-400 flex flex-nowrap items-center justify-center gap-4 sm:gap-8 mb-8">
               {[
-                { value: '$40M+', label: 'Revenue Generated' },
-                { value: '300+', label: 'Campaigns Launched' },
-                { value: '8x', label: 'Average ROAS' },
+                { value: '$20M+', label: 'Revenue Generated' },
+                { value: '50+', label: 'Businesses Worked With' },
+                { value: '7 Years', label: 'In Business' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <p className="text-2xl sm:text-3xl font-black mb-1"
@@ -119,8 +119,8 @@ export default function Hero() {
                 href="https://calendly.com/switchmedia/15min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-black rounded-xl transition-all duration-300 hover:scale-105 active:scale-100 whitespace-nowrap"
-                style={{ background: lime.grad, boxShadow: `0 0 24px ${lime.glow}` }}
+                className="cta-glow-btn inline-flex items-center justify-center px-8 py-4 text-base font-bold text-black rounded-xl transition-transform duration-300 hover:scale-105 active:scale-100 whitespace-nowrap"
+                style={{ background: lime.grad }}
               >
                 Book a Strategy Call
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4 ml-2">
