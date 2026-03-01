@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import AnimatedTimeline from "@/components/AnimatedTimeline";
 
 export const metadata: Metadata = {
     title: "About the Founder | Switch Media Marketing LLC",
@@ -94,39 +95,7 @@ export default function AboutPage() {
 
             {/* Timeline */}
             <section className="relative z-10 pb-16 px-6 lg:px-8 max-w-3xl mx-auto">
-                <div className="flex flex-col gap-0">
-                    {milestones.map((m, i) => (
-                        <div key={m.year} className="flex gap-6">
-                            {/* Timeline spine */}
-                            <div className="flex flex-col items-center w-12 shrink-0">
-                                <div
-                                    className="w-3 h-3 rounded-full shrink-0 mt-1"
-                                    style={{ background: i === milestones.length - 1 ? '#FF2D78' : '#9B30FF' }}
-                                />
-                                {i < milestones.length - 1 && (
-                                    <div
-                                        className="flex-1 w-px mt-2"
-                                        style={{ background: 'rgba(255,255,255,0.08)', minHeight: '60px' }}
-                                    />
-                                )}
-                            </div>
-
-                            {/* Content */}
-                            <div className="pb-10">
-                                <p
-                                    className="text-xs font-bold uppercase tracking-[0.2em] mb-1"
-                                    style={{ color: i === milestones.length - 1 ? 'rgba(255,45,120,0.7)' : 'rgba(155,48,255,0.7)' }}
-                                >
-                                    {m.year}
-                                </p>
-                                <h2 className="text-lg font-black text-white mb-3">{m.label}</h2>
-                                <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.55)' }}>
-                                    {m.body}
-                                </p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                <AnimatedTimeline milestones={milestones} />
             </section>
 
             {/* Stats bar */}
