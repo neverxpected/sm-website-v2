@@ -33,12 +33,12 @@ export default function ContactPage() {
 
     return (
         <main
-            className="min-h-screen text-white"
+            className="relative min-h-screen text-white"
             style={{ background: "#0A0F1C" }}
         >
             {/* Grid pattern */}
             <div
-                className="fixed inset-0 pointer-events-none z-0"
+                className="absolute inset-0 pointer-events-none z-0"
                 style={{
                     backgroundImage:
                         "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)",
@@ -47,7 +47,7 @@ export default function ContactPage() {
             />
 
             {/* Ambient glow */}
-            <div className="fixed inset-0 pointer-events-none z-0">
+            <div className="absolute inset-0 pointer-events-none z-0">
                 <div
                     className="absolute top-1/3 left-1/4 w-[600px] h-[600px] rounded-full"
                     style={{
