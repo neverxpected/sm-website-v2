@@ -111,7 +111,7 @@ export default function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
           style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
           <p className="text-xs text-center sm:text-left" style={{ color: 'rgba(240,244,255,0.25)' }}>
-            &copy; 2019&ndash;{new Date().getFullYear()} Switch Media Marketing. All rights reserved.
+            &copy; 2019&ndash;{new Date().getFullYear()} | Switch Media Marketing | All rights reserved | Psalm 127:1
           </p>
           <Link
             href="https://calendly.com/switchmedia/15min"
