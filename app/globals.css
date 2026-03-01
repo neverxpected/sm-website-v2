@@ -478,6 +478,20 @@ body {
   animation: limeGlow 3s ease-in-out infinite;
 }
 
+@keyframes eyebrowGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 8px rgba(163, 230, 53, 0.20), 0 0 20px rgba(163, 230, 53, 0.08);
+    border-color: rgba(163, 230, 53, 0.30);
+  }
+
+  50% {
+    box-shadow: 0 0 16px rgba(163, 230, 53, 0.50), 0 0 40px rgba(163, 230, 53, 0.20);
+    border-color: rgba(163, 230, 53, 0.60);
+  }
+}
+
 .gold-border {
   background: linear-gradient(135deg,
       rgba(163, 230, 53, 0.85) 0%,
