@@ -85,7 +85,7 @@ export default function MeetTheTeam() {
                   style={{ background: `radial-gradient(circle at 50% 60%, ${member.accent}20 0%, transparent 65%)` }} />
                 {/* Circular photo with neon ring */}
                 <div
-                  className="relative w-36 h-36 rounded-full overflow-hidden z-10"
+                  className="relative w-52 h-52 rounded-full overflow-hidden z-10"
                   style={{ boxShadow: `0 0 40px ${member.accent}55, 0 0 0 3px ${member.accent}40` }}
                 >
                   <Image
@@ -93,7 +93,7 @@ export default function MeetTheTeam() {
                     alt={member.name}
                     fill
                     className="object-cover"
-                    sizes="144px"
+                    sizes="208px"
                   />
                 </div>
               </div>
