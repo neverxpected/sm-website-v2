@@ -8,6 +8,27 @@ export default function ContactSection() {
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const name = data.get('name') as string || '';
+    const email = data.get('email') as string || '';
+    const company = data.get('company') as string || '';
+    const phone = data.get('phone') as string || '';
+    const services = data.getAll('service_interest').join(', ') || 'None selected';
+    const budget = data.get('budget') as string || '';
+    const message = data.get('message') as string || '';
+
+    const body = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Company: ${company}`,
+      `Phone: ${phone}`,
+      `Service Interest: ${services}`,
+      `Monthly Budget: ${budget}`,
+      `Message: ${message}`,
+    ].join('\n');
+
+    const mailto = `mailto:Charles@switchmediaco.com?subject=${encodeURIComponent('SM Web Inquiry')}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
     setSubmitted(true);
   }
 
@@ -108,28 +129,28 @@ export default function ContactSection() {
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Name <span style={{ color: '#FF2D78' }}>*</span></label>
-                      <input required type="text" placeholder="John Smith" className={inputClass} style={inputStyle} />
+                      <input required name="name" type="text" placeholder="John Smith" className={inputClass} style={inputStyle} />
                     </div>
                     <div>
                       <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Email <span style={{ color: '#FF2D78' }}>*</span></label>
-                      <input required type="email" placeholder="john@company.com" className={inputClass} style={inputStyle} />
+                      <input required name="email" type="email" placeholder="john@company.com" className={inputClass} style={inputStyle} />
                     </div>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Company <span style={{ color: '#FF2D78' }}>*</span></label>
-                      <input required type="text" placeholder="Company name" className={inputClass} style={inputStyle} />
+                      <input required name="company" type="text" placeholder="Company name" className={inputClass} style={inputStyle} />
                     </div>
                     <div>
                       <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Phone <span style={{ color: '#FF2D78' }}>*</span></label>
-                      <input required type="tel" placeholder="+1 (555) 000-0000" className={inputClass} style={inputStyle} />
+                      <input required name="phone" type="tel" placeholder="+1 (555) 000-0000" className={inputClass} style={inputStyle} />
                     </div>
                   </div>
                   <ServicePicker />
                   <div>
                     <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Monthly Budget <span style={{ color: '#FF2D78' }}>*</span></label>
                     <div className="relative">
-                      <select required className={inputClass} style={{ ...inputStyle, color: 'rgba(240,244,255,0.5)', paddingRight: '2.5rem' }}>
+                      <select required name="budget" className={inputClass} style={{ ...inputStyle, color: 'rgba(240,244,255,0.5)', paddingRight: '2.5rem' }}>
                         <option value="">Select budget</option>
                         <option>Under $5,000/mo</option>
                         <option>$5,000 – $10,000/mo</option>
@@ -141,7 +162,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Message</label>
-                    <textarea rows={4} placeholder="Tell us about your business and goals..." className={inputClass + " resize-none"} style={inputStyle} />
+                    <textarea name="message" rows={4} placeholder="Tell us about your business and goals..." className={inputClass + " resize-none"} style={inputStyle} />
                   </div>
                   <button
                     type="submit"

@@ -7,8 +7,29 @@ import ServicePicker from "../../components/ServicePicker";
 export default function ContactPage() {
     const [submitted, setSubmitted] = useState(false);
 
-    function handleSubmit(e: React.FormEvent) {
+    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
+        const data = new FormData(e.currentTarget);
+        const name = data.get('name') as string || '';
+        const email = data.get('email') as string || '';
+        const company = data.get('company') as string || '';
+        const phone = data.get('phone') as string || '';
+        const services = data.getAll('service_interest').join(', ') || 'None selected';
+        const budget = data.get('budget') as string || '';
+        const message = data.get('message') as string || '';
+
+        const body = [
+            `Name: ${name}`,
+            `Email: ${email}`,
+            `Company: ${company}`,
+            `Phone: ${phone}`,
+            `Service Interest: ${services}`,
+            `Monthly Budget: ${budget}`,
+            `Message: ${message}`,
+        ].join('\n');
+
+        const mailto = `mailto:Charles@switchmediaco.com?subject=${encodeURIComponent('SM Web Inquiry')}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailto;
         setSubmitted(true);
     }
 
@@ -90,13 +111,13 @@ export default function ContactPage() {
                                 <div className="grid grid-cols-2 gap-4">
                                     <div>
                                         <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Name <span style={{ color: '#FF2D78' }}>*</span></label>
-                                        <input required type="text" placeholder="John Smith"
+                                        <input required name="name" type="text" placeholder="John Smith"
                                             className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder:text-white/20 focus:outline-none transition-all appearance-none"
                                             style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)' }} />
                                     </div>
                                     <div>
                                         <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Email <span style={{ color: '#FF2D78' }}>*</span></label>
-                                        <input required type="email" placeholder="john@company.com"
+                                        <input required name="email" type="email" placeholder="john@company.com"
                                             className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder:text-white/20 focus:outline-none transition-all appearance-none"
                                             style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)' }} />
                                     </div>
@@ -104,13 +125,13 @@ export default function ContactPage() {
                                 <div className="grid grid-cols-2 gap-4">
                                     <div>
                                         <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Company <span style={{ color: '#FF2D78' }}>*</span></label>
-                                        <input required type="text" placeholder="Company name"
+                                        <input required name="company" type="text" placeholder="Company name"
                                             className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder:text-white/20 focus:outline-none transition-all appearance-none"
                                             style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)' }} />
                                     </div>
                                     <div>
                                         <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Phone <span style={{ color: '#FF2D78' }}>*</span></label>
-                                        <input required type="tel" placeholder="+1 (555) 000-0000"
+                                        <input required name="phone" type="tel" placeholder="+1 (555) 000-0000"
                                             className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder:text-white/20 focus:outline-none transition-all appearance-none"
                                             style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)' }} />
                                     </div>
@@ -119,7 +140,7 @@ export default function ContactPage() {
                                 <div>
                                     <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Monthly Budget <span style={{ color: '#FF2D78' }}>*</span></label>
                                     <div className="relative">
-                                        <select required className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none transition-all appearance-none cursor-pointer"
+                                        <select required name="budget" className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none transition-all appearance-none cursor-pointer"
                                             style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(240,244,255,0.5)', paddingRight: '2.5rem' }}>
                                             <option value="">Select budget</option>
                                             <option>Under $5,000/mo</option>
@@ -132,7 +153,7 @@ export default function ContactPage() {
                                 </div>
                                 <div>
                                     <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Message</label>
-                                    <textarea rows={4} placeholder="Tell us about your business and goals..."
+                                    <textarea name="message" rows={4} placeholder="Tell us about your business and goals..."
                                         className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder:text-white/20 focus:outline-none transition-all appearance-none resize-none"
                                         style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)' }} />
                                 </div>
