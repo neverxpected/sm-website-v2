@@ -104,7 +104,7 @@ export default function ContactPage() {
                                     </svg>
                                 </span>
                                 <h3 className="text-xl font-black text-white">Message Sent!</h3>
-                                <p className="text-sm" style={{ color: 'rgba(240,244,255,0.5)' }}>We&apos;ll be in touch within 24 hours.</p>
+                                <p className="text-sm" style={{ color: 'rgba(240,244,255,0.5)' }}>We&apos;ll be in touch shortly.</p>
                             </div>
                         ) : (
                             <form onSubmit={handleSubmit} className="space-y-5">
