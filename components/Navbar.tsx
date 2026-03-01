@@ -39,7 +39,14 @@ const paidAdsLinks = [
     href: "/services/digital-advertising",
     description: "Capture professional audiences across Microsoft's search ecosystem.",
     icon: (
-      <span className="font-black text-base leading-none" style={{ fontFamily: 'serif' }}>B</span>
+      <svg viewBox="0 0 20 24" className="w-4 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        {/* Vertical stem */}
+        <rect x="2" y="1" width="4" height="22" />
+        {/* Main arm: from mid-stem sweeps to bottom-right */}
+        <polygon points="6,9 18,15 11,23 6,23" />
+        {/* Shadow fold triangle */}
+        <polygon points="6,13 14,15 6,18" opacity="0.35" fill="#000" />
+      </svg>
     ),
   },
 ];
