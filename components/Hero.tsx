@@ -33,16 +33,8 @@ export default function Hero() {
       {/* ── HERO ─────────────────────────────────────────── */}
       <section
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
-        style={{ background: lime.bg }}
+        style={{ background: 'transparent' }}
       >
-        {/* Animated background */}
-        <div
-          className="absolute inset-0 animate-gradient-shift"
-          style={{
-            background: `linear-gradient(135deg, ${lime.bg} 0%, #0a120a 25%, ${lime.bg} 50%, #080f05 75%, ${lime.bg} 100%)`,
-            backgroundSize: '400% 400%',
-          }}
-        />
 
         {/* Floating orbs */}
         <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full pointer-events-none animate-float"

@@ -79,38 +79,34 @@ const ChalkText = ({ text, size, opacity, rotate = 0 }: {
 );
 
 // ─── Positioned instances ──────────────────────────────────────────────────
-// x/y in %, animDur in s, animDelay in s
+// LEFT RAIL: x 22–27%  |  RIGHT RAIL: x 68–74%  — never in the content center
 const ELEMENTS = [
-    // Icons
-    { type: 'flask', x: 3, y: 6, size: 52, opacity: 0.18, dur: 14, delay: 0, rot: -8 },
-    { type: 'atom', x: 80, y: 10, size: 68, opacity: 0.16, dur: 18, delay: 3, rot: 12 },
-    { type: 'molecule', x: 62, y: 68, size: 76, opacity: 0.15, dur: 16, delay: 6, rot: -5 },
-    { type: 'benzene', x: 88, y: 44, size: 58, opacity: 0.16, dur: 20, delay: 1, rot: 15 },
-    { type: 'flask', x: 70, y: 88, size: 48, opacity: 0.18, dur: 13, delay: 5, rot: 10 },
-    { type: 'atom', x: 10, y: 55, size: 62, opacity: 0.15, dur: 22, delay: 8, rot: -20 },
-    { type: 'benzene', x: 38, y: 80, size: 52, opacity: 0.16, dur: 15, delay: 2, rot: 25 },
-    { type: 'molecule', x: 22, y: 20, size: 72, opacity: 0.14, dur: 19, delay: 10, rot: 5 },
-    { type: 'flask', x: 92, y: 75, size: 46, opacity: 0.17, dur: 17, delay: 4, rot: -12 },
-    { type: 'arrow', x: 50, y: 12, size: 70, opacity: 0.15, dur: 25, delay: 7, rot: -3 },
-    { type: 'arrow', x: 6, y: 82, size: 62, opacity: 0.14, dur: 23, delay: 12, rot: 8 },
-    // Text formulas
-    { type: 'text', text: 'H₂O', x: 42, y: 5, size: 22, opacity: 0.18, dur: 16, delay: 0, rot: -4 },
-    { type: 'text', text: 'Fe + H₂O → FeO + H₂', x: 5, y: 30, size: 16, opacity: 0.17, dur: 20, delay: 5, rot: -2 },
-    { type: 'text', text: '2H₂ + O₂ → 2H₂O', x: 55, y: 30, size: 16, opacity: 0.16, dur: 18, delay: 2, rot: 3 },
-    { type: 'text', text: 'FeO', x: 30, y: 50, size: 24, opacity: 0.17, dur: 14, delay: 8, rot: 5 },
-    { type: 'text', text: 'H₂', x: 82, y: 60, size: 26, opacity: 0.18, dur: 15, delay: 4, rot: -6 },
-    { type: 'text', text: '3Fe + 2O₂ → Fe₃O₄', x: 10, y: 90, size: 15, opacity: 0.16, dur: 22, delay: 11, rot: -3 },
-    { type: 'text', text: 'H—O—H', x: 65, y: 50, size: 20, opacity: 0.17, dur: 17, delay: 6, rot: 4 },
-    { type: 'text', text: 'O₂', x: 48, y: 90, size: 24, opacity: 0.16, dur: 19, delay: 9, rot: -5 },
-    { type: 'text', text: 'CO₂', x: 18, y: 70, size: 22, opacity: 0.17, dur: 21, delay: 7, rot: 6 },
-    { type: 'text', text: 'NaCl', x: 75, y: 22, size: 20, opacity: 0.17, dur: 16, delay: 3, rot: -8 },
-    { type: 'text', text: 'CH₄', x: 35, y: 38, size: 22, opacity: 0.16, dur: 23, delay: 14, rot: 4 },
+    // ── LEFT RAIL icons (x: 28–32%) ──
+    { type: 'flask', x: 30, y: 8, size: 32, opacity: 0.07, dur: 14, delay: 0, rot: -8 },
+    { type: 'atom', x: 31, y: 38, size: 38, opacity: 0.06, dur: 22, delay: 8, rot: -20 },
+    { type: 'benzene', x: 28, y: 62, size: 28, opacity: 0.07, dur: 15, delay: 2, rot: 10 },
+    { type: 'molecule', x: 32, y: 82, size: 36, opacity: 0.06, dur: 19, delay: 10, rot: 5 },
+    { type: 'arrow', x: 29, y: 52, size: 40, opacity: 0.06, dur: 23, delay: 12, rot: 8 },
+    // ── RIGHT RAIL icons (true mirror: x = 100 - left → 68–72%) ──
+    { type: 'atom', x: 69, y: 8, size: 36, opacity: 0.06, dur: 18, delay: 3, rot: 12 },
+    { type: 'flask', x: 68, y: 35, size: 30, opacity: 0.07, dur: 13, delay: 5, rot: 10 },
+    { type: 'benzene', x: 72, y: 58, size: 32, opacity: 0.07, dur: 20, delay: 1, rot: 15 },
+    { type: 'flask', x: 68, y: 78, size: 28, opacity: 0.06, dur: 17, delay: 4, rot: -12 },
+    { type: 'arrow', x: 71, y: 22, size: 44, opacity: 0.06, dur: 25, delay: 7, rot: -3 },
+    // ── LEFT RAIL formulas (x: 26–29%) ──
+    { type: 'text', text: 'ROAS = Revenue / Spend', x: 26, y: 22, size: 12, opacity: 0.07, dur: 20, delay: 5, rot: -2 },
+    { type: 'text', text: 'CTR = Clicks / Impressions', x: 26, y: 48, size: 12, opacity: 0.07, dur: 16, delay: 0, rot: 3 },
+    { type: 'text', text: 'LTV > CAC', x: 29, y: 72, size: 14, opacity: 0.08, dur: 14, delay: 8, rot: -4 },
+    // ── RIGHT RAIL formulas (mirror: x = 100 - left → 67–70%) ──
+    { type: 'text', text: 'CAC = Total Cost / New Customers', x: 67, y: 15, size: 11, opacity: 0.07, dur: 18, delay: 2, rot: 2 },
+    { type: 'text', text: 'ROAS = Revenue / Spend', x: 70, y: 45, size: 12, opacity: 0.07, dur: 20, delay: 11, rot: -3 },
+    { type: 'text', text: 'LTV > CAC', x: 71, y: 68, size: 14, opacity: 0.08, dur: 15, delay: 6, rot: 5 },
 ] as const;
 
 export default function FloatingBackground() {
     return (
         <div
-            className="fixed inset-0 pointer-events-none overflow-hidden"
+            className="hidden lg:block fixed inset-0 pointer-events-none overflow-hidden"
             style={{ zIndex: 0 }}
             aria-hidden="true"
         >

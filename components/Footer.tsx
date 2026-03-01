@@ -41,7 +41,7 @@ const columns = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: lime.bg, borderTop: `1px solid rgba(163,230,53,0.18)` }}>
+    <footer className="relative" style={{ background: lime.bg, borderTop: `1px solid rgba(163,230,53,0.18)`, zIndex: 1 }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
 
         {/* Main grid */}
