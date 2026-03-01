@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -67,33 +68,16 @@ export default function AboutPage() {
                 </p>
             </section>
 
-            {/* Family photo placeholder — replace with your image when ready */}
+            {/* Founder photo */}
             <section className="relative z-10 pb-10 px-6 lg:px-8 max-w-3xl mx-auto">
-                <div
-                    className="w-full rounded-2xl overflow-hidden flex flex-col items-center justify-center gap-3"
-                    style={{
-                        height: '420px',
-                        background: 'rgba(255,255,255,0.02)',
-                        border: '2px dashed rgba(255,255,255,0.12)',
-                    }}
-                >
-                    {/*
-                      To replace: add your photo to /public/images/family.jpg
-                      then swap this block for:
-                      <img src="/images/family.jpg" alt="Founder with family" className="w-full h-full object-cover" />
-                    */}
-                    <svg viewBox="0 0 48 48" fill="none" className="w-12 h-12" style={{ color: 'rgba(255,255,255,0.15)' }}>
-                        <rect x="4" y="10" width="40" height="30" rx="4" stroke="currentColor" strokeWidth="2" />
-                        <circle cx="17" cy="22" r="4" stroke="currentColor" strokeWidth="2" />
-                        <path d="M4 34l10-8 8 7 7-5 15 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                    <p className="text-sm font-medium" style={{ color: 'rgba(240,244,255,0.2)' }}>
-                        Your family photo goes here
-                    </p>
-                    <p className="text-xs" style={{ color: 'rgba(240,244,255,0.12)' }}>
-                        Recommended: 1200 x 840px — place in /public/images/
-                    </p>
-                </div>
+                <Image
+                    src="/images/switch-media-founder.webp"
+                    alt="Switch Media Marketing founder with family"
+                    width={1200}
+                    height={840}
+                    priority
+                    className="w-full h-auto rounded-xl"
+                />
             </section>
 
             {/* Intro card */}
