@@ -515,3 +515,12 @@ select option {
   background-color: #1a1f2e;
   color: #f0f4ff;
 }
+
+/* ─── Navbar dropdown lime hover ────────────────── */
+.nav-dropdown-hovered {
+  background: linear-gradient(135deg, #a3e635, #65a30d) !important;
+}
+
+.nav-dropdown-hovered * {
+  color: #1a2e05 !important;
+}

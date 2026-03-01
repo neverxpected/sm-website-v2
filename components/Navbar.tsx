@@ -116,8 +116,8 @@ function DesktopDropdown({ label, links }: { label: string; links: NavLink[] }) 
                   href={link.href}
                   className="flex items-start gap-4 px-5 py-4 transition-colors group"
                   style={{ background: 'transparent' }}
-                  onMouseEnter={(e) => { const el = e.currentTarget as HTMLElement; el.style.background = 'linear-gradient(135deg, #a3e635, #65a30d)'; el.style.color = '#000'; }}
-                  onMouseLeave={(e) => { const el = e.currentTarget as HTMLElement; el.style.background = 'transparent'; el.style.color = ''; }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).classList.add('nav-dropdown-hovered'); }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).classList.remove('nav-dropdown-hovered'); }}
                   onClick={() => setOpen(false)}
                 >
                   <span className="mt-0.5 text-white/40 group-hover:text-white transition-colors shrink-0">
