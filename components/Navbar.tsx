@@ -39,8 +39,13 @@ const paidAdsLinks = [
     href: "/services/digital-advertising",
     description: "Capture professional audiences across Microsoft's search ecosystem.",
     icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
-        <path d="M5 0v16.4l3.9 2.2 8.3-4.8-4.5-2.6V5.2L5 0zm0 24v-3.2l3.9-2.2 8.6 4.9-4.5 2.6L5 24zm7.7-4.5L5 15.1V8.6l7.7 4.4v6.5z" />
+      <svg viewBox="0 0 20 24" className="w-4 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        {/* Vertical stem */}
+        <rect x="2" y="1" width="4" height="22" />
+        {/* Main arm: from mid-stem sweeps to bottom-right */}
+        <polygon points="6,9 18,15 11,23 6,23" />
+        {/* Shadow fold triangle */}
+        <polygon points="6,13 14,15 6,18" opacity="0.35" fill="#000" />
       </svg>
     ),
   },
@@ -109,11 +114,11 @@ function DesktopDropdown({ label, links }: { label: string; links: NavLink[] }) 
                   href={link.href}
                   className="flex items-start gap-4 px-5 py-4 transition-colors group"
                   style={{ background: 'transparent' }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, rgba(255,45,120,0.12), rgba(155,48,255,0.12))'; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'transparent'; }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, rgba(255,45,120,0.85), rgba(155,48,255,0.85))'; (e.currentTarget as HTMLElement).style.color = 'white'; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'transparent'; (e.currentTarget as HTMLElement).style.color = ''; }}
                   onClick={() => setOpen(false)}
                 >
-                  <span className="mt-0.5 text-white/40 group-hover:text-white/70 transition-colors shrink-0">
+                  <span className="mt-0.5 text-white/40 group-hover:text-white transition-colors shrink-0">
                     {link.icon}
                   </span>
                   <span>

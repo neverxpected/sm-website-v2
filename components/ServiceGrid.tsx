@@ -49,8 +49,10 @@ const services = [
     description: "Untapped reach with lower CPCs. Capture professional audiences across Microsoft's ecosystem.",
     tags: ["Search", "Display", "LinkedIn Import"],
     icon: (
-      <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
-        <path d="M5 3l4 1.5v13l6-3.5-2-1.2 2-4.8L5 3zm0 0" />
+      <svg viewBox="0 0 20 24" className="w-5 h-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="1" width="4" height="22" />
+        <polygon points="6,9 18,15 11,23 6,23" />
+        <polygon points="6,13 14,15 6,18" opacity="0.35" fill="#000" />
       </svg>
     ),
     iconBg: "bg-orange-500",

@@ -1,18 +1,16 @@
 import type { Metadata } from "next";
-import HeroSwitch from "@/components/HeroSwitch";
+import Hero from "@/components/Hero";
 
 export const metadata: Metadata = {
-  title: "Houston AI Agency — AI Systems & Precision Advertising",
+  title: "Switch Media Marketing — AI-Powered Advertising",
   description:
-    "Houston AI Agency builds autonomous AI systems and high-performance ad engines that scale revenue across every timezone.",
+    "Switch Media Marketing delivers expert digital advertising and AI system integration services to grow your business.",
 };
 
 export default function HomePage() {
   return (
     <main className="relative min-h-screen overflow-hidden">
-      <div className="relative z-10">
-        <HeroSwitch />
-      </div>
+      <Hero />
     </main>
   );
 }

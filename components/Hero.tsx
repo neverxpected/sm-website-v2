@@ -58,7 +58,7 @@ export default function Hero() {
         }} />
 
         {/* Content */}
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-24 sm:pt-44 lg:pt-36">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-24 lg:pt-16 pb-16">
           <div className="max-w-5xl mx-auto text-center">
 
             {/* Eyebrow */}
@@ -134,7 +134,7 @@ export default function Hero() {
             </div>
 
             {/* Stats bar */}
-            <div className="reveal reveal-delay-600 flex flex-wrap items-center justify-center gap-8 mt-10 pt-10"
+            <div className="reveal reveal-delay-600 flex flex-wrap items-center justify-center gap-8 mt-6 pt-6"
               style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
               {[
                 { value: '$40M+', label: 'Revenue Generated' },
