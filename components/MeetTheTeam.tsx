@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const team = [
   {
     name: "Charles Snider",
@@ -7,9 +9,9 @@ const team = [
     location: "Houston, Texas",
     bio: "Father of 3 beautiful girls and a proud Baylor University graduate with a passion for all things digital. When he's not building growth systems for clients, you'll likely find him enjoying the open road on his motorcycle.",
     accent: "#FF2D78",
-    initials: "CS",
     gradientFrom: "#FF2D78",
     gradientTo: "#9B30FF",
+    photo: "/images/team/charles.webp",
   },
   {
     name: "Chris Kim",
@@ -17,9 +19,9 @@ const team = [
     location: "Houston, Texas",
     bio: "A cyber security expert with serious IT depth, Chris is the sharpest technical mind on the team. His credentials are impeccable — though we're still holding a grudge about the time he talked us out of buying Bitcoin at $300. The jury's still out on his investment advice.",
     accent: "#00E5FF",
-    initials: "CK",
     gradientFrom: "#00E5FF",
     gradientTo: "#9B30FF",
+    photo: "/images/team/chris.webp",
   },
   {
     name: "Thomas Sanders",
@@ -27,9 +29,9 @@ const team = [
     location: "Houston, Texas",
     bio: "Probably one of the nicest and most genuine people you'll ever meet. Thomas is a proud dad to 2 smart kiddos and a TCU Graduate. When he's not closing deals, you might find him deep in a League of Legends match.",
     accent: "#9B30FF",
-    initials: "TS",
     gradientFrom: "#9B30FF",
     gradientTo: "#FF2D78",
+    photo: "/images/team/thomas.webp",
   },
 ];
 
@@ -75,24 +77,24 @@ export default function MeetTheTeam() {
               className={`reveal reveal-delay-${(i + 2) * 100} card-neon rounded-2xl overflow-hidden flex flex-col`}
               style={{ background: 'rgba(13,21,38,0.85)', border: '1px solid rgba(255,255,255,0.07)', backdropFilter: 'blur(12px)' }}
             >
-              {/* Photo placeholder */}
+              {/* Photo */}
               <div className="relative h-64 flex items-center justify-center overflow-hidden"
                 style={{ background: `linear-gradient(135deg, ${member.gradientFrom}18, ${member.gradientTo}18)` }}>
-                {/* Avatar circle */}
-                <div className="w-28 h-28 rounded-full flex items-center justify-center text-3xl font-black text-white"
-                  style={{
-                    background: `linear-gradient(135deg, ${member.gradientFrom}, ${member.gradientTo})`,
-                    boxShadow: `0 0 40px ${member.accent}40`,
-                  }}>
-                  {member.initials}
-                </div>
                 {/* Ambient glow */}
                 <div className="absolute inset-0 pointer-events-none"
-                  style={{ background: `radial-gradient(circle at 50% 60%, ${member.accent}15 0%, transparent 65%)` }} />
-                {/* Photo upload hint */}
-                <div className="absolute bottom-3 right-3 px-2 py-1 rounded-md text-[10px] font-semibold uppercase tracking-wider"
-                  style={{ background: 'rgba(0,0,0,0.5)', color: 'rgba(240,244,255,0.3)', border: '1px dashed rgba(255,255,255,0.1)' }}>
-                  Photo coming soon
+                  style={{ background: `radial-gradient(circle at 50% 60%, ${member.accent}20 0%, transparent 65%)` }} />
+                {/* Circular photo with neon ring */}
+                <div
+                  className="relative w-36 h-36 rounded-full overflow-hidden z-10"
+                  style={{ boxShadow: `0 0 40px ${member.accent}55, 0 0 0 3px ${member.accent}40` }}
+                >
+                  <Image
+                    src={member.photo}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                    sizes="144px"
+                  />
                 </div>
               </div>
 
