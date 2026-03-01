@@ -57,6 +57,14 @@ export default function Hero() {
             ===================================================== */}
 
 
+        {/* CTA glow keyframe — injected here to guarantee availability */}
+        <style>{`
+          @keyframes ctaGlow {
+            0%, 100% { box-shadow: 0 0 16px rgba(163,230,53,0.4), 0 0 44px rgba(163,230,53,0.18); }
+            50%       { box-shadow: 0 0 32px rgba(163,230,53,0.75), 0 0 80px rgba(163,230,53,0.38); }
+          }
+        `}</style>
+
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-24 lg:pt-0 pb-4 lg:-mt-10">
           <div className="max-w-5xl mx-auto text-center">
@@ -119,8 +127,8 @@ export default function Hero() {
                 href="https://calendly.com/switchmedia/15min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cta-glow-btn inline-flex items-center justify-center px-8 py-4 text-base font-bold text-black rounded-xl transition-transform duration-300 hover:scale-105 active:scale-100 whitespace-nowrap"
-                style={{ background: lime.grad }}
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-black rounded-xl transition-transform duration-300 hover:scale-105 active:scale-100 whitespace-nowrap"
+                style={{ background: lime.grad, animation: 'ctaGlow 3s ease-in-out infinite' }}
               >
                 Book a Strategy Call
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4 ml-2">
