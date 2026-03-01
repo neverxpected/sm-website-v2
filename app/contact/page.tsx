@@ -103,23 +103,23 @@ export default function ContactPage() {
                                 </div>
                                 <div className="grid grid-cols-2 gap-4">
                                     <div>
-                                        <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Company</label>
-                                        <input type="text" placeholder="Company name"
+                                        <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Company <span style={{ color: '#FF2D78' }}>*</span></label>
+                                        <input required type="text" placeholder="Company name"
                                             className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder:text-white/20 focus:outline-none transition-all appearance-none"
                                             style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)' }} />
                                     </div>
                                     <div>
-                                        <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Phone</label>
-                                        <input type="tel" placeholder="+1 (555) 000-0000"
+                                        <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Phone <span style={{ color: '#FF2D78' }}>*</span></label>
+                                        <input required type="tel" placeholder="+1 (555) 000-0000"
                                             className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder:text-white/20 focus:outline-none transition-all appearance-none"
                                             style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)' }} />
                                     </div>
                                 </div>
                                 <ServicePicker />
                                 <div>
-                                    <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Monthly Budget</label>
+                                    <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Monthly Budget <span style={{ color: '#FF2D78' }}>*</span></label>
                                     <div className="relative">
-                                        <select className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none transition-all appearance-none cursor-pointer"
+                                        <select required className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none transition-all appearance-none cursor-pointer"
                                             style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(240,244,255,0.5)', paddingRight: '2.5rem' }}>
                                             <option value="">Select budget</option>
                                             <option>Under $5,000/mo</option>

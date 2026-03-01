@@ -27,7 +27,7 @@ export default function ContactSection() {
         style={{ background: 'radial-gradient(circle, rgba(155,48,255,0.07) 0%, transparent 70%)' }} />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-[2fr_3fr] gap-16 items-start">
 
           {/* Left */}
           <div>
@@ -117,19 +117,19 @@ export default function ContactSection() {
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Company</label>
-                      <input type="text" placeholder="Company name" className={inputClass} style={inputStyle} />
+                      <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Company <span style={{ color: '#FF2D78' }}>*</span></label>
+                      <input required type="text" placeholder="Company name" className={inputClass} style={inputStyle} />
                     </div>
                     <div>
-                      <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Phone</label>
-                      <input type="tel" placeholder="+1 (555) 000-0000" className={inputClass} style={inputStyle} />
+                      <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Phone <span style={{ color: '#FF2D78' }}>*</span></label>
+                      <input required type="tel" placeholder="+1 (555) 000-0000" className={inputClass} style={inputStyle} />
                     </div>
                   </div>
                   <ServicePicker />
                   <div>
-                    <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Monthly Budget</label>
+                    <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Monthly Budget <span style={{ color: '#FF2D78' }}>*</span></label>
                     <div className="relative">
-                      <select className={inputClass} style={{ ...inputStyle, color: 'rgba(240,244,255,0.5)', paddingRight: '2.5rem' }}>
+                      <select required className={inputClass} style={{ ...inputStyle, color: 'rgba(240,244,255,0.5)', paddingRight: '2.5rem' }}>
                         <option value="">Select budget</option>
                         <option>Under $5,000/mo</option>
                         <option>$5,000 – $10,000/mo</option>
