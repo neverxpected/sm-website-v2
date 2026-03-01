@@ -27,13 +27,13 @@ const caseStudies = [
     services: ["Botox", "Lip Filler", "Hydrafacials", "Microneedling"],
   },
   {
-    client: "Wellness",
-    location: "Southwest US",
-    niche: "Wellness",
-    duration: "Ongoing",
-    stat: "$180k+",
-    statLabel: "Revenue Generated",
-    services: ["Weight Loss", "IV Therapy", "Aesthetics"],
+    client: "Illuminate Heights Fitness",
+    location: "Houston, TX",
+    niche: "Fitness",
+    duration: "2.5+ Years",
+    stat: "2,800+",
+    statLabel: "Inquiries Generated",
+    services: ["Memberships", "Limited Time Specials", "Private Training"],
   },
 ];
 
