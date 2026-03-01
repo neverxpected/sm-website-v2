@@ -60,7 +60,7 @@ export default function Hero() {
             <div className="reveal reveal-delay-100 inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.25em]"
               style={{ background: 'rgba(163,230,53,0.08)', border: `1px solid rgba(163,230,53,0.25)`, color: lime.accent }}>
               <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
-              Houston&apos;s #1 AI Marketing Agency
+              A Houston Based Agency
             </div>
 
             {/* Headline */}
@@ -84,15 +84,27 @@ export default function Hero() {
               </span>
             </h1>
 
-            {/* Subheadline */}
-            <p className="reveal reveal-left reveal-delay-400 text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed mb-10"
-              style={{ color: 'rgba(240,244,255,0.55)' }}>
-              Switch Media Co builds autonomous systems and high-performance ad engines that scale revenue across every timezone.{' '}
-              <span style={{ color: 'rgba(240,244,255,0.85)' }}>Stop guessing. Start scaling.</span>
-            </p>
+
+            {/* Stats bar */}
+            <div className="reveal reveal-delay-400 flex flex-wrap items-center justify-center gap-8 mb-8 pb-8"
+              style={{ borderBottom: '1px solid rgba(163,230,53,0.10)' }}>
+              {[
+                { value: '$40M+', label: 'Revenue Generated' },
+                { value: '300+', label: 'Campaigns Launched' },
+                { value: '8x', label: 'Average ROAS' },
+              ].map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <p className="text-2xl sm:text-3xl font-black mb-1"
+                    style={{ background: lime.gradText, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+                    {stat.value}
+                  </p>
+                  <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: 'rgba(240,244,255,0.4)' }}>{stat.label}</p>
+                </div>
+              ))}
+            </div>
 
             {/* CTAs */}
-            <div className="reveal reveal-delay-500 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="reveal reveal-delay-500 flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <Link
                 href="https://calendly.com/switchmedia/15min"
                 target="_blank"
@@ -115,7 +127,7 @@ export default function Hero() {
             </div>
 
             {/* Trust badges */}
-            <div className="reveal reveal-delay-600 flex flex-wrap items-center justify-center gap-6 sm:gap-8 mt-8">
+            <div className="reveal reveal-delay-600 flex flex-wrap items-center justify-center gap-6 sm:gap-8">
               {[
                 'No long-term contracts',
                 'Results in 30 days',
@@ -128,23 +140,6 @@ export default function Hero() {
               ))}
             </div>
 
-            {/* Stats bar */}
-            <div className="reveal reveal-delay-600 flex flex-wrap items-center justify-center gap-8 mt-6 pt-6"
-              style={{ borderTop: '1px solid rgba(163,230,53,0.10)' }}>
-              {[
-                { value: '$40M+', label: 'Revenue Generated' },
-                { value: '300+', label: 'Campaigns Launched' },
-                { value: '8x', label: 'Average ROAS' },
-              ].map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <p className="text-2xl sm:text-3xl font-black text-white mb-1"
-                    style={{ background: lime.gradText, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-                    {stat.value}
-                  </p>
-                  <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: 'rgba(240,244,255,0.4)' }}>{stat.label}</p>
-                </div>
-              ))}
-            </div>
 
           </div>
         </div>
@@ -152,15 +147,15 @@ export default function Hero() {
         {/* Bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
           style={{ background: `linear-gradient(to bottom, transparent, ${lime.bg})` }} />
-      </section>
+      </section >
 
       {/* ── REST OF PAGE ─────────────────────────────────── */}
-      <TrustedBy />
+      < TrustedBy />
       <ServiceGrid />
       <AIAdvantage />
       <CaseStudies />
       <MeetTheTeam />
       <ContactSection />
-    </div>
+    </div >
   );
 }
