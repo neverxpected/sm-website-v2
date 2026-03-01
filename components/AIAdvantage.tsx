@@ -161,12 +161,12 @@ export default function AIAdvantage() {
         <div className="reveal reveal-delay-300 flex flex-col lg:flex-row gap-6 items-start">
 
           {/* Left — tab buttons */}
-          <div className="flex flex-row lg:flex-col gap-3 w-full lg:w-64 shrink-0">
+          <div className="flex flex-col gap-2 w-full lg:w-64 shrink-0">
             {tabs.map((t, i) => (
               <button
                 key={t.id}
                 onClick={() => setActive(i)}
-                className="flex items-center gap-3 px-4 py-4 rounded-2xl text-left transition-all duration-300 w-full"
+                className="flex items-center gap-3 px-4 py-3 rounded-2xl text-left transition-all duration-300 w-full"
                 style={active === i ? {
                   background: accentColors[i].bg,
                   border: `1px solid ${accentColors[i].border}`,
