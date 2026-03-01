@@ -251,8 +251,8 @@ export default function Navbar() {
             { label: 'AI Receptionist', href: '/services/ai-receptionist' },
             { label: 'AI Integrations', href: '/services/ai-system-integration' },
             { label: 'Results', href: '/our-work' },
-            { label: 'About', href: '/about' },
-            { label: 'Contact', href: '/contact' },
+            { label: 'About Us', href: '/about' },
+            { label: 'Contact Us', href: '/contact' },
           ].map((link) => (
             <div key={link.href} className="border-b border-white/10">
               <Link
