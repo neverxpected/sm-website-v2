@@ -35,18 +35,97 @@ const team = [
   },
 ];
 
+/* Circuit trace lengths (approximate) so dasharray matches the path */
+const TRACES = [
+  { d: "M10 30 H90 V70 H160 V40 H240 V80 H310 V45 H390", delay: "0s", dur: "3s" },
+  { d: "M10 128 H60 V95  H140 V135 H210 V105 H270 V148 H350 V115 H390", delay: "0.9s", dur: "4s" },
+  { d: "M10 220 H75 V185 H155 V225 H235 V195 H315 V228 H390", delay: "1.8s", dur: "3.5s" },
+  { d: "M90 30  V128 M240 80  V105 M310 45  V148 M160 70  V135", delay: "0.5s", dur: "2.5s" },
+  { d: "M60 128 V220 M270 148 V195 M350 115 V228", delay: "1.3s", dur: "3.2s" },
+];
+
+const NODES = [
+  [90, 30], [160, 40], [240, 80], [310, 45],
+  [60, 128], [140, 135], [210, 105], [270, 148], [350, 115],
+  [75, 220], [155, 225], [235, 195], [315, 228],
+  [240, 30], [90, 128], [160, 128],
+];
+
+function CircuitBg({ color }: { color: string }) {
+  return (
+    <svg
+      className="absolute inset-0 w-full h-full pointer-events-none"
+      viewBox="0 0 400 256"
+      preserveAspectRatio="xMidYMid slice"
+      aria-hidden
+    >
+      <defs>
+        <filter id={`glow-${color.replace('#', '')}`}>
+          <feGaussianBlur stdDeviation="2" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+      </defs>
+
+      {TRACES.map((t, i) => (
+        <path
+          key={i}
+          d={t.d}
+          fill="none"
+          stroke={color}
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          filter={`url(#glow-${color.replace('#', '')})`}
+        >
+          <animate
+            attributeName="stroke-dasharray"
+            values="0 1200; 200 1000; 0 1200"
+            dur={t.dur}
+            begin={t.delay}
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="opacity"
+            values="0.15; 0.55; 0.15"
+            dur={t.dur}
+            begin={t.delay}
+            repeatCount="indefinite"
+          />
+        </path>
+      ))}
+
+      {NODES.map(([x, y], i) => (
+        <circle key={i} cx={x} cy={y} r="2.5" fill={color}
+          filter={`url(#glow-${color.replace('#', '')})`}>
+          <animate
+            attributeName="opacity"
+            values="0.2; 0.8; 0.2"
+            dur={`${2 + (i % 4) * 0.5}s`}
+            begin={`${(i * 0.25) % 2}s`}
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="r"
+            values="2.5; 4; 2.5"
+            dur={`${2 + (i % 4) * 0.5}s`}
+            begin={`${(i * 0.25) % 2}s`}
+            repeatCount="indefinite"
+          />
+        </circle>
+      ))}
+    </svg>
+  );
+}
+
 export default function MeetTheTeam() {
   return (
     <section className="relative py-24 lg:py-32" style={{ background: '#0A0F1C' }}>
-      {/* Subtle grid */}
       <div className="absolute inset-0 pointer-events-none" style={{
         backgroundImage: 'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
         backgroundSize: '60px 60px',
       }} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-
-        {/* Section header */}
         <div className="text-center mb-16">
           <div className="reveal inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.25em]"
             style={{ background: 'rgba(155,48,255,0.1)', border: '1px solid rgba(155,48,255,0.25)', color: '#9B30FF' }}>
@@ -69,7 +148,6 @@ export default function MeetTheTeam() {
           </p>
         </div>
 
-        {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {team.map((member, i) => (
             <div
@@ -77,16 +155,24 @@ export default function MeetTheTeam() {
               className={`reveal reveal-delay-${(i + 2) * 100} card-neon rounded-2xl overflow-hidden flex flex-col`}
               style={{ background: 'rgba(13,21,38,0.85)', border: '1px solid rgba(255,255,255,0.07)', backdropFilter: 'blur(12px)' }}
             >
-              {/* Photo */}
-              <div className="relative h-64 flex items-center justify-center overflow-hidden"
-                style={{ background: `linear-gradient(135deg, ${member.gradientFrom}18, ${member.gradientTo}18)` }}>
-                {/* Ambient glow */}
-                <div className="absolute inset-0 pointer-events-none"
-                  style={{ background: `radial-gradient(circle at 50% 60%, ${member.accent}20 0%, transparent 65%)` }} />
-                {/* Circular photo with neon ring */}
+              {/* Photo area */}
+              <div
+                className="relative h-64 flex items-center justify-center overflow-hidden"
+                style={{ background: `linear-gradient(135deg, ${member.gradientFrom}10, ${member.gradientTo}10)` }}
+              >
+                {/* Circuit board animation */}
+                <CircuitBg color={member.accent} />
+
+                {/* Soft radial glow behind photo */}
+                <div className="absolute inset-0 z-10 pointer-events-none"
+                  style={{ background: `radial-gradient(circle at 50% 50%, ${member.accent}22 0%, transparent 65%)` }} />
+
+                {/* Circular photo */}
                 <div
-                  className="relative w-52 h-52 rounded-full overflow-hidden z-10"
-                  style={{ boxShadow: `0 0 40px ${member.accent}55, 0 0 0 3px ${member.accent}40` }}
+                  className="relative w-52 h-52 rounded-full overflow-hidden z-20"
+                  style={{
+                    boxShadow: `0 0 0 3px ${member.accent}70, 0 0 25px ${member.accent}60, 0 0 60px ${member.accent}30`,
+                  }}
                 >
                   <Image
                     src={member.photo}
@@ -113,7 +199,6 @@ export default function MeetTheTeam() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
