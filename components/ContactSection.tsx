@@ -54,12 +54,12 @@ export default function ContactSection() {
                   color: 'rgba(255,45,120,0.15)', borderColor: 'rgba(255,45,120,0.25)', iconColor: '#FF2D78',
                 },
                 {
-                  label: 'Phone', value: '469-518-0508', href: 'tel:4695180508',
+                  label: 'Phone', value: '(469) 518-0508', href: 'tel:4695180508',
                   icon: <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21L8.5 10.5s1.5 3 5 5l1.113-1.724a1 1 0 011.21-.502l4.493 1.498A1 1 0 0121 15.72V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />,
                   color: 'rgba(155,48,255,0.15)', borderColor: 'rgba(155,48,255,0.25)', iconColor: '#9B30FF',
                 },
                 {
-                  label: 'Location', value: 'Houston, TX', href: null,
+                  label: 'Headquarters', value: 'Houston, TX', href: null,
                   icon: <><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></>,
                   color: 'rgba(0,229,255,0.12)', borderColor: 'rgba(0,229,255,0.2)', iconColor: '#00E5FF',
                 },
