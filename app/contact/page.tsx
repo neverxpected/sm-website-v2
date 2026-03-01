@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import ServicePicker from "../../components/ServicePicker";
 
 export default function ContactPage() {
     const [submitted, setSubmitted] = useState(false);
@@ -114,35 +115,19 @@ export default function ContactPage() {
                                             style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)' }} />
                                     </div>
                                 </div>
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div>
-                                        <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Service Interest</label>
-                                        <div className="relative">
-                                            <select className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none transition-all appearance-none cursor-pointer"
-                                                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(240,244,255,0.5)', paddingRight: '2.5rem' }}>
-                                                <option value="">Select a service</option>
-                                                <option>Meta Ads</option>
-                                                <option>Google Ads</option>
-                                                <option>TikTok Ads</option>
-                                                <option>AI Receptionist</option>
-                                                <option>AI Integrations</option>
-                                            </select>
-                                            <svg className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: 'rgba(240,244,255,0.3)' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Monthly Budget</label>
-                                        <div className="relative">
-                                            <select className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none transition-all appearance-none cursor-pointer"
-                                                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(240,244,255,0.5)', paddingRight: '2.5rem' }}>
-                                                <option value="">Select budget</option>
-                                                <option>Under $5,000/mo</option>
-                                                <option>$5,000 – $10,000/mo</option>
-                                                <option>$10,000 – $25,000/mo</option>
-                                                <option>$25,000+/mo</option>
-                                            </select>
-                                            <svg className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: 'rgba(240,244,255,0.3)' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
-                                        </div>
+                                <ServicePicker />
+                                <div>
+                                    <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Monthly Budget</label>
+                                    <div className="relative">
+                                        <select className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none transition-all appearance-none cursor-pointer"
+                                            style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(240,244,255,0.5)', paddingRight: '2.5rem' }}>
+                                            <option value="">Select budget</option>
+                                            <option>Under $5,000/mo</option>
+                                            <option>$5,000 – $10,000/mo</option>
+                                            <option>$10,000 – $25,000/mo</option>
+                                            <option>$25,000+/mo</option>
+                                        </select>
+                                        <svg className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: 'rgba(240,244,255,0.3)' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
                                     </div>
                                 </div>
                                 <div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import ServicePicker from "./ServicePicker";
 
 export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
@@ -126,21 +127,6 @@ export default function ContactSection() {
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Service Interest</label>
-                      <div className="relative">
-                        <select className={inputClass} style={{ ...inputStyle, color: 'rgba(240,244,255,0.5)', paddingRight: '2.5rem' }}>
-                          <option value="">Select a service</option>
-                          <option>Meta Ads</option>
-                          <option>Google Ads</option>
-                          <option>TikTok Ads</option>
-                          <option>AI Receptionist</option>
-                          <option>AI Integrations</option>
-
-                        </select>
-                        <svg className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: 'rgba(240,244,255,0.3)' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
-                      </div>
-                    </div>
-                    <div>
                       <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Monthly Budget</label>
                       <div className="relative">
                         <select className={inputClass} style={{ ...inputStyle, color: 'rgba(240,244,255,0.5)', paddingRight: '2.5rem' }}>
@@ -154,6 +140,7 @@ export default function ContactSection() {
                       </div>
                     </div>
                   </div>
+                  <ServicePicker />
                   <div>
                     <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Message</label>
                     <textarea rows={4} placeholder="Tell us about your business and goals..." className={inputClass + " resize-none"} style={inputStyle} />
