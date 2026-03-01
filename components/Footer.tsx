@@ -98,7 +98,7 @@ export default function Footer() {
                     <Link href={link.href}
                       className="text-sm transition-colors duration-200"
                       style={{ color: 'rgba(240,244,255,0.5)' }}
-                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#FF2D78'; }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#a3e635'; }}
                       onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = 'rgba(240,244,255,0.5)'; }}
                     >
                       {link.label}

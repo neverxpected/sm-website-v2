@@ -116,7 +116,7 @@ export default function ContactSection() {
               {submitted ? (
                 <div className="flex flex-col items-center justify-center py-16 text-center gap-4">
                   <span className="w-14 h-14 rounded-full flex items-center justify-center"
-                    style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)' }}>
+                    style={{ background: 'linear-gradient(135deg, #a3e635, #65a30d)' }}>
                     <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={2.5} className="w-7 h-7">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>

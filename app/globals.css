@@ -275,24 +275,24 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-@keyframes goldGlow {
+@keyframes limeGlow {
   0%, 100% {
     box-shadow:
-      0 0 20px rgba(255,185,30,0.4),
-      0 0 50px rgba(255,160,20,0.2),
-      0 0 90px rgba(255,140,0,0.1);
+      0 0 20px rgba(163,230,53,0.4),
+      0 0 50px rgba(163,230,53,0.2),
+      0 0 90px rgba(163,230,53,0.1);
   }
   50% {
     box-shadow:
-      0 0 35px rgba(255,210,30,0.7),
-      0 0 80px rgba(255,185,20,0.4),
-      0 0 130px rgba(255,160,0,0.2);
+      0 0 35px rgba(163,230,53,0.7),
+      0 0 80px rgba(163,230,53,0.4),
+      0 0 130px rgba(163,230,53,0.2);
   }
 }
 
 .contact-gold-frame {
-  border: 1.5px solid #FFB800;
-  animation: goldGlow 3s ease-in-out infinite;
+  border: 1.5px solid #a3e635;
+  animation: limeGlow 3s ease-in-out infinite;
 }
 
 .gold-border {
