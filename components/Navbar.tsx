@@ -205,6 +205,9 @@ export default function Navbar() {
           <Link href="/our-work" className="text-sm font-medium text-white/70 hover:text-white transition-colors">
             Results
           </Link>
+          <Link href="/about" className="text-sm font-medium text-white/70 hover:text-white transition-colors">
+            About
+          </Link>
           <Link
             href="https://calendly.com/switchmedia/15min"
             className="relative px-6 py-2.5 text-sm font-bold rounded-full text-white transition-all duration-300 hover:scale-105 overflow-hidden"
@@ -240,6 +243,16 @@ export default function Navbar() {
               onClick={() => setMobileOpen(false)}
             >
               Results
+            </Link>
+          </div>
+
+          <div className="border-b border-white/10">
+            <Link
+              href="/about"
+              className="flex items-center gap-3 py-4 text-base font-medium text-white/80"
+              onClick={() => setMobileOpen(false)}
+            >
+              About
             </Link>
           </div>
 
