@@ -55,24 +55,50 @@ function TimelineItem({
             <div className="flex flex-col items-center w-12 shrink-0">
                 {/* Animated dot */}
                 <div className="relative mt-1">
-                    {/* Pulse ring */}
-                    <span
-                        className="absolute inset-0 rounded-full"
-                        style={{
-                            background: accentColor,
-                            opacity: visible ? 0 : 0.5,
-                            transform: visible ? "scale(2.5)" : "scale(1)",
-                            transition: `transform 0.8s ease ${index * 0.15 + 0.3}s, opacity 0.8s ease ${index * 0.15 + 0.3}s`,
-                        }}
-                    />
-                    <div
-                        className="w-3 h-3 rounded-full relative z-10"
-                        style={{
-                            background: accentColor,
-                            boxShadow: visible ? `0 0 12px ${accentColor}` : "none",
-                            transition: `box-shadow 0.5s ease ${index * 0.15 + 0.4}s`,
-                        }}
-                    />
+                    {isLast ? (
+                        /* "Today" — infinite looping ping */
+                        <>
+                            {visible && (
+                                <span
+                                    className="absolute inline-flex rounded-full animate-ping"
+                                    style={{
+                                        inset: '-4px',
+                                        background: accentColor,
+                                        opacity: 0.35,
+                                    }}
+                                />
+                            )}
+                            <div
+                                className="w-3 h-3 rounded-full relative z-10"
+                                style={{
+                                    background: accentColor,
+                                    boxShadow: visible ? `0 0 14px ${accentColor}` : "none",
+                                    transition: `box-shadow 0.5s ease ${index * 0.15 + 0.4}s`,
+                                }}
+                            />
+                        </>
+                    ) : (
+                        /* All other dots — one-shot entry pulse */
+                        <>
+                            <span
+                                className="absolute inset-0 rounded-full"
+                                style={{
+                                    background: accentColor,
+                                    opacity: visible ? 0 : 0.5,
+                                    transform: visible ? "scale(2.5)" : "scale(1)",
+                                    transition: `transform 0.8s ease ${index * 0.15 + 0.3}s, opacity 0.8s ease ${index * 0.15 + 0.3}s`,
+                                }}
+                            />
+                            <div
+                                className="w-3 h-3 rounded-full relative z-10"
+                                style={{
+                                    background: accentColor,
+                                    boxShadow: visible ? `0 0 12px ${accentColor}` : "none",
+                                    transition: `box-shadow 0.5s ease ${index * 0.15 + 0.4}s`,
+                                }}
+                            />
+                        </>
+                    )}
                 </div>
 
                 {/* Growing spine line */}
