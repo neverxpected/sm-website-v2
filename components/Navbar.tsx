@@ -39,9 +39,7 @@ const paidAdsLinks = [
     href: "/services/digital-advertising",
     description: "Capture professional audiences across Microsoft's search ecosystem.",
     icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
-        <path d="M5 0v16.4l3.9 2.2 8.3-4.8-4.5-2.6V5.2L5 0zm0 24v-3.2l3.9-2.2 8.6 4.9-4.5 2.6L5 24zm7.7-4.5L5 15.1V8.6l7.7 4.4v6.5z" />
-      </svg>
+      <span className="font-black text-base leading-none" style={{ fontFamily: 'serif' }}>B</span>
     ),
   },
 ];
