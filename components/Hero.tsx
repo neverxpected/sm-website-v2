@@ -102,7 +102,7 @@ export default function Hero() {
                 href="https://calendly.com/switchmedia/15min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl transition-all duration-300 hover:scale-105 active:scale-100 animate-glow-pulse"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl transition-all duration-300 hover:scale-105 active:scale-100 animate-glow-pulse whitespace-nowrap"
                 style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)' }}
               >
                 Book a Strategy Call
