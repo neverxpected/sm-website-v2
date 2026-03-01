@@ -62,7 +62,7 @@ export default function Hero() {
           <div className="max-w-5xl mx-auto text-center">
 
             {/* Eyebrow */}
-            <div className="reveal reveal-delay-100 inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] whitespace-nowrap"
+            <div className="reveal reveal-delay-100 inline-flex items-center gap-2 mb-8 px-3 py-2 rounded-full text-[8px] sm:text-[10px] md:text-xs font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-center leading-tight"
               style={{
                 background: 'rgba(163,230,53,0.08)',
                 border: '1px solid rgba(163,230,53,0.35)',
@@ -70,7 +70,7 @@ export default function Hero() {
                 boxShadow: '0 0 12px rgba(163,230,53,0.25), 0 0 30px rgba(163,230,53,0.10)',
                 animation: 'eyebrowGlow 3s ease-in-out infinite',
               }}>
-              <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse shrink-0" />
               A HOUSTON BASED DIGITAL MARKETING &amp; AI AGENCY
             </div>
 
@@ -97,7 +97,7 @@ export default function Hero() {
 
 
             {/* Stats bar */}
-            <div className="reveal reveal-delay-400 flex flex-wrap items-center justify-center gap-8 mb-8">
+            <div className="reveal reveal-delay-400 flex flex-nowrap items-center justify-center gap-4 sm:gap-8 mb-8">
               {[
                 { value: '$40M+', label: 'Revenue Generated' },
                 { value: '300+', label: 'Campaigns Launched' },
