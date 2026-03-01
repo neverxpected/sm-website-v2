@@ -3,33 +3,14 @@
 import Link from "next/link";
 import { useState } from "react";
 
-const interests = [
-    { value: "", label: "Select primary interest" },
-    { value: "paid-ads", label: "Paid Ads" },
-    { value: "ai-voice", label: "AI Voice" },
-    { value: "ai-workflow", label: "AI Workflow" },
-    { value: "full-infrastructure", label: "Full Infrastructure" },
-];
-
 export default function ContactPage() {
-    const [form, setForm] = useState({
-        name: "",
-        email: "",
-        website: "",
-        interest: "",
-    });
     const [submitted, setSubmitted] = useState(false);
-
-    function handleChange(
-        e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-    ) {
-        setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-    }
 
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
         setSubmitted(true);
     }
+
 
     return (
         <main
@@ -89,205 +70,96 @@ export default function ContactPage() {
                 <div className="grid lg:grid-cols-[1fr_320px] gap-10 items-start">
 
                     {/* Contact form */}
-                    <div
-                        className="p-8 lg:p-10 rounded-2xl"
-                        style={{
-                            background: "rgba(255,255,255,0.03)",
-                            border: "1px solid rgba(255,255,255,0.07)",
-                        }}
+                    <div className="contact-gold-frame rounded-2xl p-8"
+                        style={{ background: 'rgba(13,21,38,0.97)', backdropFilter: 'blur(16px)' }}
                     >
                         {submitted ? (
-                            <div className="flex flex-col items-center justify-center py-16 gap-4 text-center">
-                                <div
-                                    className="w-14 h-14 rounded-full flex items-center justify-center mb-2"
-                                    style={{
-                                        background:
-                                            "linear-gradient(135deg, rgba(255,45,120,0.15), rgba(155,48,255,0.15))",
-                                        border: "1px solid rgba(255,45,120,0.3)",
-                                    }}
-                                >
-                                    <svg
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="#FF2D78"
-                                        strokeWidth={2.5}
-                                        className="w-6 h-6"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M4.5 12.75l6 6 9-13.5"
-                                        />
+                            <div className="flex flex-col items-center justify-center py-16 text-center gap-4">
+                                <span className="w-14 h-14 rounded-full flex items-center justify-center"
+                                    style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)' }}>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={2.5} className="w-7 h-7">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                                     </svg>
-                                </div>
-                                <h2 className="text-xl font-black text-white">
-                                    Request Received
-                                </h2>
-                                <p
-                                    className="text-sm leading-relaxed max-w-sm"
-                                    style={{ color: "rgba(240,244,255,0.45)" }}
-                                >
-                                    Our team will review your infrastructure and respond within
-                                    one business day.
-                                </p>
+                                </span>
+                                <h3 className="text-xl font-black text-white">Message Sent!</h3>
+                                <p className="text-sm" style={{ color: 'rgba(240,244,255,0.5)' }}>We&apos;ll be in touch within 24 hours.</p>
                             </div>
                         ) : (
-                            <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-                                <h2 className="text-lg font-black text-white mb-2">
-                                    Start the Conversation
-                                </h2>
-
-                                {/* Name */}
-                                <div className="flex flex-col gap-2">
-                                    <label
-                                        htmlFor="name"
-                                        className="text-xs font-bold uppercase tracking-[0.15em]"
-                                        style={{ color: "rgba(240,244,255,0.4)" }}
-                                    >
-                                        Full Name
-                                    </label>
-                                    <input
-                                        id="name"
-                                        name="name"
-                                        type="text"
-                                        required
-                                        placeholder="Charles Johnson"
-                                        value={form.name}
-                                        onChange={handleChange}
-                                        className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder-white/20 outline-none transition-all duration-200"
-                                        style={{
-                                            background: "rgba(255,255,255,0.04)",
-                                            border: "1px solid rgba(255,255,255,0.09)",
-                                        }}
-                                        onFocus={(e) => {
-                                            e.currentTarget.style.border = "1px solid rgba(255,45,120,0.5)";
-                                            e.currentTarget.style.boxShadow = "0 0 0 3px rgba(255,45,120,0.08)";
-                                        }}
-                                        onBlur={(e) => {
-                                            e.currentTarget.style.border = "1px solid rgba(255,255,255,0.09)";
-                                            e.currentTarget.style.boxShadow = "none";
-                                        }}
-                                    />
+                            <form onSubmit={handleSubmit} className="space-y-5">
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Name <span style={{ color: '#FF2D78' }}>*</span></label>
+                                        <input required type="text" placeholder="John Smith"
+                                            className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder:text-white/20 focus:outline-none transition-all appearance-none"
+                                            style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)' }} />
+                                    </div>
+                                    <div>
+                                        <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Email <span style={{ color: '#FF2D78' }}>*</span></label>
+                                        <input required type="email" placeholder="john@company.com"
+                                            className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder:text-white/20 focus:outline-none transition-all appearance-none"
+                                            style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)' }} />
+                                    </div>
                                 </div>
-
-                                {/* Email */}
-                                <div className="flex flex-col gap-2">
-                                    <label
-                                        htmlFor="email"
-                                        className="text-xs font-bold uppercase tracking-[0.15em]"
-                                        style={{ color: "rgba(240,244,255,0.4)" }}
-                                    >
-                                        Company Email
-                                    </label>
-                                    <input
-                                        id="email"
-                                        name="email"
-                                        type="email"
-                                        required
-                                        placeholder="you@yourcompany.com"
-                                        value={form.email}
-                                        onChange={handleChange}
-                                        className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder-white/20 outline-none transition-all duration-200"
-                                        style={{
-                                            background: "rgba(255,255,255,0.04)",
-                                            border: "1px solid rgba(255,255,255,0.09)",
-                                        }}
-                                        onFocus={(e) => {
-                                            e.currentTarget.style.border = "1px solid rgba(255,45,120,0.5)";
-                                            e.currentTarget.style.boxShadow = "0 0 0 3px rgba(255,45,120,0.08)";
-                                        }}
-                                        onBlur={(e) => {
-                                            e.currentTarget.style.border = "1px solid rgba(255,255,255,0.09)";
-                                            e.currentTarget.style.boxShadow = "none";
-                                        }}
-                                    />
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Company</label>
+                                        <input type="text" placeholder="Company name"
+                                            className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder:text-white/20 focus:outline-none transition-all appearance-none"
+                                            style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)' }} />
+                                    </div>
+                                    <div>
+                                        <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Phone</label>
+                                        <input type="tel" placeholder="+1 (555) 000-0000"
+                                            className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder:text-white/20 focus:outline-none transition-all appearance-none"
+                                            style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)' }} />
+                                    </div>
                                 </div>
-
-                                {/* Website */}
-                                <div className="flex flex-col gap-2">
-                                    <label
-                                        htmlFor="website"
-                                        className="text-xs font-bold uppercase tracking-[0.15em]"
-                                        style={{ color: "rgba(240,244,255,0.4)" }}
-                                    >
-                                        Website URL
-                                    </label>
-                                    <input
-                                        id="website"
-                                        name="website"
-                                        type="url"
-                                        placeholder="https://yoursite.com"
-                                        value={form.website}
-                                        onChange={handleChange}
-                                        className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder-white/20 outline-none transition-all duration-200"
-                                        style={{
-                                            background: "rgba(255,255,255,0.04)",
-                                            border: "1px solid rgba(255,255,255,0.09)",
-                                        }}
-                                        onFocus={(e) => {
-                                            e.currentTarget.style.border = "1px solid rgba(255,45,120,0.5)";
-                                            e.currentTarget.style.boxShadow = "0 0 0 3px rgba(255,45,120,0.08)";
-                                        }}
-                                        onBlur={(e) => {
-                                            e.currentTarget.style.border = "1px solid rgba(255,255,255,0.09)";
-                                            e.currentTarget.style.boxShadow = "none";
-                                        }}
-                                    />
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Service Interest</label>
+                                        <div className="relative">
+                                            <select className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none transition-all appearance-none cursor-pointer"
+                                                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(240,244,255,0.5)', paddingRight: '2.5rem' }}>
+                                                <option value="">Select a service</option>
+                                                <option>Meta Ads</option>
+                                                <option>Google Ads</option>
+                                                <option>TikTok Ads</option>
+                                                <option>AI Receptionist</option>
+                                                <option>AI Integrations</option>
+                                            </select>
+                                            <svg className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: 'rgba(240,244,255,0.3)' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Monthly Budget</label>
+                                        <div className="relative">
+                                            <select className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none transition-all appearance-none cursor-pointer"
+                                                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(240,244,255,0.5)', paddingRight: '2.5rem' }}>
+                                                <option value="">Select budget</option>
+                                                <option>Under $5,000/mo</option>
+                                                <option>$5,000 – $10,000/mo</option>
+                                                <option>$10,000 – $25,000/mo</option>
+                                                <option>$25,000+/mo</option>
+                                            </select>
+                                            <svg className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: 'rgba(240,244,255,0.3)' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                                        </div>
+                                    </div>
                                 </div>
-
-                                {/* Interest dropdown */}
-                                <div className="flex flex-col gap-2">
-                                    <label
-                                        htmlFor="interest"
-                                        className="text-xs font-bold uppercase tracking-[0.15em]"
-                                        style={{ color: "rgba(240,244,255,0.4)" }}
-                                    >
-                                        Primary Integration Interest
-                                    </label>
-                                    <select
-                                        id="interest"
-                                        name="interest"
-                                        required
-                                        value={form.interest}
-                                        onChange={handleChange}
-                                        className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all duration-200 appearance-none cursor-pointer"
-                                        style={{
-                                            background: "rgba(255,255,255,0.04)",
-                                            border: "1px solid rgba(255,255,255,0.09)",
-                                            color: form.interest ? "white" : "rgba(255,255,255,0.2)",
-                                        }}
-                                        onFocus={(e) => {
-                                            e.currentTarget.style.border = "1px solid rgba(255,45,120,0.5)";
-                                            e.currentTarget.style.boxShadow = "0 0 0 3px rgba(255,45,120,0.08)";
-                                        }}
-                                        onBlur={(e) => {
-                                            e.currentTarget.style.border = "1px solid rgba(255,255,255,0.09)";
-                                            e.currentTarget.style.boxShadow = "none";
-                                        }}
-                                    >
-                                        {interests.map((opt) => (
-                                            <option
-                                                key={opt.value}
-                                                value={opt.value}
-                                                disabled={opt.value === ""}
-                                                style={{ background: "#0A0F1C", color: "white" }}
-                                            >
-                                                {opt.label}
-                                            </option>
-                                        ))}
-                                    </select>
+                                <div>
+                                    <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Message</label>
+                                    <textarea rows={4} placeholder="Tell us about your business and goals..."
+                                        className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder:text-white/20 focus:outline-none transition-all appearance-none resize-none"
+                                        style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)' }} />
                                 </div>
-
-                                {/* Submit */}
                                 <button
                                     type="submit"
-                                    className="mt-2 w-full py-4 rounded-xl text-sm font-bold text-white transition-all duration-300 hover:scale-[1.02] hover:brightness-110"
-                                    style={{
-                                        background: "linear-gradient(135deg, #FF2D78, #9B30FF)",
-                                        boxShadow: "0 0 24px rgba(255,45,120,0.25)",
-                                    }}
+                                    className="w-full flex items-center justify-center gap-2 px-6 py-4 text-white text-sm font-black rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-100"
+                                    style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', boxShadow: '0 0 30px rgba(255,45,120,0.3)' }}
                                 >
-                                    Send Inquiry
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                                    </svg>
+                                    Send Message
                                 </button>
                             </form>
                         )}
