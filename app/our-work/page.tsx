@@ -30,10 +30,19 @@ const caseStudies = [
 
 export default function OurWorkPage() {
   return (
-    <main className="min-h-screen text-white" style={{ background: '#0A0F1C' }}>
+    <main className="relative min-h-screen text-white" style={{ background: '#0A0F1C' }}>
+
+      {/* Grid pattern */}
+      <div
+        className="absolute inset-0 pointer-events-none z-0"
+        style={{
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
+          backgroundSize: '64px 64px',
+        }}
+      />
 
       {/* Ambient glows */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full"
           style={{ background: 'radial-gradient(circle, rgba(255,45,120,0.07) 0%, transparent 65%)' }} />
         <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full"
