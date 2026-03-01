@@ -1,4 +1,5 @@
 "use client";
+import { lime } from "@/lib/cyberLime";
 
 const logos = [
   { name: "Acme Corp", abbr: "AC" },
@@ -17,13 +18,12 @@ export default function TrustedBy() {
   const doubled = [...logos, ...logos];
 
   return (
-    <section className="relative py-10 overflow-hidden" style={{ background: '#080C18', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+    <section className="relative py-10 overflow-hidden" style={{ background: lime.bg, borderTop: `1px solid ${lime.border}`, borderBottom: `1px solid ${lime.border}` }}>
 
-      {/* Left + right fade masks */}
       <div className="absolute inset-y-0 left-0 w-24 z-10 pointer-events-none"
-        style={{ background: 'linear-gradient(to right, #080C18, transparent)' }} />
+        style={{ background: `linear-gradient(to right, ${lime.bg}, transparent)` }} />
       <div className="absolute inset-y-0 right-0 w-24 z-10 pointer-events-none"
-        style={{ background: 'linear-gradient(to left, #080C18, transparent)' }} />
+        style={{ background: `linear-gradient(to left, ${lime.bg}, transparent)` }} />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-6 text-center">
         <p className="text-xs font-bold uppercase tracking-[0.25em]" style={{ color: 'rgba(240,244,255,0.25)' }}>

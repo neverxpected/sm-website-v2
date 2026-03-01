@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { lime } from "@/lib/cyberLime";
 
 const services = [
   {
@@ -122,18 +123,18 @@ const aiServices = [
 
 export default function ServiceGrid() {
   return (
-    <section className="pt-4 pb-24 px-6 lg:px-8" style={{ background: '#0A0F1C' }}>
+    <section className="pt-4 pb-24 px-6 lg:px-8" style={{ background: lime.bg }}>
       <div className="max-w-7xl mx-auto">
 
         {/* Paid Ads header */}
         <div className="reveal flex items-center justify-center gap-4 mb-12">
-          <div className="flex-1 h-px max-w-xs" style={{ background: 'linear-gradient(to right, transparent, rgba(255,45,120,0.3))' }} />
+          <div className="flex-1 h-px max-w-xs" style={{ background: `linear-gradient(to right, transparent, rgba(163,230,53,0.3))` }} />
           <div className="flex items-center gap-2.5 shrink-0 px-4 py-2 rounded-full"
-            style={{ background: 'rgba(255,45,120,0.08)', border: '1px solid rgba(255,45,120,0.2)' }}>
-            <span className="w-2 h-2 rounded-full" style={{ background: '#FF2D78' }} />
-            <span className="text-sm font-bold tracking-widest uppercase" style={{ color: '#FF2D78' }}>Paid Advertising Mastery</span>
+            style={{ background: 'rgba(163,230,53,0.08)', border: `1px solid rgba(163,230,53,0.2)` }}>
+            <span className="w-2 h-2 rounded-full" style={{ background: lime.accent }} />
+            <span className="text-sm font-bold tracking-widest uppercase" style={{ color: lime.accent }}>Paid Advertising Mastery</span>
           </div>
-          <div className="flex-1 h-px max-w-xs" style={{ background: 'linear-gradient(to left, transparent, rgba(255,45,120,0.3))' }} />
+          <div className="flex-1 h-px max-w-xs" style={{ background: `linear-gradient(to left, transparent, rgba(163,230,53,0.3))` }} />
         </div>
 
         {/* 4-column paid ads grid */}
@@ -168,13 +169,13 @@ export default function ServiceGrid() {
 
         {/* AI Automation header */}
         <div className="reveal flex items-center justify-center gap-4 mt-16 mb-12">
-          <div className="flex-1 h-px max-w-xs" style={{ background: 'linear-gradient(to right, transparent, rgba(155,48,255,0.3))' }} />
+          <div className="flex-1 h-px max-w-xs" style={{ background: `linear-gradient(to right, transparent, rgba(163,230,53,0.3))` }} />
           <div className="flex items-center gap-2.5 shrink-0 px-4 py-2 rounded-full"
-            style={{ background: 'rgba(155,48,255,0.08)', border: '1px solid rgba(155,48,255,0.2)' }}>
-            <span className="w-2 h-2 rounded-full" style={{ background: '#9B30FF' }} />
-            <span className="text-sm font-bold tracking-widest uppercase" style={{ color: '#9B30FF' }}>AI-Powered Automation</span>
+            style={{ background: 'rgba(163,230,53,0.08)', border: `1px solid rgba(163,230,53,0.2)` }}>
+            <span className="w-2 h-2 rounded-full" style={{ background: lime.accent }} />
+            <span className="text-sm font-bold tracking-widest uppercase" style={{ color: lime.accent }}>AI-Powered Automation</span>
           </div>
-          <div className="flex-1 h-px max-w-xs" style={{ background: 'linear-gradient(to left, transparent, rgba(155,48,255,0.3))' }} />
+          <div className="flex-1 h-px max-w-xs" style={{ background: `linear-gradient(to left, transparent, rgba(163,230,53,0.3))` }} />
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">

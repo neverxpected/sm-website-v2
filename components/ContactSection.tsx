@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ServicePicker from "./ServicePicker";
+import { lime } from "@/lib/cyberLime";
 
 export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
@@ -40,12 +41,11 @@ export default function ContactSection() {
   const labelClass = "block text-xs font-semibold mb-1.5" as const;
 
   return (
-    <section className="py-24 lg:py-32 px-6 lg:px-8 relative overflow-hidden" style={{ background: '#0D1526' }}>
-      {/* Ambient orbs */}
+    <section className="py-24 lg:py-32 px-6 lg:px-8 relative overflow-hidden" style={{ background: lime.bg }}>
       <div className="absolute top-0 right-1/4 w-[600px] h-[600px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(255,45,120,0.08) 0%, transparent 70%)' }} />
+        style={{ background: `radial-gradient(circle, ${lime.glow} 0%, transparent 70%)` }} />
       <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(155,48,255,0.07) 0%, transparent 70%)' }} />
+        style={{ background: `radial-gradient(circle, rgba(163,230,53,0.06) 0%, transparent 70%)` }} />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-[2fr_3fr] gap-16 items-start">
@@ -53,14 +53,14 @@ export default function ContactSection() {
           {/* Left */}
           <div>
             <div className="reveal inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.25em]"
-              style={{ background: 'rgba(255,45,120,0.1)', border: '1px solid rgba(255,45,120,0.25)', color: '#FF2D78' }}>
+              style={{ background: 'rgba(163,230,53,0.08)', border: `1px solid rgba(163,230,53,0.25)`, color: lime.accent }}>
               <span className="w-1.5 h-1.5 rounded-full bg-current" />
               Get In Touch
             </div>
             <h2 className="reveal reveal-delay-100 text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight mb-6">
               Ready to Scale?
               <br />
-              <span style={{ background: 'linear-gradient(90deg, #FF2D78, #9B30FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+              <span style={{ background: lime.gradText, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                 Let&apos;s Talk.
               </span>
             </h2>
@@ -73,17 +73,17 @@ export default function ContactSection() {
                 {
                   label: 'Email', value: 'Charles@switchmediaco.com', href: 'mailto:Charles@switchmediaco.com',
                   icon: <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />,
-                  color: 'rgba(255,45,120,0.15)', borderColor: 'rgba(255,45,120,0.25)', iconColor: '#FF2D78',
+                  color: 'rgba(163,230,53,0.12)', borderColor: 'rgba(163,230,53,0.25)', iconColor: lime.accent,
                 },
                 {
                   label: 'Phone', value: '(469) 518-0508', href: 'tel:4695180508',
                   icon: <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21L8.5 10.5s1.5 3 5 5l1.113-1.724a1 1 0 011.21-.502l4.493 1.498A1 1 0 0121 15.72V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />,
-                  color: 'rgba(155,48,255,0.15)', borderColor: 'rgba(155,48,255,0.25)', iconColor: '#9B30FF',
+                  color: 'rgba(163,230,53,0.08)', borderColor: 'rgba(163,230,53,0.20)', iconColor: '#84cc16',
                 },
                 {
                   label: 'Headquarters', value: 'Houston, TX', href: null,
                   icon: <><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></>,
-                  color: 'rgba(0,229,255,0.12)', borderColor: 'rgba(0,229,255,0.2)', iconColor: '#00E5FF',
+                  color: 'rgba(163,230,53,0.06)', borderColor: 'rgba(163,230,53,0.15)', iconColor: '#65a30d',
                 },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-4">
@@ -128,27 +128,27 @@ export default function ContactSection() {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Name <span style={{ color: '#FF2D78' }}>*</span></label>
+                      <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Name <span style={{ color: lime.accent }}>*</span></label>
                       <input required name="name" type="text" placeholder="John Smith" className={inputClass} style={inputStyle} />
                     </div>
                     <div>
-                      <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Email <span style={{ color: '#FF2D78' }}>*</span></label>
+                      <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Email <span style={{ color: lime.accent }}>*</span></label>
                       <input required name="email" type="email" placeholder="john@company.com" className={inputClass} style={inputStyle} />
                     </div>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Company <span style={{ color: '#FF2D78' }}>*</span></label>
+                      <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Company <span style={{ color: lime.accent }}>*</span></label>
                       <input required name="company" type="text" placeholder="Company name" className={inputClass} style={inputStyle} />
                     </div>
                     <div>
-                      <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Phone <span style={{ color: '#FF2D78' }}>*</span></label>
+                      <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Phone <span style={{ color: lime.accent }}>*</span></label>
                       <input required name="phone" type="tel" placeholder="+1 (555) 000-0000" className={inputClass} style={inputStyle} />
                     </div>
                   </div>
                   <ServicePicker />
                   <div>
-                    <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Monthly Budget <span style={{ color: '#FF2D78' }}>*</span></label>
+                    <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Monthly Budget <span style={{ color: lime.accent }}>*</span></label>
                     <div className="relative">
                       <select required name="budget" className={inputClass} style={{ ...inputStyle, color: 'rgba(240,244,255,0.5)', paddingRight: '2.5rem' }}>
                         <option value="">Select budget</option>
@@ -166,8 +166,8 @@ export default function ContactSection() {
                   </div>
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 px-6 py-4 text-white text-sm font-black rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-100"
-                    style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', boxShadow: '0 0 30px rgba(255,45,120,0.3)' }}
+                    className="w-full flex items-center justify-center gap-2 px-6 py-4 text-black text-sm font-black rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-100"
+                    style={{ background: lime.grad, boxShadow: `0 0 30px ${lime.glow}` }}
                   >
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
+import { lime } from "@/lib/cyberLime";
 
 const paidAdsLinks = [
   {
@@ -209,19 +210,19 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-6 text-white">
           <DesktopDropdown label="Paid Ads" links={paidAdsLinks} />
           <DesktopDropdown label="AI Automations" links={aiAutomationLinks} />
-          <Link href="/our-work" className="text-sm font-medium text-white/70 hover:text-white transition-colors">
+          <Link href="/our-work" className="text-sm font-medium text-white/70 transition-colors" style={{}} onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = lime.accent} onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = ''}>
             Results
           </Link>
-          <Link href="/about" className="text-sm font-medium text-white/70 hover:text-white transition-colors">
+          <Link href="/about" className="text-sm font-medium text-white/70 transition-colors" onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = lime.accent} onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = ''}>
             About
           </Link>
-          <Link href="/contact" className="text-sm font-medium text-white/70 hover:text-white transition-colors">
+          <Link href="/contact" className="text-sm font-medium text-white/70 transition-colors" onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = lime.accent} onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = ''}>
             Contact
           </Link>
           <Link
             href="https://calendly.com/switchmedia/15min"
-            className="relative px-6 py-2.5 text-sm font-bold rounded-full text-white transition-all duration-300 hover:scale-105 overflow-hidden whitespace-nowrap"
-            style={{ background: "linear-gradient(135deg, #FF2D78, #9B30FF)", boxShadow: "0 0 20px rgba(255,45,120,0.35)" }}
+            className="relative px-6 py-2.5 text-sm font-bold rounded-full text-black transition-all duration-300 hover:scale-105 overflow-hidden whitespace-nowrap"
+            style={{ background: lime.grad, boxShadow: `0 0 20px ${lime.glow}` }}
           >
             Book a Strategy Call
           </Link>
@@ -242,7 +243,7 @@ export default function Navbar() {
 
       {/* Mobile menu panel */}
       {mobileOpen && (
-        <div className="md:hidden px-6 pb-6" style={{ background: "rgba(11,11,12,0.85)", backdropFilter: "blur(12px)", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+        <div className="md:hidden px-6 pb-6" style={{ background: 'rgba(5,5,5,0.92)', backdropFilter: 'blur(12px)', borderTop: `1px solid ${lime.border}` }}>
           {[
             { label: 'Meta Ads', href: '/services/meta-ads' },
             { label: 'Google Ads', href: '/services/google-ads' },
@@ -268,8 +269,8 @@ export default function Navbar() {
           <div className="pt-6">
             <Link
               href="https://calendly.com/switchmedia/15min"
-              className="block w-full text-center px-6 py-3.5 text-sm font-bold rounded-full text-white transition-all whitespace-nowrap"
-              style={{ background: "linear-gradient(135deg, #FF2D78, #9B30FF)" }}
+              className="block w-full text-center px-6 py-3.5 text-sm font-bold rounded-full text-black transition-all whitespace-nowrap"
+              style={{ background: lime.grad }}
               onClick={() => setMobileOpen(false)}
             >
               Book a Strategy Call
