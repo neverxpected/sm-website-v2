@@ -25,7 +25,7 @@ const team = [
   },
   {
     name: "Thomas Sanders",
-    role: "Sales Manager",
+    role: "CSO",
     location: "Houston, Texas",
     bio: "Probably one of the nicest and most genuine people you'll ever meet. Thomas is a proud dad to 2 smart kiddos and a TCU Graduate. When he's not closing deals, you might find him deep in a League of Legends match.",
     accent: "#9B30FF",
