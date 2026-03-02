@@ -146,9 +146,15 @@ export default function AIAdvantage() {
             <span className="w-1.5 h-1.5 rounded-full bg-current" />
             AI Solutions
           </div>
+          <style>{`
+            @keyframes aiAdvantageShimmer {
+              0%   { background-position: 200% center; }
+              100% { background-position: -200% center; }
+            }
+          `}</style>
           <h2 className="reveal reveal-delay-100 text-4xl lg:text-5xl font-black text-white tracking-tight mb-5">
             The{' '}
-            <span style={{ background: 'linear-gradient(90deg, #9B30FF, #00E5FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+            <span style={{ background: 'linear-gradient(90deg, #9B30FF, #00E5FF, #9B30FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', backgroundSize: '200% auto', animation: 'aiAdvantageShimmer 4s linear infinite', display: 'inline-block' }}>
               AI Advantage
             </span>
           </h2>
