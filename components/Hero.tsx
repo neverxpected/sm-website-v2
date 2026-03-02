@@ -32,7 +32,7 @@ export default function Hero() {
     <div className="grain" ref={heroRef}>
       {/* ── HERO ─────────────────────────────────────────── */}
       <section
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        className="relative min-h-[85vh] flex flex-col justify-center overflow-hidden"
         style={{ background: '#0A0F1C' }}
       >
         {/* Animated gradient background */}
@@ -87,7 +87,7 @@ export default function Hero() {
         `}</style>
 
         {/* Content */}
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-24 lg:pt-0 pb-4 lg:-mt-10">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-32 lg:pt-40 pb-12">
           <div className="max-w-5xl mx-auto text-center">
 
             {/* Eyebrow */}
@@ -104,10 +104,10 @@ export default function Hero() {
 
             {/* Headline */}
             <h1 className="font-black tracking-tight text-white leading-[0.95] mb-8">
-              <span className="reveal block text-3xl sm:text-5xl lg:text-6xl xl:text-7xl reveal-delay-100">
+              <span className="reveal block text-4xl md:text-6xl lg:text-7xl xl:text-8xl reveal-delay-100">
                 THE CHEAT CODE
               </span>
-              <span className="reveal block text-3xl sm:text-5xl lg:text-6xl xl:text-7xl reveal-delay-200">
+              <span className="reveal block text-4xl md:text-6xl lg:text-7xl xl:text-8xl reveal-delay-200">
                 TO{' '}
                 <style>{`
                   @keyframes digitallyScaleShimmer {
@@ -127,7 +127,7 @@ export default function Hero() {
                   DIGITALLY SCALE
                 </span>
               </span>
-              <span className="reveal block text-3xl sm:text-5xl lg:text-6xl xl:text-7xl reveal-delay-300">
+              <span className="reveal block text-4xl md:text-6xl lg:text-7xl xl:text-8xl reveal-delay-300">
                 YOUR BUSINESS
               </span>
             </h1>
