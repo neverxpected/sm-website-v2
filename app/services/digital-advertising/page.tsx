@@ -99,11 +99,20 @@ export default function DigitalAdsPage() {
 
           <h1 className="text-5xl lg:text-7xl font-black tracking-tight leading-[1] mb-8 text-white">
             High-Efficiency Microsoft<br />
+            <style>{`
+              @keyframes digitalAdsShimmer {
+                0%   { background-position: 200% center; }
+                100% { background-position: -200% center; }
+              }
+            `}</style>
             <span style={{
-              background: 'linear-gradient(90deg, #0078D4, #9B30FF)',
+              background: 'linear-gradient(90deg, #0078D4, #9B30FF, #0078D4)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
+              backgroundSize: '200% auto',
+              animation: 'digitalAdsShimmer 4s linear infinite',
+              display: 'inline-block',
             }}>Advertising and Search.</span>
           </h1>
 

@@ -99,11 +99,20 @@ export default function GoogleAdsPage() {
 
           <h1 className="text-5xl lg:text-7xl font-black tracking-tight leading-[1] mb-8 text-white">
             High-Intent Google Search<br />
+            <style>{`
+              @keyframes googleAdsShimmer {
+                0%   { background-position: 200% center; }
+                100% { background-position: -200% center; }
+              }
+            `}</style>
             <span style={{
-              background: 'linear-gradient(90deg, #4285F4, #9B30FF)',
+              background: 'linear-gradient(90deg, #4285F4, #9B30FF, #4285F4)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
+              backgroundSize: '200% auto',
+              animation: 'googleAdsShimmer 4s linear infinite',
+              display: 'inline-block',
             }}>and Performance Advertising.</span>
           </h1>
 
