@@ -109,11 +109,20 @@ export default function Hero() {
               </span>
               <span className="reveal block text-3xl sm:text-5xl lg:text-6xl xl:text-7xl reveal-delay-200">
                 TO{' '}
+                <style>{`
+                  @keyframes digitallyScaleShimmer {
+                    0%   { background-position: 200% center; }
+                    100% { background-position: -200% center; }
+                  }
+                `}</style>
                 <span style={{
-                  background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF)',
+                  background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
+                  backgroundSize: '200% auto',
+                  animation: 'digitallyScaleShimmer 4s linear infinite',
+                  display: 'inline-block',
                 }}>
                   DIGITALLY SCALE
                 </span>
