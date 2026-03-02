@@ -50,7 +50,7 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1 space-y-5">
             <Link href="/" className="flex items-center gap-3 group">
               <span className="rounded-xl flex items-center justify-center shrink-0 p-1 transition-all duration-300 group-hover:scale-110"
-                style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)' }}>
+                style={{ background: 'linear-gradient(135deg, #a3e635, #65a30d)' }}>
                 <Image
                   src="/images/logo/sm-logo.png"
                   alt="Switch Media Marketing Logo"
@@ -63,7 +63,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.35)' }}>
-              We help service-based businesses generate predictable leads and scale revenue with paid ads and AI automation.
+              <em>&ldquo;Your unfair advantage in elite paid media and AI automation. We scale service businesses into market leaders through intelligent growth strategies.&rdquo;</em>
             </p>
 
             {/* Social icons */}
