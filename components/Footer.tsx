@@ -64,7 +64,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.35)' }}>
-              <em>&ldquo;Your unfair advantage in elite paid media and AI automation. We scale service businesses into market leaders through intelligent growth strategies.&rdquo;</em>
+              <em>&ldquo;Psalm 127:1 ~ Unless the LORD builds a house, its builders labor over it in vain; unless the LORD watches over a city, the watchman stays alert in vain&rdquo;</em>
             </p>
 
             {/* Social icons */}
