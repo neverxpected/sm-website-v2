@@ -242,23 +242,23 @@ export default function OurWorkPage() {
       {/* Animated ambient orbs */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <div
-          className="absolute top-1/4 left-1/4 w-[700px] h-[700px] rounded-full"
+          className="absolute top-1/4 left-1/4 w-[800px] h-[800px] rounded-full"
           style={{
-            background: "radial-gradient(circle, rgba(255,45,120,0.09) 0%, transparent 65%)",
+            background: "radial-gradient(circle, rgba(255,45,120,0.22) 0%, rgba(255,45,120,0.08) 40%, transparent 70%)",
             animation: "floatOrb 12s ease-in-out infinite",
           }}
         />
         <div
-          className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] rounded-full"
+          className="absolute bottom-1/4 right-1/4 w-[700px] h-[700px] rounded-full"
           style={{
-            background: "radial-gradient(circle, rgba(155,48,255,0.09) 0%, transparent 65%)",
+            background: "radial-gradient(circle, rgba(155,48,255,0.22) 0%, rgba(155,48,255,0.08) 40%, transparent 70%)",
             animation: "floatOrb 16s ease-in-out infinite reverse",
           }}
         />
         <div
-          className="absolute top-2/3 left-1/2 w-[400px] h-[400px] rounded-full"
+          className="absolute top-2/3 left-1/2 w-[500px] h-[500px] rounded-full"
           style={{
-            background: "radial-gradient(circle, rgba(0,229,255,0.06) 0%, transparent 65%)",
+            background: "radial-gradient(circle, rgba(0,229,255,0.15) 0%, rgba(0,229,255,0.05) 40%, transparent 70%)",
             animation: "floatOrb 10s ease-in-out infinite",
             animationDelay: "4s",
           }}
