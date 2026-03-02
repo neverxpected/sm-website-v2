@@ -107,16 +107,16 @@ export default function Hero() {
             {/* Stats bar */}
             <div className="reveal reveal-delay-400 flex flex-nowrap items-center justify-center gap-4 sm:gap-8 mb-8">
               {[
-                { value: '$20M+', label: 'Revenue Generated' },
-                { value: '50+', label: 'Businesses Worked With' },
-                { value: '7 Years', label: 'In Business' },
+                { value: '$20M+', label: 'Revenue Generated', mobileHide: false },
+                { value: '50+', label: 'Businesses Worked With', mobileHide: false },
+                { value: '7 Years', label: 'In Business', mobileHide: true },
               ].map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <p className="text-2xl sm:text-3xl font-black mb-1"
+                <div key={stat.label} className={`text-center min-w-0 ${stat.mobileHide ? 'hidden sm:block' : ''}`}>
+                  <p className="text-2xl sm:text-3xl font-black mb-1 whitespace-nowrap"
                     style={{ background: lime.gradText, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                     {stat.value}
                   </p>
-                  <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: 'rgba(240,244,255,0.4)' }}>{stat.label}</p>
+                  <p className="text-[9px] sm:text-xs font-semibold uppercase tracking-widest whitespace-nowrap" style={{ color: 'rgba(240,244,255,0.4)' }}>{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -145,14 +145,14 @@ export default function Hero() {
             </div>
 
             {/* Trust badges */}
-            <div className="reveal reveal-delay-600 flex flex-wrap items-center justify-center gap-6 sm:gap-8">
+            <div className="reveal reveal-delay-600 flex flex-nowrap items-center justify-center gap-3 sm:gap-6">
               {[
                 'No long-term contracts',
                 'Results in 30 days',
                 'Free strategy session',
               ].map((badge) => (
-                <span key={badge} className="flex items-center gap-2 text-sm font-medium" style={{ color: 'rgba(240,244,255,0.55)' }}>
-                  <span className="w-2 h-2 rounded-full shrink-0" style={{ background: lime.accent, boxShadow: `0 0 6px ${lime.glowStrong}` }} />
+                <span key={badge} className="flex items-center gap-1.5 text-[10px] sm:text-sm font-medium whitespace-nowrap" style={{ color: 'rgba(240,244,255,0.55)' }}>
+                  <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: lime.accent, boxShadow: `0 0 6px ${lime.glowStrong}` }} />
                   {badge}
                 </span>
               ))}

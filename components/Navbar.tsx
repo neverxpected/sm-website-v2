@@ -192,7 +192,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
           <span className="rounded-xl flex items-center justify-center shrink-0 p-1 transition-all duration-300 group-hover:scale-110"
-            style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)' }}>
+            style={{ background: lime.grad }}>
             <Image
               src="/images/logo/sm-logo.png"
               alt="Switch Media Marketing Logo"
