@@ -460,39 +460,39 @@ body {
   0%,
   100% {
     box-shadow:
-      0 0 20px rgba(255, 185, 30, 0.4),
-      0 0 50px rgba(255, 160, 20, 0.2),
-      0 0 90px rgba(255, 140, 0, 0.1);
+      0 0 20px rgba(0, 229, 255, 0.4),
+      0 0 50px rgba(0, 229, 255, 0.2),
+      0 0 90px rgba(0, 229, 255, 0.1);
   }
 
   50% {
     box-shadow:
-      0 0 35px rgba(255, 210, 30, 0.7),
-      0 0 80px rgba(255, 185, 20, 0.4),
-      0 0 130px rgba(255, 160, 0, 0.2);
+      0 0 35px rgba(0, 229, 255, 0.7),
+      0 0 80px rgba(0, 229, 255, 0.4),
+      0 0 130px rgba(0, 229, 255, 0.2);
   }
 }
 
 .contact-gold-frame {
-  border: 1.5px solid #FFB800;
+  border: 1.5px solid #00E5FF;
   animation: goldGlow 3s ease-in-out infinite;
 }
 
 .gold-border {
   background: linear-gradient(135deg,
-      rgba(255, 200, 50, 0.85) 0%,
-      rgba(255, 240, 120, 0.95) 20%,
-      rgba(255, 160, 20, 0.5) 40%,
-      rgba(255, 255, 200, 1) 55%,
-      rgba(255, 160, 20, 0.5) 70%,
-      rgba(255, 220, 80, 0.9) 85%,
-      rgba(255, 200, 50, 0.85) 100%);
+      rgba(0, 229, 255, 0.85) 0%,
+      rgba(100, 240, 255, 0.95) 20%,
+      rgba(0, 200, 255, 0.5) 40%,
+      rgba(180, 255, 255, 1) 55%,
+      rgba(0, 200, 255, 0.5) 70%,
+      rgba(0, 229, 255, 0.9) 85%,
+      rgba(0, 229, 255, 0.85) 100%);
   background-size: 300% 300%;
   animation: goldSweep 3s ease-in-out infinite;
   box-shadow:
-    0 0 30px rgba(255, 185, 30, 0.3),
-    0 0 70px rgba(255, 160, 20, 0.15),
-    0 0 120px rgba(255, 140, 0, 0.08);
+    0 0 30px rgba(0, 229, 255, 0.3),
+    0 0 70px rgba(0, 229, 255, 0.15),
+    0 0 120px rgba(0, 229, 255, 0.08);
 }
 
 /* ─── Dropdown option text fix ──────────────────────── */
