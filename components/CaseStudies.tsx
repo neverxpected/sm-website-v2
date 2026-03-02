@@ -65,9 +65,15 @@ export default function CaseStudies() {
             <span className="w-1.5 h-1.5 rounded-full bg-current" />
             Case Studies
           </div>
+          <style>{`
+            @keyframes realGrowthShimmer {
+              0%   { background-position: 200% center; }
+              100% { background-position: -200% center; }
+            }
+          `}</style>
           <h2 className="reveal reveal-delay-100 text-4xl lg:text-5xl font-black text-white tracking-tight mb-5">
             Real Results.{' '}
-            <span style={{ background: 'linear-gradient(90deg, #FF2D78, #9B30FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+            <span style={{ background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #FF2D78)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', backgroundSize: '200% auto', animation: 'realGrowthShimmer 4s linear infinite', display: 'inline-block' }}>
               Real Growth.
             </span>
           </h2>
