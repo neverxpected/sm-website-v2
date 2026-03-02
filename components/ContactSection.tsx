@@ -50,7 +50,7 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-[2fr_3fr] gap-16 items-start">
 
-          {/* Left */}
+          {/* Left — heading + description (always top); contact info desktop only */}
           <div>
             <div className="reveal inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.25em]"
               style={{ background: 'rgba(163,230,53,0.08)', border: `1px solid rgba(163,230,53,0.25)`, color: lime.accent }}>
@@ -68,7 +68,8 @@ export default function ContactSection() {
               Book a free strategy call with our team. We&apos;ll analyze your current marketing efforts and show you exactly how we can help you reach your goals.
             </p>
 
-            <div className="reveal reveal-delay-300 space-y-5">
+            {/* Contact info — desktop only (hidden on mobile, shown after form instead) */}
+            <div className="reveal reveal-delay-300 space-y-5 hidden lg:block">
               {[
                 {
                   label: 'Email', value: 'Charles@switchmediaco.com', href: 'mailto:Charles@switchmediaco.com',
@@ -177,9 +178,48 @@ export default function ContactSection() {
                 </form>
               )}
             </div>
+
+            {/* Contact info — mobile only (shown below form) */}
+            <div className="space-y-5 mt-8 lg:hidden">
+              {[
+                {
+                  label: 'Email', value: 'Charles@switchmediaco.com', href: 'mailto:Charles@switchmediaco.com',
+                  icon: <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />,
+                  color: 'rgba(163,230,53,0.12)', borderColor: 'rgba(163,230,53,0.25)', iconColor: lime.accent,
+                },
+                {
+                  label: 'Phone', value: '(469) 518-0508', href: 'tel:4695180508',
+                  icon: <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21L8.5 10.5s1.5 3 5 5l1.113-1.724a1 1 0 011.21-.502l4.493 1.498A1 1 0 0121 15.72V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />,
+                  color: 'rgba(163,230,53,0.08)', borderColor: 'rgba(163,230,53,0.20)', iconColor: '#84cc16',
+                },
+                {
+                  label: 'Headquarters', value: 'Houston, TX', href: null,
+                  icon: <><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></>,
+                  color: 'rgba(163,230,53,0.06)', borderColor: 'rgba(163,230,53,0.15)', iconColor: '#65a30d',
+                },
+              ].map((item) => (
+                <div key={item.label} className="flex items-center gap-4">
+                  <span className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
+                    style={{ background: item.color, border: `1px solid ${item.borderColor}` }}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke={item.iconColor} strokeWidth={1.5} className="w-5 h-5">
+                      {item.icon}
+                    </svg>
+                  </span>
+                  <div>
+                    <p className="text-xs mb-0.5" style={{ color: 'rgba(240,244,255,0.35)' }}>{item.label}</p>
+                    {item.href ? (
+                      <a href={item.href} className="text-sm font-semibold text-white hover:text-white/70 transition-colors">{item.value}</a>
+                    ) : (
+                      <p className="text-sm font-semibold text-white">{item.value}</p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
         </div>
+
       </div>
     </section>
   );
