@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { lime } from "@/lib/cyberLime";
 
 const columns = [
   {
@@ -40,7 +41,7 @@ const columns = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#080C18', borderTop: '1px solid rgba(255,45,120,0.15)' }}>
+    <footer className="relative" style={{ background: lime.bg, borderTop: `1px solid rgba(163,230,53,0.18)`, zIndex: 1 }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
 
         {/* Main grid */}
@@ -50,7 +51,7 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1 space-y-5">
             <Link href="/" className="flex items-center gap-3 group">
               <span className="rounded-xl flex items-center justify-center shrink-0 p-1 transition-all duration-300 group-hover:scale-110"
-                style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)' }}>
+                style={{ background: lime.grad }}>
                 <Image
                   src="/images/logo/sm-logo.png"
                   alt="Switch Media Marketing Logo"
@@ -63,7 +64,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.35)' }}>
-              We help service-based businesses generate predictable leads and scale revenue with paid ads and AI automation.
+              <em>&ldquo;Your unfair advantage in elite paid media and AI automation. We scale service businesses into market leaders through intelligent growth strategies.&rdquo;</em>
             </p>
 
             {/* Social icons */}
@@ -76,7 +77,7 @@ export default function Footer() {
                 <a key={s.href} href={s.href} target="_blank" rel="noopener noreferrer"
                   className="w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
                   style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)', color: 'rgba(240,244,255,0.45)' }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#FF2D78'; (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,45,120,0.3)'; }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = lime.accent; (e.currentTarget as HTMLElement).style.borderColor = 'rgba(163,230,53,0.3)'; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = 'rgba(240,244,255,0.45)'; (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.08)'; }}
                 >
                   <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
@@ -97,7 +98,7 @@ export default function Footer() {
                     <Link href={link.href}
                       className="text-sm transition-colors duration-200"
                       style={{ color: 'rgba(240,244,255,0.5)' }}
-                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#FF2D78'; }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#a3e635'; }}
                       onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = 'rgba(240,244,255,0.5)'; }}
                     >
                       {link.label}
@@ -117,8 +118,8 @@ export default function Footer() {
           </p>
           <Link
             href="https://calendly.com/switchmedia/15min"
-            className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-white rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap"
-            style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)' }}
+            className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-black rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap"
+            style={{ background: lime.grad }}
           >
             Book a Strategy Call
           </Link>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { lime } from "@/lib/cyberLime";
 
 const cases = [
   {
@@ -49,25 +50,24 @@ const cases = [
 
 export default function CaseStudies() {
   return (
-    <section className="py-24 px-6 lg:px-8 relative overflow-hidden" style={{ background: '#0A0F1C' }}>
-      {/* Ambient orbs */}
+    <section className="py-24 px-6 lg:px-8 relative overflow-hidden" style={{ background: lime.bg }}>
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(255,45,120,0.07) 0%, transparent 70%)' }} />
+        style={{ background: `radial-gradient(circle, ${lime.glow} 0%, transparent 70%)` }} />
       <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(0,229,255,0.06) 0%, transparent 70%)' }} />
+        style={{ background: `radial-gradient(circle, rgba(163,230,53,0.05) 0%, transparent 70%)` }} />
 
       <div className="max-w-7xl mx-auto relative z-10">
 
         {/* Header */}
         <div className="text-center mb-16">
           <div className="reveal inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.25em]"
-            style={{ background: 'rgba(0,229,255,0.08)', border: '1px solid rgba(0,229,255,0.2)', color: '#00E5FF' }}>
+            style={{ background: 'rgba(163,230,53,0.08)', border: `1px solid rgba(163,230,53,0.2)`, color: lime.accent }}>
             <span className="w-1.5 h-1.5 rounded-full bg-current" />
             Case Studies
           </div>
           <h2 className="reveal reveal-delay-100 text-4xl lg:text-5xl font-black text-white tracking-tight mb-5">
             Real Results.{' '}
-            <span style={{ background: 'linear-gradient(90deg, #FF2D78, #9B30FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+            <span style={{ background: lime.gradText, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
               Real Growth.
             </span>
           </h2>
@@ -83,15 +83,15 @@ export default function CaseStudies() {
               key={c.name}
               href={c.href}
               className={`reveal reveal-delay-${(i + 1) * 100} group flex flex-col rounded-2xl overflow-hidden transition-all duration-400`}
-              style={{ background: 'rgba(13,21,38,0.8)', border: '1px solid rgba(255,255,255,0.07)' }}
+              style={{ background: lime.card, border: `1px solid ${lime.border}` }}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLElement).style.transform = 'translateY(-6px)';
-                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.15)';
+                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(163,230,53,0.28)';
                 (e.currentTarget as HTMLElement).style.boxShadow = '0 20px 60px -10px rgba(0,0,0,0.6)';
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
-                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.07)';
+                (e.currentTarget as HTMLElement).style.borderColor = lime.border;
                 (e.currentTarget as HTMLElement).style.boxShadow = 'none';
               }}
             >
@@ -153,8 +153,8 @@ export default function CaseStudies() {
         <div className="reveal reveal-delay-400 text-center mt-14">
           <Link
             href="/our-work"
-            className="inline-flex items-center gap-2 px-8 py-4 text-white text-sm font-bold rounded-xl transition-all duration-300 hover:scale-105"
-            style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', boxShadow: '0 0 30px rgba(255,45,120,0.3)' }}
+            className="inline-flex items-center gap-2 px-8 py-4 text-black text-sm font-bold rounded-xl transition-all duration-300 hover:scale-105"
+            style={{ background: lime.grad, boxShadow: `0 0 30px ${lime.glow}` }}
           >
             View All Case Studies
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">

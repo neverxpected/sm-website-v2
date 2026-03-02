@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { lime } from "@/lib/cyberLime";
 
 const team = [
   {
@@ -8,9 +9,9 @@ const team = [
     role: "Founder",
     location: "Houston, Texas",
     bio: "Father of 3 beautiful girls and a proud Baylor University graduate with a passion for all things digital. When he's not building growth systems for clients, you'll likely find him enjoying the open road on his motorcycle.",
-    accent: "#FF2D78",
-    gradientFrom: "#FF2D78",
-    gradientTo: "#9B30FF",
+    accent: lime.accent,
+    gradientFrom: lime.accent,
+    gradientTo: '#84cc16',
     photo: "/images/team/charles.webp",
   },
   {
@@ -18,19 +19,19 @@ const team = [
     role: "CIO",
     location: "Houston, Texas",
     bio: "A cyber security expert with serious IT depth, Chris is the sharpest technical mind on the team. His credentials are impeccable — though we're still holding a grudge about the time he talked us out of buying Bitcoin at $300. The jury's still out on his investment advice.",
-    accent: "#00E5FF",
-    gradientFrom: "#00E5FF",
-    gradientTo: "#9B30FF",
+    accent: '#84cc16',
+    gradientFrom: '#84cc16',
+    gradientTo: lime.accentDark,
     photo: "/images/team/chris.webp",
   },
   {
     name: "Thomas Sanders",
-    role: "Sales Manager",
+    role: "CSO",
     location: "Houston, Texas",
     bio: "Probably one of the nicest and most genuine people you'll ever meet. Thomas is a proud dad to 2 smart kiddos and a TCU Graduate. When he's not closing deals, you might find him deep in a League of Legends match.",
-    accent: "#9B30FF",
-    gradientFrom: "#9B30FF",
-    gradientTo: "#FF2D78",
+    accent: lime.accentDark,
+    gradientFrom: lime.accentDark,
+    gradientTo: lime.accent,
     photo: "/images/team/thomas.webp",
   },
 ];
@@ -111,9 +112,9 @@ function ParticleBg({ color }: { color: string }) {
 
 export default function MeetTheTeam() {
   return (
-    <section className="relative py-24 lg:py-32" style={{ background: '#0A0F1C' }}>
+    <section className="relative py-24 lg:py-32" style={{ background: lime.bg }}>
       <div className="absolute inset-0 pointer-events-none" style={{
-        backgroundImage: 'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
+        backgroundImage: 'linear-gradient(rgba(163,230,53,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(163,230,53,0.02) 1px, transparent 1px)',
         backgroundSize: '60px 60px',
       }} />
 
@@ -121,14 +122,14 @@ export default function MeetTheTeam() {
 
         <div className="text-center mb-16">
           <div className="reveal inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.25em]"
-            style={{ background: 'rgba(155,48,255,0.1)', border: '1px solid rgba(155,48,255,0.25)', color: '#9B30FF' }}>
+            style={{ background: 'rgba(163,230,53,0.08)', border: `1px solid rgba(163,230,53,0.25)`, color: lime.accent }}>
             <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
             The Crew Behind The Results
           </div>
           <h2 className="reveal reveal-delay-100 text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
             Meet The{' '}
             <span style={{
-              background: 'linear-gradient(90deg, #FF2D78, #9B30FF)',
+              background: lime.gradText,
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -146,7 +147,7 @@ export default function MeetTheTeam() {
             <div
               key={member.name}
               className={`reveal reveal-delay-${(i + 2) * 100} card-neon rounded-2xl overflow-hidden flex flex-col`}
-              style={{ background: 'rgba(13,21,38,0.85)', border: '1px solid rgba(255,255,255,0.07)', backdropFilter: 'blur(12px)' }}
+              style={{ background: lime.card, border: `1px solid ${lime.border}`, backdropFilter: 'blur(12px)' }}
             >
               {/* Photo area */}
               <div
