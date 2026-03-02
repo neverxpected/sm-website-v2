@@ -107,6 +107,7 @@ export default function MetaAdsPage() {
               backgroundSize: '200% auto',
               animation: 'metaAdsShimmer 4s linear infinite',
               display: 'inline-block',
+              paddingBottom: '0.1em',
             }}>for High-Ticket Brands.</span>
           </h1>
 

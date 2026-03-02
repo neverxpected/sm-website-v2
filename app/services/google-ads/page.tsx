@@ -113,6 +113,7 @@ export default function GoogleAdsPage() {
               backgroundSize: '200% auto',
               animation: 'googleAdsShimmer 4s linear infinite',
               display: 'inline-block',
+              paddingBottom: '0.1em',
             }}>and Performance Advertising.</span>
           </h1>
 

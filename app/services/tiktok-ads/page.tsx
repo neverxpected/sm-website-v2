@@ -113,6 +113,7 @@ export default function TikTokAdsPage() {
               backgroundSize: '200% auto',
               animation: 'tikTokAdsShimmer 4s linear infinite',
               display: 'inline-block',
+              paddingBottom: '0.1em',
             }}>Video Advertising.</span>
           </h1>
 

@@ -113,6 +113,7 @@ export default function AiReceptionistPage() {
               backgroundSize: '200% auto',
               animation: 'aiReceptionistShimmer 4s linear infinite',
               display: 'inline-block',
+              paddingBottom: '0.1em',
             }}>Voice Infrastructure.</span>
           </h1>
 

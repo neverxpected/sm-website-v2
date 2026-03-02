@@ -113,6 +113,7 @@ export default function DigitalAdsPage() {
               backgroundSize: '200% auto',
               animation: 'digitalAdsShimmer 4s linear infinite',
               display: 'inline-block',
+              paddingBottom: '0.1em',
             }}>Advertising and Search.</span>
           </h1>
 
