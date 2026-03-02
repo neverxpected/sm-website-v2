@@ -150,9 +150,18 @@ export default function HowItWorks() {
                 {/* Steps grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 relative">
 
-                    {/* Animated connector lines (desktop only) */}
-                    <div className="hidden lg:block absolute top-10 left-[calc(33.33%+1rem)] right-[calc(33.33%+1rem)] h-[2px] pointer-events-none" style={{
-                        background: 'linear-gradient(90deg, transparent, #FF2D78 25%, #9B30FF 50%, #00E5FF 75%, transparent)',
+                    {/* Connector 1: gap between card 1 and card 2 */}
+                    <div className="hidden lg:block absolute pointer-events-none" style={{
+                        top: '2.6rem', left: 'calc(33.33% + 0.25rem)', width: '1.5rem', height: '2px',
+                        background: 'linear-gradient(90deg, #FF2D78, #9B30FF)',
+                        backgroundSize: '200% 100%',
+                        animation: 'connectorFlow 3s linear infinite',
+                    }} />
+
+                    {/* Connector 2: gap between card 2 and card 3 */}
+                    <div className="hidden lg:block absolute pointer-events-none" style={{
+                        top: '2.6rem', left: 'calc(66.66% + 0.25rem)', width: '1.5rem', height: '2px',
+                        background: 'linear-gradient(90deg, #9B30FF, #00E5FF)',
                         backgroundSize: '200% 100%',
                         animation: 'connectorFlow 3s linear infinite',
                     }} />
@@ -162,8 +171,9 @@ export default function HowItWorks() {
                             key={step.number}
                             className="relative flex flex-col items-center text-center p-8 rounded-2xl transition-all duration-300"
                             style={{
-                                background: 'rgba(255,255,255,0.03)',
+                                background: 'rgba(13,21,38,0.95)',
                                 border: '1px solid rgba(255,255,255,0.08)',
+                                zIndex: 1,
                                 ...reveal(300 + i * 150),
                             }}
                             onMouseEnter={e => {
