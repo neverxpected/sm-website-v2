@@ -209,13 +209,13 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-6 text-white">
           <DesktopDropdown label="Paid Ads" links={paidAdsLinks} />
           <DesktopDropdown label="AI Automations" links={aiAutomationLinks} />
-          <Link href="/our-work" className="text-sm font-medium text-white/70 hover:text-white transition-colors">
+          <Link href="/our-work" className="text-sm font-medium text-white/70 hover:text-[#FF2D78] transition-colors">
             Results
           </Link>
-          <Link href="/about" className="text-sm font-medium text-white/70 hover:text-white transition-colors">
+          <Link href="/about" className="text-sm font-medium text-white/70 hover:text-[#FF2D78] transition-colors">
             About
           </Link>
-          <Link href="/contact" className="text-sm font-medium text-white/70 hover:text-white transition-colors">
+          <Link href="/contact" className="text-sm font-medium text-white/70 hover:text-[#FF2D78] transition-colors">
             Contact
           </Link>
           <Link
