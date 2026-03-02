@@ -25,6 +25,7 @@ const columns = [
     links: [
       { label: "About Us", href: "/about" },
       { label: "Case Studies", href: "/our-work" },
+      { label: "Results", href: "/our-work" },
       { label: "Contact Us", href: "/contact" },
     ],
   },
