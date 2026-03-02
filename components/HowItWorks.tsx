@@ -147,75 +147,82 @@ export default function HowItWorks() {
                     </p>
                 </div>
 
-                {/* Steps grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 relative">
-
-                    {/* Connector 1: gap between card 1 and card 2 */}
-                    <div className="hidden lg:block absolute pointer-events-none" style={{
-                        top: '2.6rem', left: 'calc(33.33% + 0.25rem)', width: '1.5rem', height: '2px',
-                        background: 'linear-gradient(90deg, #FF2D78, #9B30FF)',
-                        backgroundSize: '200% 100%',
-                        animation: 'connectorFlow 3s linear infinite',
-                    }} />
-
-                    {/* Connector 2: gap between card 2 and card 3 */}
-                    <div className="hidden lg:block absolute pointer-events-none" style={{
-                        top: '2.6rem', left: 'calc(66.66% + 0.25rem)', width: '1.5rem', height: '2px',
-                        background: 'linear-gradient(90deg, #9B30FF, #00E5FF)',
-                        backgroundSize: '200% 100%',
-                        animation: 'connectorFlow 3s linear infinite',
-                    }} />
-
+                {/* Mobile: stacked */}
+                <div className="flex flex-col gap-6 lg:hidden">
                     {steps.map((step, i) => (
-                        <div
-                            key={step.number}
-                            className="relative flex flex-col items-center text-center p-8 rounded-2xl transition-all duration-300"
-                            style={{
-                                background: 'rgba(13,21,38,0.95)',
-                                border: '1px solid rgba(255,255,255,0.08)',
-                                zIndex: 1,
-                                ...reveal(300 + i * 150),
-                            }}
-                            onMouseEnter={e => {
-                                (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-4px)';
-                                (e.currentTarget as HTMLDivElement).style.borderColor = step.glow.replace('0.35', '0.4');
-                                (e.currentTarget as HTMLDivElement).style.boxShadow = `0 14px 40px ${step.glow}`;
-                            }}
-                            onMouseLeave={e => {
-                                (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)';
-                                (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(255,255,255,0.08)';
-                                (e.currentTarget as HTMLDivElement).style.boxShadow = 'none';
-                            }}
-                        >
-                            {/* Ping ring animation behind badge */}
+                        <div key={step.number}
+                            className="relative flex flex-col items-center text-center p-8 rounded-2xl"
+                            style={{ background: 'rgba(13,21,38,0.95)', border: '1px solid rgba(255,255,255,0.08)', ...reveal(300 + i * 150) }}>
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full"
+                                style={{ background: step.accent, boxShadow: `0 0 8px ${step.accent}` }} />
                             <div className="relative w-16 h-16 mb-6 shrink-0">
-                                {/* Outer ping ring */}
-                                <div className="absolute inset-0 rounded-full" style={{
-                                    border: `2px solid ${step.accent}`,
-                                    animation: `ringPing 2s ease-out infinite`,
-                                    animationDelay: `${i * 0.5}s`,
-                                }} />
-                                {/* Inner solid badge */}
+                                <div className="absolute inset-0 rounded-full" style={{ border: `2px solid ${step.accent}`, animation: `ringPing 2s ease-out infinite`, animationDelay: `${i * 0.5}s` }} />
                                 <div className="absolute inset-0 rounded-full border-2 flex items-center justify-center font-black text-xl z-10"
-                                    style={{
-                                        borderColor: step.accent,
-                                        color: step.accent,
-                                        background: `${step.accent}12`,
-                                        boxShadow: `0 0 18px ${step.glow}`,
-                                    }}>
+                                    style={{ borderColor: step.accent, color: step.accent, background: `${step.accent}12`, boxShadow: `0 0 18px ${step.glow}` }}>
                                     {step.number}
                                 </div>
                             </div>
-
-                            {/* Color accent dot at top of card */}
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full"
-                                style={{ background: step.accent, boxShadow: `0 0 8px ${step.accent}` }} />
-
                             <h3 className="text-lg font-black text-white mb-3">{step.title}</h3>
-                            <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.5)' }}>
-                                {step.description}
-                            </p>
+                            <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.5)' }}>{step.description}</p>
                         </div>
+                    ))}
+                </div>
+
+                {/* Desktop: flex row with inline connectors */}
+                <div className="hidden lg:flex items-start">
+                    {steps.map((step, i) => (
+                        <>
+                            <div key={step.number}
+                                className="relative flex flex-col items-center text-center p-8 rounded-2xl transition-all duration-300"
+                                style={{
+                                    flex: 1,
+                                    background: 'rgba(13,21,38,0.95)',
+                                    border: '1px solid rgba(255,255,255,0.08)',
+                                    ...reveal(300 + i * 150),
+                                }}
+                                onMouseEnter={e => {
+                                    (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-4px)';
+                                    (e.currentTarget as HTMLDivElement).style.borderColor = step.glow.replace('0.35', '0.4');
+                                    (e.currentTarget as HTMLDivElement).style.boxShadow = `0 14px 40px ${step.glow}`;
+                                }}
+                                onMouseLeave={e => {
+                                    (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)';
+                                    (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(255,255,255,0.08)';
+                                    (e.currentTarget as HTMLDivElement).style.boxShadow = 'none';
+                                }}
+                            >
+                                {/* Accent dot at top */}
+                                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full"
+                                    style={{ background: step.accent, boxShadow: `0 0 8px ${step.accent}` }} />
+
+                                {/* Badge with ping ring */}
+                                <div className="relative w-16 h-16 mb-6 shrink-0">
+                                    <div className="absolute inset-0 rounded-full" style={{
+                                        border: `2px solid ${step.accent}`,
+                                        animation: `ringPing 2s ease-out infinite`,
+                                        animationDelay: `${i * 0.5}s`,
+                                    }} />
+                                    <div className="absolute inset-0 rounded-full border-2 flex items-center justify-center font-black text-xl z-10"
+                                        style={{ borderColor: step.accent, color: step.accent, background: `${step.accent}12`, boxShadow: `0 0 18px ${step.glow}` }}>
+                                        {step.number}
+                                    </div>
+                                </div>
+
+                                <h3 className="text-lg font-black text-white mb-3">{step.title}</h3>
+                                <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.5)' }}>{step.description}</p>
+                            </div>
+
+                            {/* Connector between cards */}
+                            {i < steps.length - 1 && (
+                                <div className="flex items-start justify-center shrink-0 pt-[2.6rem]" style={{ width: '3rem' }}>
+                                    <div className="w-full h-[2px]" style={{
+                                        background: `linear-gradient(90deg, ${step.accent}, ${steps[i + 1].accent})`,
+                                        backgroundSize: '200% 100%',
+                                        animation: 'connectorFlow 3s linear infinite',
+                                    }} />
+                                </div>
+                            )}
+                        </>
                     ))}
                 </div>
             </div>
