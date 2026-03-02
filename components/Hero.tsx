@@ -8,6 +8,7 @@ import CaseStudies from './CaseStudies';
 import ContactSection from './ContactSection';
 import MeetTheTeam from './MeetTheTeam';
 import TrustedBy from './TrustedBy';
+import LightRays from './LightRays';
 
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -56,6 +57,22 @@ export default function Hero() {
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)',
           backgroundSize: '60px 60px',
         }} />
+
+        {/* Light rays overlay */}
+        <div className="absolute inset-0 pointer-events-none" style={{ opacity: 0.55, zIndex: 1 }}>
+          <LightRays
+            raysOrigin="top-center"
+            raysColor="#FF2D78"
+            raysSpeed={1.1}
+            lightSpread={0.5}
+            rayLength={3}
+            followMouse={true}
+            mouseInfluence={0.1}
+            pulsating={false}
+            fadeDistance={1}
+            saturation={1}
+          />
+        </div>
 
         {/* CTA glow keyframe */}
         <style>{`
