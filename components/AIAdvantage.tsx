@@ -154,7 +154,7 @@ export default function AIAdvantage() {
           `}</style>
           <h2 className="reveal reveal-delay-100 text-4xl lg:text-5xl font-black text-white tracking-tight mb-5">
             The{' '}
-            <span style={{ background: 'linear-gradient(90deg, #9B30FF, #00E5FF, #9B30FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', backgroundSize: '200% auto', animation: 'aiAdvantageShimmer 4s linear infinite', display: 'inline-block' }}>
+            <span style={{ background: 'linear-gradient(90deg, #9B30FF, #00E5FF, #9B30FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', backgroundSize: '200% auto', animation: 'aiAdvantageShimmer 4s linear infinite', display: 'inline-block', paddingBottom: '0.1em' }}>
               AI Advantage
             </span>
           </h2>
