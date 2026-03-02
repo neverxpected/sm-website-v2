@@ -64,7 +64,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.35)' }}>
-              We help service-based businesses generate predictable leads and scale revenue with paid ads and AI automation.
+              Future-proofing service businesses with AI-driven marketing and automation.
             </p>
 
             {/* Social icons */}
