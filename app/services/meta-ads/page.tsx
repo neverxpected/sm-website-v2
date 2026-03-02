@@ -93,11 +93,20 @@ export default function MetaAdsPage() {
 
           <h1 className="text-5xl lg:text-7xl font-black tracking-tight leading-[1] mb-8 text-white">
             Precision Meta Advertising<br />
+            <style>{`
+              @keyframes metaAdsShimmer {
+                0%   { background-position: 200% center; }
+                100% { background-position: -200% center; }
+              }
+            `}</style>
             <span style={{
-              background: 'linear-gradient(90deg, #FF2D78, #9B30FF)',
+              background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #FF2D78)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
+              backgroundSize: '200% auto',
+              animation: 'metaAdsShimmer 4s linear infinite',
+              display: 'inline-block',
             }}>for High-Ticket Brands.</span>
           </h1>
 

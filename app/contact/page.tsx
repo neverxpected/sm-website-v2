@@ -1,11 +1,67 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { useState } from "react";
-import ServicePicker from "../../components/ServicePicker";
+import Link from 'next/link';
+import { useState, useEffect, useRef } from 'react';
+import ServicePicker from '../../components/ServicePicker';
 
 export default function ContactPage() {
     const [submitted, setSubmitted] = useState(false);
+
+    // Scroll reveal state
+    const heroRef = useRef<HTMLElement>(null);
+    const formRef = useRef<HTMLDivElement>(null);
+    const sidebarRef = useRef<HTMLDivElement>(null);
+
+    const [heroVisible, setHeroVisible] = useState(false);
+    const [formVisible, setFormVisible] = useState(false);
+    const [sidebarVisible, setSidebarVisible] = useState(false);
+
+    // Floating orb refs
+    const orbRef1 = useRef<HTMLDivElement>(null);
+    const orbRef2 = useRef<HTMLDivElement>(null);
+    const orbRef3 = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const makeObs = (setter: (v: boolean) => void) =>
+            new IntersectionObserver(([e]) => { if (e.isIntersecting) setter(true); }, { threshold: 0.1 });
+
+        const pairs: [React.RefObject<HTMLElement | HTMLDivElement | null>, (v: boolean) => void][] = [
+            [heroRef, setHeroVisible],
+            [formRef, setFormVisible],
+            [sidebarRef, setSidebarVisible],
+        ];
+        const observers = pairs.map(([ref, setter]) => {
+            const obs = makeObs(setter);
+            if (ref.current) obs.observe(ref.current);
+            return obs;
+        });
+        return () => observers.forEach(o => o.disconnect());
+    }, []);
+
+    // Floating orbs
+    useEffect(() => {
+        const orbs = [orbRef1, orbRef2, orbRef3];
+        const offsets = [0, 2.5, 4.8];
+        let frame: number;
+        const animate = () => {
+            const t = Date.now() / 1000;
+            orbs.forEach((ref, i) => {
+                if (!ref.current) return;
+                const ox = Math.sin(t * 0.28 + offsets[i]) * 38;
+                const oy = Math.cos(t * 0.22 + offsets[i]) * 28;
+                ref.current.style.transform = `translate(${ox}px, ${oy}px)`;
+            });
+            frame = requestAnimationFrame(animate);
+        };
+        animate();
+        return () => cancelAnimationFrame(frame);
+    }, []);
+
+    const reveal = (visible: boolean, delay = 0): React.CSSProperties => ({
+        opacity: visible ? 1 : 0,
+        transform: visible ? 'translateY(0)' : 'translateY(28px)',
+        transition: `opacity 0.7s ease ${delay}ms, transform 0.7s ease ${delay}ms`,
+    });
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -33,57 +89,78 @@ export default function ContactPage() {
         setSubmitted(true);
     }
 
-
     return (
-        <main
-            className="relative min-h-screen text-white"
-            style={{ background: "#0A0F1C" }}
-        >
-            {/* Grid pattern */}
-            <div
-                className="absolute inset-0 pointer-events-none z-0"
-                style={{
-                    backgroundImage:
-                        "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)",
-                    backgroundSize: "64px 64px",
-                }}
-            />
+        <main className="relative min-h-screen text-white overflow-hidden" style={{ background: '#0A0F1C' }}>
+            <style>{`
+        @keyframes contactHeadlineShimmer {
+          0%   { background-position: 200% center; }
+          100% { background-position: -200% center; }
+        }
+        @keyframes pulseSubmit {
+          0%, 100% { box-shadow: 0 0 28px rgba(255,45,120,0.35); }
+          50%       { box-shadow: 0 0 52px rgba(155,48,255,0.6); }
+        }
+      `}</style>
 
-            {/* Ambient glow */}
-            <div className="absolute inset-0 pointer-events-none z-0">
-                <div
-                    className="absolute top-1/3 left-1/4 w-[600px] h-[600px] rounded-full"
-                    style={{
-                        background:
-                            "radial-gradient(circle, rgba(255,45,120,0.06) 0%, transparent 65%)",
-                    }}
-                />
-                <div
-                    className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full"
-                    style={{
-                        background:
-                            "radial-gradient(circle, rgba(155,48,255,0.07) 0%, transparent 65%)",
-                    }}
-                />
+            {/* Grid pattern */}
+            <div className="absolute inset-0 pointer-events-none z-0" style={{
+                backgroundImage: 'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)',
+                backgroundSize: '64px 64px',
+            }} />
+
+            {/* Floating ambient orbs */}
+            <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+                <div ref={orbRef1} className="absolute" style={{
+                    top: '8%', left: '5%',
+                    width: 500, height: 500,
+                    borderRadius: '50%',
+                    background: 'radial-gradient(circle, rgba(255,45,120,0.08) 0%, transparent 65%)',
+                    willChange: 'transform',
+                }} />
+                <div ref={orbRef2} className="absolute" style={{
+                    top: '40%', right: '3%',
+                    width: 460, height: 460,
+                    borderRadius: '50%',
+                    background: 'radial-gradient(circle, rgba(155,48,255,0.1) 0%, transparent 65%)',
+                    willChange: 'transform',
+                }} />
+                <div ref={orbRef3} className="absolute" style={{
+                    bottom: '5%', left: '40%',
+                    width: 380, height: 380,
+                    borderRadius: '50%',
+                    background: 'radial-gradient(circle, rgba(0,229,255,0.06) 0%, transparent 65%)',
+                    willChange: 'transform',
+                }} />
             </div>
 
             {/* Hero */}
-            <section className="relative z-10 pt-40 pb-16 px-6 lg:px-8 max-w-6xl mx-auto">
-                <p
-                    className="text-xs font-bold uppercase tracking-[0.25em] mb-6"
-                    style={{ color: "rgba(255,45,120,0.8)" }}
-                >
+            <section ref={heroRef} className="relative z-10 pt-40 pb-16 px-6 lg:px-8 max-w-6xl mx-auto">
+                {/* Pill badge */}
+                <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.25em]"
+                    style={{ background: 'rgba(255,45,120,0.1)', border: '1px solid rgba(255,45,120,0.25)', color: '#FF2D78', ...reveal(heroVisible, 0) }}>
+                    <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
                     Contact
-                </p>
-                <h1 className="text-4xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-tight max-w-2xl">
-                    Initialize Your Strategy.
+                </div>
+
+                <h1 className="text-4xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-tight max-w-2xl"
+                    style={reveal(heroVisible, 100)}>
+                    Initialize Your{' '}
+                    <span style={{
+                        background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        backgroundClip: 'text',
+                        backgroundSize: '200% auto',
+                        animation: 'contactHeadlineShimmer 4s linear infinite',
+                        display: 'inline-block',
+                    }}>
+                        Strategy.
+                    </span>
                 </h1>
-                <p
-                    className="text-base leading-relaxed max-w-xl"
-                    style={{ color: "rgba(240,244,255,0.5)" }}
-                >
-                    Bridge the gap between fragmented data and autonomous growth. Reach
-                    out to our engineering team to audit your current infrastructure.
+
+                <p className="text-base leading-relaxed max-w-xl"
+                    style={{ color: 'rgba(240,244,255,0.5)', ...reveal(heroVisible, 200) }}>
+                    Bridge the gap between fragmented data and autonomous growth. Reach out to our engineering team to audit your current infrastructure.
                 </p>
             </section>
 
@@ -92,9 +169,12 @@ export default function ContactPage() {
                 <div className="grid lg:grid-cols-[1fr_320px] gap-10 items-start">
 
                     {/* Contact form */}
-                    <div className="contact-gold-frame rounded-2xl p-8"
-                        style={{ background: 'rgba(13,21,38,0.97)', backdropFilter: 'blur(16px)' }}
-                    >
+                    <div ref={formRef} className="contact-gold-frame rounded-2xl p-8"
+                        style={{
+                            background: 'rgba(13,21,38,0.97)',
+                            backdropFilter: 'blur(16px)',
+                            ...reveal(formVisible, 0),
+                        }}>
                         {submitted ? (
                             <div className="flex flex-col items-center justify-center py-16 text-center gap-4">
                                 <span className="w-14 h-14 rounded-full flex items-center justify-center"
@@ -160,7 +240,7 @@ export default function ContactPage() {
                                 <button
                                     type="submit"
                                     className="w-full flex items-center justify-center gap-2 px-6 py-4 text-white text-sm font-black rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-100"
-                                    style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', boxShadow: '0 0 30px rgba(255,45,120,0.3)' }}
+                                    style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', animation: 'pulseSubmit 3s ease-in-out infinite' }}
                                 >
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
@@ -171,118 +251,68 @@ export default function ContactPage() {
                         )}
                     </div>
 
-                    {/* Direct Access sidebar */}
-                    <div className="flex flex-col gap-5">
+                    {/* Sidebar */}
+                    <div ref={sidebarRef} className="flex flex-col gap-5">
 
                         {/* Location */}
-                        <div
-                            className="p-6 rounded-2xl flex gap-4 items-start"
-                            style={{
-                                background: "rgba(255,255,255,0.03)",
-                                border: "1px solid rgba(255,255,255,0.07)",
-                            }}
-                        >
-                            <div
-                                className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 mt-0.5"
-                                style={{
-                                    background: "rgba(155,48,255,0.12)",
-                                    border: "1px solid rgba(155,48,255,0.2)",
-                                }}
-                            >
+                        <div className="p-6 rounded-2xl flex gap-4 items-start"
+                            style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', ...reveal(sidebarVisible, 0) }}>
+                            <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 mt-0.5"
+                                style={{ background: 'rgba(155,48,255,0.12)', border: '1px solid rgba(155,48,255,0.2)' }}>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="#9B30FF" strokeWidth={1.5} className="w-4 h-4">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                                 </svg>
                             </div>
                             <div>
-                                <p
-                                    className="text-xs font-bold uppercase tracking-[0.15em] mb-1"
-                                    style={{ color: "rgba(240,244,255,0.35)" }}
-                                >
-                                    Location
-                                </p>
+                                <p className="text-xs font-bold uppercase tracking-[0.15em] mb-1" style={{ color: 'rgba(240,244,255,0.35)' }}>Location</p>
                                 <p className="text-sm font-semibold text-white">Houston, TX</p>
                             </div>
                         </div>
 
                         {/* Email */}
-                        <div
-                            className="p-6 rounded-2xl flex gap-4 items-start"
-                            style={{
-                                background: "rgba(255,255,255,0.03)",
-                                border: "1px solid rgba(255,255,255,0.07)",
-                            }}
-                        >
-                            <div
-                                className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 mt-0.5"
-                                style={{
-                                    background: "rgba(155,48,255,0.12)",
-                                    border: "1px solid rgba(155,48,255,0.2)",
-                                }}
-                            >
+                        <div className="p-6 rounded-2xl flex gap-4 items-start"
+                            style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', ...reveal(sidebarVisible, 100) }}>
+                            <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 mt-0.5"
+                                style={{ background: 'rgba(155,48,255,0.12)', border: '1px solid rgba(155,48,255,0.2)' }}>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="#9B30FF" strokeWidth={1.5} className="w-4 h-4">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                                 </svg>
                             </div>
                             <div>
-                                <p
-                                    className="text-xs font-bold uppercase tracking-[0.15em] mb-1"
-                                    style={{ color: "rgba(240,244,255,0.35)" }}
-                                >
-                                    Email
-                                </p>
-                                <a
-                                    href="mailto:charles@switchmediaco.com"
+                                <p className="text-xs font-bold uppercase tracking-[0.15em] mb-1" style={{ color: 'rgba(240,244,255,0.35)' }}>Email</p>
+                                <a href="mailto:charles@switchmediaco.com"
                                     className="text-sm font-semibold transition-colors duration-200"
-                                    style={{ color: "#9B30FF" }}
-                                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#FF2D78"; }}
-                                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#9B30FF"; }}
-                                >
+                                    style={{ color: '#9B30FF' }}
+                                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = '#FF2D78'; }}
+                                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = '#9B30FF'; }}>
                                     charles@switchmediaco.com
                                 </a>
                             </div>
                         </div>
 
                         {/* Book a Strategy Audit */}
-                        <Link
-                            href="https://calendly.com/switchmedia/15min"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <Link href="https://calendly.com/switchmedia/15min" target="_blank" rel="noopener noreferrer"
                             className="flex items-center justify-between p-6 rounded-2xl transition-all duration-300 group hover:scale-[1.02]"
                             style={{
-                                background: "linear-gradient(135deg, rgba(255,45,120,0.1), rgba(155,48,255,0.1))",
-                                border: "1px solid rgba(255,45,120,0.2)",
+                                background: 'linear-gradient(135deg, rgba(255,45,120,0.1), rgba(155,48,255,0.1))',
+                                border: '1px solid rgba(255,45,120,0.2)',
+                                ...reveal(sidebarVisible, 200),
                             }}
-                            onMouseEnter={(e) => {
-                                (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,45,120,0.45)";
-                                (e.currentTarget as HTMLElement).style.boxShadow = "0 0 24px rgba(255,45,120,0.12)";
+                            onMouseEnter={e => {
+                                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,45,120,0.45)';
+                                (e.currentTarget as HTMLElement).style.boxShadow = '0 0 24px rgba(255,45,120,0.12)';
                             }}
-                            onMouseLeave={(e) => {
-                                (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,45,120,0.2)";
-                                (e.currentTarget as HTMLElement).style.boxShadow = "none";
-                            }}
-                        >
+                            onMouseLeave={e => {
+                                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,45,120,0.2)';
+                                (e.currentTarget as HTMLElement).style.boxShadow = 'none';
+                            }}>
                             <div>
-                                <p
-                                    className="text-xs font-bold uppercase tracking-[0.15em] mb-1"
-                                    style={{ color: "rgba(240,244,255,0.35)" }}
-                                >
-                                    Direct Access
-                                </p>
-                                <p className="text-sm font-black text-white">
-                                    Book a Strategy Audit
-                                </p>
+                                <p className="text-xs font-bold uppercase tracking-[0.15em] mb-1" style={{ color: 'rgba(240,244,255,0.35)' }}>Direct Access</p>
+                                <p className="text-sm font-black text-white">Book a Strategy Audit</p>
                             </div>
-                            <svg
-                                viewBox="0 0 20 20"
-                                fill="#FF2D78"
-                                className="w-5 h-5 shrink-0 transition-transform duration-300 group-hover:translate-x-1"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                    clipRule="evenodd"
-                                />
+                            <svg viewBox="0 0 20 20" fill="#FF2D78" className="w-5 h-5 shrink-0 transition-transform duration-300 group-hover:translate-x-1">
+                                <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                             </svg>
                         </Link>
 

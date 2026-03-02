@@ -25,7 +25,7 @@ const team = [
   },
   {
     name: "Thomas Sanders",
-    role: "Sales Manager",
+    role: "CSO",
     location: "Houston, Texas",
     bio: "Probably one of the nicest and most genuine people you'll ever meet. Thomas is a proud dad to 2 smart kiddos and a TCU Graduate. When he's not closing deals, you might find him deep in a League of Legends match.",
     accent: "#9B30FF",
@@ -125,13 +125,22 @@ export default function MeetTheTeam() {
             <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
             The Crew Behind The Results
           </div>
+          <style>{`
+            @keyframes teamShimmer {
+              0%   { background-position: 200% center; }
+              100% { background-position: -200% center; }
+            }
+          `}</style>
           <h2 className="reveal reveal-delay-100 text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
             Meet The{' '}
             <span style={{
-              background: 'linear-gradient(90deg, #FF2D78, #9B30FF)',
+              background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #FF2D78)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
+              backgroundSize: '200% auto',
+              animation: 'teamShimmer 4s linear infinite',
+              display: 'inline-block',
             }}>
               Team
             </span>

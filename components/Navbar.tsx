@@ -93,7 +93,7 @@ function DesktopDropdown({ label, links }: { label: string; links: NavLink[] }) 
       onMouseLeave={() => setOpen(false)}
     >
       <button
-        className="flex items-center gap-1 text-sm font-medium text-white hover:text-white/60 transition-colors cursor-pointer"
+        className="flex items-center gap-1 text-sm font-medium text-white/70 hover:text-[#FF2D78] transition-colors cursor-pointer"
         aria-expanded={open}
         aria-haspopup="true"
       >
@@ -209,13 +209,13 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-6 text-white">
           <DesktopDropdown label="Paid Ads" links={paidAdsLinks} />
           <DesktopDropdown label="AI Automations" links={aiAutomationLinks} />
-          <Link href="/our-work" className="text-sm font-medium text-white/70 hover:text-white transition-colors">
+          <Link href="/our-work" className="text-sm font-medium text-white/70 hover:text-[#FF2D78] transition-colors">
             Results
           </Link>
-          <Link href="/about" className="text-sm font-medium text-white/70 hover:text-white transition-colors">
+          <Link href="/about" className="text-sm font-medium text-white/70 hover:text-[#FF2D78] transition-colors">
             About
           </Link>
-          <Link href="/contact" className="text-sm font-medium text-white/70 hover:text-white transition-colors">
+          <Link href="/contact" className="text-sm font-medium text-white/70 hover:text-[#FF2D78] transition-colors">
             Contact
           </Link>
           <Link
