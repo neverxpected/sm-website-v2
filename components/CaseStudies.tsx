@@ -6,15 +6,15 @@ const cases = [
   {
     category: "Med Spa",
     name: "Radiant with Rebecca",
-    description: "Scaled monthly bookings with Meta Ads + AI-powered client follow-up sequences that brought patients back consistently.",
+    description: "We've worked with Rebecca at Radiant Med Spa since early 2021 when she was still a \"Mobile Med Spa\". Our main focus was Meta Ads and we helped grow her first spa so much that she eventually opened a 2nd location a few years later.",
     href: "/results",
     photo: "/images/client-results/radiant med spa olathe kansas.webp",
     overlayColor: "rgba(255,45,120,0.72)",
     overlayColorEnd: "rgba(155,48,255,0.65)",
     accentHex: "#FF2D78",
     stats: [
-      { emoji: "📈", label: "Revenue Increase", value: "300%" },
-      { emoji: "👤", label: "New Patients/Month", value: "180+" },
+      { emoji: "⏱️", label: "Duration", value: "5+ Years" },
+      { emoji: "📅", label: "Bookings", value: "4,000+" },
       { emoji: "💲", label: "Cost Per Lead", value: "$12" },
     ],
   },
