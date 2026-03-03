@@ -155,9 +155,7 @@ export default function Hero() {
             {/* CTAs */}
             <div className="reveal reveal-delay-500 flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <Link
-                href="https://calendly.com/switchmedia/15min"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/strategy-call"
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl transition-transform duration-300 hover:scale-105 active:scale-100 whitespace-nowrap"
                 style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', animation: 'ctaGlowPink 3s ease-in-out infinite' }}
               >

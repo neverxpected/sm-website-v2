@@ -235,9 +235,7 @@ export default function DigitalAdsPage() {
               We review your current search presence on Bing, assess LinkedIn targeting opportunity, and identify where Microsoft Advertising can deliver incremental revenue at lower cost. No obligation.
             </p>
             <Link
-              href="https://calendly.com/switchmedia/15min"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/strategy-call"
               className="inline-flex items-center justify-center px-10 py-4 text-white font-bold text-base rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap"
               style={{ background: 'linear-gradient(135deg, #0078D4, #9B30FF)', boxShadow: '0 0 30px rgba(0,120,212,0.35)' }}
             >

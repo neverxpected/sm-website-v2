@@ -1,0 +1,118 @@
+'use client';
+
+import Script from 'next/script';
+
+export default function StrategyCallPage() {
+    return (
+        <main
+            className="relative min-h-screen text-white overflow-hidden"
+            style={{ background: '#0A0F1C' }}
+        >
+            <style>{`
+                @keyframes shimmer {
+                    0%   { background-position: 200% center; }
+                    100% { background-position: -200% center; }
+                }
+                @keyframes pulseCta {
+                    0%, 100% { box-shadow: 0 0 30px rgba(255,45,120,0.35); }
+                    50%       { box-shadow: 0 0 55px rgba(155,48,255,0.6); }
+                }
+            `}</style>
+
+            {/* Grid pattern */}
+            <div
+                className="absolute inset-0 pointer-events-none z-0"
+                style={{
+                    backgroundImage:
+                        'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)',
+                    backgroundSize: '64px 64px',
+                }}
+            />
+
+            {/* Ambient orbs */}
+            <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+                <div
+                    className="absolute"
+                    style={{
+                        top: '10%', left: '5%',
+                        width: 500, height: 500,
+                        borderRadius: '50%',
+                        background: 'radial-gradient(circle, rgba(255,45,120,0.08) 0%, transparent 65%)',
+                    }}
+                />
+                <div
+                    className="absolute"
+                    style={{
+                        top: '40%', right: '5%',
+                        width: 480, height: 480,
+                        borderRadius: '50%',
+                        background: 'radial-gradient(circle, rgba(155,48,255,0.09) 0%, transparent 65%)',
+                    }}
+                />
+            </div>
+
+            {/* Page header */}
+            <section className="relative z-10 pt-40 pb-10 px-6 lg:px-8 max-w-3xl mx-auto text-center">
+                <div
+                    className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.25em]"
+                    style={{
+                        background: 'rgba(255,45,120,0.1)',
+                        border: '1px solid rgba(255,45,120,0.25)',
+                        color: '#FF2D78',
+                    }}
+                >
+                    <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
+                    Free · No Obligation
+                </div>
+
+                <h1
+                    className="text-4xl lg:text-6xl font-black tracking-tight leading-tight mb-5"
+                >
+                    Book Your{' '}
+                    <span
+                        style={{
+                            background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
+                            WebkitBackgroundClip: 'text',
+                            WebkitTextFillColor: 'transparent',
+                            backgroundClip: 'text',
+                            backgroundSize: '200% auto',
+                            animation: 'shimmer 4s linear infinite',
+                            display: 'inline-block',
+                        }}
+                    >
+                        Strategy Call
+                    </span>
+                </h1>
+
+                <p
+                    className="text-base leading-relaxed max-w-xl mx-auto"
+                    style={{ color: 'rgba(240,244,255,0.55)' }}
+                >
+                    Pick a time that works for you. We&apos;ll review your current marketing, identify the biggest growth levers, and map out a precision plan — no fluff, no pressure.
+                </p>
+            </section>
+
+            {/* Calendly embed */}
+            <section className="relative z-10 pb-32 px-4 max-w-4xl mx-auto">
+                <div
+                    className="rounded-2xl overflow-hidden"
+                    style={{
+                        border: '1px solid rgba(255,255,255,0.07)',
+                        background: 'rgba(255,255,255,0.02)',
+                    }}
+                >
+                    <div
+                        className="calendly-inline-widget"
+                        data-url="https://calendly.com/switchmedia/15min?primary_color=ff00d2"
+                        style={{ minWidth: '320px', height: '700px' }}
+                    />
+                </div>
+            </section>
+
+            <Script
+                src="https://assets.calendly.com/assets/external/widget.js"
+                strategy="lazyOnload"
+            />
+        </main>
+    );
+}

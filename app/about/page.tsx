@@ -271,9 +271,7 @@ export default function AboutPage() {
                     Ready to see what precision marketing and autonomous AI infrastructure can do for your business?
                 </p>
                 <Link
-                    href="https://calendly.com/switchmedia/15min"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/strategy-call"
                     className="inline-flex items-center gap-2 px-8 py-4 text-sm font-bold text-white rounded-full transition-all duration-300 hover:scale-105"
                     style={{
                         background: 'linear-gradient(135deg, #FF2D78, #9B30FF)',

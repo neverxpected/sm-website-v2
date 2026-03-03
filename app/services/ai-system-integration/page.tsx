@@ -318,9 +318,7 @@ export default function AISystemIntegrationPage() {
               We scope the integration, design the architecture, and deliver a production system built for your specific business logic. Schedule a call to begin.
             </p>
             <Link
-              href="https://calendly.com/switchmedia/15min"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/strategy-call"
               className="inline-flex items-center justify-center px-10 py-4 text-white font-bold text-base rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap"
               style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', animation: 'pulseCta 3s ease-in-out infinite' }}
             >

@@ -150,7 +150,7 @@ export default function Pricing() {
                                 ))}
                             </ul>
 
-                            <Link href="https://calendly.com/switchmedia/15min" target="_blank" rel="noopener noreferrer"
+                            <Link href="/strategy-call"
                                 className="w-full flex items-center justify-center px-6 py-3.5 text-sm font-bold text-white rounded-xl transition-all duration-300 hover:scale-[1.02]"
                                 style={{
                                     background: plan.featured ? `linear-gradient(135deg, #FF2D78, #9B30FF)` : `${plan.accent}22`,
