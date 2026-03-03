@@ -94,7 +94,7 @@ export default function PrivacyPolicyPage() {
           Privacy Policy
         </h1>
         <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.45)' }}>
-          Switch Media Marketing LLC | Last updated March 2025
+          Switch Media Marketing LLC | Effective Date: 2/9/2019 | Updated: 3/1/2026
         </p>
       </section>
 

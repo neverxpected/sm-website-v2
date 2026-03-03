@@ -24,8 +24,6 @@ const columns = [
     heading: "Company",
     links: [
       { label: "About Us", href: "/about" },
-      { label: "Case Studies", href: "/our-work" },
-      { label: "Results", href: "/our-work" },
       { label: "Contact Us", href: "/contact" },
     ],
   },
@@ -117,7 +115,7 @@ export default function Footer() {
             &copy; 2019&ndash;{new Date().getFullYear()} | Switch Media Marketing | All rights reserved
           </p>
           <Link
-            href="https://calendly.com/switchmedia/15min"
+            href="/strategy-call"
             className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold text-white rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap"
             style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)' }}
           >

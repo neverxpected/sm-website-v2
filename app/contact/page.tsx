@@ -292,7 +292,7 @@ export default function ContactPage() {
                         </div>
 
                         {/* Book a Strategy Audit */}
-                        <Link href="https://calendly.com/switchmedia/15min" target="_blank" rel="noopener noreferrer"
+                        <Link href="/strategy-call"
                             className="flex items-center justify-between p-6 rounded-2xl transition-all duration-300 group hover:scale-[1.02]"
                             style={{
                                 background: 'linear-gradient(135deg, rgba(255,45,120,0.1), rgba(155,48,255,0.1))',

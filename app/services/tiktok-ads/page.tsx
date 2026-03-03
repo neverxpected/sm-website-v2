@@ -113,6 +113,7 @@ export default function TikTokAdsPage() {
               backgroundSize: '200% auto',
               animation: 'tikTokAdsShimmer 4s linear infinite',
               display: 'inline-block',
+              paddingBottom: '0.1em',
             }}>Video Advertising.</span>
           </h1>
 
@@ -234,9 +235,7 @@ export default function TikTokAdsPage() {
               We review your current creative assets, pixel setup, and account structure. We identify what is holding performance back and map a path to scalable acquisition.
             </p>
             <Link
-              href="https://calendly.com/switchmedia/15min"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/strategy-call"
               className="inline-flex items-center justify-center px-10 py-4 text-white font-bold text-base rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap"
               style={{ background: 'linear-gradient(135deg, #FF2D78, #00E5FF)', boxShadow: '0 0 30px rgba(255,45,120,0.35)' }}
             >

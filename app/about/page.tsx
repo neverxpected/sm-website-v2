@@ -241,29 +241,6 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Intro card */}
-            <section ref={introRef} className="relative z-10 pb-16 px-6 lg:px-8 max-w-3xl mx-auto">
-                <div className="p-8 rounded-2xl" style={{
-                    background: 'rgba(255,255,255,0.03)',
-                    border: '1px solid rgba(255,255,255,0.07)',
-                    opacity: introVisible ? 1 : 0,
-                    transform: introVisible ? 'translateY(0)' : 'translateY(32px)',
-                    transition: 'opacity 0.7s ease, transform 0.7s ease, border-color 0.4s ease, box-shadow 0.4s ease',
-                }}
-                    onMouseEnter={e => {
-                        (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(255,45,120,0.25)';
-                        (e.currentTarget as HTMLDivElement).style.boxShadow = '0 0 40px rgba(255,45,120,0.08)';
-                    }}
-                    onMouseLeave={e => {
-                        (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(255,255,255,0.07)';
-                        (e.currentTarget as HTMLDivElement).style.boxShadow = 'none';
-                    }}
-                >
-                    <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.65)' }}>
-                        Switch Media is not a marketing agency built on theory. It was built by a founder who has spent a lifetime studying digital systems, tested every dollar in real markets, and built the track record to prove the model works. The following is that record.
-                    </p>
-                </div>
-            </section>
 
             {/* Timeline */}
             <section ref={timelineRef} className="relative z-10 pb-16 px-6 lg:px-8 max-w-3xl mx-auto"
@@ -294,9 +271,7 @@ export default function AboutPage() {
                     Ready to see what precision marketing and autonomous AI infrastructure can do for your business?
                 </p>
                 <Link
-                    href="https://calendly.com/switchmedia/15min"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/strategy-call"
                     className="inline-flex items-center gap-2 px-8 py-4 text-sm font-bold text-white rounded-full transition-all duration-300 hover:scale-105"
                     style={{
                         background: 'linear-gradient(135deg, #FF2D78, #9B30FF)',

@@ -209,9 +209,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-6 text-white">
           <DesktopDropdown label="Paid Ads" links={paidAdsLinks} />
           <DesktopDropdown label="AI Automations" links={aiAutomationLinks} />
-          <Link href="/our-work" className="text-sm font-medium text-white/70 hover:text-[#FF2D78] transition-colors">
-            Results
-          </Link>
+
           <Link href="/about" className="text-sm font-medium text-white/70 hover:text-[#FF2D78] transition-colors">
             About
           </Link>
@@ -219,7 +217,7 @@ export default function Navbar() {
             Contact
           </Link>
           <Link
-            href="https://calendly.com/switchmedia/15min"
+            href="/strategy-call"
             className="relative px-6 py-2.5 text-sm font-bold rounded-full text-white transition-all duration-300 hover:scale-105 overflow-hidden whitespace-nowrap"
             style={{ background: "linear-gradient(135deg, #FF2D78, #9B30FF)", boxShadow: "0 0 20px rgba(255,45,120,0.35)" }}
           >
@@ -250,7 +248,7 @@ export default function Navbar() {
             { label: 'Bing Ads', href: '/services/digital-advertising' },
             { label: 'AI Receptionist', href: '/services/ai-receptionist' },
             { label: 'AI Integrations', href: '/services/ai-system-integration' },
-            { label: 'Results', href: '/our-work' },
+
             { label: 'About Us', href: '/about' },
             { label: 'Contact Us', href: '/contact' },
           ].map((link) => (
@@ -267,7 +265,7 @@ export default function Navbar() {
 
           <div className="pt-6">
             <Link
-              href="https://calendly.com/switchmedia/15min"
+              href="/strategy-call"
               className="block w-full text-center px-6 py-3.5 text-sm font-bold rounded-full text-white transition-all whitespace-nowrap"
               style={{ background: "linear-gradient(135deg, #FF2D78, #9B30FF)" }}
               onClick={() => setMobileOpen(false)}

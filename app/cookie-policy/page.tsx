@@ -64,7 +64,7 @@ export default function CookiePolicyPage() {
           Cookie Policy
         </h1>
         <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.45)' }}>
-          Switch Media Marketing LLC | Effective Date: March 1, 2026
+          Switch Media Marketing LLC | Effective Date: 2/9/2019 | Updated: 3/1/2026
         </p>
       </section>
 

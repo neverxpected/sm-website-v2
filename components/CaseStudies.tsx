@@ -4,66 +4,65 @@ import Link from "next/link";
 
 const cases = [
   {
-    category: "Medical Spa",
-    name: "Elite MedSpa",
-    description: "Scaled from $80K to $320K monthly revenue with Meta Ads + AI booking system.",
-    href: "/our-work",
-    overlayColor: "from-pink-500/80 to-rose-600/80",
-    imageBg: "bg-gradient-to-br from-pink-900 to-rose-800",
-    accentColor: "bg-pink-500",
+    category: "Med Spa",
+    name: "Radiant with Rebecca",
+    description: "We've worked with Rebecca at Radiant Med Spa since early 2021 when she was still a \"Mobile Med Spa\". Our main focus was Meta Ads and we helped grow her first spa so much that she eventually opened a 2nd location a few years later.",
+    href: "/contact",
+    photo: "/images/client-results/radiant med spa olathe kansas.webp",
+    accentHex: "#FF2D78",
+    accentHex2: "#9B30FF",
     stats: [
-      { icon: "📈", label: "Revenue Increase", value: "300%" },
-      { icon: "👤", label: "New Patients/Month", value: "180+" },
-      { icon: "💲", label: "Cost Per Lead", value: "$12" },
+      { emoji: "⏱️", label: "Worked Together", value: "5+ Years" },
+      { emoji: "💰", label: "Added Revenue", value: "$1M+" },
     ],
   },
   {
-    category: "Fitness Studio",
-    name: "Peak Performance Gym",
-    description: "Generated 2,400+ qualified leads in 90 days using Google Ads + AI nurturing sequences.",
-    href: "/our-work",
-    overlayColor: "from-cyan-500/80 to-blue-600/80",
-    imageBg: "bg-gradient-to-br from-cyan-900 to-blue-800",
-    accentColor: "bg-cyan-500",
+    category: "Fitness",
+    name: "illumiNate Heights Fitness",
+    description: "Owners Nate and Jourdan have been absolutely awesome to work with! Plus their 19,000+ sqft two sided gym is probably one of the dopest gyms in Houston! Definitely check them out if you're ever in the Heights area of Houston.",
+    href: "/contact",
+    photo: "/images/client-results/illuminate heights fitness.webp",
+    accentHex: "#00C8FF",
+    accentHex2: "#9B30FF",
     stats: [
-      { icon: "👥", label: "Leads Generated", value: "2,400+" },
-      { icon: "📈", label: "ROAS", value: "5.8x" },
-      { icon: "💲", label: "Membership Growth", value: "156%" },
+      { emoji: "⏱️", label: "Worked Together", value: "5+ Years" },
+      { emoji: "👥", label: "Leads Generated", value: "5,000+" },
     ],
   },
   {
     category: "Plastic Surgery",
-    name: "Prestige Aesthetics",
-    description: "Booked $1.2M in consultations with TikTok awareness + AI qualification system.",
-    href: "/our-work",
-    overlayColor: "from-violet-500/80 to-purple-700/80",
-    imageBg: "bg-gradient-to-br from-violet-900 to-purple-800",
-    accentColor: "bg-violet-500",
+    name: "The Oaks Plastic Surgery",
+    description: "We started working with Dr. Wijay & Dr. Andry since early 2022 and it's been a fun journey. When you have two of the top surgeons in Houston it's much easier to win big! Now partnered with Elite Dermatology, their practices keep growing and we're excited to grow with them.",
+    href: "/contact",
+    photo: "/images/client-results/oaks plastic surgery.webp",
+    accentHex: "#9B30FF",
+    accentHex2: "#FF2D78",
     stats: [
-      { icon: "💲", label: "Consultations Booked", value: "$1.2M" },
-      { icon: "📈", label: "Lead Quality Score", value: "94%" },
-      { icon: "👤", label: "Response Time", value: "<30s" },
+      { emoji: "⏱️", label: "Worked Together", value: "4+ Years" },
+      { emoji: "👥", label: "Consultations Booked", value: "5,000+" },
     ],
   },
 ];
 
 export default function CaseStudies() {
   return (
-    <section className="py-24 px-6 lg:px-8 relative overflow-hidden" style={{ background: '#0A0F1C' }}>
+    <section className="py-24 px-6 lg:px-8 relative overflow-hidden" style={{ background: '#060A14' }}>
       {/* Ambient orbs */}
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(255,45,120,0.07) 0%, transparent 70%)' }} />
-      <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(0,229,255,0.06) 0%, transparent 70%)' }} />
+        style={{ background: 'radial-gradient(circle, rgba(255,45,120,0.06) 0%, transparent 70%)' }} />
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(0,229,255,0.05) 0%, transparent 70%)' }} />
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10">
 
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <div className="reveal inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.25em]"
             style={{ background: 'rgba(0,229,255,0.08)', border: '1px solid rgba(0,229,255,0.2)', color: '#00E5FF' }}>
-            <span className="w-1.5 h-1.5 rounded-full bg-current" />
-            Case Studies
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-3.5 h-3.5 shrink-0">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0" />
+            </svg>
+            Client Results
           </div>
           <style>{`
             @keyframes realGrowthShimmer {
@@ -82,91 +81,88 @@ export default function CaseStudies() {
           </p>
         </div>
 
-        {/* Cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {cases.map((c, i) => (
-            <Link
-              key={c.name}
-              href={c.href}
-              className={`reveal reveal-delay-${(i + 1) * 100} group flex flex-col rounded-2xl overflow-hidden transition-all duration-400`}
-              style={{ background: 'rgba(13,21,38,0.8)', border: '1px solid rgba(255,255,255,0.07)' }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.transform = 'translateY(-6px)';
-                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.15)';
-                (e.currentTarget as HTMLElement).style.boxShadow = '0 20px 60px -10px rgba(0,0,0,0.6)';
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
-                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.07)';
-                (e.currentTarget as HTMLElement).style.boxShadow = 'none';
-              }}
-            >
-              {/* Image area */}
-              <div className="relative h-52 overflow-hidden">
-                <div className={`absolute inset-0 ${c.imageBg}`}>
-                  <div className="absolute inset-0 opacity-30" style={{
-                    backgroundImage: 'repeating-linear-gradient(45deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 12px)'
-                  }} />
-                </div>
-                {/* Neon overlay fades on hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${c.overlayColor} transition-opacity duration-500 group-hover:opacity-0`} />
-                {/* Bottom fade */}
-                <div className="absolute bottom-0 left-0 right-0 h-2/3"
-                  style={{ background: 'linear-gradient(to top, rgba(13,21,38,0.95), transparent)' }} />
-                {/* Category badge */}
-                <div className="absolute top-3 left-3 z-10">
-                  <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full"
-                    style={{ background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(8px)', color: 'rgba(240,244,255,0.8)', border: '1px solid rgba(255,255,255,0.1)' }}>
-                    {c.category}
-                  </span>
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="flex flex-col gap-4 p-6 flex-1">
-                <div className="flex items-start justify-between gap-2">
-                  <h3 className="text-lg font-black text-white">{c.name}</h3>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}
-                    className="w-4 h-4 shrink-0 mt-0.5 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                    style={{ color: 'rgba(255,255,255,0.3)' }}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
-                  </svg>
+        {/* Alternating rows */}
+        <div className="flex flex-col gap-6">
+          {cases.map((c, i) => {
+            const isReversed = i % 2 === 1;
+            return (
+              <div
+                key={c.name}
+                className={`reveal reveal-delay-${(i + 1) * 100} flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} rounded-3xl overflow-hidden`}
+                style={{
+                  background: 'rgba(13,21,38,0.7)',
+                  border: '1px solid rgba(255,255,255,0.07)',
+                  minHeight: '260px',
+                }}
+              >
+                {/* Photo */}
+                <div className="relative lg:w-[38%] shrink-0 overflow-hidden" style={{ minHeight: '200px' }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={c.photo}
+                    alt={c.name}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    style={{ objectPosition: 'center top' }}
+                  />
+                  {/* Gradient bleed toward content side */}
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background: isReversed
+                        ? 'linear-gradient(to left, rgba(13,21,38,0.85) 0%, transparent 50%)'
+                        : 'linear-gradient(to right, rgba(13,21,38,0.85) 0%, transparent 50%)',
+                    }}
+                  />
+                  {/* Category badge */}
+                  <div className="absolute top-4 left-4 z-10">
+                    <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full"
+                      style={{ background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(8px)', color: 'rgba(240,244,255,0.9)', border: '1px solid rgba(255,255,255,0.15)' }}>
+                      {c.category}
+                    </span>
+                  </div>
                 </div>
 
-                <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.5)' }}>{c.description}</p>
+                {/* Content */}
+                <div className="flex flex-col justify-center gap-4 p-6 lg:p-8 flex-1">
+                  {/* Accent line */}
+                  <div className="w-10 h-0.5 rounded-full" style={{ background: `linear-gradient(90deg, ${c.accentHex}, ${c.accentHex2})` }} />
 
-                {/* Stats */}
-                <div className="flex flex-col gap-2 mt-auto">
-                  {c.stats.map((stat) => (
-                    <div key={stat.label} className="flex items-center justify-between rounded-xl px-3 py-2.5"
-                      style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}>
-                      <div className="flex items-center gap-2.5">
-                        <span className={`w-7 h-7 rounded-lg ${c.accentColor} flex items-center justify-center text-xs`}>
-                          {stat.icon}
-                        </span>
-                        <span className="text-xs" style={{ color: 'rgba(240,244,255,0.55)' }}>{stat.label}</span>
+                  <div>
+                    <h3 className="text-xl lg:text-2xl font-black text-white mb-2">{c.name}</h3>
+                    <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.6)' }}>{c.description}</p>
+                  </div>
+
+                  {/* Stats — horizontal pills */}
+                  <div className="flex flex-wrap gap-3">
+                    {c.stats.map((stat) => (
+                      <div key={stat.label} className="flex items-center gap-3 px-4 py-3 rounded-xl"
+                        style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                        <span className="text-base">{stat.emoji}</span>
+                        <div>
+                          <p className="text-[10px] uppercase tracking-widest font-bold" style={{ color: 'rgba(240,244,255,0.4)' }}>{stat.label}</p>
+                          <p className="text-lg font-black text-white leading-tight">{stat.value}</p>
+                        </div>
                       </div>
-                      <span className="text-sm font-black text-white">{stat.value}</span>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
+
+                  {/* CTA link */}
+                  <div>
+                    <Link
+                      href={c.href}
+                      className="inline-flex items-center gap-2 text-sm font-bold transition-all duration-300 hover:gap-3"
+                      style={{ color: c.accentHex }}
+                    >
+                      Work with us
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-4 h-4">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                      </svg>
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </Link>
-          ))}
-        </div>
-
-        {/* CTA */}
-        <div className="reveal reveal-delay-400 text-center mt-14">
-          <Link
-            href="/our-work"
-            className="inline-flex items-center gap-2 px-8 py-4 text-white text-sm font-bold rounded-xl transition-all duration-300 hover:scale-105"
-            style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', boxShadow: '0 0 30px rgba(255,45,120,0.3)' }}
-          >
-            View All Case Studies
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </svg>
-          </Link>
+            );
+          })}
         </div>
 
       </div>
