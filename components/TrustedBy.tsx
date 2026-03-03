@@ -1,22 +1,20 @@
 "use client";
 
 const logos = [
-  { src: '/images/client-logos/Elite Dermatology %26 The Oaks Plastic Surgery.png', alt: 'Elite Dermatology & The Oaks Plastic Surgery' },
-  { src: '/images/client-logos/illuminate heights fitness.png', alt: 'illumiNate Heights Fitness' },
-  { src: '/images/client-logos/radiant med spa.png', alt: 'Radiant Med Spa' },
-  { src: '/images/client-logos/makaan investment group.png', alt: 'Makaan Investment Group' },
-  { src: '/images/client-logos/the royal med spa.png', alt: 'The Royal Med Spa' },
-  { src: '/images/client-logos/lind institute of plastic surgery.png', alt: 'Lind Institute of Plastic Surgery' },
-  { src: '/images/client-logos/dance alliance.png', alt: 'Dance Alliance' },
-  { src: '/images/client-logos/spindletap brewery and coffee.png', alt: 'Spindletap Brewery & Coffee' },
-  { src: '/images/client-logos/axcelsus.png', alt: 'Axcelsus' },
-  { src: '/images/client-logos/lesavoy plastic surgery.png', alt: 'LeSavoy Plastic Surgery' },
-  { src: '/images/client-logos/outcomes therapy.png', alt: 'Outcomes Therapy' },
+  { src: '/images/client-logos/elite dermatology and the oaks plastic surgery logo.png', alt: 'Elite Dermatology & The Oaks Plastic Surgery' },
+  { src: '/images/client-logos/illuminate heights fitness logo.png', alt: 'illumiNate Heights Fitness' },
+  { src: '/images/client-logos/radiant with rebecca med spa logo.png', alt: 'Radiant With Rebecca Med Spa' },
+  { src: '/images/client-logos/makaan investment group logo.png', alt: 'Makaan Investment Group' },
+  { src: '/images/client-logos/the royal med spa logo.png', alt: 'The Royal Med Spa' },
+  { src: '/images/client-logos/lind institute of plastic surgery logo.png', alt: 'Lind Institute of Plastic Surgery' },
+  { src: '/images/client-logos/dance alliance kingwood logo.png', alt: 'Dance Alliance of Kingwood' },
+  { src: '/images/client-logos/spindletap brewery and coffee logo.png', alt: 'Spindletap Brewery & Coffee' },
+  { src: '/images/client-logos/lesavoy plastic surgery logo.png', alt: 'LeSavoy Plastic Surgery' },
+  { src: '/images/client-logos/outcomes therapy logo.png', alt: 'Outcomes Therapy' },
+  { src: '/images/client-logos/rosa mexicano logo.png', alt: 'Rosa Mexicano' },
 ];
 
 export default function TrustedBy() {
-  const doubled = [...logos, ...logos];
-
   return (
     <section
       className="relative py-10 overflow-hidden"
@@ -43,16 +41,16 @@ export default function TrustedBy() {
         {[0, 1].map((trackIdx) => (
           <div
             key={trackIdx}
-            className="animate-marquee flex shrink-0"
+            className="animate-marquee flex shrink-0 items-center"
             aria-hidden={trackIdx === 1}
           >
             {logos.map((logo, i) => (
               <div
                 key={i}
-                className="inline-flex items-center justify-center mx-6 shrink-0 rounded-xl"
+                className="inline-flex items-center justify-center mx-5 shrink-0 rounded-xl"
                 style={{
-                  width: 140,
-                  height: 56,
+                  width: 148,
+                  height: 60,
                   padding: '8px 16px',
                   background: 'rgba(255,255,255,0.04)',
                   border: '1px solid rgba(255,255,255,0.08)',
@@ -63,13 +61,13 @@ export default function TrustedBy() {
                   src={logo.src}
                   alt={logo.alt}
                   style={{
-                    maxWidth: '108px',
-                    maxHeight: '40px',
+                    maxWidth: '116px',
+                    maxHeight: '44px',
                     width: 'auto',
                     height: 'auto',
                     objectFit: 'contain',
                     filter: 'brightness(0) invert(1)',
-                    opacity: 0.6,
+                    opacity: 0.65,
                     display: 'block',
                   }}
                 />
