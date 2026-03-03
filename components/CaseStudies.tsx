@@ -115,13 +115,6 @@ export default function CaseStudies() {
                   className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
 
-                {/* Colorful overlay — fades out on hover to reveal the photo */}
-                <div
-                  className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-0"
-                  style={{
-                    background: `linear-gradient(135deg, ${c.overlayColor}, ${c.overlayColorEnd})`,
-                  }}
-                />
 
                 {/* Persistent bottom fade so card content blends in */}
                 <div
