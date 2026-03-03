@@ -49,11 +49,11 @@ export default function TrustedBy() {
                 key={i}
                 className="inline-flex items-center justify-center mx-5 shrink-0 rounded-xl"
                 style={{
-                  width: 148,
-                  height: 60,
-                  padding: '8px 16px',
-                  background: 'rgba(255,255,255,0.04)',
-                  border: '1px solid rgba(255,255,255,0.08)',
+                  width: 200,
+                  height: 84,
+                  padding: '10px 20px',
+                  background: 'rgba(255,255,255,0.05)',
+                  border: '1px solid rgba(255,255,255,0.1)',
                 }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -61,13 +61,13 @@ export default function TrustedBy() {
                   src={logo.src}
                   alt={logo.alt}
                   style={{
-                    maxWidth: '116px',
-                    maxHeight: '44px',
+                    maxWidth: '160px',
+                    maxHeight: '60px',
                     width: 'auto',
                     height: 'auto',
                     objectFit: 'contain',
-                    filter: 'invert(1)',
-                    opacity: 0.75,
+                    filter: 'invert(1) brightness(2) contrast(1.4)',
+                    opacity: 1,
                     display: 'block',
                   }}
                 />
