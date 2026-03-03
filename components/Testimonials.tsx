@@ -4,23 +4,23 @@ import { useEffect, useRef, useState } from 'react';
 
 const testimonials = [
     {
-        quote: 'PLACEHOLDER — Replace with real client quote. Switch Media transformed our lead generation completely.',
-        name: 'Client Name',
-        title: 'CEO, Company Name',
+        quote: 'We started using Switch Media Marketing prior to our gym opening up. I must say, their marketing techniques have helped us tremendously! Chuck is a genuine guy, and truly cares about his clients. He always makes us feel like we\'re his only client with his attention to detail and excellent communication. I highly recommend Switch Media Marketing if you want to get quality ads that drive business!',
+        name: 'Nate Bran',
+        title: 'illumiNate Heights Fitness',
         stars: 5,
         accent: '#FF2D78',
     },
     {
-        quote: 'PLACEHOLDER — Replace with real client quote. The ROI we saw in the first 30 days was unlike anything we had experienced before.',
-        name: 'Client Name',
-        title: 'Founder, Company Name',
+        quote: 'In 1 year my business has doubled the revenue within a few months. I routinely hear "I don\'t know who does your marketing but they do an amazing job — I see your ads more than any other med spa in the area." Chuck is accessible to any questions I have or is on top of them. He has me as a client for life! Purely Exceptional!',
+        name: 'Rebecca Appelgren',
+        title: 'Radiant With Rebecca Med Spa',
         stars: 5,
         accent: '#9B30FF',
     },
     {
-        quote: 'PLACEHOLDER — Replace with real client quote. Their AI receptionist alone added $40k in revenue our first month.',
-        name: 'Client Name',
-        title: 'Owner, Company Name',
+        quote: 'Chuck has been great to work with. He creates and maintains our FB paid ads and we have received thousands of leads this way as well as converted millions invested. He answers questions and requests quickly and monitors ads very well. Highly recommend Switch Media.',
+        name: 'Tracey T',
+        title: 'Makaan Investment Group',
         stars: 5,
         accent: '#00E5FF',
     },
