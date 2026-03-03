@@ -173,19 +173,6 @@ export default function CaseStudies() {
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="reveal reveal-delay-400 text-center mt-14">
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 text-white text-sm font-bold rounded-xl transition-all duration-300 hover:scale-105"
-            style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', boxShadow: '0 0 30px rgba(255,45,120,0.3)' }}
-          >
-            View All Client Results
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </svg>
-          </Link>
-        </div>
 
       </div>
     </section>
