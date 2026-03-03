@@ -209,7 +209,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-6 text-white">
           <DesktopDropdown label="Paid Ads" links={paidAdsLinks} />
           <DesktopDropdown label="AI Automations" links={aiAutomationLinks} />
-          <Link href="/our-work" className="text-sm font-medium text-white/70 hover:text-[#FF2D78] transition-colors">
+          <Link href="/results" className="text-sm font-medium text-white/70 hover:text-[#FF2D78] transition-colors">
             Results
           </Link>
           <Link href="/about" className="text-sm font-medium text-white/70 hover:text-[#FF2D78] transition-colors">
@@ -253,7 +253,7 @@ export default function Navbar() {
             { label: 'Bing Ads', href: '/services/digital-advertising' },
             { label: 'AI Receptionist', href: '/services/ai-receptionist' },
             { label: 'AI Integrations', href: '/services/ai-system-integration' },
-            { label: 'Results', href: '/our-work' },
+            { label: 'Results', href: '/results' },
             { label: 'About Us', href: '/about' },
             { label: 'Pricing', href: '/pricing' },
             { label: 'Contact Us', href: '/contact' },
