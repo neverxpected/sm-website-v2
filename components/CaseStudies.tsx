@@ -21,7 +21,7 @@ const cases = [
   {
     category: "Fitness",
     name: "illumiNate Heights Fitness",
-    description: "Generated thousands of qualified leads in 90 days using Google Ads + AI nurturing sequences tailored for fitness buyers.",
+    description: "Owners Nate and Jourdan have been absolutely awesome to work with! Plus their 19,000+ sqft two sided gym is probably one of the dopest gyms in Houston! Definitely check them out if you're ever in the Heights area of Houston.",
     href: "/results",
     photo: "/images/client-results/illuminate heights fitness.webp",
     overlayColor: "rgba(0,200,255,0.72)",
