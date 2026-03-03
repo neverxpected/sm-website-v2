@@ -137,18 +137,18 @@ export default function Hero() {
             </h1>
 
             {/* Stats bar — above CTAs */}
-            <div className="reveal reveal-delay-400 flex flex-nowrap items-center justify-center gap-4 sm:gap-8 mb-8">
+            <div className="reveal reveal-delay-400 flex flex-nowrap items-center justify-center gap-3 sm:gap-8 mb-8">
               {[
-                { value: '$20M+', label: 'Revenue Generated', mobileHide: false },
-                { value: '50+', label: 'Businesses Worked With', mobileHide: false },
-                { value: '7 Years', label: 'In Business', mobileHide: true },
-              ].map((stat) => (
-                <div key={stat.label} className={`text-center min-w-0 ${stat.mobileHide ? 'hidden sm:block' : ''}`}>
-                  <p className="text-2xl sm:text-3xl font-black mb-1 whitespace-nowrap"
+                { value: '$20M+', label: 'Revenue Generated' },
+                { value: '50+', label: 'Businesses Worked With' },
+                { value: '7 Years', label: 'In Business' },
+              ].map((stat, i) => (
+                <div key={stat.label} className="text-center min-w-0 flex-1 sm:flex-none">
+                  <p className="text-lg sm:text-3xl font-black mb-1 whitespace-nowrap"
                     style={{ background: 'linear-gradient(90deg, #FF2D78, #9B30FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                     {stat.value}
                   </p>
-                  <p className="text-[9px] sm:text-xs font-semibold uppercase tracking-widest whitespace-nowrap" style={{ color: 'rgba(240,244,255,0.4)' }}>{stat.label}</p>
+                  <p className="text-[7px] sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-widest" style={{ color: 'rgba(240,244,255,0.4)' }}>{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -196,11 +196,11 @@ export default function Hero() {
         {/* Bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
           style={{ background: 'linear-gradient(to bottom, transparent, #0A0F1C)' }} />
-      </section>
+      </section >
 
 
       {/* ── REST OF PAGE ─────────────────────────────────── */}
-      <TrustedBy />
+      < TrustedBy />
       <ServiceGrid />
       <HowItWorks />
       <AIAdvantage />
@@ -210,6 +210,6 @@ export default function Hero() {
       <FAQ />
       <Pricing />
       <ContactSection />
-    </div>
+    </div >
   );
 }
