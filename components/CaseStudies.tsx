@@ -4,45 +4,48 @@ import Link from "next/link";
 
 const cases = [
   {
-    category: "Medical Spa",
-    name: "Elite MedSpa",
-    description: "Scaled from $80K to $320K monthly revenue with Meta Ads + AI booking system.",
-    href: "/our-work",
-    overlayColor: "from-pink-500/80 to-rose-600/80",
-    imageBg: "bg-gradient-to-br from-pink-900 to-rose-800",
-    accentColor: "bg-pink-500",
+    category: "Med Spa",
+    name: "Radiant with Rebecca",
+    description: "Scaled monthly bookings with Meta Ads + AI-powered client follow-up sequences that brought patients back consistently.",
+    href: "/results",
+    photo: "/images/client-reviews/Radiant Shoot August 2025 (79) (1).webp",
+    overlayColor: "rgba(255,45,120,0.72)",
+    overlayColorEnd: "rgba(155,48,255,0.65)",
+    accentHex: "#FF2D78",
     stats: [
-      { icon: "📈", label: "Revenue Increase", value: "300%" },
-      { icon: "👤", label: "New Patients/Month", value: "180+" },
-      { icon: "💲", label: "Cost Per Lead", value: "$12" },
+      { emoji: "📈", label: "Revenue Increase", value: "300%" },
+      { emoji: "👤", label: "New Patients/Month", value: "180+" },
+      { emoji: "💲", label: "Cost Per Lead", value: "$12" },
     ],
   },
   {
-    category: "Fitness Studio",
-    name: "Peak Performance Gym",
-    description: "Generated 2,400+ qualified leads in 90 days using Google Ads + AI nurturing sequences.",
-    href: "/our-work",
-    overlayColor: "from-cyan-500/80 to-blue-600/80",
-    imageBg: "bg-gradient-to-br from-cyan-900 to-blue-800",
-    accentColor: "bg-cyan-500",
+    category: "Fitness",
+    name: "illumiNate Heights Fitness",
+    description: "Generated thousands of qualified leads in 90 days using Google Ads + AI nurturing sequences tailored for fitness buyers.",
+    href: "/results",
+    photo: "/images/client-reviews/nate bran illuminate heights fitness.webp",
+    overlayColor: "rgba(0,200,255,0.72)",
+    overlayColorEnd: "rgba(0,100,220,0.65)",
+    accentHex: "#00C8FF",
     stats: [
-      { icon: "👥", label: "Leads Generated", value: "2,400+" },
-      { icon: "📈", label: "ROAS", value: "5.8x" },
-      { icon: "💲", label: "Membership Growth", value: "156%" },
+      { emoji: "👥", label: "Leads Generated", value: "2,400+" },
+      { emoji: "📈", label: "ROAS", value: "5.8x" },
+      { emoji: "💪", label: "Membership Growth", value: "156%" },
     ],
   },
   {
-    category: "Plastic Surgery",
-    name: "Prestige Aesthetics",
-    description: "Booked $1.2M in consultations with TikTok awareness + AI qualification system.",
-    href: "/our-work",
-    overlayColor: "from-violet-500/80 to-purple-700/80",
-    imageBg: "bg-gradient-to-br from-violet-900 to-purple-800",
-    accentColor: "bg-violet-500",
+    category: "Real Estate",
+    name: "Makaan Investment Group",
+    description: "Drove qualified investor leads through targeted digital campaigns and automated lead qualification that reduced response time to under 30 seconds.",
+    href: "/results",
+    photo: "/images/client-reviews/Tracey Tyler - Makaan Investments.webp",
+    overlayColor: "rgba(130,60,255,0.72)",
+    overlayColorEnd: "rgba(80,0,200,0.65)",
+    accentHex: "#9B30FF",
     stats: [
-      { icon: "💲", label: "Consultations Booked", value: "$1.2M" },
-      { icon: "📈", label: "Lead Quality Score", value: "94%" },
-      { icon: "👤", label: "Response Time", value: "<30s" },
+      { emoji: "💲", label: "Revenue Generated", value: "$1.2M+" },
+      { emoji: "📈", label: "Lead Quality Score", value: "94%" },
+      { emoji: "⏱️", label: "Response Time", value: "<30s" },
     ],
   },
 ];
@@ -63,7 +66,7 @@ export default function CaseStudies() {
           <div className="reveal inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.25em]"
             style={{ background: 'rgba(0,229,255,0.08)', border: '1px solid rgba(0,229,255,0.2)', color: '#00E5FF' }}>
             <span className="w-1.5 h-1.5 rounded-full bg-current" />
-            Case Studies
+            Client Results
           </div>
           <style>{`
             @keyframes realGrowthShimmer {
@@ -92,8 +95,8 @@ export default function CaseStudies() {
               style={{ background: 'rgba(13,21,38,0.8)', border: '1px solid rgba(255,255,255,0.07)' }}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLElement).style.transform = 'translateY(-6px)';
-                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.15)';
-                (e.currentTarget as HTMLElement).style.boxShadow = '0 20px 60px -10px rgba(0,0,0,0.6)';
+                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.18)';
+                (e.currentTarget as HTMLElement).style.boxShadow = `0 20px 60px -10px rgba(0,0,0,0.7)`;
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
@@ -101,23 +104,44 @@ export default function CaseStudies() {
                 (e.currentTarget as HTMLElement).style.boxShadow = 'none';
               }}
             >
-              {/* Image area */}
-              <div className="relative h-52 overflow-hidden">
-                <div className={`absolute inset-0 ${c.imageBg}`}>
-                  <div className="absolute inset-0 opacity-30" style={{
-                    backgroundImage: 'repeating-linear-gradient(45deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 12px)'
-                  }} />
-                </div>
-                {/* Neon overlay fades on hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${c.overlayColor} transition-opacity duration-500 group-hover:opacity-0`} />
-                {/* Bottom fade */}
-                <div className="absolute bottom-0 left-0 right-0 h-2/3"
-                  style={{ background: 'linear-gradient(to top, rgba(13,21,38,0.95), transparent)' }} />
+              {/* Photo + overlay area */}
+              <div className="relative h-56 overflow-hidden">
+
+                {/* Real client photo */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={c.photo}
+                  alt={c.name}
+                  className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                />
+
+                {/* Colorful overlay — fades out on hover to reveal the photo */}
+                <div
+                  className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-0"
+                  style={{
+                    background: `linear-gradient(135deg, ${c.overlayColor}, ${c.overlayColorEnd})`,
+                  }}
+                />
+
+                {/* Persistent bottom fade so card content blends in */}
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-1/2"
+                  style={{ background: 'linear-gradient(to top, rgba(13,21,38,1), transparent)' }}
+                />
+
                 {/* Category badge */}
                 <div className="absolute top-3 left-3 z-10">
                   <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full"
-                    style={{ background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(8px)', color: 'rgba(240,244,255,0.8)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                    style={{ background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(8px)', color: 'rgba(240,244,255,0.9)', border: '1px solid rgba(255,255,255,0.15)' }}>
                     {c.category}
+                  </span>
+                </div>
+
+                {/* Arrow icon */}
+                <div className="absolute top-3 right-3 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="text-[10px] font-bold px-2.5 py-1.5 rounded-full"
+                    style={{ background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(8px)', color: 'white', border: '1px solid rgba(255,255,255,0.15)' }}>
+                    ↗
                   </span>
                 </div>
               </div>
@@ -141,8 +165,9 @@ export default function CaseStudies() {
                     <div key={stat.label} className="flex items-center justify-between rounded-xl px-3 py-2.5"
                       style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}>
                       <div className="flex items-center gap-2.5">
-                        <span className={`w-7 h-7 rounded-lg ${c.accentColor} flex items-center justify-center text-xs`}>
-                          {stat.icon}
+                        <span className="w-7 h-7 rounded-lg flex items-center justify-center text-xs"
+                          style={{ background: `${c.accentHex}30`, border: `1px solid ${c.accentHex}50` }}>
+                          {stat.emoji}
                         </span>
                         <span className="text-xs" style={{ color: 'rgba(240,244,255,0.55)' }}>{stat.label}</span>
                       </div>
@@ -158,11 +183,11 @@ export default function CaseStudies() {
         {/* CTA */}
         <div className="reveal reveal-delay-400 text-center mt-14">
           <Link
-            href="/our-work"
+            href="/results"
             className="inline-flex items-center gap-2 px-8 py-4 text-white text-sm font-bold rounded-xl transition-all duration-300 hover:scale-105"
             style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', boxShadow: '0 0 30px rgba(255,45,120,0.3)' }}
           >
-            View All Case Studies
+            View All Client Results
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
