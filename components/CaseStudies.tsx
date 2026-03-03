@@ -28,8 +28,8 @@ const cases = [
     overlayColorEnd: "rgba(0,100,220,0.65)",
     accentHex: "#00C8FF",
     stats: [
-      { emoji: "👥", label: "Leads Generated", value: "2,400+" },
-      { emoji: "📈", label: "ROAS", value: "5.8x" },
+      { emoji: "⏱️", label: "Worked Together", value: "5+ Years" },
+      { emoji: "👥", label: "Leads Generated", value: "5,000+" },
       { emoji: "💪", label: "Membership Growth", value: "156%" },
     ],
   },
