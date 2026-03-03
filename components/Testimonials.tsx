@@ -7,6 +7,7 @@ const testimonials = [
         quote: 'We started using Switch Media Marketing prior to our gym opening up. I must say, their marketing techniques have helped us tremendously! Chuck is a genuine guy, and truly cares about his clients. He always makes us feel like we\'re his only client with his attention to detail and excellent communication. I highly recommend Switch Media Marketing if you want to get quality ads that drive business!',
         name: 'Nate Bran',
         title: 'illumiNate Heights Fitness',
+        location: 'Houston, TX',
         stars: 5,
         accent: '#FF2D78',
     },
@@ -14,6 +15,7 @@ const testimonials = [
         quote: 'In 1 year my business has doubled the revenue within a few months. I routinely hear "I don\'t know who does your marketing but they do an amazing job — I see your ads more than any other med spa in the area." Chuck is accessible to any questions I have or is on top of them. He has me as a client for life! Purely Exceptional!',
         name: 'Rebecca Appelgren',
         title: 'Radiant With Rebecca Med Spa',
+        location: 'UPDATE LOCATION',
         stars: 5,
         accent: '#9B30FF',
     },
@@ -21,6 +23,7 @@ const testimonials = [
         quote: 'Chuck has been great to work with. He creates and maintains our FB paid ads and we have received thousands of leads this way as well as converted millions invested. He answers questions and requests quickly and monitors ads very well. Highly recommend Switch Media.',
         name: 'Tracey T',
         title: 'Makaan Investment Group',
+        location: 'UPDATE LOCATION',
         stars: 5,
         accent: '#00E5FF',
     },
@@ -101,6 +104,13 @@ export default function Testimonials() {
                                 <div>
                                     <p className="text-sm font-bold text-white">{t.name}</p>
                                     <p className="text-xs" style={{ color: 'rgba(240,244,255,0.4)' }}>{t.title}</p>
+                                    <p className="flex items-center gap-1 text-xs mt-0.5" style={{ color: 'rgba(240,244,255,0.3)' }}>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-3 h-3 shrink-0" style={{ color: t.accent }}>
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        </svg>
+                                        {t.location}
+                                    </p>
                                 </div>
                             </div>
                         </div>
