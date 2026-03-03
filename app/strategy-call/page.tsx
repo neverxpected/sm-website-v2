@@ -88,7 +88,7 @@ export default function StrategyCallPage() {
                 >
                     <div
                         className="calendly-inline-widget"
-                        data-url="https://calendly.com/switchmedia/15min?primary_color=ff00d2&layout=month_view"
+                        data-url="https://calendly.com/switchmedia/15min?primary_color=00c2ff&layout=month_view"
                         style={{ minWidth: '320px', height: `${embedHeight}px` }}
                     />
                 </div>
