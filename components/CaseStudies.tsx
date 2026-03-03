@@ -36,15 +36,15 @@ const cases = [
   {
     category: "Plastic Surgery",
     name: "The Oaks Plastic Surgery",
-    description: "Booked high-value consultations through targeted Meta & Google campaigns paired with an AI qualification system that filtered serious patients.",
+    description: "We started working with Dr. Wijay & Dr. Andry since early 2022 and it's been a fun journey. When you have two of the top surgeons in Houston it's much easier to win big! Now partnered with Elite Dermatology, their practices keep growing and we're excited to grow with them.",
     href: "/results",
     photo: "/images/client-results/oaks plastic surgery.webp",
     overlayColor: "rgba(130,60,255,0.72)",
     overlayColorEnd: "rgba(80,0,200,0.65)",
     accentHex: "#9B30FF",
     stats: [
-      { emoji: "💲", label: "Consultations Booked", value: "$1.2M+" },
-      { emoji: "📈", label: "Lead Quality Score", value: "94%" },
+      { emoji: "⏱️", label: "Worked Together", value: "4+ Years" },
+      { emoji: "👥", label: "Consultations Booked", value: "5,000+" },
       { emoji: "⏱️", label: "Response Time", value: "<30s" },
     ],
   },
