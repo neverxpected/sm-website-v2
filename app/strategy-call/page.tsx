@@ -106,7 +106,7 @@ export default function StrategyCallPage() {
                     <div
                         className="calendly-inline-widget"
                         data-url="https://calendly.com/switchmedia/15min?primary_color=ff00d2"
-                        style={{ minWidth: '320px', height: 'clamp(700px, 90vh, 1000px)' }}
+                        style={{ minWidth: '320px', height: '1050px' }}
                     />
                 </div>
             </section>
