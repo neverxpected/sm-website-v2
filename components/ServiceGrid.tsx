@@ -122,7 +122,7 @@ const aiServices = [
 
 export default function ServiceGrid() {
   return (
-    <section className="pt-4 pb-24 px-6 lg:px-8" style={{ background: '#0A0F1C' }}>
+    <section className="pt-4 pb-24 px-6 lg:px-8" style={{ background: '#141B2E' }}>
       <div className="max-w-7xl mx-auto">
 
         {/* Paid Ads header */}

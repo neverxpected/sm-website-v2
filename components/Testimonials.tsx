@@ -49,7 +49,7 @@ export default function Testimonials() {
     });
 
     return (
-        <section ref={sectionRef} className="relative z-10 py-24 px-6 lg:px-8" style={{ background: '#080C18', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <section ref={sectionRef} className="relative z-10 py-24 px-6 lg:px-8" style={{ background: '#060A14', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-16" style={reveal(0)}>

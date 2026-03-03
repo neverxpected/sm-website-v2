@@ -132,7 +132,7 @@ export default function AIAdvantage() {
   ];
 
   return (
-    <section className="py-24 px-6 lg:px-8 relative overflow-hidden" style={{ background: '#0D1526' }}>
+    <section className="py-24 px-6 lg:px-8 relative overflow-hidden" style={{ background: '#141B2E' }}>
       {/* Background orb */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(circle, rgba(155,48,255,0.08) 0%, transparent 70%)' }} />
