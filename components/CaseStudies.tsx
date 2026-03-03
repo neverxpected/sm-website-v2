@@ -13,9 +13,9 @@ const cases = [
     overlayColorEnd: "rgba(155,48,255,0.65)",
     accentHex: "#FF2D78",
     stats: [
-      { emoji: "⏱️", label: "Duration", value: "5+ Years" },
-      { emoji: "📅", label: "Bookings", value: "4,000+" },
-      { emoji: "💲", label: "Cost Per Lead", value: "$12" },
+      { emoji: "⏱️", label: "Worked Together", value: "5+ Years" },
+      { emoji: "📅", label: "Bookings", value: "5,000+" },
+      { emoji: "💰", label: "Added Revenue", value: "$1M+" },
     ],
   },
   {
