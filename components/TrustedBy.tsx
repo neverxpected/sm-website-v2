@@ -66,8 +66,8 @@ export default function TrustedBy() {
                     width: 'auto',
                     height: 'auto',
                     objectFit: 'contain',
-                    filter: 'brightness(0) invert(1)',
-                    opacity: 0.65,
+                    filter: 'invert(1)',
+                    opacity: 0.75,
                     display: 'block',
                   }}
                 />
