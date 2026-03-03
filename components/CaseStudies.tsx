@@ -7,7 +7,7 @@ const cases = [
     category: "Med Spa",
     name: "Radiant with Rebecca",
     description: "We've worked with Rebecca at Radiant Med Spa since early 2021 when she was still a \"Mobile Med Spa\". Our main focus was Meta Ads and we helped grow her first spa so much that she eventually opened a 2nd location a few years later.",
-    href: "/results",
+    href: "/contact",
     photo: "/images/client-results/radiant med spa olathe kansas.webp",
     overlayColor: "rgba(255,45,120,0.72)",
     overlayColorEnd: "rgba(155,48,255,0.65)",
@@ -22,7 +22,7 @@ const cases = [
     category: "Fitness",
     name: "illumiNate Heights Fitness",
     description: "Owners Nate and Jourdan have been absolutely awesome to work with! Plus their 19,000+ sqft two sided gym is probably one of the dopest gyms in Houston! Definitely check them out if you're ever in the Heights area of Houston.",
-    href: "/results",
+    href: "/contact",
     photo: "/images/client-results/illuminate heights fitness.webp",
     overlayColor: "rgba(0,200,255,0.72)",
     overlayColorEnd: "rgba(0,100,220,0.65)",
@@ -37,7 +37,7 @@ const cases = [
     category: "Plastic Surgery",
     name: "The Oaks Plastic Surgery",
     description: "We started working with Dr. Wijay & Dr. Andry since early 2022 and it's been a fun journey. When you have two of the top surgeons in Houston it's much easier to win big! Now partnered with Elite Dermatology, their practices keep growing and we're excited to grow with them.",
-    href: "/results",
+    href: "/contact",
     photo: "/images/client-results/oaks plastic surgery.webp",
     overlayColor: "rgba(130,60,255,0.72)",
     overlayColorEnd: "rgba(80,0,200,0.65)",
@@ -176,7 +176,7 @@ export default function CaseStudies() {
         {/* CTA */}
         <div className="reveal reveal-delay-400 text-center mt-14">
           <Link
-            href="/results"
+            href="/contact"
             className="inline-flex items-center gap-2 px-8 py-4 text-white text-sm font-bold rounded-xl transition-all duration-300 hover:scale-105"
             style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', boxShadow: '0 0 30px rgba(255,45,120,0.3)' }}
           >
