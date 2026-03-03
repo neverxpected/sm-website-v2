@@ -90,11 +90,11 @@ export default function CaseStudies() {
                 style={{
                   background: 'rgba(13,21,38,0.7)',
                   border: '1px solid rgba(255,255,255,0.07)',
-                  minHeight: '340px',
+                  minHeight: '260px',
                 }}
               >
                 {/* Photo */}
-                <div className="relative lg:w-[45%] shrink-0 overflow-hidden" style={{ minHeight: '260px' }}>
+                <div className="relative lg:w-[38%] shrink-0 overflow-hidden" style={{ minHeight: '200px' }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={c.photo}
@@ -121,13 +121,13 @@ export default function CaseStudies() {
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-col justify-center gap-6 p-8 lg:p-12 flex-1">
+                <div className="flex flex-col justify-center gap-4 p-6 lg:p-8 flex-1">
                   {/* Accent line */}
                   <div className="w-10 h-0.5 rounded-full" style={{ background: `linear-gradient(90deg, ${c.accentHex}, ${c.accentHex2})` }} />
 
                   <div>
-                    <h3 className="text-2xl lg:text-3xl font-black text-white mb-3">{c.name}</h3>
-                    <p className="text-sm lg:text-base leading-relaxed" style={{ color: 'rgba(240,244,255,0.6)' }}>{c.description}</p>
+                    <h3 className="text-xl lg:text-2xl font-black text-white mb-2">{c.name}</h3>
+                    <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.6)' }}>{c.description}</p>
                   </div>
 
                   {/* Stats — horizontal pills */}
