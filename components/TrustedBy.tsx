@@ -30,9 +30,9 @@ export default function TrustedBy() {
       <div className="absolute inset-y-0 right-0 w-24 z-10 pointer-events-none"
         style={{ background: 'linear-gradient(to left, #080C18, transparent)' }} />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-6 text-center">
-        <p className="text-xs font-bold uppercase tracking-[0.25em]" style={{ color: 'rgba(240,244,255,0.25)' }}>
-          Trusted by 50+ companies across Houston &amp; beyond
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-8 text-center">
+        <p className="text-sm font-bold uppercase tracking-[0.35em]" style={{ color: 'rgba(240,244,255,0.5)' }}>
+          Trusted By
         </p>
       </div>
 
