@@ -14,7 +14,6 @@ const cases = [
     accentHex: "#FF2D78",
     stats: [
       { emoji: "⏱️", label: "Worked Together", value: "5+ Years" },
-      { emoji: "📅", label: "Bookings", value: "5,000+" },
       { emoji: "💰", label: "Added Revenue", value: "$1M+" },
     ],
   },
@@ -30,7 +29,6 @@ const cases = [
     stats: [
       { emoji: "⏱️", label: "Worked Together", value: "5+ Years" },
       { emoji: "👥", label: "Leads Generated", value: "5,000+" },
-      { emoji: "💪", label: "Membership Growth", value: "156%" },
     ],
   },
   {
@@ -45,7 +43,6 @@ const cases = [
     stats: [
       { emoji: "⏱️", label: "Worked Together", value: "4+ Years" },
       { emoji: "👥", label: "Consultations Booked", value: "5,000+" },
-      { emoji: "⏱️", label: "Response Time", value: "<30s" },
     ],
   },
 ];
