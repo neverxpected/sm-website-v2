@@ -218,9 +218,6 @@ export default function Navbar() {
           <Link href="/contact" className="text-sm font-medium text-white/70 hover:text-[#FF2D78] transition-colors">
             Contact
           </Link>
-          <Link href="/pricing" className="text-sm font-medium text-white/70 hover:text-[#FF2D78] transition-colors">
-            Pricing
-          </Link>
           <Link
             href="https://calendly.com/switchmedia/15min"
             className="relative px-6 py-2.5 text-sm font-bold rounded-full text-white transition-all duration-300 hover:scale-105 overflow-hidden whitespace-nowrap"
@@ -255,7 +252,6 @@ export default function Navbar() {
             { label: 'AI Integrations', href: '/services/ai-system-integration' },
             { label: 'Results', href: '/results' },
             { label: 'About Us', href: '/about' },
-            { label: 'Pricing', href: '/pricing' },
             { label: 'Contact Us', href: '/contact' },
           ].map((link) => (
             <div key={link.href} className="border-b border-white/10">
