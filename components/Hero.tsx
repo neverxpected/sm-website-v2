@@ -11,7 +11,7 @@ import TrustedBy from './TrustedBy';
 import LightRays from './LightRays';
 import HowItWorks from './HowItWorks';
 import Testimonials from './Testimonials';
-import FAQ from './FAQ';
+
 
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -199,7 +199,7 @@ export default function Hero() {
       <CaseStudies />
       <MeetTheTeam />
       <Testimonials />
-      <FAQ />
+
       <ContactSection />
     </div >
   );
