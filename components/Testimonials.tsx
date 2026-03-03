@@ -8,6 +8,7 @@ const testimonials = [
         name: 'Nate Bran',
         title: 'illumiNate Heights Fitness',
         location: 'Houston, TX',
+        image: '/images/client-reviews/nate bran illuminate heights fitness.webp',
         stars: 5,
         accent: '#FF2D78',
     },
@@ -16,6 +17,7 @@ const testimonials = [
         name: 'Rebecca Appelgren',
         title: 'Radiant With Rebecca Med Spa',
         location: 'Olathe, KS',
+        image: '/images/client-reviews/Radiant Shoot August 2025 (79) (1).webp',
         stars: 5,
         accent: '#9B30FF',
     },
@@ -24,6 +26,7 @@ const testimonials = [
         name: 'Tracey T',
         title: 'Makaan Investment Group',
         location: 'Houston, TX',
+        image: '/images/client-reviews/Tracey Tyler - Makaan Investments.webp',
         stars: 5,
         accent: '#00E5FF',
     },
@@ -97,9 +100,13 @@ export default function Testimonials() {
 
                             {/* Attribution */}
                             <div className="flex items-center gap-3 pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
-                                <div className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-black shrink-0"
-                                    style={{ background: `${t.accent}22`, color: t.accent, border: `1px solid ${t.accent}40` }}>
-                                    {t.name[0]}
+                                <div className="w-12 h-12 rounded-full shrink-0 overflow-hidden"
+                                    style={{ border: `2px solid ${t.accent}60` }}>
+                                    <img
+                                        src={t.image}
+                                        alt={t.name}
+                                        className="w-full h-full object-cover object-top"
+                                    />
                                 </div>
                                 <div>
                                     <p className="text-sm font-bold text-white">{t.name}</p>
