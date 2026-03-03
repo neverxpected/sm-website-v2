@@ -10,10 +10,9 @@ export default function StrategyCallPage() {
     useEffect(() => {
         function calcHeight() {
             const headerH = headerRef.current?.offsetHeight ?? 0;
-            // viewport height minus the header and bottom padding (128px = pb-32)
             const available = window.innerHeight - headerH - 128;
-            // clamp between 700 (mobile) and 1200 (very tall desktop)
-            setEmbedHeight(Math.min(Math.max(available, 700), 1200));
+            // horizontal month_view is compact — clamp 580 (mobile) to 750 (desktop)
+            setEmbedHeight(Math.min(Math.max(available, 580), 750));
         }
 
         calcHeight();
@@ -82,14 +81,14 @@ export default function StrategyCallPage() {
             </section>
 
             {/* Calendly embed — height is dynamically computed to fill the remaining viewport */}
-            <section className="relative z-10 pb-32 px-4 max-w-4xl mx-auto">
+            <section className="relative z-10 pb-32 px-4 max-w-6xl mx-auto">
                 <div
                     className="rounded-2xl overflow-hidden"
                     style={{ border: '1px solid rgba(255,255,255,0.07)', background: 'rgba(255,255,255,0.02)' }}
                 >
                     <div
                         className="calendly-inline-widget"
-                        data-url="https://calendly.com/switchmedia/15min?primary_color=ff00d2"
+                        data-url="https://calendly.com/switchmedia/15min?primary_color=ff00d2&layout=month_view"
                         style={{ minWidth: '320px', height: `${embedHeight}px` }}
                     />
                 </div>
