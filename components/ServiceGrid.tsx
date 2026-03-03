@@ -130,7 +130,9 @@ export default function ServiceGrid() {
           <div className="flex-1 h-px max-w-xs" style={{ background: 'linear-gradient(to right, transparent, rgba(255,45,120,0.3))' }} />
           <div className="flex items-center gap-2.5 shrink-0 px-4 py-2 rounded-full"
             style={{ background: 'rgba(255,45,120,0.08)', border: '1px solid rgba(255,45,120,0.2)' }}>
-            <span className="w-2 h-2 rounded-full" style={{ background: '#FF2D78' }} />
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FF2D78" strokeWidth={2} className="w-3.5 h-3.5 shrink-0">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 110-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.9.985 2.8A6.733 6.733 0 0011.5 21H12a2 2 0 002-2v-.5a2 2 0 00-.5-1.366m0-13.268A6.733 6.733 0 0011.5 3H12a2 2 0 012 2v.5a2 2 0 00.5 1.366m0 13.268A6.733 6.733 0 0014.5 21c.253-.9.384-1.838.385-2.8M10.34 15.84c2.3-.207 4.52-.69 6.61-1.418m0 0a44.97 44.97 0 001.732-.694m-1.732.694a4.5 4.5 0 01-.363-1.356m.363 1.356l1.732.694m-2.095-1.05a44.97 44.97 0 00.363-1.356m1.732 2.05a44.97 44.97 0 001.732-.694m0 0a4.5 4.5 0 01.363-1.356M5.25 10.5a4.5 4.5 0 014.5-4.5h.75m-5.25 4.5v3" />
+            </svg>
             <span className="text-sm font-bold tracking-widest uppercase" style={{ color: '#FF2D78' }}>Paid Advertising Mastery</span>
           </div>
           <div className="flex-1 h-px max-w-xs" style={{ background: 'linear-gradient(to left, transparent, rgba(255,45,120,0.3))' }} />
@@ -171,7 +173,9 @@ export default function ServiceGrid() {
           <div className="flex-1 h-px max-w-xs" style={{ background: 'linear-gradient(to right, transparent, rgba(155,48,255,0.3))' }} />
           <div className="flex items-center gap-2.5 shrink-0 px-4 py-2 rounded-full"
             style={{ background: 'rgba(155,48,255,0.08)', border: '1px solid rgba(155,48,255,0.2)' }}>
-            <span className="w-2 h-2 rounded-full" style={{ background: '#9B30FF' }} />
+            <svg viewBox="0 0 24 24" fill="none" stroke="#9B30FF" strokeWidth={2} className="w-3.5 h-3.5 shrink-0">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+            </svg>
             <span className="text-sm font-bold tracking-widest uppercase" style={{ color: '#9B30FF' }}>AI-Powered Automation</span>
           </div>
           <div className="flex-1 h-px max-w-xs" style={{ background: 'linear-gradient(to left, transparent, rgba(155,48,255,0.3))' }} />
