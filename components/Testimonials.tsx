@@ -80,48 +80,51 @@ export default function Testimonials() {
                 {/* Cards */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     {testimonials.map((t, i) => (
-                        <div key={i} className="card-hover p-8 rounded-2xl flex flex-col gap-5"
+                        <div key={i} className="card-hover rounded-2xl flex flex-col overflow-hidden"
                             style={{
-                                background: 'rgba(255,255,255,0.03)',
-                                border: '1px solid rgba(255,255,255,0.07)',
+                                border: `1px solid ${t.accent}88`,
+                                boxShadow: `0 0 24px ${t.accent}30, 0 4px 16px rgba(0,0,0,0.4)`,
                                 ...reveal(i * 120),
                             }}>
-                            {/* Attribution — photo, name, location at the top */}
-                            <div className="flex items-center gap-3">
-                                <div className="w-12 h-12 rounded-full shrink-0 overflow-hidden"
-                                    style={{ border: `2px solid ${t.accent}60` }}>
-                                    <img
-                                        src={t.image}
-                                        alt={t.name}
-                                        className="w-full h-full object-cover object-top"
-                                    />
+                            {/* Dark top — avatar, name, location, stars */}
+                            <div className="p-6 flex flex-col gap-4" style={{ background: 'rgba(13,21,38,0.95)' }}>
+                                <div className="flex items-center gap-3">
+                                    <div className="w-12 h-12 rounded-full shrink-0 overflow-hidden"
+                                        style={{ border: `2px solid ${t.accent}60` }}>
+                                        <img
+                                            src={t.image}
+                                            alt={t.name}
+                                            className="w-full h-full object-cover object-top"
+                                        />
+                                    </div>
+                                    <div>
+                                        <p className="text-sm font-bold text-white">{t.name}</p>
+                                        <p className="text-xs" style={{ color: 'rgba(240,244,255,0.4)' }}>{t.title}</p>
+                                        <p className="flex items-center gap-1 text-xs mt-0.5" style={{ color: 'rgba(240,244,255,0.3)' }}>
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-3 h-3 shrink-0" style={{ color: t.accent }}>
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            </svg>
+                                            {t.location}
+                                        </p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <p className="text-sm font-bold text-white">{t.name}</p>
-                                    <p className="text-xs" style={{ color: 'rgba(240,244,255,0.4)' }}>{t.title}</p>
-                                    <p className="flex items-center gap-1 text-xs mt-0.5" style={{ color: 'rgba(240,244,255,0.3)' }}>
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-3 h-3 shrink-0" style={{ color: t.accent }}>
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                {/* Stars */}
+                                <div className="flex gap-1">
+                                    {Array.from({ length: t.stars }).map((_, j) => (
+                                        <svg key={j} viewBox="0 0 20 20" fill={t.accent} className="w-4 h-4">
+                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                         </svg>
-                                        {t.location}
-                                    </p>
+                                    ))}
                                 </div>
                             </div>
 
-                            {/* Stars */}
-                            <div className="flex gap-1">
-                                {Array.from({ length: t.stars }).map((_, j) => (
-                                    <svg key={j} viewBox="0 0 20 20" fill={t.accent} className="w-4 h-4">
-                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                    </svg>
-                                ))}
+                            {/* White bottom — quote */}
+                            <div className="p-6 flex-1" style={{ background: '#ffffff' }}>
+                                <p className="text-sm leading-relaxed italic" style={{ color: '#374151' }}>
+                                    &ldquo;{t.quote}&rdquo;
+                                </p>
                             </div>
-
-                            {/* Quote */}
-                            <p className="text-sm leading-relaxed flex-1 italic" style={{ color: 'rgba(240,244,255,0.7)' }}>
-                                &ldquo;{t.quote}&rdquo;
-                            </p>
                         </div>
                     ))}
                 </div>
