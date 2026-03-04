@@ -123,24 +123,24 @@ export default function CaseStudies() {
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-col justify-center gap-4 p-6 lg:p-8 flex-1">
+                <div className="flex flex-col justify-center gap-4 p-6 lg:p-8 flex-1" style={{ background: '#ffffff' }}>
                   {/* Accent line */}
                   <div className="w-10 h-0.5 rounded-full" style={{ background: `linear-gradient(90deg, ${c.accentHex}, ${c.accentHex2})` }} />
 
                   <div>
-                    <h3 className="text-xl lg:text-2xl font-black text-white mb-2">{c.name}</h3>
-                    <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.6)' }}>{c.description}</p>
+                    <h3 className="text-xl lg:text-2xl font-black mb-2" style={{ color: '#111827' }}>{c.name}</h3>
+                    <p className="text-sm leading-relaxed" style={{ color: '#4B5563' }}>{c.description}</p>
                   </div>
 
                   {/* Stats — horizontal pills */}
                   <div className="flex flex-wrap gap-3">
                     {c.stats.map((stat) => (
                       <div key={stat.label} className="flex items-center gap-3 px-4 py-3 rounded-xl"
-                        style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                        style={{ background: '#F3F4F6', border: '1px solid rgba(0,0,0,0.08)' }}>
                         <span className="text-base">{stat.emoji}</span>
                         <div>
-                          <p className="text-[10px] uppercase tracking-widest font-bold" style={{ color: 'rgba(240,244,255,0.4)' }}>{stat.label}</p>
-                          <p className="text-lg font-black text-white leading-tight">{stat.value}</p>
+                          <p className="text-[10px] uppercase tracking-widest font-bold" style={{ color: '#6B7280' }}>{stat.label}</p>
+                          <p className="text-lg font-black leading-tight" style={{ color: '#111827' }}>{stat.value}</p>
                         </div>
                       </div>
                     ))}

@@ -35,7 +35,7 @@ export default function Hero() {
     <div className="grain" ref={heroRef}>
       {/* ── HERO ─────────────────────────────────────────── */}
       <section
-        className="relative min-h-[85vh] flex flex-col justify-center overflow-hidden"
+        className="relative min-h-0 sm:min-h-[85vh] flex flex-col justify-center overflow-hidden"
         style={{ background: '#0A0F1C' }}
       >
         {/* Animated gradient background */}
@@ -109,8 +109,8 @@ export default function Hero() {
             </div>
 
             {/* Headline */}
-            <h1 className="font-black tracking-tight text-white leading-[0.95] mb-8">
-              <span className="reveal block text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-100">
+            <h1 className="font-black tracking-tight text-white leading-[0.95] mb-8" style={{ fontWeight: 800 }}>
+              <span className="reveal block text-2xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-100">
                 THE{' '}
                 <style>{`
                   @keyframes cheatCodeShimmer {
@@ -130,10 +130,10 @@ export default function Hero() {
                   CHEAT CODE
                 </span>
               </span>
-              <span className="reveal block text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl whitespace-nowrap reveal-delay-200">
+              <span className="reveal block text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl sm:whitespace-nowrap reveal-delay-200">
                 TO DIGITALLY SCALE
               </span>
-              <span className="reveal block text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-300">
+              <span className="reveal block text-2xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-300">
                 YOUR BUSINESS
               </span>
             </h1>

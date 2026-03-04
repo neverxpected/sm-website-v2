@@ -1,12 +1,18 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Inter, Orbitron } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+});
+
+const orbitron = Orbitron({
+  variable: "--font-orbitron",
+  subsets: ["latin"],
+  weight: ["500", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -25,10 +31,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} antialiased text-black`}>
-          <Navbar />
-          {children}
-          <Footer />
+      <body className={`${inter.variable} ${orbitron.variable} antialiased text-black`}>
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );

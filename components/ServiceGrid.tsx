@@ -6,6 +6,8 @@ const services = [
     href: "/services/meta-ads",
     description: "Facebook & Instagram campaigns that convert scrollers into customers with precision targeting.",
     tags: ["Facebook", "Instagram"],
+    colorClass: "svc-blue",
+    learnMoreColor: "#2563EB",
     icon: (
       <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
         <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
@@ -20,6 +22,8 @@ const services = [
     href: "/services/google-ads",
     description: "Search, Local & Display campaigns that capture high-intent buyers when they're ready to act.",
     tags: ["Search", "Local", "Display"],
+    colorClass: "svc-green",
+    learnMoreColor: "#059669",
     icon: (
       <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
         <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" />
@@ -34,6 +38,8 @@ const services = [
     href: "/services/tiktok-ads",
     description: "Viral-ready creative that reaches new audiences and drives massive awareness at scale.",
     tags: ["TikTok", "Spark Ads"],
+    colorClass: "svc-pink-ads",
+    learnMoreColor: "#DB2777",
     icon: (
       <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
         <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z" />
@@ -48,6 +54,8 @@ const services = [
     href: "/services/digital-advertising",
     description: "Untapped reach with lower CPCs. Capture professional audiences across Microsoft's ecosystem.",
     tags: ["Search", "Display", "LinkedIn Import"],
+    colorClass: "svc-orange",
+    learnMoreColor: "#EA580C",
     icon: (
       <svg viewBox="0 0 20 24" className="w-5 h-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <rect x="2" y="1" width="4" height="22" />
@@ -67,6 +75,8 @@ const aiServices = [
     href: "/services/ai-receptionist",
     description: "Never miss a lead. Our AI handles calls, qualifies prospects, and books appointments 24/7.",
     tags: ["24/7 Availability", "Lead Qualification", "Appointment Booking"],
+    colorClass: "svc-violet",
+    learnMoreColor: "#7C3AED",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21L8.5 10.5S10 13.5 13.5 15.5l1.113-1.724a1 1 0 011.21-.502l4.493 1.498A1 1 0 0121 15.72V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -81,6 +91,8 @@ const aiServices = [
     href: "/services/ai-system-integration",
     description: "Smart triggers, CRM sync, scheduling automation, and messaging bots that work while you sleep.",
     tags: ["CRM Integration", "Smart Triggers", "Workflow Automation"],
+    colorClass: "svc-cyan",
+    learnMoreColor: "#0891B2",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
@@ -95,6 +107,8 @@ const aiServices = [
     href: "/services/ai-system-integration",
     description: "Predictive engagement and automated follow-ups that turn cold leads into booked clients.",
     tags: ["Predictive Engagement", "Auto Follow-ups", "Smart Sequences"],
+    colorClass: "svc-rose",
+    learnMoreColor: "#E11D48",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
@@ -109,6 +123,8 @@ const aiServices = [
     href: "/services/ai-system-integration",
     description: "Bespoke automation built for your specific business needs and growth goals.",
     tags: ["Custom Workflows", "API Integrations", "Tailored Solutions"],
+    colorClass: "svc-purple",
+    learnMoreColor: "#9333EA",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z" />
@@ -131,7 +147,7 @@ export default function ServiceGrid() {
           <div className="flex items-center gap-2.5 shrink-0 px-4 py-2 rounded-full"
             style={{ background: 'rgba(255,45,120,0.08)', border: '1px solid rgba(255,45,120,0.2)' }}>
             <svg viewBox="0 0 24 24" fill="none" stroke="#FF2D78" strokeWidth={2} className="w-3.5 h-3.5 shrink-0">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 110-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.9.985 2.8A6.733 6.733 0 0011.5 21H12a2 2 0 002-2v-.5a2 2 0 00-.5-1.366m0-13.268A6.733 6.733 0 0011.5 3H12a2 2 0 012 2v.5a2 2 0 00.5 1.366m0 13.268A6.733 6.733 0 0014.5 21c.253-.9.384-1.838.385-2.8M10.34 15.84c2.3-.207 4.52-.69 6.61-1.418m0 0a44.97 44.97 0 001.732-.694m-1.732.694a4.5 4.5 0 01-.363-1.356m.363 1.356l1.732.694m-2.095-1.05a44.97 44.97 0 00.363-1.356m1.732 2.05a44.97 44.97 0 001.732-.694m0 0a4.5 4.5 0 01.363-1.356M5.25 10.5a4.5 4.5 0 014.5-4.5h.75m-5.25 4.5v3" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
             </svg>
             <span className="text-sm font-bold tracking-widest uppercase" style={{ color: '#FF2D78' }}>Paid Advertising Mastery</span>
           </div>
@@ -144,30 +160,23 @@ export default function ServiceGrid() {
             <Link
               key={s.href}
               href={s.href}
-              className={`card-neon reveal reveal-delay-${(i + 1) * 100} group p-6 flex flex-col gap-4 ${s.glow}`}
-              style={{
-                background: '#ffffff',
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.035'%3E%3Cpath d='M0 0h20v1H0zM0 0v20H1V0z'/%3E%3C/g%3E%3C/svg%3E")`,
-                border: '1px solid rgba(0,0,0,0.1)',
-                boxShadow: '0 4px 24px rgba(0,0,0,0.18), 0 1px 4px rgba(0,0,0,0.08)',
-              }}
+              className={`card-neon svc-card ${s.colorClass} reveal reveal-delay-${(i + 1) * 100} group p-6 flex flex-col gap-4 ${s.glow}`}
             >
               {/* Icon + Title inline */}
               <div className="flex items-center gap-3">
                 <span className={`w-11 h-11 rounded-xl ${s.iconBg} ${s.iconColor} flex items-center justify-center shrink-0`}>
                   {s.icon}
                 </span>
-                <h3 className="text-base font-bold leading-tight" style={{ color: '#111827' }}>{s.label}</h3>
+                <h3 className="svc-title text-base font-bold leading-tight">{s.label}</h3>
               </div>
-              <p className="text-sm leading-relaxed" style={{ color: '#1F2937' }}>{s.description}</p>
+              <p className="svc-desc text-sm leading-relaxed">{s.description}</p>
               <div className="flex flex-wrap gap-1.5">
                 {s.tags.map((tag) => (
-                  <span key={tag} className="text-xs rounded-full px-2.5 py-0.5"
-                    style={{ color: '#374151', border: '1px solid rgba(0,0,0,0.15)', background: 'rgba(0,0,0,0.03)' }}>{tag}</span>
+                  <span key={tag} className="svc-tag text-xs rounded-full px-2.5 py-0.5">{tag}</span>
                 ))}
               </div>
               {/* CTA row */}
-              <div className="mt-auto pt-2 flex items-center gap-1.5 text-sm font-semibold transition-all duration-200 group-hover:gap-2.5" style={{ color: '#FF2D78' }}>
+              <div className="mt-auto pt-2 flex items-center gap-1.5 text-sm font-semibold transition-all duration-200 group-hover:gap-2.5" style={{ color: s.learnMoreColor }}>
                 Learn more
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-4 h-4">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -195,30 +204,23 @@ export default function ServiceGrid() {
             <Link
               key={s.label}
               href={s.href}
-              className={`card-neon reveal reveal-delay-${(i + 1) * 100} group p-6 flex flex-col gap-4 ${s.glow}`}
-              style={{
-                background: '#ffffff',
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.035'%3E%3Cpath d='M0 0h20v1H0zM0 0v20H1V0z'/%3E%3C/g%3E%3C/svg%3E")`,
-                border: '1px solid rgba(0,0,0,0.1)',
-                boxShadow: '0 4px 24px rgba(0,0,0,0.18), 0 1px 4px rgba(0,0,0,0.08)',
-              }}
+              className={`card-neon svc-card ${s.colorClass} reveal reveal-delay-${(i + 1) * 100} group p-6 flex flex-col gap-4 ${s.glow}`}
             >
               {/* Icon + Title inline */}
               <div className="flex items-center gap-3">
                 <span className={`w-11 h-11 rounded-xl ${s.iconBg} ${s.iconColor} flex items-center justify-center shrink-0`}>
                   {s.icon}
                 </span>
-                <h3 className="text-base font-bold leading-tight" style={{ color: '#111827' }}>{s.label}</h3>
+                <h3 className="svc-title text-base font-bold leading-tight">{s.label}</h3>
               </div>
-              <p className="text-sm leading-relaxed" style={{ color: '#1F2937' }}>{s.description}</p>
+              <p className="svc-desc text-sm leading-relaxed">{s.description}</p>
               <div className="flex flex-wrap gap-1.5">
                 {s.tags.map((tag) => (
-                  <span key={tag} className="text-xs rounded-full px-2.5 py-0.5"
-                    style={{ color: '#374151', border: '1px solid rgba(0,0,0,0.15)', background: 'rgba(0,0,0,0.03)' }}>{tag}</span>
+                  <span key={tag} className="svc-tag text-xs rounded-full px-2.5 py-0.5">{tag}</span>
                 ))}
               </div>
               {/* CTA row */}
-              <div className="mt-auto pt-2 flex items-center gap-1.5 text-sm font-semibold transition-all duration-200 group-hover:gap-2.5" style={{ color: '#9B30FF' }}>
+              <div className="mt-auto pt-2 flex items-center gap-1.5 text-sm font-semibold transition-all duration-200 group-hover:gap-2.5" style={{ color: s.learnMoreColor }}>
                 Learn more
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-4 h-4">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />

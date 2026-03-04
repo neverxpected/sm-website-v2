@@ -17,10 +17,9 @@ const logos = [
 export default function TrustedBy() {
   return (
     <section
-      className="relative py-10 overflow-hidden"
+      className="relative pt-4 pb-10 sm:py-10 overflow-hidden"
       style={{
         background: '#080C18',
-        borderTop: '1px solid rgba(255,255,255,0.05)',
         borderBottom: '1px solid rgba(255,255,255,0.05)',
       }}
     >
@@ -31,7 +30,7 @@ export default function TrustedBy() {
         style={{ background: 'linear-gradient(to left, #080C18, transparent)' }} />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-8 text-center">
-        <p className="text-sm font-bold uppercase tracking-[0.35em]" style={{ color: 'rgba(240,244,255,0.5)' }}>
+        <p className="text-xl uppercase tracking-[0.35em]" style={{ color: '#ffffff', fontFamily: 'var(--font-orbitron), sans-serif', fontWeight: 500 }}>
           Trusted By
         </p>
       </div>
@@ -47,22 +46,16 @@ export default function TrustedBy() {
             {logos.map((logo, i) => (
               <div
                 key={i}
-                className="inline-flex items-center justify-center mx-5 shrink-0 rounded-xl"
-                style={{
-                  width: 200,
-                  height: 84,
-                  padding: '10px 20px',
-                  background: 'rgba(255,255,255,0.05)',
-                  border: '1px solid rgba(255,255,255,0.1)',
-                }}
+                className="inline-flex items-center justify-center mx-6 shrink-0"
+                style={{ width: 220, height: 90 }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={logo.src}
                   alt={logo.alt}
                   style={{
-                    maxWidth: '160px',
-                    maxHeight: '60px',
+                    maxWidth: '200px',
+                    maxHeight: '80px',
                     width: 'auto',
                     height: 'auto',
                     objectFit: 'contain',
