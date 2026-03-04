@@ -90,7 +90,7 @@ export default function Hero() {
         `}</style>
 
         {/* Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-28 md:pt-28 lg:pt-32 pb-12">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-28 md:pt-28 lg:pt-32 pb-4 sm:pb-12">
           <div className="max-w-7xl mx-auto text-center">
 
             {/* Eyebrow */}
