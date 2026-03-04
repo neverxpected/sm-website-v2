@@ -91,7 +91,8 @@ export default function CaseStudies() {
                 className={`reveal reveal-delay-${(i + 1) * 100} flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} rounded-3xl overflow-hidden`}
                 style={{
                   background: 'rgba(13,21,38,0.7)',
-                  border: '1px solid rgba(255,255,255,0.07)',
+                  border: `1px solid ${c.accentHex}88`,
+                  boxShadow: `0 0 24px ${c.accentHex}30, 0 4px 16px rgba(0,0,0,0.4)`,
                   minHeight: '260px',
                 }}
               >
