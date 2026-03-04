@@ -90,8 +90,8 @@ export default function Hero() {
         `}</style>
 
         {/* Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-32 lg:pt-40 pb-12">
-          <div className="max-w-5xl mx-auto text-center">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-28 md:pt-28 lg:pt-32 pb-4 sm:pb-12">
+          <div className="max-w-7xl mx-auto text-center">
 
             {/* Eyebrow */}
             <div className="reveal reveal-delay-100 inline-flex items-center gap-2 mb-8 px-3 py-2 rounded-full text-[8px] sm:text-[10px] md:text-xs font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-center leading-tight"
@@ -110,13 +110,10 @@ export default function Hero() {
 
             {/* Headline */}
             <h1 className="font-black tracking-tight text-white leading-[0.95] mb-8">
-              <span className="reveal block text-4xl md:text-6xl lg:text-7xl xl:text-7xl reveal-delay-100">
-                THE CHEAT CODE
-              </span>
-              <span className="reveal block text-4xl md:text-6xl lg:text-7xl xl:text-7xl reveal-delay-200">
-                TO{' '}
+              <span className="reveal block text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-100">
+                THE{' '}
                 <style>{`
-                  @keyframes digitallyScaleShimmer {
+                  @keyframes cheatCodeShimmer {
                     0%   { background-position: 200% center; }
                     100% { background-position: -200% center; }
                   }
@@ -127,19 +124,22 @@ export default function Hero() {
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
                   backgroundSize: '200% auto',
-                  animation: 'digitallyScaleShimmer 4s linear infinite',
+                  animation: 'cheatCodeShimmer 4s linear infinite',
                   display: 'inline-block',
                 }}>
-                  DIGITALLY SCALE
+                  CHEAT CODE
                 </span>
               </span>
-              <span className="reveal block text-4xl md:text-6xl lg:text-7xl xl:text-7xl reveal-delay-300">
+              <span className="reveal block text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl whitespace-nowrap reveal-delay-200">
+                TO DIGITALLY SCALE
+              </span>
+              <span className="reveal block text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-300">
                 YOUR BUSINESS
               </span>
             </h1>
 
             {/* Stats bar — above CTAs */}
-            <div className="reveal reveal-delay-400 flex flex-nowrap items-center justify-center gap-3 sm:gap-8 mb-8">
+            <div className="reveal reveal-delay-400 hidden sm:flex flex-nowrap items-center justify-center gap-3 sm:gap-8 mb-3">
               {[
                 { value: '$20M+', label: 'Revenue Generated' },
                 { value: '50+', label: 'Businesses Worked With' },
@@ -155,22 +155,8 @@ export default function Hero() {
               ))}
             </div>
 
-            {/* CTAs */}
-            <div className="reveal reveal-delay-500 flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-              <Link
-                href="/strategy-call"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl transition-transform duration-300 hover:scale-105 active:scale-100 whitespace-nowrap"
-                style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', animation: 'ctaGlowPink 3s ease-in-out infinite' }}
-              >
-                Book a Strategy Call
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4 ml-2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
-              </Link>
-            </div>
-
             {/* Trust badges — one row */}
-            <div className="reveal reveal-delay-600 flex flex-nowrap items-center justify-center gap-3 sm:gap-6">
+            <div className="reveal reveal-delay-500 hidden sm:flex flex-nowrap items-center justify-center gap-3 sm:gap-6 mb-6">
               {[
                 'No long-term contracts',
                 'Results in 30 days',
@@ -181,6 +167,20 @@ export default function Hero() {
                   {badge}
                 </span>
               ))}
+            </div>
+
+            {/* CTAs */}
+            <div className="reveal reveal-delay-600 flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+              <Link
+                href="/strategy-call"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl transition-transform duration-300 hover:scale-105 active:scale-100 whitespace-nowrap"
+                style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', animation: 'ctaGlowPink 3s ease-in-out infinite' }}
+              >
+                Book a Strategy Call
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4 ml-2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </Link>
             </div>
 
           </div>

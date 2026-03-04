@@ -144,25 +144,34 @@ export default function ServiceGrid() {
             <Link
               key={s.href}
               href={s.href}
-              className={`card-neon reveal reveal-delay-${(i + 1) * 100} group p-6 flex flex-col gap-4`}
+              className={`card-neon reveal reveal-delay-${(i + 1) * 100} group p-6 flex flex-col gap-4 ${s.glow}`}
+              style={{
+                background: '#ffffff',
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.035'%3E%3Cpath d='M0 0h20v1H0zM0 0v20H1V0z'/%3E%3C/g%3E%3C/svg%3E")`,
+                border: '1px solid rgba(0,0,0,0.1)',
+                boxShadow: '0 4px 24px rgba(0,0,0,0.18), 0 1px 4px rgba(0,0,0,0.08)',
+              }}
             >
-              <svg className="absolute top-4 right-4 w-3.5 h-3.5 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                style={{ color: 'rgba(255,255,255,0.2)' }}
-                fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
-              </svg>
-              <span className={`w-11 h-11 rounded-xl ${s.iconBg} ${s.iconColor} flex items-center justify-center shrink-0`}>
-                {s.icon}
-              </span>
-              <div>
-                <h3 className="text-base font-bold text-white mb-1.5 group-hover:text-white transition-colors">{s.label}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.45)' }}>{s.description}</p>
+              {/* Icon + Title inline */}
+              <div className="flex items-center gap-3">
+                <span className={`w-11 h-11 rounded-xl ${s.iconBg} ${s.iconColor} flex items-center justify-center shrink-0`}>
+                  {s.icon}
+                </span>
+                <h3 className="text-base font-bold leading-tight" style={{ color: '#111827' }}>{s.label}</h3>
               </div>
-              <div className="flex flex-wrap gap-1.5 mt-auto">
+              <p className="text-sm leading-relaxed" style={{ color: '#1F2937' }}>{s.description}</p>
+              <div className="flex flex-wrap gap-1.5">
                 {s.tags.map((tag) => (
                   <span key={tag} className="text-xs rounded-full px-2.5 py-0.5"
-                    style={{ color: 'rgba(240,244,255,0.35)', border: '1px solid rgba(255,255,255,0.08)' }}>{tag}</span>
+                    style={{ color: '#374151', border: '1px solid rgba(0,0,0,0.15)', background: 'rgba(0,0,0,0.03)' }}>{tag}</span>
                 ))}
+              </div>
+              {/* CTA row */}
+              <div className="mt-auto pt-2 flex items-center gap-1.5 text-sm font-semibold transition-all duration-200 group-hover:gap-2.5" style={{ color: '#FF2D78' }}>
+                Learn more
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-4 h-4">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
               </div>
             </Link>
           ))}
@@ -186,25 +195,34 @@ export default function ServiceGrid() {
             <Link
               key={s.label}
               href={s.href}
-              className={`card-neon reveal reveal-delay-${(i + 1) * 100} group p-6 flex flex-col gap-4`}
+              className={`card-neon reveal reveal-delay-${(i + 1) * 100} group p-6 flex flex-col gap-4 ${s.glow}`}
+              style={{
+                background: '#ffffff',
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.035'%3E%3Cpath d='M0 0h20v1H0zM0 0v20H1V0z'/%3E%3C/g%3E%3C/svg%3E")`,
+                border: '1px solid rgba(0,0,0,0.1)',
+                boxShadow: '0 4px 24px rgba(0,0,0,0.18), 0 1px 4px rgba(0,0,0,0.08)',
+              }}
             >
-              <svg className="absolute top-4 right-4 w-3.5 h-3.5 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                style={{ color: 'rgba(255,255,255,0.2)' }}
-                fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
-              </svg>
-              <span className={`w-11 h-11 rounded-xl ${s.iconBg} ${s.iconColor} flex items-center justify-center shrink-0`}>
-                {s.icon}
-              </span>
-              <div>
-                <h3 className="text-base font-bold text-white mb-1.5">{s.label}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.45)' }}>{s.description}</p>
+              {/* Icon + Title inline */}
+              <div className="flex items-center gap-3">
+                <span className={`w-11 h-11 rounded-xl ${s.iconBg} ${s.iconColor} flex items-center justify-center shrink-0`}>
+                  {s.icon}
+                </span>
+                <h3 className="text-base font-bold leading-tight" style={{ color: '#111827' }}>{s.label}</h3>
               </div>
-              <div className="flex flex-wrap gap-1.5 mt-auto">
+              <p className="text-sm leading-relaxed" style={{ color: '#1F2937' }}>{s.description}</p>
+              <div className="flex flex-wrap gap-1.5">
                 {s.tags.map((tag) => (
                   <span key={tag} className="text-xs rounded-full px-2.5 py-0.5"
-                    style={{ color: 'rgba(240,244,255,0.35)', border: '1px solid rgba(255,255,255,0.08)' }}>{tag}</span>
+                    style={{ color: '#374151', border: '1px solid rgba(0,0,0,0.15)', background: 'rgba(0,0,0,0.03)' }}>{tag}</span>
                 ))}
+              </div>
+              {/* CTA row */}
+              <div className="mt-auto pt-2 flex items-center gap-1.5 text-sm font-semibold transition-all duration-200 group-hover:gap-2.5" style={{ color: '#9B30FF' }}>
+                Learn more
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-4 h-4">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
               </div>
             </Link>
           ))}
