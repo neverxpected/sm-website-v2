@@ -31,7 +31,7 @@ export default function TrustedBy() {
         style={{ background: 'linear-gradient(to left, #080C18, transparent)' }} />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-8 text-center">
-        <p className="text-base uppercase tracking-[0.35em]" style={{ color: 'rgba(240,244,255,0.5)', fontFamily: 'var(--font-orbitron), sans-serif', fontWeight: 500 }}>
+        <p className="text-xl uppercase tracking-[0.35em]" style={{ color: '#ffffff', fontFamily: 'var(--font-orbitron), sans-serif', fontWeight: 500 }}>
           Trusted By
         </p>
       </div>
