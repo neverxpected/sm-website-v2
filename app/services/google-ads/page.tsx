@@ -123,7 +123,7 @@ export default function GoogleAdsPage() {
           </p>
 
           <Link
-            href="#contact"
+            href="/strategy-call"
             className="inline-flex items-center justify-center px-10 py-4 text-white font-bold text-base rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap"
             style={{ background: 'linear-gradient(135deg, #4285F4, #9B30FF)', boxShadow: '0 0 30px rgba(66,133,244,0.35)' }}
           >
