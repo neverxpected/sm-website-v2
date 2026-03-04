@@ -144,24 +144,26 @@ export default function ServiceGrid() {
             <Link
               key={s.href}
               href={s.href}
-              className={`card-neon reveal reveal-delay-${(i + 1) * 100} group p-6 flex flex-col gap-4`}
+              className={`card-neon reveal reveal-delay-${(i + 1) * 100} group p-6 flex flex-col gap-4 ${s.glow}`}
+              style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)' }}
             >
               <svg className="absolute top-4 right-4 w-3.5 h-3.5 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                style={{ color: 'rgba(255,255,255,0.2)' }}
+                style={{ color: 'rgba(255,255,255,0.25)' }}
                 fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
               </svg>
-              <span className={`w-11 h-11 rounded-xl ${s.iconBg} ${s.iconColor} flex items-center justify-center shrink-0`}>
-                {s.icon}
-              </span>
-              <div>
-                <h3 className="text-base font-bold text-white mb-1.5 group-hover:text-white transition-colors">{s.label}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.45)' }}>{s.description}</p>
+              {/* Icon + Title inline */}
+              <div className="flex items-center gap-3">
+                <span className={`w-11 h-11 rounded-xl ${s.iconBg} ${s.iconColor} flex items-center justify-center shrink-0`}>
+                  {s.icon}
+                </span>
+                <h3 className="text-base font-bold text-white group-hover:text-white transition-colors leading-tight">{s.label}</h3>
               </div>
+              <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.6)' }}>{s.description}</p>
               <div className="flex flex-wrap gap-1.5 mt-auto">
                 {s.tags.map((tag) => (
                   <span key={tag} className="text-xs rounded-full px-2.5 py-0.5"
-                    style={{ color: 'rgba(240,244,255,0.35)', border: '1px solid rgba(255,255,255,0.08)' }}>{tag}</span>
+                    style={{ color: 'rgba(240,244,255,0.5)', border: '1px solid rgba(255,255,255,0.12)' }}>{tag}</span>
                 ))}
               </div>
             </Link>
@@ -186,24 +188,26 @@ export default function ServiceGrid() {
             <Link
               key={s.label}
               href={s.href}
-              className={`card-neon reveal reveal-delay-${(i + 1) * 100} group p-6 flex flex-col gap-4`}
+              className={`card-neon reveal reveal-delay-${(i + 1) * 100} group p-6 flex flex-col gap-4 ${s.glow}`}
+              style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)' }}
             >
               <svg className="absolute top-4 right-4 w-3.5 h-3.5 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                style={{ color: 'rgba(255,255,255,0.2)' }}
+                style={{ color: 'rgba(255,255,255,0.25)' }}
                 fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
               </svg>
-              <span className={`w-11 h-11 rounded-xl ${s.iconBg} ${s.iconColor} flex items-center justify-center shrink-0`}>
-                {s.icon}
-              </span>
-              <div>
-                <h3 className="text-base font-bold text-white mb-1.5">{s.label}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.45)' }}>{s.description}</p>
+              {/* Icon + Title inline */}
+              <div className="flex items-center gap-3">
+                <span className={`w-11 h-11 rounded-xl ${s.iconBg} ${s.iconColor} flex items-center justify-center shrink-0`}>
+                  {s.icon}
+                </span>
+                <h3 className="text-base font-bold text-white leading-tight">{s.label}</h3>
               </div>
+              <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.6)' }}>{s.description}</p>
               <div className="flex flex-wrap gap-1.5 mt-auto">
                 {s.tags.map((tag) => (
                   <span key={tag} className="text-xs rounded-full px-2.5 py-0.5"
-                    style={{ color: 'rgba(240,244,255,0.35)', border: '1px solid rgba(255,255,255,0.08)' }}>{tag}</span>
+                    style={{ color: 'rgba(240,244,255,0.5)', border: '1px solid rgba(255,255,255,0.12)' }}>{tag}</span>
                 ))}
               </div>
             </Link>
