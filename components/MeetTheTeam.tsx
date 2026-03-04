@@ -189,14 +189,14 @@ export default function MeetTheTeam() {
               </div>
 
               {/* Info */}
-              <div className="p-6 flex flex-col gap-3 flex-1">
+              <div className="p-6 flex flex-col gap-3 flex-1" style={{ background: '#ffffff' }}>
                 <div>
-                  <h3 className="text-lg font-black text-white">{member.name}</h3>
+                  <h3 className="text-lg font-black" style={{ color: '#111827' }}>{member.name}</h3>
                   <p className="text-sm font-semibold mt-0.5" style={{ color: member.accent }}>
                     {member.role} — {member.location}
                   </p>
                 </div>
-                <p className="text-sm leading-relaxed flex-1" style={{ color: 'rgba(240,244,255,0.5)' }}>
+                <p className="text-sm leading-relaxed flex-1" style={{ color: '#4B5563' }}>
                   {member.bio}
                 </p>
               </div>
