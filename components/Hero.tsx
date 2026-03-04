@@ -90,8 +90,8 @@ export default function Hero() {
         `}</style>
 
         {/* Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-32 lg:pt-40 pb-12">
-          <div className="max-w-5xl mx-auto text-center">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-28 lg:pt-32 pb-12">
+          <div className="max-w-7xl mx-auto text-center">
 
             {/* Eyebrow */}
             <div className="reveal reveal-delay-100 inline-flex items-center gap-2 mb-8 px-3 py-2 rounded-full text-[8px] sm:text-[10px] md:text-xs font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-center leading-tight"
@@ -110,10 +110,10 @@ export default function Hero() {
 
             {/* Headline */}
             <h1 className="font-black tracking-tight text-white leading-[0.95] mb-8">
-              <span className="reveal block text-4xl md:text-6xl lg:text-7xl xl:text-7xl reveal-delay-100">
+              <span className="reveal block text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-100">
                 THE CHEAT CODE
               </span>
-              <span className="reveal block text-4xl md:text-6xl lg:text-7xl xl:text-7xl reveal-delay-200">
+              <span className="reveal block text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-200">
                 TO{' '}
                 <style>{`
                   @keyframes digitallyScaleShimmer {
@@ -133,7 +133,7 @@ export default function Hero() {
                   DIGITALLY SCALE
                 </span>
               </span>
-              <span className="reveal block text-4xl md:text-6xl lg:text-7xl xl:text-7xl reveal-delay-300">
+              <span className="reveal block text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-300">
                 YOUR BUSINESS
               </span>
             </h1>
