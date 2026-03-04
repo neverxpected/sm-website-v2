@@ -110,7 +110,7 @@ export default function Hero() {
 
             {/* Headline */}
             <h1 className="font-black tracking-tight text-white leading-[0.95] mb-8">
-              <span className="reveal block text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-100">
+              <span className="reveal block text-2xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-100">
                 THE{' '}
                 <style>{`
                   @keyframes cheatCodeShimmer {
@@ -130,10 +130,10 @@ export default function Hero() {
                   CHEAT CODE
                 </span>
               </span>
-              <span className="reveal block text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl whitespace-nowrap reveal-delay-200">
+              <span className="reveal block text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl sm:whitespace-nowrap reveal-delay-200">
                 TO DIGITALLY SCALE
               </span>
-              <span className="reveal block text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-300">
+              <span className="reveal block text-2xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-300">
                 YOUR BUSINESS
               </span>
             </h1>
