@@ -60,9 +60,9 @@ export default function Hero() {
           backgroundSize: '60px 60px',
         }} />
 
-        {/* ── HERO ─────────────────────────────────────────── */}
+        {/* ── HERO + TRUSTED BY ──────────────────────────────── */}
         <section
-          className="relative min-h-0 sm:min-h-[85vh] flex flex-col justify-center"
+          className="relative flex flex-col"
         >
           {/* Light rays overlay */}
           <div className="absolute inset-0 pointer-events-none" style={{ opacity: 0.55, zIndex: 1 }}>
@@ -93,7 +93,7 @@ export default function Hero() {
             `}</style>
 
           {/* Content */}
-          <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-28 md:pt-28 lg:pt-32 pb-4 sm:pb-12">
+          <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 lg:pt-40 pb-8 sm:pb-16">
             <div className="max-w-7xl mx-auto text-center">
 
               {/* Eyebrow */}
@@ -189,15 +189,18 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Bottom fade into next section */}
-          <div className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
-            style={{ background: 'linear-gradient(to bottom, transparent, rgba(10,15,28,0.6))' }} />
+          {/* Trusted By — sits inside section, same LightRays covers it */}
+          <div className="relative z-10">
+            <TrustedBy />
+          </div>
+
+          {/* Fade to dark after logos */}
+          <div className="relative z-10 h-20 pointer-events-none"
+            style={{ background: 'linear-gradient(to bottom, transparent, #060A14)' }} />
+
         </section>
 
-        {/* ── TRUSTED BY — same background ──────────────────── */}
-        <TrustedBy />
-
-      </div > {/* end shared background */}
+      </div>{/* end shared background */}
 
       {/* ── REST OF PAGE ─────────────────────────────────── */}
       <ServiceGrid />
