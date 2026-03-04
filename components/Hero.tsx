@@ -139,7 +139,7 @@ export default function Hero() {
             </h1>
 
             {/* Stats bar — above CTAs */}
-            <div className="reveal reveal-delay-400 flex flex-nowrap items-center justify-center gap-3 sm:gap-8 mb-3">
+            <div className="reveal reveal-delay-400 hidden sm:flex flex-nowrap items-center justify-center gap-3 sm:gap-8 mb-3">
               {[
                 { value: '$20M+', label: 'Revenue Generated' },
                 { value: '50+', label: 'Businesses Worked With' },
@@ -156,7 +156,7 @@ export default function Hero() {
             </div>
 
             {/* Trust badges — one row */}
-            <div className="reveal reveal-delay-500 flex flex-nowrap items-center justify-center gap-3 sm:gap-6 mb-6">
+            <div className="reveal reveal-delay-500 hidden sm:flex flex-nowrap items-center justify-center gap-3 sm:gap-6 mb-6">
               {[
                 'No long-term contracts',
                 'Results in 30 days',
