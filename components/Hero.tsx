@@ -109,7 +109,7 @@ export default function Hero() {
             </div>
 
             {/* Headline */}
-            <h1 className="font-black tracking-tight text-white leading-[0.95] mb-8" style={{ fontFamily: "var(--font-orbitron), sans-serif", fontWeight: 800 }}>
+            <h1 className="font-black tracking-tight text-white leading-[0.95] mb-8" style={{ fontWeight: 800 }}>
               <span className="reveal block text-2xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-100">
                 THE{' '}
                 <style>{`
