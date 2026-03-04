@@ -379,6 +379,90 @@ body {
   opacity: 1;
 }
 
+/* ─── Service card: white on mobile, dark+glow on desktop ─ */
+.svc-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18), 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.svc-card .svc-title {
+  color: #111827;
+}
+
+.svc-card .svc-desc {
+  color: #1F2937;
+}
+
+.svc-card .svc-tag {
+  color: #374151;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+@media (min-width: 1024px) {
+  .svc-card {
+    background: rgba(10, 15, 30, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .svc-card .svc-title {
+    color: #ffffff;
+  }
+
+  .svc-card .svc-desc {
+    color: rgba(220, 230, 255, 0.65);
+  }
+
+  .svc-card .svc-tag {
+    color: rgba(220, 230, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  /* Per-service coloured border + glow */
+  .svc-blue {
+    border-color: rgba(59, 130, 246, 0.55);
+    box-shadow: 0 0 24px rgba(59, 130, 246, 0.18), 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .svc-green {
+    border-color: rgba(16, 185, 129, 0.55);
+    box-shadow: 0 0 24px rgba(16, 185, 129, 0.18), 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .svc-pink-ads {
+    border-color: rgba(236, 72, 153, 0.55);
+    box-shadow: 0 0 24px rgba(236, 72, 153, 0.18), 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .svc-orange {
+    border-color: rgba(249, 115, 22, 0.55);
+    box-shadow: 0 0 24px rgba(249, 115, 22, 0.18), 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .svc-violet {
+    border-color: rgba(124, 58, 237, 0.55);
+    box-shadow: 0 0 24px rgba(124, 58, 237, 0.18), 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .svc-cyan {
+    border-color: rgba(6, 182, 212, 0.55);
+    box-shadow: 0 0 24px rgba(6, 182, 212, 0.18), 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .svc-rose {
+    border-color: rgba(244, 63, 94, 0.55);
+    box-shadow: 0 0 24px rgba(244, 63, 94, 0.18), 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .svc-purple {
+    border-color: rgba(168, 85, 247, 0.55);
+    box-shadow: 0 0 24px rgba(168, 85, 247, 0.18), 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+}
+
 /* ─── Step cards (inner pages) ──────────────────────── */
 
 .step-card {
