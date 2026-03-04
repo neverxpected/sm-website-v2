@@ -20,7 +20,6 @@ export default function TrustedBy() {
       className="relative pt-4 pb-10 sm:py-10 overflow-hidden"
       style={{
         background: '#080C18',
-        borderTop: '1px solid rgba(255,255,255,0.05)',
         borderBottom: '1px solid rgba(255,255,255,0.05)',
       }}
     >
