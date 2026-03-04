@@ -145,10 +145,10 @@ export default function ServiceGrid() {
               key={s.href}
               href={s.href}
               className={`card-neon reveal reveal-delay-${(i + 1) * 100} group p-6 flex flex-col gap-4 ${s.glow}`}
-              style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)' }}
+              style={{ background: '#ffffff', border: '1px solid rgba(0,0,0,0.06)' }}
             >
               <svg className="absolute top-4 right-4 w-3.5 h-3.5 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                style={{ color: 'rgba(255,255,255,0.25)' }}
+                style={{ color: 'rgba(0,0,0,0.2)' }}
                 fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
               </svg>
@@ -157,13 +157,13 @@ export default function ServiceGrid() {
                 <span className={`w-11 h-11 rounded-xl ${s.iconBg} ${s.iconColor} flex items-center justify-center shrink-0`}>
                   {s.icon}
                 </span>
-                <h3 className="text-base font-bold text-white group-hover:text-white transition-colors leading-tight">{s.label}</h3>
+                <h3 className="text-base font-bold leading-tight" style={{ color: '#0A0F1C' }}>{s.label}</h3>
               </div>
-              <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.6)' }}>{s.description}</p>
+              <p className="text-sm leading-relaxed" style={{ color: '#4B5563' }}>{s.description}</p>
               <div className="flex flex-wrap gap-1.5 mt-auto">
                 {s.tags.map((tag) => (
                   <span key={tag} className="text-xs rounded-full px-2.5 py-0.5"
-                    style={{ color: 'rgba(240,244,255,0.5)', border: '1px solid rgba(255,255,255,0.12)' }}>{tag}</span>
+                    style={{ color: '#374151', border: '1px solid rgba(0,0,0,0.12)' }}>{tag}</span>
                 ))}
               </div>
             </Link>
@@ -189,10 +189,10 @@ export default function ServiceGrid() {
               key={s.label}
               href={s.href}
               className={`card-neon reveal reveal-delay-${(i + 1) * 100} group p-6 flex flex-col gap-4 ${s.glow}`}
-              style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)' }}
+              style={{ background: '#ffffff', border: '1px solid rgba(0,0,0,0.06)' }}
             >
               <svg className="absolute top-4 right-4 w-3.5 h-3.5 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                style={{ color: 'rgba(255,255,255,0.25)' }}
+                style={{ color: 'rgba(0,0,0,0.2)' }}
                 fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
               </svg>
@@ -201,13 +201,13 @@ export default function ServiceGrid() {
                 <span className={`w-11 h-11 rounded-xl ${s.iconBg} ${s.iconColor} flex items-center justify-center shrink-0`}>
                   {s.icon}
                 </span>
-                <h3 className="text-base font-bold text-white leading-tight">{s.label}</h3>
+                <h3 className="text-base font-bold leading-tight" style={{ color: '#0A0F1C' }}>{s.label}</h3>
               </div>
-              <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.6)' }}>{s.description}</p>
+              <p className="text-sm leading-relaxed" style={{ color: '#4B5563' }}>{s.description}</p>
               <div className="flex flex-wrap gap-1.5 mt-auto">
                 {s.tags.map((tag) => (
                   <span key={tag} className="text-xs rounded-full px-2.5 py-0.5"
-                    style={{ color: 'rgba(240,244,255,0.5)', border: '1px solid rgba(255,255,255,0.12)' }}>{tag}</span>
+                    style={{ color: '#374151', border: '1px solid rgba(0,0,0,0.12)' }}>{tag}</span>
                 ))}
               </div>
             </Link>
