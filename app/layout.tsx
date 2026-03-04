@@ -12,7 +12,7 @@ const geistSans = Geist({
 const orbitron = Orbitron({
   variable: "--font-orbitron",
   subsets: ["latin"],
-  weight: ["700", "900"],
+  weight: ["700", "800", "900"],
 });
 
 export const metadata: Metadata = {
