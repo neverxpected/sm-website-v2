@@ -90,7 +90,7 @@ export default function Hero() {
         `}</style>
 
         {/* Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-28 lg:pt-32 pb-12">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-28 md:pt-28 lg:pt-32 pb-12">
           <div className="max-w-7xl mx-auto text-center">
 
             {/* Eyebrow */}
@@ -130,7 +130,7 @@ export default function Hero() {
                   CHEAT CODE
                 </span>
               </span>
-              <span className="reveal block text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-200">
+              <span className="reveal block text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl whitespace-nowrap reveal-delay-200">
                 TO DIGITALLY SCALE
               </span>
               <span className="reveal block text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-300">
