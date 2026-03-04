@@ -47,14 +47,8 @@ export default function TrustedBy() {
             {logos.map((logo, i) => (
               <div
                 key={i}
-                className="inline-flex items-center justify-center mx-5 shrink-0 rounded-xl"
-                style={{
-                  width: 200,
-                  height: 84,
-                  padding: '10px 20px',
-                  background: 'rgba(255,255,255,0.05)',
-                  border: '1px solid rgba(255,255,255,0.1)',
-                }}
+                className="inline-flex items-center justify-center mx-5 shrink-0"
+                style={{ width: 160, height: 64 }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
