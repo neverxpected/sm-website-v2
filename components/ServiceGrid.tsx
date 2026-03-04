@@ -147,7 +147,6 @@ export default function ServiceGrid() {
               className={`card-neon reveal reveal-delay-${(i + 1) * 100} group p-6 flex flex-col gap-4 ${s.glow}`}
               style={{
                 background: '#ffffff',
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.035'%3E%3Cpath d='M0 0h20v1H0zM0 0v20H1V0z'/%3E%3C/g%3E%3C/svg%3E")`,
                 border: '1px solid rgba(0,0,0,0.1)',
                 boxShadow: '0 4px 24px rgba(0,0,0,0.18), 0 1px 4px rgba(0,0,0,0.08)',
               }}
@@ -198,7 +197,6 @@ export default function ServiceGrid() {
               className={`card-neon reveal reveal-delay-${(i + 1) * 100} group p-6 flex flex-col gap-4 ${s.glow}`}
               style={{
                 background: '#ffffff',
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.035'%3E%3Cpath d='M0 0h20v1H0zM0 0v20H1V0z'/%3E%3C/g%3E%3C/svg%3E")`,
                 border: '1px solid rgba(0,0,0,0.1)',
                 boxShadow: '0 4px 24px rgba(0,0,0,0.18), 0 1px 4px rgba(0,0,0,0.08)',
               }}
