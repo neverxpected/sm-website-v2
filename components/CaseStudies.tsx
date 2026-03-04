@@ -130,11 +130,11 @@ export default function CaseStudies() {
 
                   <div>
                     <h3 className="text-base lg:text-lg font-black mb-1" style={{ color: '#111827' }}>{c.name}</h3>
-                    <p className="text-xs leading-relaxed" style={{ color: '#4B5563' }}>{c.description}</p>
+                    <p className="text-xs leading-relaxed line-clamp-3" style={{ color: '#4B5563' }}>{c.description}</p>
                   </div>
 
                   {/* Stats — horizontal pills */}
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-nowrap gap-2">
                     {c.stats.map((stat) => (
                       <div key={stat.label} className="flex items-center gap-2 px-3 py-2 rounded-lg"
                         style={{ background: '#F3F4F6', border: '1px solid rgba(0,0,0,0.08)' }}>
