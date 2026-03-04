@@ -61,7 +61,7 @@ export default function Testimonials() {
                         Client Testimonials
                     </div>
                     <h2 className="text-3xl lg:text-5xl font-black text-white tracking-tight mb-4">
-                        Don&apos;t take our{' '}
+                        Don&apos;t take our<br className="sm:hidden" />{' '}
                         <span style={{
                             background: 'linear-gradient(90deg, #9B30FF, #FF2D78, #9B30FF)',
                             WebkitBackgroundClip: 'text',
