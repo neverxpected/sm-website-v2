@@ -35,7 +35,7 @@ export default function Hero() {
     <div className="grain" ref={heroRef}>
       {/* ── HERO ─────────────────────────────────────────── */}
       <section
-        className="relative min-h-[85vh] flex flex-col justify-center overflow-hidden"
+        className="relative min-h-0 sm:min-h-[85vh] flex flex-col justify-center overflow-hidden"
         style={{ background: '#0A0F1C' }}
       >
         {/* Animated gradient background */}
