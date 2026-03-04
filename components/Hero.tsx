@@ -111,12 +111,9 @@ export default function Hero() {
             {/* Headline */}
             <h1 className="font-black tracking-tight text-white leading-[0.95] mb-8">
               <span className="reveal block text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-100">
-                THE CHEAT CODE
-              </span>
-              <span className="reveal block text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-200">
-                TO{' '}
+                THE{' '}
                 <style>{`
-                  @keyframes digitallyScaleShimmer {
+                  @keyframes cheatCodeShimmer {
                     0%   { background-position: 200% center; }
                     100% { background-position: -200% center; }
                   }
@@ -127,11 +124,14 @@ export default function Hero() {
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
                   backgroundSize: '200% auto',
-                  animation: 'digitallyScaleShimmer 4s linear infinite',
+                  animation: 'cheatCodeShimmer 4s linear infinite',
                   display: 'inline-block',
                 }}>
-                  DIGITALLY SCALE
+                  CHEAT CODE
                 </span>
+              </span>
+              <span className="reveal block text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-200">
+                TO DIGITALLY SCALE
               </span>
               <span className="reveal block text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-300">
                 YOUR BUSINESS
