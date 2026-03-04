@@ -155,22 +155,8 @@ export default function Hero() {
               ))}
             </div>
 
-            {/* CTAs */}
-            <div className="reveal reveal-delay-500 flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-              <Link
-                href="/strategy-call"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl transition-transform duration-300 hover:scale-105 active:scale-100 whitespace-nowrap"
-                style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', animation: 'ctaGlowPink 3s ease-in-out infinite' }}
-              >
-                Book a Strategy Call
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4 ml-2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
-              </Link>
-            </div>
-
             {/* Trust badges — one row */}
-            <div className="reveal reveal-delay-600 flex flex-nowrap items-center justify-center gap-3 sm:gap-6">
+            <div className="reveal reveal-delay-500 flex flex-nowrap items-center justify-center gap-3 sm:gap-6 mb-6">
               {[
                 'No long-term contracts',
                 'Results in 30 days',
@@ -181,6 +167,20 @@ export default function Hero() {
                   {badge}
                 </span>
               ))}
+            </div>
+
+            {/* CTAs */}
+            <div className="reveal reveal-delay-600 flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+              <Link
+                href="/strategy-call"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl transition-transform duration-300 hover:scale-105 active:scale-100 whitespace-nowrap"
+                style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', animation: 'ctaGlowPink 3s ease-in-out infinite' }}
+              >
+                Book a Strategy Call
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4 ml-2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </Link>
             </div>
 
           </div>
