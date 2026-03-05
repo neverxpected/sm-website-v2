@@ -131,6 +131,8 @@ export default function ServiceGrid() {
               We run high-ROI ad campaigns across every major platform — turning ad spend into booked clients, leads, and real revenue for service-based businesses.
             </p>
 
+            <hr style={{ borderColor: 'rgba(0,0,0,0.08)' }} />
+
             {/* Platform pills */}
             <div className="grid grid-cols-2 gap-3">
               {paidPlatforms.map((p) => (
@@ -172,6 +174,8 @@ export default function ServiceGrid() {
             <p className="text-sm leading-relaxed" style={{ color: '#4B5563' }}>
               Let AI handle the follow-up, booking, and outreach so your team can focus on closing. Our automation systems work 24/7 to qualify and convert leads automatically.
             </p>
+
+            <hr style={{ borderColor: 'rgba(0,0,0,0.08)' }} />
 
             {/* Platform pills */}
             <div className="grid grid-cols-2 gap-3">
