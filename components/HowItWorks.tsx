@@ -195,7 +195,7 @@ export default function HowItWorks() {
                 </div>
 
                 {/* Desktop: flex row with inline connectors */}
-                <div className="hidden lg:flex items-start">
+                <div className="hidden lg:flex items-stretch">
                     {steps.map((step, i) => (
                         <>
                             <div key={step.number}
