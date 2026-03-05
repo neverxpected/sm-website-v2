@@ -111,9 +111,9 @@ function ParticleBg({ color }: { color: string }) {
 
 export default function MeetTheTeam() {
   return (
-    <section className="relative py-24 lg:py-32" style={{ background: '#080C18' }}>
+    <section className="relative py-24 lg:py-32" style={{ background: '#000000' }}>
       <div className="absolute inset-0 pointer-events-none" style={{
-        backgroundImage: 'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
+        backgroundImage: 'none',
         backgroundSize: '60px 60px',
       }} />
 
@@ -157,7 +157,7 @@ export default function MeetTheTeam() {
             <div
               key={member.name}
               className={`reveal reveal-delay-${(i + 2) * 100} card-neon rounded-2xl overflow-hidden flex flex-col`}
-              style={{ background: 'rgba(13,21,38,0.85)', border: `1px solid ${member.accent}88`, backdropFilter: 'blur(12px)', boxShadow: `0 0 24px ${member.accent}30, 0 4px 16px rgba(0,0,0,0.4)` }}
+              style={{ background: '#000000', border: `1px solid ${member.accent}88`, backdropFilter: 'blur(12px)', boxShadow: `0 0 24px ${member.accent}30, 0 4px 16px rgba(0,0,0,0.8)` }}
             >
               {/* Photo area */}
               <div

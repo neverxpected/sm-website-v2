@@ -90,7 +90,7 @@ const aiPlatforms = [
 
 export default function ServiceGrid() {
   return (
-    <section className="py-20 px-6 lg:px-8" style={{ background: '#080C18' }}>
+    <section className="py-20 px-6 lg:px-8" style={{ background: '#000000' }}>
       <div className="max-w-6xl mx-auto">
 
         {/* Section header */}

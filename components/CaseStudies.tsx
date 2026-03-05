@@ -46,7 +46,7 @@ const cases = [
 
 export default function CaseStudies() {
   return (
-    <section className="py-24 px-6 lg:px-8 relative overflow-hidden" style={{ background: '#080C18' }}>
+    <section className="py-24 px-6 lg:px-8 relative overflow-hidden" style={{ background: '#000000' }}>
       {/* Ambient orbs */}
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(circle, rgba(255,45,120,0.06) 0%, transparent 70%)' }} />
@@ -90,7 +90,7 @@ export default function CaseStudies() {
                 key={c.name}
                 className={`reveal reveal-delay-${(i + 1) * 100} flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} rounded-3xl overflow-hidden`}
                 style={{
-                  background: 'rgba(13,21,38,0.7)',
+                  background: '#000000',
                   border: `1px solid ${c.accentHex}88`,
                   boxShadow: `0 0 24px ${c.accentHex}30, 0 4px 16px rgba(0,0,0,0.4)`,
                   minHeight: '180px',
@@ -110,8 +110,8 @@ export default function CaseStudies() {
                     className="absolute inset-0"
                     style={{
                       background: isReversed
-                        ? 'linear-gradient(to left, rgba(13,21,38,0.85) 0%, transparent 50%)'
-                        : 'linear-gradient(to right, rgba(13,21,38,0.85) 0%, transparent 50%)',
+                        ? 'linear-gradient(to left, rgba(0,0,0,0.85) 0%, transparent 50%)'
+                        : 'linear-gradient(to right, rgba(0,0,0,0.85) 0%, transparent 50%)',
                     }}
                   />
                   {/* Category badge */}

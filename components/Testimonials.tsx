@@ -66,7 +66,7 @@ export default function Testimonials() {
     const [featured, ...side] = testimonials;
 
     return (
-        <section ref={sectionRef} className="relative z-10 py-24 px-6 lg:px-8" style={{ background: '#080C18' }}>
+        <section ref={sectionRef} className="relative z-10 py-24 px-6 lg:px-8" style={{ background: '#000000' }}>
             <div className="max-w-6xl mx-auto">
 
                 {/* Header */}
@@ -105,7 +105,7 @@ export default function Testimonials() {
                             ...reveal(100),
                         }}>
                         {/* Big quote mark */}
-                        <div className="relative flex-1 p-8 flex flex-col gap-6" style={{ background: 'rgba(13,21,38,0.97)' }}>
+                        <div className="relative flex-1 p-8 flex flex-col gap-6" style={{ background: 'rgba(0,0,0,0.98)' }}>
                             <span className="absolute top-5 right-7 text-8xl font-black leading-none select-none"
                                 style={{ color: `${featured.accent}18`, fontFamily: 'Georgia, serif' }}>&ldquo;</span>
 
@@ -141,7 +141,7 @@ export default function Testimonials() {
                                     boxShadow: `0 0 24px ${t.accent}15`,
                                     ...reveal(200 + i * 120),
                                 }}>
-                                <div className="relative flex-1 p-6 flex flex-col gap-4" style={{ background: 'rgba(13,21,38,0.97)' }}>
+                                <div className="relative flex-1 p-6 flex flex-col gap-4" style={{ background: 'rgba(0,0,0,0.98)' }}>
                                     <span className="absolute top-3 right-5 text-6xl font-black leading-none select-none"
                                         style={{ color: `${t.accent}15`, fontFamily: 'Georgia, serif' }}>&ldquo;</span>
 

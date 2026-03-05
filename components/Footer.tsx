@@ -40,7 +40,7 @@ const columns = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#080C18', borderTop: '1px solid rgba(255,45,120,0.15)' }}>
+    <footer style={{ background: '#000000', borderTop: '1px solid rgba(255,45,120,0.15)' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
 
         {/* Main grid */}
