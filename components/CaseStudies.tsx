@@ -91,12 +91,13 @@ export default function CaseStudies() {
                 className={`reveal reveal-delay-${(i + 1) * 100} flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} rounded-3xl overflow-hidden`}
                 style={{
                   background: 'rgba(13,21,38,0.7)',
-                  border: '1px solid rgba(255,255,255,0.07)',
-                  minHeight: '260px',
+                  border: `1px solid ${c.accentHex}88`,
+                  boxShadow: `0 0 24px ${c.accentHex}30, 0 4px 16px rgba(0,0,0,0.4)`,
+                  minHeight: '180px',
                 }}
               >
                 {/* Photo */}
-                <div className="relative lg:w-[38%] shrink-0 overflow-hidden" style={{ minHeight: '200px' }}>
+                <div className="relative lg:w-[32%] shrink-0 overflow-hidden" style={{ minHeight: '140px' }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={c.photo}
@@ -123,24 +124,24 @@ export default function CaseStudies() {
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-col justify-center gap-4 p-6 lg:p-8 flex-1" style={{ background: '#ffffff' }}>
+                <div className="flex flex-col justify-center gap-3 p-4 lg:p-6 flex-1" style={{ background: '#ffffff' }}>
                   {/* Accent line */}
                   <div className="w-10 h-0.5 rounded-full" style={{ background: `linear-gradient(90deg, ${c.accentHex}, ${c.accentHex2})` }} />
 
                   <div>
-                    <h3 className="text-xl lg:text-2xl font-black mb-2" style={{ color: '#111827' }}>{c.name}</h3>
-                    <p className="text-sm leading-relaxed" style={{ color: '#4B5563' }}>{c.description}</p>
+                    <h3 className="text-base lg:text-lg font-black mb-1" style={{ color: '#111827' }}>{c.name}</h3>
+                    <p className="text-xs leading-relaxed line-clamp-3" style={{ color: '#4B5563' }}>{c.description}</p>
                   </div>
 
                   {/* Stats — horizontal pills */}
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-nowrap gap-2">
                     {c.stats.map((stat) => (
-                      <div key={stat.label} className="flex items-center gap-3 px-4 py-3 rounded-xl"
+                      <div key={stat.label} className="flex items-center gap-2 px-3 py-2 rounded-lg"
                         style={{ background: '#F3F4F6', border: '1px solid rgba(0,0,0,0.08)' }}>
-                        <span className="text-base">{stat.emoji}</span>
+                        <span className="text-sm">{stat.emoji}</span>
                         <div>
-                          <p className="text-[10px] uppercase tracking-widest font-bold" style={{ color: '#6B7280' }}>{stat.label}</p>
-                          <p className="text-lg font-black leading-tight" style={{ color: '#111827' }}>{stat.value}</p>
+                          <p className="text-[9px] uppercase tracking-widest font-bold" style={{ color: '#6B7280' }}>{stat.label}</p>
+                          <p className="text-base font-black leading-tight" style={{ color: '#111827' }}>{stat.value}</p>
                         </div>
                       </div>
                     ))}

@@ -25,10 +25,10 @@ export default function ServicePicker() {
         <div>
             <label
                 className="block text-xs font-semibold mb-2"
-                style={{ color: "rgba(240,244,255,0.45)" }}
+                style={{ color: "#374151" }}
             >
                 Service Interest{" "}
-                <span style={{ color: "rgba(240,244,255,0.25)", fontWeight: 400 }}>
+                <span style={{ color: "#6B7280", fontWeight: 400 }}>
                     (select all that apply)
                 </span>
             </label>
@@ -43,12 +43,12 @@ export default function ServicePicker() {
                             className="px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200"
                             style={{
                                 background: active
-                                    ? "linear-gradient(135deg, rgba(255,45,120,0.2), rgba(155,48,255,0.2))"
-                                    : "rgba(255,255,255,0.04)",
+                                    ? "linear-gradient(135deg, rgba(255,45,120,0.15), rgba(155,48,255,0.15))"
+                                    : "#F3F4F6",
                                 border: active
                                     ? "1px solid rgba(255,45,120,0.55)"
-                                    : "1px solid rgba(255,255,255,0.1)",
-                                color: active ? "#fff" : "rgba(240,244,255,0.5)",
+                                    : "1px solid rgba(0,0,0,0.15)",
+                                color: active ? "#FF2D78" : "#374151",
                                 boxShadow: active ? "0 0 12px rgba(255,45,120,0.15)" : "none",
                             }}
                         >

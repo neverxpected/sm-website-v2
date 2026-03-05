@@ -33,21 +33,22 @@ export default function Hero() {
 
   return (
     <div className="grain" ref={heroRef}>
-      {/* ── HERO ─────────────────────────────────────────── */}
+
+      {/* ── HERO + TRUSTED BY — one unified section ─────────── */}
       <section
-        className="relative min-h-0 sm:min-h-[85vh] flex flex-col justify-center overflow-hidden"
+        className="relative overflow-hidden"
         style={{ background: '#0A0F1C' }}
       >
         {/* Animated gradient background */}
         <div
-          className="absolute inset-0 animate-gradient-shift"
+          className="absolute inset-0 animate-gradient-shift pointer-events-none"
           style={{
             background: 'linear-gradient(135deg, #0A0F1C 0%, #1a0a2e 25%, #0a1628 50%, #1a0818 75%, #0A0F1C 100%)',
             backgroundSize: '400% 400%',
           }}
         />
 
-        {/* Floating orbs — Level 4 ambient */}
+        {/* Floating orbs */}
         <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full pointer-events-none animate-float"
           style={{ background: 'radial-gradient(circle, rgba(155,48,255,0.18) 0%, transparent 70%)', animationDelay: '0s' }} />
         <div className="absolute bottom-1/3 left-1/5 w-[400px] h-[400px] rounded-full pointer-events-none animate-float"
@@ -61,7 +62,7 @@ export default function Hero() {
           backgroundSize: '60px 60px',
         }} />
 
-        {/* Light rays overlay */}
+        {/* Light rays */}
         <div className="absolute inset-0 pointer-events-none" style={{ opacity: 0.55, zIndex: 1 }}>
           <LightRays
             raysOrigin="top-center"
@@ -79,18 +80,18 @@ export default function Hero() {
 
         {/* CTA glow keyframe */}
         <style>{`
-          @keyframes ctaGlowPink {
-            0%, 100% { box-shadow: 0 0 16px rgba(255,45,120,0.4), 0 0 44px rgba(155,48,255,0.18); }
-            50%       { box-shadow: 0 0 32px rgba(255,45,120,0.75), 0 0 80px rgba(155,48,255,0.38); }
-          }
-          @keyframes eyebrowGlowPink {
-            0%, 100% { box-shadow: 0 0 8px rgba(255,45,120,0.20), 0 0 20px rgba(255,45,120,0.08); border-color: rgba(255,45,120,0.30); }
-            50%       { box-shadow: 0 0 16px rgba(255,45,120,0.50), 0 0 40px rgba(255,45,120,0.20); border-color: rgba(255,45,120,0.60); }
-          }
-        `}</style>
+              @keyframes ctaGlowPink {
+                0%, 100% { box-shadow: 0 0 16px rgba(255,45,120,0.4), 0 0 44px rgba(155,48,255,0.18); }
+                50%       { box-shadow: 0 0 32px rgba(255,45,120,0.75), 0 0 80px rgba(155,48,255,0.38); }
+              }
+              @keyframes eyebrowGlowPink {
+                0%, 100% { box-shadow: 0 0 8px rgba(255,45,120,0.20), 0 0 20px rgba(255,45,120,0.08); border-color: rgba(255,45,120,0.30); }
+                50%       { box-shadow: 0 0 16px rgba(255,45,120,0.50), 0 0 40px rgba(255,45,120,0.20); border-color: rgba(255,45,120,0.60); }
+              }
+            `}</style>
 
         {/* Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-28 md:pt-28 lg:pt-32 pb-4 sm:pb-12">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 lg:pt-40 pb-8 sm:pb-16">
           <div className="max-w-7xl mx-auto text-center">
 
             {/* Eyebrow */}
@@ -186,14 +187,18 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
-          style={{ background: 'linear-gradient(to bottom, transparent, #0A0F1C)' }} />
-      </section >
+        {/* ── TRUSTED BY ─────────────────────────────────── */}
+        <div className="relative z-10">
+          <TrustedBy />
+        </div>
 
+        {/* Bottom fade to next section */}
+        <div className="relative z-10 h-20 pointer-events-none"
+          style={{ background: 'linear-gradient(to bottom, transparent, #07091A)' }} />
+
+      </section>
 
       {/* ── REST OF PAGE ─────────────────────────────────── */}
-      < TrustedBy />
       <ServiceGrid />
       <HowItWorks />
       <AIAdvantage />
