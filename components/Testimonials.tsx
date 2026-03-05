@@ -104,31 +104,27 @@ export default function Testimonials() {
                             boxShadow: `0 0 30px ${featured.accent}55, 0 0 80px ${featured.accent}20, 0 0 160px ${featured.accent}08`,
                             ...reveal(100),
                         }}>
-                        {/* Big quote mark */}
-                        <div className="relative flex-1 p-8 flex flex-col gap-6" style={{ background: 'rgba(0,0,0,0.98)' }}>
+                        {/* Top: author + stars (dark) */}
+                        <div className="p-6 flex items-center gap-4" style={{ background: '#000000', borderBottom: `1px solid ${featured.accent}22` }}>
+                            <div className="w-14 h-14 rounded-2xl overflow-hidden shrink-0"
+                                style={{ border: `2px solid ${featured.accent}60` }}>
+                                <img src={featured.image} alt={featured.name} className="w-full h-full object-cover object-top" />
+                            </div>
+                            <div className="flex-1">
+                                <p className="text-sm font-bold text-white">{featured.name}</p>
+                                <p className="text-xs" style={{ color: featured.accent }}>{featured.title}</p>
+                                <p className="text-xs mt-0.5" style={{ color: 'rgba(240,244,255,0.35)' }}>{featured.location}</p>
+                            </div>
+                            <Stars count={featured.stars} color={featured.accent} />
+                        </div>
+                        {/* Bottom: quote (white) */}
+                        <div className="relative flex-1 p-8 flex flex-col" style={{ background: '#FFFFFF' }}>
                             <span className="absolute top-5 right-7 text-8xl font-black leading-none select-none"
                                 style={{ color: `${featured.accent}18`, fontFamily: 'Georgia, serif' }}>&ldquo;</span>
-
-                            <Stars count={featured.stars} color={featured.accent} />
-
                             <p className="text-base lg:text-lg leading-relaxed font-medium relative z-10"
-                                style={{ color: 'rgba(240,244,255,0.85)' }}>
+                                style={{ color: '#111827' }}>
                                 &ldquo;{featured.quote}&rdquo;
                             </p>
-
-                            {/* Author row */}
-                            <div className="flex items-center gap-4 pt-4 mt-auto"
-                                style={{ borderTop: `1px solid ${featured.accent}22` }}>
-                                <div className="w-14 h-14 rounded-2xl overflow-hidden shrink-0"
-                                    style={{ border: `2px solid ${featured.accent}60` }}>
-                                    <img src={featured.image} alt={featured.name} className="w-full h-full object-cover object-top" />
-                                </div>
-                                <div>
-                                    <p className="text-sm font-bold text-white">{featured.name}</p>
-                                    <p className="text-xs" style={{ color: featured.accent }}>{featured.title}</p>
-                                    <p className="text-xs mt-0.5" style={{ color: 'rgba(240,244,255,0.35)' }}>{featured.location}</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
@@ -141,27 +137,25 @@ export default function Testimonials() {
                                     boxShadow: `0 0 30px ${t.accent}55, 0 0 80px ${t.accent}20, 0 0 160px ${t.accent}08`,
                                     ...reveal(200 + i * 120),
                                 }}>
-                                <div className="relative flex-1 p-6 flex flex-col gap-4" style={{ background: 'rgba(0,0,0,0.98)' }}>
-                                    <span className="absolute top-3 right-5 text-6xl font-black leading-none select-none"
-                                        style={{ color: `${t.accent}15`, fontFamily: 'Georgia, serif' }}>&ldquo;</span>
-
+                                {/* Top: author + stars (dark) */}
+                                <div className="p-4 flex items-center gap-3" style={{ background: '#000000', borderBottom: `1px solid ${t.accent}22` }}>
+                                    <div className="w-10 h-10 rounded-xl overflow-hidden shrink-0"
+                                        style={{ border: `2px solid ${t.accent}50` }}>
+                                        <img src={t.image} alt={t.name} className="w-full h-full object-cover object-top" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <p className="text-xs font-bold text-white">{t.name}</p>
+                                        <p className="text-[11px]" style={{ color: t.accent }}>{t.title}</p>
+                                    </div>
                                     <Stars count={t.stars} color={t.accent} />
-
-                                    <p className="text-sm leading-relaxed relative z-10" style={{ color: 'rgba(240,244,255,0.75)' }}>
+                                </div>
+                                {/* Bottom: quote (white) */}
+                                <div className="relative flex-1 p-5 flex flex-col" style={{ background: '#FFFFFF' }}>
+                                    <span className="absolute top-3 right-5 text-6xl font-black leading-none select-none"
+                                        style={{ color: `${t.accent}18`, fontFamily: 'Georgia, serif' }}>&ldquo;</span>
+                                    <p className="text-sm leading-relaxed relative z-10" style={{ color: '#374151' }}>
                                         &ldquo;{t.quote}&rdquo;
                                     </p>
-
-                                    <div className="flex items-center gap-3 pt-3 mt-auto"
-                                        style={{ borderTop: `1px solid ${t.accent}20` }}>
-                                        <div className="w-10 h-10 rounded-xl overflow-hidden shrink-0"
-                                            style={{ border: `2px solid ${t.accent}50` }}>
-                                            <img src={t.image} alt={t.name} className="w-full h-full object-cover object-top" />
-                                        </div>
-                                        <div>
-                                            <p className="text-xs font-bold text-white">{t.name}</p>
-                                            <p className="text-[11px]" style={{ color: t.accent }}>{t.title}</p>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         ))}
