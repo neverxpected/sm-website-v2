@@ -40,7 +40,7 @@ export default function ContactSection() {
   const labelClass = "block text-xs font-semibold mb-1.5" as const;
 
   return (
-    <section className="py-24 lg:py-32 px-6 lg:px-8 relative overflow-hidden" style={{ background: '#0D1526' }}>
+    <section className="py-24 lg:py-32 px-6 lg:px-8 relative overflow-hidden" style={{ background: '#000000' }}>
       {/* Ambient orbs */}
       <div className="absolute top-0 right-1/4 w-[600px] h-[600px] rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(circle, rgba(255,45,120,0.08) 0%, transparent 70%)' }} />

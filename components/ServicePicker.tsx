@@ -28,9 +28,8 @@ export default function ServicePicker() {
                 style={{ color: "#374151" }}
             >
                 Service Interest{" "}
-                <span style={{ color: "#6B7280", fontWeight: 400 }}>
-                    (select all that apply)
-                </span>
+                <span style={{ color: "#FF2D78" }}>*</span>{" "}
+                <span style={{ color: "#6B7280", fontWeight: 400 }}>(select all that apply)</span>
             </label>
             <div className="flex flex-wrap gap-2">
                 {SERVICES.map((service) => {
@@ -62,6 +61,17 @@ export default function ServicePicker() {
                     );
                 })}
             </div>
+            {/* Required guard — empty string fails native validation when nothing selected */}
+            <input
+                type="text"
+                name="_service_required_guard"
+                required
+                aria-hidden="true"
+                tabIndex={-1}
+                value={selected.length > 0 ? 'ok' : ''}
+                onChange={() => { }}
+                style={{ position: 'absolute', opacity: 0, pointerEvents: 'none', height: 0, width: 0 }}
+            />
             {/* Hidden inputs so form submissions capture the selections */}
             {selected.map((s) => (
                 <input key={s} type="hidden" name="service_interest" value={s} />

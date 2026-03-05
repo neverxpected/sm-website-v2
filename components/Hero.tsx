@@ -37,30 +37,9 @@ export default function Hero() {
       {/* ── HERO + TRUSTED BY — one unified section ─────────── */}
       <section
         className="relative overflow-hidden"
-        style={{ background: '#0A0F1C' }}
+        style={{ background: '#000000' }}
       >
-        {/* Animated gradient background */}
-        <div
-          className="absolute inset-0 animate-gradient-shift pointer-events-none"
-          style={{
-            background: 'linear-gradient(135deg, #0A0F1C 0%, #1a0a2e 25%, #0a1628 50%, #1a0818 75%, #0A0F1C 100%)',
-            backgroundSize: '400% 400%',
-          }}
-        />
 
-        {/* Floating orbs */}
-        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full pointer-events-none animate-float"
-          style={{ background: 'radial-gradient(circle, rgba(155,48,255,0.18) 0%, transparent 70%)', animationDelay: '0s' }} />
-        <div className="absolute bottom-1/3 left-1/5 w-[400px] h-[400px] rounded-full pointer-events-none animate-float"
-          style={{ background: 'radial-gradient(circle, rgba(255,45,120,0.14) 0%, transparent 70%)', animationDelay: '2.5s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none animate-float"
-          style={{ background: 'radial-gradient(circle, rgba(0,229,255,0.07) 0%, transparent 70%)', animationDelay: '5s' }} />
-
-        {/* Grid overlay */}
-        <div className="absolute inset-0 pointer-events-none" style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)',
-          backgroundSize: '60px 60px',
-        }} />
 
         {/* Light rays */}
         <div className="absolute inset-0 pointer-events-none" style={{ opacity: 0.55, zIndex: 1 }}>
@@ -194,17 +173,17 @@ export default function Hero() {
 
         {/* Bottom fade to next section */}
         <div className="relative z-10 h-20 pointer-events-none"
-          style={{ background: 'linear-gradient(to bottom, transparent, #07091A)' }} />
+          style={{ background: 'linear-gradient(to bottom, transparent, #000000)' }} />
 
       </section>
 
       {/* ── REST OF PAGE ─────────────────────────────────── */}
       <ServiceGrid />
       <HowItWorks />
-      <AIAdvantage />
+
       <CaseStudies />
-      <MeetTheTeam />
       <Testimonials />
+      <MeetTheTeam />
 
       <ContactSection />
     </div >

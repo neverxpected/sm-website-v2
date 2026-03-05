@@ -6,7 +6,12 @@ const steps = [
     {
         number: '01',
         title: 'Strategy Call',
-        description: 'We audit your current marketing infrastructure, identify revenue gaps, and map a precision growth plan tailored to your business model.',
+        bullets: [
+            'Audit your current marketing infrastructure',
+            'Identify revenue gaps & missed opportunities',
+            'Map a precision growth plan',
+            'Tailored to your business model',
+        ],
         accent: '#FF2D78',
         glow: 'rgba(255,45,120,0.35)',
         orbColor: 'rgba(255,45,120,0.09)',
@@ -14,7 +19,12 @@ const steps = [
     {
         number: '02',
         title: 'Build & Launch',
-        description: 'Our team engineers your campaigns, AI systems, and automation workflows from the ground up — built to convert from day one.',
+        bullets: [
+            'Engineer custom ad campaigns',
+            'Build AI systems & automations',
+            'Workflows built from the ground up',
+            'Built to convert from day one',
+        ],
         accent: '#9B30FF',
         glow: 'rgba(155,48,255,0.35)',
         orbColor: 'rgba(155,48,255,0.09)',
@@ -22,7 +32,12 @@ const steps = [
     {
         number: '03',
         title: 'Scale & Optimize',
-        description: 'We analyze performance data weekly, dial in what works, and systematically scale your results month over month.',
+        bullets: [
+            'Weekly performance data analysis',
+            'Double down on what works',
+            'Cut what doesn\'t convert',
+            'Systematically scale month over month',
+        ],
         accent: '#00E5FF',
         glow: 'rgba(0,229,255,0.35)',
         orbColor: 'rgba(0,229,255,0.07)',
@@ -71,7 +86,7 @@ export default function HowItWorks() {
         <section
             ref={sectionRef}
             className="relative z-10 py-28 px-6 lg:px-8 overflow-hidden"
-            style={{ background: '#060A14', borderTop: '1px solid rgba(255,255,255,0.05)' }}
+            style={{ background: '#000000' }}
         >
             <style>{`
         @keyframes howItWorksShimmer {
@@ -154,7 +169,7 @@ export default function HowItWorks() {
                     {steps.map((step, i) => (
                         <div key={step.number}
                             className="relative flex flex-col items-center text-center p-8 rounded-2xl"
-                            style={{ background: 'rgba(13,21,38,0.95)', border: '1px solid rgba(255,255,255,0.08)', ...reveal(300 + i * 150) }}>
+                            style={{ background: '#000000', border: `1px solid ${step.accent}44`, boxShadow: `0 0 28px ${step.glow.replace('0.35', '0.2')}, 0 4px 16px rgba(0,0,0,0.8)`, ...reveal(300 + i * 150) }}>
                             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full"
                                 style={{ background: step.accent, boxShadow: `0 0 8px ${step.accent}` }} />
                             <div className="relative w-16 h-16 mb-6 shrink-0">
@@ -164,8 +179,17 @@ export default function HowItWorks() {
                                     {step.number}
                                 </div>
                             </div>
-                            <h3 className="text-lg font-black text-white mb-3">{step.title}</h3>
-                            <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.5)' }}>{step.description}</p>
+                            <h3 className="text-lg font-black text-white mb-4">{step.title}</h3>
+                            <ul className="text-left space-y-2 w-full">
+                                {step.bullets.map((b) => (
+                                    <li key={b} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(240,244,255,0.65)' }}>
+                                        <svg viewBox="0 0 24 24" fill="none" className="w-3.5 h-3.5 mt-0.5 shrink-0" stroke={step.accent} strokeWidth={2.5}>
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                        {b}
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
                     ))}
                 </div>
@@ -178,19 +202,18 @@ export default function HowItWorks() {
                                 className="relative flex flex-col items-center text-center p-8 rounded-2xl transition-all duration-300"
                                 style={{
                                     flex: 1,
-                                    background: 'rgba(13,21,38,0.95)',
-                                    border: '1px solid rgba(255,255,255,0.08)',
+                                    background: '#000000',
+                                    border: `1px solid ${step.accent}44`,
+                                    boxShadow: `0 0 28px ${step.glow.replace('0.35', '0.2')}, 0 4px 16px rgba(0,0,0,0.4)`,
                                     ...reveal(300 + i * 150),
                                 }}
                                 onMouseEnter={e => {
                                     (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-4px)';
-                                    (e.currentTarget as HTMLDivElement).style.borderColor = step.glow.replace('0.35', '0.4');
-                                    (e.currentTarget as HTMLDivElement).style.boxShadow = `0 14px 40px ${step.glow}`;
+                                    (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 45px ${step.glow}, 0 14px 40px rgba(0,0,0,0.5)`;
                                 }}
                                 onMouseLeave={e => {
                                     (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)';
-                                    (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(255,255,255,0.08)';
-                                    (e.currentTarget as HTMLDivElement).style.boxShadow = 'none';
+                                    (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 28px ${step.glow.replace('0.35', '0.2')}, 0 4px 16px rgba(0,0,0,0.4)`;
                                 }}
                             >
                                 {/* Accent dot at top */}
@@ -210,8 +233,17 @@ export default function HowItWorks() {
                                     </div>
                                 </div>
 
-                                <h3 className="text-lg font-black text-white mb-3">{step.title}</h3>
-                                <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.5)' }}>{step.description}</p>
+                                <h3 className="text-lg font-black text-white mb-4">{step.title}</h3>
+                                <ul className="text-left space-y-2 w-full">
+                                    {step.bullets.map((b) => (
+                                        <li key={b} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(240,244,255,0.65)' }}>
+                                            <svg viewBox="0 0 24 24" fill="none" className="w-3.5 h-3.5 mt-0.5 shrink-0" stroke={step.accent} strokeWidth={2.5}>
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                            {b}
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
 
                             {/* Connector between cards */}
