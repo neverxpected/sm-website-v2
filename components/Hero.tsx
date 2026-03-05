@@ -203,8 +203,8 @@ export default function Hero() {
       <HowItWorks />
 
       <CaseStudies />
-      <MeetTheTeam />
       <Testimonials />
+      <MeetTheTeam />
 
       <ContactSection />
     </div >
