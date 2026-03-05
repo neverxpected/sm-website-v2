@@ -145,16 +145,6 @@ export default function ServiceGrid() {
               ))}
             </div>
 
-            {/* Stats */}
-            <div className="flex gap-6 pt-2 border-t" style={{ borderColor: 'rgba(0,0,0,0.08)' }}>
-              {[{ v: '$20M+', l: 'Revenue Generated' }, { v: '5+ Yrs', l: 'Average Client' }].map(s => (
-                <div key={s.l}>
-                  <p className="text-lg font-black" style={{ background: 'linear-gradient(90deg, #2563EB, #059669)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>{s.v}</p>
-                  <p className="text-[10px] uppercase tracking-widest font-semibold" style={{ color: '#9CA3AF' }}>{s.l}</p>
-                </div>
-              ))}
-            </div>
-
 
           </div>
 
@@ -194,16 +184,6 @@ export default function ServiceGrid() {
                   </span>
                   {p.label}
                 </Link>
-              ))}
-            </div>
-
-            {/* Stats */}
-            <div className="flex gap-6 pt-2 border-t" style={{ borderColor: 'rgba(0,0,0,0.08)' }}>
-              {[{ v: '24/7', l: 'Always Working' }, { v: '5,000+', l: 'Leads Handled' }].map(s => (
-                <div key={s.l}>
-                  <p className="text-lg font-black" style={{ background: 'linear-gradient(90deg, #7C3AED, #EC4899)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>{s.v}</p>
-                  <p className="text-[10px] uppercase tracking-widest font-semibold" style={{ color: '#9CA3AF' }}>{s.l}</p>
-                </div>
               ))}
             </div>
 
