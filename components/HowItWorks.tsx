@@ -86,7 +86,7 @@ export default function HowItWorks() {
         <section
             ref={sectionRef}
             className="relative z-10 py-28 px-6 lg:px-8 overflow-hidden"
-            style={{ background: '#060A14', borderTop: '1px solid rgba(255,255,255,0.05)' }}
+            style={{ background: '#080C18' }}
         >
             <style>{`
         @keyframes howItWorksShimmer {

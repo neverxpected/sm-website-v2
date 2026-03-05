@@ -46,7 +46,7 @@ const cases = [
 
 export default function CaseStudies() {
   return (
-    <section className="py-24 px-6 lg:px-8 relative overflow-hidden" style={{ background: '#060A14' }}>
+    <section className="py-24 px-6 lg:px-8 relative overflow-hidden" style={{ background: '#080C18' }}>
       {/* Ambient orbs */}
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(circle, rgba(255,45,120,0.06) 0%, transparent 70%)' }} />

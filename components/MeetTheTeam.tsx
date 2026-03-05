@@ -111,7 +111,7 @@ function ParticleBg({ color }: { color: string }) {
 
 export default function MeetTheTeam() {
   return (
-    <section className="relative py-24 lg:py-32" style={{ background: '#141B2E' }}>
+    <section className="relative py-24 lg:py-32" style={{ background: '#080C18' }}>
       <div className="absolute inset-0 pointer-events-none" style={{
         backgroundImage: 'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
         backgroundSize: '60px 60px',
