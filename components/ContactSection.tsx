@@ -32,10 +32,10 @@ export default function ContactSection() {
     setSubmitted(true);
   }
 
-  const inputClass = "w-full px-4 py-3 rounded-xl text-sm text-white placeholder:text-white/20 focus:outline-none transition-all appearance-none";
+  const inputClass = "w-full px-4 py-3 rounded-xl text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none transition-all appearance-none";
   const inputStyle = {
-    background: 'rgba(255,255,255,0.04)',
-    border: '1px solid rgba(255,255,255,0.1)',
+    background: '#F9FAFB',
+    border: '1px solid rgba(0,0,0,0.12)',
   };
   const labelClass = "block text-xs font-semibold mb-1.5" as const;
 
@@ -72,7 +72,7 @@ export default function ContactSection() {
                 Let&apos;s Talk.
               </span>
             </h2>
-            <p className="reveal reveal-delay-200 text-base leading-relaxed mb-10 max-w-md" style={{ color: 'rgba(240,244,255,0.5)' }}>
+            <p className="reveal reveal-delay-200 text-base leading-relaxed mb-10 max-w-md" style={{ color: '#374151' }}>
               Book a free strategy call with our team. We&apos;ll analyze your current marketing efforts and show you exactly how we can help you reach your goals.
             </p>
 
@@ -119,8 +119,7 @@ export default function ContactSection() {
           <div className="reveal reveal-delay-200">
             <div className="contact-gold-frame rounded-2xl p-8"
               style={{
-                background: 'rgba(13,21,38,0.97)',
-                backdropFilter: 'blur(16px)',
+                background: '#ffffff',
               }}>
               {submitted ? (
                 <div className="flex flex-col items-center justify-center py-16 text-center gap-4">
@@ -130,47 +129,47 @@ export default function ContactSection() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
                   </span>
-                  <h3 className="text-xl font-black text-white">Message Sent!</h3>
-                  <p className="text-sm" style={{ color: 'rgba(240,244,255,0.5)' }}>We&apos;ll be in touch shortly.</p>
+                  <h3 className="text-xl font-black" style={{ color: '#111827' }}>Message Sent!</h3>
+                  <p className="text-sm" style={{ color: '#6B7280' }}>We&apos;ll be in touch shortly.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Name <span style={{ color: '#FF2D78' }}>*</span></label>
+                      <label className={labelClass} style={{ color: '#374151' }}>Name <span style={{ color: '#FF2D78' }}>*</span></label>
                       <input required name="name" type="text" placeholder="John Smith" className={inputClass} style={inputStyle} />
                     </div>
                     <div>
-                      <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Email <span style={{ color: '#FF2D78' }}>*</span></label>
+                      <label className={labelClass} style={{ color: '#374151' }}>Email <span style={{ color: '#FF2D78' }}>*</span></label>
                       <input required name="email" type="email" placeholder="john@company.com" className={inputClass} style={inputStyle} />
                     </div>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Company <span style={{ color: '#FF2D78' }}>*</span></label>
+                      <label className={labelClass} style={{ color: '#374151' }}>Company <span style={{ color: '#FF2D78' }}>*</span></label>
                       <input required name="company" type="text" placeholder="Company name" className={inputClass} style={inputStyle} />
                     </div>
                     <div>
-                      <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Phone <span style={{ color: '#FF2D78' }}>*</span></label>
+                      <label className={labelClass} style={{ color: '#374151' }}>Phone <span style={{ color: '#FF2D78' }}>*</span></label>
                       <input required name="phone" type="tel" placeholder="+1 (555) 000-0000" className={inputClass} style={inputStyle} />
                     </div>
                   </div>
                   <ServicePicker />
                   <div>
-                    <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Monthly Budget <span style={{ color: '#FF2D78' }}>*</span></label>
+                    <label className={labelClass} style={{ color: '#374151' }}>Monthly Budget <span style={{ color: '#FF2D78' }}>*</span></label>
                     <div className="relative">
-                      <select required name="budget" className={inputClass} style={{ ...inputStyle, color: 'rgba(240,244,255,0.5)', paddingRight: '2.5rem' }}>
+                      <select required name="budget" className={inputClass} style={{ ...inputStyle, color: '#374151', paddingRight: '2.5rem' }}>
                         <option value="">Select budget</option>
                         <option>Under $5,000/mo</option>
                         <option>$5,000 – $10,000/mo</option>
                         <option>$10,000 – $25,000/mo</option>
                         <option>$25,000+/mo</option>
                       </select>
-                      <svg className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: 'rgba(240,244,255,0.3)' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                      <svg className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#9CA3AF' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
                     </div>
                   </div>
                   <div>
-                    <label className={labelClass} style={{ color: 'rgba(240,244,255,0.45)' }}>Message</label>
+                    <label className={labelClass} style={{ color: '#374151' }}>Message</label>
                     <textarea name="message" rows={4} placeholder="Tell us about your business and goals..." className={inputClass + " resize-none"} style={inputStyle} />
                   </div>
                   <button
