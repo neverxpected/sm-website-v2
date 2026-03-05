@@ -73,7 +73,7 @@ export default function Testimonials() {
                     </h2>
                     <p className="text-base max-w-xl mx-auto" style={{ color: 'rgba(240,244,255,0.5)' }}>
                         {/* PLACEHOLDER: Update subheadline */}
-                        Real results from real businesses we&apos;ve partnered with.
+                        Real feedback from real clients we&apos;ve worked with
                     </p>
                 </div>
 
