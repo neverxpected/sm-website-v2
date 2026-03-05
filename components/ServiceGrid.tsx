@@ -132,7 +132,7 @@ export default function ServiceGrid() {
             </p>
 
             {/* Platform pills */}
-            <div className="flex flex-wrap gap-3">
+            <div className="grid grid-cols-2 gap-3">
               {paidPlatforms.map((p) => (
                 <Link key={p.href} href={p.href}
                   className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold transition-all duration-200 hover:scale-105"
@@ -174,7 +174,7 @@ export default function ServiceGrid() {
             </p>
 
             {/* Platform pills */}
-            <div className="flex flex-wrap gap-3">
+            <div className="grid grid-cols-2 gap-3">
               {aiPlatforms.map((p) => (
                 <Link key={p.href} href={p.href}
                   className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold transition-all duration-200 hover:scale-105"
