@@ -18,6 +18,7 @@ const columns = [
     links: [
       { label: "AI Receptionist", href: "/services/ai-receptionist" },
       { label: "AI Integrations", href: "/services/ai-system-integration" },
+      { label: "AI Lead Nurturing", href: "/services/ai-lead-nurturing" },
     ],
   },
   {

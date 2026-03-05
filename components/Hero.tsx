@@ -201,7 +201,7 @@ export default function Hero() {
       {/* ── REST OF PAGE ─────────────────────────────────── */}
       <ServiceGrid />
       <HowItWorks />
-      <AIAdvantage />
+
       <CaseStudies />
       <MeetTheTeam />
       <Testimonials />

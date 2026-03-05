@@ -132,6 +132,25 @@ export default function AiReceptionistPage() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
           </Link>
+
+          {/* At a Glance — from AI Advantage */}
+          <div className="mt-12 flex flex-wrap gap-3">
+            {[
+              "Answers instantly, no hold times",
+              "Qualifies leads with smart questions",
+              "Books directly into your calendar",
+              "Speaks naturally, not robotic",
+              "Handles objections professionally",
+            ].map((b) => (
+              <span key={b} className="flex items-center gap-2 px-4 py-2 rounded-full text-sm"
+                style={{ background: "rgba(155,48,255,0.1)", border: "1px solid rgba(155,48,255,0.2)", color: "rgba(240,244,255,0.75)" }}>
+                <svg viewBox="0 0 24 24" fill="none" className="w-3.5 h-3.5 shrink-0" stroke="#9B30FF" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                {b}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 
