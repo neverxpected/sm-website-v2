@@ -171,9 +171,7 @@ export default function Hero() {
           <TrustedBy />
         </div>
 
-        {/* Bottom fade to next section */}
-        <div className="relative z-10 h-20 pointer-events-none"
-          style={{ background: 'linear-gradient(to bottom, transparent, #000000)' }} />
+
 
       </section>
 
