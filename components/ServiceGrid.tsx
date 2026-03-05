@@ -155,14 +155,7 @@ export default function ServiceGrid() {
               ))}
             </div>
 
-            <Link href="/services/meta-ads"
-              className="inline-flex items-center gap-2 text-sm font-bold transition-all duration-200 hover:gap-3"
-              style={{ color: '#2563EB' }}>
-              Explore paid ads
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-4 h-4">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </Link>
+
           </div>
 
           {/* ── AI Automation Card ────────────────────────── */}
@@ -214,14 +207,7 @@ export default function ServiceGrid() {
               ))}
             </div>
 
-            <Link href="/services/ai-receptionist"
-              className="inline-flex items-center gap-2 text-sm font-bold transition-all duration-200 hover:gap-3"
-              style={{ color: '#7C3AED' }}>
-              Explore AI services
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-4 h-4">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </Link>
+
           </div>
 
         </div>
