@@ -101,7 +101,7 @@ export default function Testimonials() {
                     <div className="lg:col-span-3 rounded-3xl flex flex-col overflow-hidden"
                         style={{
                             border: `1px solid ${featured.accent}55`,
-                            boxShadow: `0 0 40px ${featured.accent}20, 0 8px 32px rgba(0,0,0,0.5)`,
+                            boxShadow: `0 0 30px ${featured.accent}55, 0 0 80px ${featured.accent}20, 0 0 160px ${featured.accent}08`,
                             ...reveal(100),
                         }}>
                         {/* Big quote mark */}
@@ -137,8 +137,8 @@ export default function Testimonials() {
                         {side.map((t, i) => (
                             <div key={i} className="card-hover flex-1 rounded-3xl flex flex-col overflow-hidden"
                                 style={{
-                                    border: `1px solid ${t.accent}44`,
-                                    boxShadow: `0 0 24px ${t.accent}15`,
+                                    border: `1px solid ${t.accent}66`,
+                                    boxShadow: `0 0 30px ${t.accent}55, 0 0 80px ${t.accent}20, 0 0 160px ${t.accent}08`,
                                     ...reveal(200 + i * 120),
                                 }}>
                                 <div className="relative flex-1 p-6 flex flex-col gap-4" style={{ background: 'rgba(0,0,0,0.98)' }}>

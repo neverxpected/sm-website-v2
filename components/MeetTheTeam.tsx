@@ -157,7 +157,7 @@ export default function MeetTheTeam() {
             <div
               key={member.name}
               className={`reveal reveal-delay-${(i + 2) * 100} card-neon rounded-2xl overflow-hidden flex flex-col`}
-              style={{ background: '#000000', border: `1px solid ${member.accent}88`, backdropFilter: 'blur(12px)', boxShadow: `0 0 24px ${member.accent}30, 0 4px 16px rgba(0,0,0,0.8)` }}
+              style={{ background: '#000000', border: `1px solid ${member.accent}88`, backdropFilter: 'blur(12px)', boxShadow: `0 0 30px ${member.accent}55, 0 0 80px ${member.accent}20, 0 0 160px ${member.accent}08` }}
             >
               {/* Photo area */}
               <div

@@ -169,7 +169,7 @@ export default function HowItWorks() {
                     {steps.map((step, i) => (
                         <div key={step.number}
                             className="relative flex flex-col items-center text-center p-8 rounded-2xl"
-                            style={{ background: '#000000', border: `1px solid ${step.accent}44`, boxShadow: `0 0 28px ${step.glow.replace('0.35', '0.2')}, 0 4px 16px rgba(0,0,0,0.8)`, ...reveal(300 + i * 150) }}>
+                            style={{ background: '#000000', border: `1px solid ${step.accent}66`, boxShadow: `0 0 30px ${step.glow.replace('0.35', '0.45')}, 0 0 80px ${step.glow.replace('0.35', '0.15')}, 0 0 160px ${step.glow.replace('0.35', '0.06')}`, ...reveal(300 + i * 150) }}>
                             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full"
                                 style={{ background: step.accent, boxShadow: `0 0 8px ${step.accent}` }} />
                             <div className="relative w-16 h-16 mb-6 shrink-0">
@@ -203,8 +203,8 @@ export default function HowItWorks() {
                                 style={{
                                     flex: 1,
                                     background: '#000000',
-                                    border: `1px solid ${step.accent}44`,
-                                    boxShadow: `0 0 28px ${step.glow.replace('0.35', '0.2')}, 0 4px 16px rgba(0,0,0,0.4)`,
+                                    border: `1px solid ${step.accent}66`,
+                                    boxShadow: `0 0 30px ${step.glow.replace('0.35', '0.45')}, 0 0 80px ${step.glow.replace('0.35', '0.15')}, 0 0 160px ${step.glow.replace('0.35', '0.06')}`,
                                     ...reveal(300 + i * 150),
                                 }}
                                 onMouseEnter={e => {
