@@ -142,7 +142,7 @@ export default function ContactPage() {
                     Contact Us
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-tight max-w-3xl"
+                <h1 className="text-2xl sm:text-4xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-tight max-w-3xl"
                     style={reveal(heroVisible, 100)}>
                     You could be one<br />
                     <span style={{
