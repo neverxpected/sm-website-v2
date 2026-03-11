@@ -251,27 +251,36 @@ export default function Navbar() {
       {/* Mobile menu panel */}
       {mobileOpen && (
         <div className="md:hidden px-6 pb-6" style={{ background: "rgba(11,11,12,0.85)", backdropFilter: "blur(12px)", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
-          {[
-            { label: 'Meta Ads', href: '/services/meta-ads' },
-            { label: 'Google Ads', href: '/services/google-ads' },
-            { label: 'TikTok Ads', href: '/services/tiktok-ads' },
-            { label: 'Bing Ads', href: '/services/digital-advertising' },
-            { label: 'AI Receptionist', href: '/services/ai-receptionist' },
-            { label: 'AI Integrations', href: '/services/ai-system-integration' },
-
-            { label: 'About Us', href: '/about' },
-            { label: 'Contact Us', href: '/contact' },
-          ].map((link) => (
-            <div key={link.href} className="border-b border-white/10">
+          <div className="flex flex-col">
+            <MobileAccordion
+              label="Paid Ads"
+              links={paidAdsLinks}
+              onClose={() => setMobileOpen(false)}
+            />
+            <MobileAccordion
+              label="AI Automations"
+              links={aiAutomationLinks}
+              onClose={() => setMobileOpen(false)}
+            />
+            <div className="border-b border-white/10">
               <Link
-                href={link.href}
-                className="flex items-center gap-3 py-4 text-base font-medium text-white/80 hover:text-white transition-colors"
+                href="/about"
+                className="block w-full text-left py-4 text-base font-medium text-white"
                 onClick={() => setMobileOpen(false)}
               >
-                {link.label}
+                About Us
               </Link>
             </div>
-          ))}
+            <div className="border-b border-white/10">
+              <Link
+                href="/contact"
+                className="block w-full text-left py-4 text-base font-medium text-white"
+                onClick={() => setMobileOpen(false)}
+              >
+                Contact Us
+              </Link>
+            </div>
+          </div>
 
           <div className="pt-6">
             <Link
