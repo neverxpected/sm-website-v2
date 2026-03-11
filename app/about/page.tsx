@@ -200,7 +200,7 @@ export default function AboutPage() {
                 </div>
                 <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black tracking-tight leading-tight mb-6"
                     style={reveal(heroVisible, 100)}>
-                    Built by Someone Who Has Been{' '}
+                    This isn&apos;t an agency that discovered digital last year.{' '}
                     <span style={{
                         background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
                         WebkitBackgroundClip: 'text',
@@ -208,14 +208,13 @@ export default function AboutPage() {
                         backgroundClip: 'text',
                         backgroundSize: '200% auto',
                         animation: 'aboutHeadlineShimmer 4s linear infinite',
-                        display: 'inline-block',
+                        display: 'inline',
                     }}>
-                        Obsessed With Digital
-                    </span>{' '}
-                    Since Day One
+                        We&apos;ve been living it from the start.
+                    </span>
                 </h1>
                 <p className="text-base leading-relaxed" style={{ color: 'rgba(240,244,255,0.5)', ...reveal(heroVisible, 200) }}>
-                    Switch Media Marketing LLC | Founded February 2019 | Houston, TX
+                    Switch Media Marketing LLC - Founded in 2019
                 </p>
             </section>
 
