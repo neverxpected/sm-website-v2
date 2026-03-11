@@ -160,7 +160,7 @@ export default function ContactPage() {
 
                 <p className="text-base leading-relaxed max-w-xl"
                     style={{ color: 'rgba(240,244,255,0.5)', ...reveal(heroVisible, 200) }}>
-                    No pitch decks or salesy pitch, we&apos;re just here to listen and see what is holding your business back. If that sounds like something you need, let&apos;s talk.
+                    No pitch decks or sales pitch, we&apos;re just here to listen and find out what is holding your business back from growing. If that sounds reasonable, let&apos;s talk.
                 </p>
             </section>
 
