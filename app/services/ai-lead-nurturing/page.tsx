@@ -106,7 +106,7 @@ export default function AILeadNurturingPage() {
                         </svg>
                         AI Lead Nurturing
                     </div>
-                    <h1 className="text-4xl lg:text-6xl font-black tracking-tight mb-6">
+                    <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black tracking-tight mb-6">
                         Convert More.{" "}
                         <span style={{ background: "linear-gradient(135deg, #FF2D78, #9B30FF)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                             Automatically.

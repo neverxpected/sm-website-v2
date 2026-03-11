@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${orbitron.variable} antialiased text-black`}>
+      <body className={`${inter.variable} ${orbitron.variable} antialiased text-black overflow-x-hidden`}>
         <Navbar />
         {children}
         <Footer />

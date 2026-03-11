@@ -142,7 +142,7 @@ export default function ContactPage() {
                     Contact
                 </div>
 
-                <h1 className="text-4xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-tight max-w-2xl"
+                <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-tight max-w-2xl"
                     style={reveal(heroVisible, 100)}>
                     You could be<br />
                     <span style={{
@@ -153,11 +153,10 @@ export default function ContactPage() {
                         backgroundSize: '200% auto',
                         animation: 'contactHeadlineShimmer 4s linear infinite',
                         display: 'inline',
-                        whiteSpace: 'nowrap',
                     }}>
                         one honest conversation
                     </span><br />
-                    <span style={{ whiteSpace: 'nowrap' }}>away from real growth.</span>
+                    <span>away from real growth.</span>
                 </h1>
 
                 <p className="text-base leading-relaxed max-w-xl"

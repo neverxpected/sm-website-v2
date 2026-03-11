@@ -60,7 +60,7 @@ export default function StrategyCallPage() {
                     Free Consultation
                 </div>
 
-                <h1 className="text-4xl lg:text-6xl font-black tracking-tight leading-tight mb-5">
+                <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black tracking-tight leading-tight mb-5">
                     Book Your{' '}
                     <span style={{
                         background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',

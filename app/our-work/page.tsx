@@ -285,7 +285,7 @@ export default function OurWorkPage() {
 
           <RevealSection delay={100}>
             <h1
-              className="text-5xl lg:text-7xl font-black tracking-tight leading-[1] mb-8 text-white"
+              className="text-3xl sm:text-4xl lg:text-7xl font-black tracking-tight leading-[1] mb-8 text-white"
             >
               Engineered{" "}
               <span

@@ -171,7 +171,7 @@ export default function AISystemIntegrationPage() {
             AI Automations
           </div>
 
-          <h1 className="text-5xl lg:text-7xl font-black tracking-tight leading-[1.05] mb-8 text-white"
+          <h1 className="text-3xl sm:text-4xl lg:text-7xl font-black tracking-tight leading-[1.05] mb-8 text-white"
             style={reveal(heroVisible, 100)}>
             Autonomous AI Infrastructure<br />
             <span style={{

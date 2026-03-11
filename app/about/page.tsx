@@ -198,7 +198,7 @@ export default function AboutPage() {
                     <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
                     About the Founder
                 </div>
-                <h1 className="text-4xl lg:text-6xl font-black tracking-tight leading-tight mb-6"
+                <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black tracking-tight leading-tight mb-6"
                     style={reveal(heroVisible, 100)}>
                     Built by Someone Who Has Been{' '}
                     <span style={{
