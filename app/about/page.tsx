@@ -60,7 +60,7 @@ function StatCard({ stat, started }: { stat: typeof stats[0]; started: boolean }
     const count = useCounter(stat.value, 1800, started);
     return (
         <div className="text-center">
-            <p className="text-3xl font-black mb-1" style={{
+            <p className="text-xl sm:text-3xl font-black mb-1" style={{
                 background: 'linear-gradient(135deg, #FF2D78, #9B30FF)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
@@ -68,7 +68,7 @@ function StatCard({ stat, started }: { stat: typeof stats[0]; started: boolean }
             }}>
                 {stat.prefix ?? ''}{count}{stat.suffix}
             </p>
-            <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: 'rgba(240,244,255,0.4)' }}>
+            <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest sm:tracking-widest" style={{ color: 'rgba(240,244,255,0.4)', letterSpacing: '0.1em' }}>
                 {stat.label}
             </p>
         </div>
@@ -251,7 +251,7 @@ export default function AboutPage() {
             {/* Stats bar */}
             <section ref={statsRef} className="relative z-10 pb-16 px-6 lg:px-8 max-w-3xl mx-auto"
                 style={reveal(statsVisible, 0)}>
-                <div className="rounded-2xl p-8 grid grid-cols-2 sm:grid-cols-3 gap-8"
+                <div className="rounded-2xl p-6 sm:p-8 grid grid-cols-3 gap-4 sm:gap-8"
                     style={{
                         background: 'rgba(255,255,255,0.03)',
                         border: '1px solid rgba(255,255,255,0.07)',
