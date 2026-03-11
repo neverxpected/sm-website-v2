@@ -144,7 +144,7 @@ export default function ContactPage() {
 
                 <h1 className="text-4xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-tight max-w-2xl"
                     style={reveal(heroVisible, 100)}>
-                    Initialize Your{' '}
+                    Your Growth is One{' '}
                     <span style={{
                         background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
                         WebkitBackgroundClip: 'text',
@@ -154,13 +154,13 @@ export default function ContactPage() {
                         animation: 'contactHeadlineShimmer 4s linear infinite',
                         display: 'inline-block',
                     }}>
-                        Strategy.
+                        Conversation Away
                     </span>
                 </h1>
 
                 <p className="text-base leading-relaxed max-w-xl"
                     style={{ color: 'rgba(240,244,255,0.5)', ...reveal(heroVisible, 200) }}>
-                    Bridge the gap between fragmented data and autonomous growth. Reach out to our engineering team to audit your current infrastructure.
+                    No pitch decks or salesy pitch, we&apos;re just here to listen and see what is holding your business back. If that sounds like something you need, let&apos;s talk.
                 </p>
             </section>
 
