@@ -139,12 +139,12 @@ export default function ContactPage() {
                 <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.25em]"
                     style={{ background: 'rgba(255,45,120,0.1)', border: '1px solid rgba(255,45,120,0.25)', color: '#FF2D78', ...reveal(heroVisible, 0) }}>
                     <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
-                    Contact
+                    Contact Us
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-tight max-w-2xl"
+                <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-tight max-w-3xl"
                     style={reveal(heroVisible, 100)}>
-                    You could be<br />
+                    You could be one<br />
                     <span style={{
                         background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
                         WebkitBackgroundClip: 'text',
@@ -154,9 +154,9 @@ export default function ContactPage() {
                         animation: 'contactHeadlineShimmer 4s linear infinite',
                         display: 'inline',
                     }}>
-                        one honest conversation
+                        honest conversation
                     </span><br />
-                    <span>away from real growth.</span>
+                    away from real growth.
                 </h1>
 
                 <p className="text-base leading-relaxed max-w-xl"
