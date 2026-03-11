@@ -144,7 +144,7 @@ export default function ContactPage() {
 
                 <h1 className="text-4xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-tight max-w-2xl"
                     style={reveal(heroVisible, 100)}>
-                    Your Growth is One{' '}
+                    Real growth could be{' '}
                     <span style={{
                         background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
                         WebkitBackgroundClip: 'text',
@@ -154,7 +154,7 @@ export default function ContactPage() {
                         animation: 'contactHeadlineShimmer 4s linear infinite',
                         display: 'inline-block',
                     }}>
-                        Conversation Away
+                        one honest conversation away
                     </span>
                 </h1>
 
