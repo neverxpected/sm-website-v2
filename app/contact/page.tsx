@@ -144,7 +144,7 @@ export default function ContactPage() {
 
                 <h1 className="text-4xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-tight max-w-2xl"
                     style={reveal(heroVisible, 100)}>
-                    Real growth could<br />
+                    You could be<br />
                     <span style={{
                         background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
                         WebkitBackgroundClip: 'text',
@@ -153,11 +153,11 @@ export default function ContactPage() {
                         backgroundSize: '200% auto',
                         animation: 'contactHeadlineShimmer 4s linear infinite',
                         display: 'inline',
+                        whiteSpace: 'nowrap',
                     }}>
-                        be one honest<br />
-                        conversation
-                    </span>
-                    {' '}away
+                        one honest conversation
+                    </span><br />
+                    <span style={{ whiteSpace: 'nowrap' }}>away from real growth.</span>
                 </h1>
 
                 <p className="text-base leading-relaxed max-w-xl"
