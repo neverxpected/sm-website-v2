@@ -110,7 +110,7 @@ export default function Hero() {
                   CHEAT CODE
                 </span>
               </span>
-              <span className="reveal block text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl sm:whitespace-nowrap reveal-delay-200">
+              <span className="reveal block text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-200">
                 TO DIGITALLY SCALE
               </span>
               <span className="reveal block text-2xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-300">
@@ -171,9 +171,7 @@ export default function Hero() {
           <TrustedBy />
         </div>
 
-        {/* Bottom fade to next section */}
-        <div className="relative z-10 h-20 pointer-events-none"
-          style={{ background: 'linear-gradient(to bottom, transparent, #000000)' }} />
+
 
       </section>
 

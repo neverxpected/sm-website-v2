@@ -111,7 +111,7 @@ export default function ServiceGrid() {
             style={{
               background: '#ffffff',
               border: '1px solid rgba(37,99,235,0.5)',
-              boxShadow: '0 0 40px rgba(37,99,235,0.25), 0 0 80px rgba(37,99,235,0.08)',
+              boxShadow: '0 0 30px rgba(37,99,235,0.5), 0 0 80px rgba(37,99,235,0.2), 0 0 160px rgba(37,99,235,0.08)',
             }}>
             {/* Header */}
             <div className="flex items-center gap-3">
@@ -155,7 +155,7 @@ export default function ServiceGrid() {
             style={{
               background: '#ffffff',
               border: '1px solid rgba(124,58,237,0.5)',
-              boxShadow: '0 0 40px rgba(124,58,237,0.25), 0 0 80px rgba(124,58,237,0.08)',
+              boxShadow: '0 0 30px rgba(124,58,237,0.5), 0 0 80px rgba(124,58,237,0.2), 0 0 160px rgba(124,58,237,0.08)',
             }}>
             {/* Header */}
             <div className="flex items-center gap-3">

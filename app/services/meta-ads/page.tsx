@@ -91,7 +91,7 @@ export default function MetaAdsPage() {
             Meta Advertising
           </div>
 
-          <h1 className="text-5xl lg:text-7xl font-black tracking-tight leading-[1] mb-8 text-white">
+          <h1 className="text-3xl sm:text-4xl lg:text-7xl font-black tracking-tight leading-[1] mb-8 text-white">
             Precision Meta Advertising<br />
             <style>{`
               @keyframes metaAdsShimmer {

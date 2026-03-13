@@ -36,7 +36,7 @@ const milestones = [
 const stats = [
     { value: 50, suffix: '+', label: 'Businesses Served' },
     { value: 20, prefix: '$', suffix: 'M+', label: 'Revenue Generated' },
-    { value: 12, suffix: '+', label: 'Industries' },
+    { value: 12, suffix: '+', label: 'Industries Worked In' },
 ];
 
 // Animated counter hook
@@ -60,7 +60,7 @@ function StatCard({ stat, started }: { stat: typeof stats[0]; started: boolean }
     const count = useCounter(stat.value, 1800, started);
     return (
         <div className="text-center">
-            <p className="text-3xl font-black mb-1" style={{
+            <p className="text-xl sm:text-3xl font-black mb-1" style={{
                 background: 'linear-gradient(135deg, #FF2D78, #9B30FF)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
@@ -68,7 +68,7 @@ function StatCard({ stat, started }: { stat: typeof stats[0]; started: boolean }
             }}>
                 {stat.prefix ?? ''}{count}{stat.suffix}
             </p>
-            <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: 'rgba(240,244,255,0.4)' }}>
+            <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest sm:tracking-widest" style={{ color: 'rgba(240,244,255,0.4)', letterSpacing: '0.1em' }}>
                 {stat.label}
             </p>
         </div>
@@ -198,9 +198,9 @@ export default function AboutPage() {
                     <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
                     About the Founder
                 </div>
-                <h1 className="text-4xl lg:text-6xl font-black tracking-tight leading-tight mb-6"
+                <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black tracking-tight leading-tight mb-6"
                     style={reveal(heroVisible, 100)}>
-                    Built by Someone Who Has Been{' '}
+                    This isn&apos;t an agency that discovered digital last year.{' '}
                     <span style={{
                         background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
                         WebkitBackgroundClip: 'text',
@@ -208,14 +208,13 @@ export default function AboutPage() {
                         backgroundClip: 'text',
                         backgroundSize: '200% auto',
                         animation: 'aboutHeadlineShimmer 4s linear infinite',
-                        display: 'inline-block',
+                        display: 'inline',
                     }}>
-                        Obsessed With Digital
-                    </span>{' '}
-                    Since Day One
+                        We&apos;ve been living it from the start.
+                    </span>
                 </h1>
                 <p className="text-base leading-relaxed" style={{ color: 'rgba(240,244,255,0.5)', ...reveal(heroVisible, 200) }}>
-                    Switch Media Marketing LLC | Founded February 2019 | Houston, TX
+                    Switch Media Marketing LLC - Founded in 2019
                 </p>
             </section>
 
@@ -251,7 +250,7 @@ export default function AboutPage() {
             {/* Stats bar */}
             <section ref={statsRef} className="relative z-10 pb-16 px-6 lg:px-8 max-w-3xl mx-auto"
                 style={reveal(statsVisible, 0)}>
-                <div className="rounded-2xl p-8 grid grid-cols-2 sm:grid-cols-3 gap-8"
+                <div className="rounded-2xl p-6 sm:p-8 grid grid-cols-3 gap-4 sm:gap-8"
                     style={{
                         background: 'rgba(255,255,255,0.03)',
                         border: '1px solid rgba(255,255,255,0.07)',

@@ -92,7 +92,7 @@ export default function CaseStudies() {
                 style={{
                   background: '#000000',
                   border: `1px solid ${c.accentHex}88`,
-                  boxShadow: `0 0 24px ${c.accentHex}30, 0 4px 16px rgba(0,0,0,0.4)`,
+                  boxShadow: `0 0 30px ${c.accentHex}55, 0 0 80px ${c.accentHex}20, 0 0 160px ${c.accentHex}08`,
                   minHeight: '180px',
                 }}
               >
