@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import { Inter, Orbitron } from "next/font/google";
 import Script from "next/script";
+import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -32,6 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID!} />
       <body className={`${inter.variable} ${orbitron.variable} antialiased text-black overflow-x-hidden`}>
         {/* Meta Pixel */}
         <Script id="meta-pixel" strategy="afterInteractive">
@@ -57,6 +59,7 @@ export default function RootLayout({
             alt=""
           />
         </noscript>
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
         <Navbar />
         {children}
         <Footer />
