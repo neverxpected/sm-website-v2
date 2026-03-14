@@ -1,32 +1,20 @@
-import type { MetadataRoute } from "next";
+import type { MetadataRoute } from 'next'
+import { getAllPublishedPages } from '@/lib/content'
 
-const BASE_URL = "https://switchmediaco.com";
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const pages = await getAllPublishedPages()
+  const baseUrl = 'https://switchmediaco.com'
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: `${BASE_URL}/`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1.0,
-    },
-    {
-      url: `${BASE_URL}/services/digital-advertising`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/services/ai-system-integration`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/services/ai-receptionist`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-  ];
+  return pages.map((page) => ({
+    url: `${baseUrl}${page.slug === '/' ? '' : page.slug}`,
+    lastModified: page.updated_at ?? page.created_at ?? new Date().toISOString(),
+    changeFrequency: page.slug === '/'
+      ? ('weekly' as const)
+      : ('monthly' as const),
+    priority: page.slug === '/'
+      ? 1.0
+      : page.slug?.startsWith('/services')
+        ? 0.8
+        : 0.6,
+  }))
 }
