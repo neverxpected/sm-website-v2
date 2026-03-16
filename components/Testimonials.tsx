@@ -114,8 +114,8 @@ export default function Testimonials() {
                                 <p className="text-sm font-bold text-white">{featured.name}</p>
                                 <p className="text-xs" style={{ color: featured.accent }}>{featured.title}</p>
                                 <p className="text-xs mt-0.5" style={{ color: 'rgba(240,244,255,0.35)' }}>{featured.location}</p>
+                                <div className="mt-1.5"><Stars count={featured.stars} color={featured.accent} /></div>
                             </div>
-                            <Stars count={featured.stars} color={featured.accent} />
                         </div>
                         {/* Bottom: quote (white) */}
                         <div className="relative flex-1 p-8 flex flex-col" style={{ background: '#FFFFFF' }}>
@@ -146,8 +146,8 @@ export default function Testimonials() {
                                     <div className="flex-1">
                                         <p className="text-xs font-bold text-white">{t.name}</p>
                                         <p className="text-[11px]" style={{ color: t.accent }}>{t.title}</p>
+                                        <div className="mt-1"><Stars count={t.stars} color={t.accent} /></div>
                                     </div>
-                                    <Stars count={t.stars} color={t.accent} />
                                 </div>
                                 {/* Bottom: quote (white) */}
                                 <div className="relative flex-1 p-5 flex flex-col" style={{ background: '#FFFFFF' }}>
