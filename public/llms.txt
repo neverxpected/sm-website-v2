@@ -1,27 +1,43 @@
-# Switch Media Co
+# Switch Media Marketing
 
-## About
+> Switch Media Marketing is a Houston-based digital marketing and AI automation agency. We help service-based businesses scale through precision paid advertising (Meta, Google, TikTok, Bing) and autonomous AI systems (voice receptionist, system integration, lead nurturing). Founded in 2019, we have generated $20M+ in revenue for 50+ businesses across 12+ industries.
 
-Switch Media Co is a digital agency based in **Houston, TX**. We help growth-focused businesses and entrepreneurs scale their online presence through performance-driven marketing and intelligent technology solutions.
+## Core Pages
+- [Home](https://switchmediaco.com/): Main landing page with service overview, client results, and team
+- [About](https://switchmediaco.com/about): Founder story, company timeline, and team
+- [Our Work](https://switchmediaco.com/our-work): Case studies with documented client results
+- [Contact](https://switchmediaco.com/contact): Contact form and business information
+- [Book a Strategy Call](https://switchmediaco.com/strategy-call): Free consultation booking
 
-## Location
+## Paid Advertising Services
+- [Meta Ads](https://switchmediaco.com/services/meta-ads): Facebook and Instagram advertising campaigns for lead generation and revenue
+- [Google Ads](https://switchmediaco.com/services/google-ads): Search, LSA, and Performance Max campaigns capturing high-intent buyers
+- [TikTok Ads](https://switchmediaco.com/services/tiktok-ads): Short-form video advertising for rapid customer acquisition
+- [Microsoft/Bing Ads](https://switchmediaco.com/services/digital-advertising): Bing Search and Microsoft Audience Network campaigns
 
-Houston, TX, United States
+## AI Automation Services
+- [AI Voice Receptionist](https://switchmediaco.com/services/ai-receptionist): 24/7 autonomous AI voice agents for inbound/outbound communication with CRM sync
+- [AI System Integration](https://switchmediaco.com/services/ai-system-integration): Custom AI integrations connecting business tools with automated workflows
+- [AI Lead Nurturing](https://switchmediaco.com/services/ai-lead-nurturing): Predictive multi-channel follow-up that converts leads into booked clients
 
-## Target Audience
+## What We Do Not Do
+- We do not offer organic social media management or content creation services
+- We do not build websites or apps (we are a marketing and AI automation agency)
+- We do not offer SEO-only packages without paid advertising
 
-Small to mid-sized businesses, startups, and entrepreneurs in Houston and across the United States who want to grow their brand, generate leads, and automate their operations using modern digital tools and AI.
+## Key Information
+- Location: Houston, TX, United States
+- Founded: 2019
+- Clients served: 50+
+- Revenue generated: $20M+
+- Industries: Healthcare, med spa, plastic surgery, fitness, real estate, home services, legal, and more
 
-## Core Services
+## Contact
+- Email: Charles@switchmediaco.com
+- Phone: (469) 518-0508
+- Website: https://switchmediaco.com
 
-### Digital Advertising
-
-We design and manage targeted paid advertising campaigns across search, social, and display channels. Our approach is data-driven and ROI-focused, helping clients reach the right audience at the right time.
-
-### AI System Integration
-
-We build and deploy custom AI integrations that connect with existing business infrastructure. Our solutions automate workflows, surface actionable insights, and give businesses a measurable competitive advantage.
-
-## Website
-
-https://switchmediaco.com
+## Legal
+- [Privacy Policy](https://switchmediaco.com/privacy-policy): How we collect, process, and protect personal data
+- [Terms of Service](https://switchmediaco.com/terms-of-service): Terms governing use of our services
+- [Cookie Policy](https://switchmediaco.com/cookie-policy): How we use cookies and tracking technologies

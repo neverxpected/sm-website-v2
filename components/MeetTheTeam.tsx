@@ -1,41 +1,13 @@
-"use client";
-
 import Image from "next/image";
+import type { TeamMember } from "@/types/database";
 
-const team = [
-  {
-    name: "Charles Snider",
-    role: "Founder",
-    location: "Houston, Texas",
-    bio: "Father of 3 beautiful girls and a proud Baylor University graduate with a passion for all things digital. When he's not building growth systems for clients, you'll likely find him enjoying the open road on his motorcycle.",
-    accent: "#FF2D78",
-    gradientFrom: "#FF2D78",
-    gradientTo: "#9B30FF",
-    photo: "/images/team/charles.webp",
-  },
-  {
-    name: "Chris Kim",
-    role: "CIO",
-    location: "Houston, Texas",
-    bio: "A cyber security expert with serious IT depth, Chris is the sharpest technical mind on the team. His credentials are impeccable — though we're still holding a grudge about the time he talked us out of buying Bitcoin at $300. The jury's still out on his investment advice.",
-    accent: "#00E5FF",
-    gradientFrom: "#00E5FF",
-    gradientTo: "#9B30FF",
-    photo: "/images/team/chris.webp",
-  },
-  {
-    name: "Thomas Sanders",
-    role: "CSO",
-    location: "Houston, Texas",
-    bio: "Probably one of the nicest and most genuine people you'll ever meet. Thomas is a proud dad to 2 smart kiddos and a TCU Graduate. When he's not closing deals, you might find him deep in a League of Legends match.",
-    accent: "#9B30FF",
-    gradientFrom: "#9B30FF",
-    gradientTo: "#FF2D78",
-    photo: "/images/team/thomas.webp",
-  },
+const ACCENT_COLORS = ["#FF2D78", "#00E5FF", "#9B30FF"] as const;
+const GRADIENT_PAIRS: [string, string][] = [
+  ["#FF2D78", "#9B30FF"],
+  ["#00E5FF", "#9B30FF"],
+  ["#9B30FF", "#FF2D78"],
 ];
 
-/* Deterministic particle layout so SSR and client match */
 const PARTICLES = [
   { x: 30, y: 230, r: 1.5, dur: "6s", delay: "0s" },
   { x: 80, y: 210, r: 2.5, dur: "8s", delay: "1s" },
@@ -62,21 +34,13 @@ function ParticleBg({ color }: { color: string }) {
       aria-hidden
     >
       <defs>
-        <radialGradient id={`pg-${color.replace('#', '')}`} cx="50%" cy="50%" r="50%">
+        <radialGradient id={`pg-${color.replace("#", "")}`} cx="50%" cy="50%" r="50%">
           <stop offset="0%" stopColor={color} stopOpacity="1" />
           <stop offset="100%" stopColor={color} stopOpacity="0" />
         </radialGradient>
       </defs>
-
       {PARTICLES.map((p, i) => (
-        <circle
-          key={i}
-          cx={p.x}
-          cy={p.y}
-          r={p.r}
-          fill={`url(#pg-${color.replace('#', '')})`}
-        >
-          {/* Float upward */}
+        <circle key={i} cx={p.x} cy={p.y} r={p.r} fill={`url(#pg-${color.replace("#", "")})`}>
           <animate
             attributeName="cy"
             values={`${p.y}; ${p.y - 180}; ${p.y}`}
@@ -85,7 +49,6 @@ function ParticleBg({ color }: { color: string }) {
             repeatCount="indefinite"
             calcMode="ease"
           />
-          {/* Gentle horizontal drift */}
           <animate
             attributeName="cx"
             values={`${p.x}; ${p.x + (i % 2 === 0 ? 12 : -12)}; ${p.x}`}
@@ -94,7 +57,6 @@ function ParticleBg({ color }: { color: string }) {
             repeatCount="indefinite"
             calcMode="ease"
           />
-          {/* Fade in, hold, fade out */}
           <animate
             attributeName="opacity"
             values="0; 0.35; 0.45; 0.35; 0"
@@ -109,23 +71,39 @@ function ParticleBg({ color }: { color: string }) {
   );
 }
 
-export default function MeetTheTeam() {
+interface MeetTheTeamProps {
+  heading: string;
+  subheading: string;
+  badge: string;
+  teamMembers: TeamMember[];
+}
+
+export default function MeetTheTeam({ heading, subheading, badge, teamMembers }: MeetTheTeamProps) {
   return (
-    <section className="relative py-24 lg:py-32" style={{ background: '#000000' }}>
-      <div className="absolute inset-0 pointer-events-none" style={{
-        backgroundImage: 'none',
-        backgroundSize: '60px 60px',
-      }} />
+    <section className="relative py-24 lg:py-32" style={{ background: "#000000" }}>
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ backgroundImage: "none", backgroundSize: "60px 60px" }}
+      />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-
         <div className="text-center mb-16">
-          <div className="reveal inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.25em]"
-            style={{ background: 'rgba(155,48,255,0.1)', border: '1px solid rgba(155,48,255,0.25)', color: '#9B30FF' }}>
+          <div
+            className="reveal inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.25em]"
+            style={{
+              background: "rgba(155,48,255,0.1)",
+              border: "1px solid rgba(155,48,255,0.25)",
+              color: "#9B30FF",
+            }}
+          >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-3.5 h-3.5 shrink-0">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"
+              />
             </svg>
-            The Crew Behind The Results
+            {badge}
           </div>
           <style>{`
             @keyframes teamShimmer {
@@ -134,74 +112,91 @@ export default function MeetTheTeam() {
             }
           `}</style>
           <h2 className="reveal reveal-delay-100 text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
-            Meet The{' '}
-            <span style={{
-              background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #FF2D78)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              backgroundSize: '200% auto',
-              animation: 'teamShimmer 4s linear infinite',
-              display: 'inline-block',
-            }}>
+            {heading}{" "}
+            <span
+              style={{
+                background: "linear-gradient(90deg, #FF2D78, #9B30FF, #FF2D78)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                backgroundSize: "200% auto",
+                animation: "teamShimmer 4s linear infinite",
+                display: "inline-block",
+              }}
+            >
               Team
             </span>
           </h2>
-          <p className="reveal reveal-delay-200 text-base sm:text-lg max-w-2xl mx-auto" style={{ color: 'rgba(240,244,255,0.45)' }}>
-            Small team. Big output. Every client gets direct access to the people actually running their campaigns.
+          <p
+            className="reveal reveal-delay-200 text-base sm:text-lg max-w-2xl mx-auto"
+            style={{ color: "rgba(240,244,255,0.45)" }}
+          >
+            {subheading}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {team.map((member, i) => (
-            <div
-              key={member.name}
-              className={`reveal reveal-delay-${(i + 2) * 100} card-neon rounded-2xl overflow-hidden flex flex-col`}
-              style={{ background: '#000000', border: `1px solid ${member.accent}88`, backdropFilter: 'blur(12px)', boxShadow: `0 0 30px ${member.accent}55, 0 0 80px ${member.accent}20, 0 0 160px ${member.accent}08` }}
-            >
-              {/* Photo area */}
+          {teamMembers.map((member, i) => {
+            const accent = ACCENT_COLORS[i % ACCENT_COLORS.length];
+            const [gradientFrom, gradientTo] = GRADIENT_PAIRS[i % GRADIENT_PAIRS.length];
+            const photo = member.photo_url ?? "";
+
+            return (
               <div
-                className="relative h-64 flex items-center justify-center overflow-hidden"
-                style={{ background: `linear-gradient(160deg, ${member.gradientFrom}14 0%, ${member.gradientTo}0a 100%)` }}
+                key={member.id}
+                className={`reveal reveal-delay-${(i + 2) * 100} card-neon rounded-2xl overflow-hidden flex flex-col`}
+                style={{
+                  background: "#000000",
+                  border: `1px solid ${accent}88`,
+                  backdropFilter: "blur(12px)",
+                  boxShadow: `0 0 30px ${accent}55, 0 0 80px ${accent}20, 0 0 160px ${accent}08`,
+                }}
               >
-                {/* Particle animation */}
-                <ParticleBg color={member.accent} />
-
-                {/* Soft radial glow behind photo */}
-                <div className="absolute inset-0 z-10 pointer-events-none"
-                  style={{ background: `radial-gradient(circle at 50% 55%, ${member.accent}18 0%, transparent 60%)` }} />
-
-                {/* Circular photo */}
                 <div
-                  className="relative w-52 h-52 rounded-full overflow-hidden z-20"
+                  className="relative h-64 flex items-center justify-center overflow-hidden"
                   style={{
-                    boxShadow: `0 0 0 3px ${member.accent}60, 0 0 25px ${member.accent}50, 0 0 55px ${member.accent}25`,
+                    background: `linear-gradient(160deg, ${gradientFrom}14 0%, ${gradientTo}0a 100%)`,
                   }}
                 >
-                  <Image
-                    src={member.photo}
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                    sizes="208px"
+                  <ParticleBg color={accent} />
+                  <div
+                    className="absolute inset-0 z-10 pointer-events-none"
+                    style={{
+                      background: `radial-gradient(circle at 50% 55%, ${accent}18 0%, transparent 60%)`,
+                    }}
                   />
+                  <div
+                    className="relative w-52 h-52 rounded-full overflow-hidden z-20"
+                    style={{
+                      boxShadow: `0 0 0 3px ${accent}60, 0 0 25px ${accent}50, 0 0 55px ${accent}25`,
+                    }}
+                  >
+                    <Image
+                      src={photo}
+                      alt={member.name}
+                      fill
+                      className="object-cover"
+                      sizes="208px"
+                    />
+                  </div>
                 </div>
-              </div>
 
-              {/* Info */}
-              <div className="p-6 flex flex-col gap-3 flex-1" style={{ background: '#ffffff' }}>
-                <div>
-                  <h3 className="text-lg font-black" style={{ color: '#111827' }}>{member.name}</h3>
-                  <p className="text-sm font-semibold mt-0.5" style={{ color: member.accent }}>
-                    {member.role} — {member.location}
+                <div className="p-6 flex flex-col gap-3 flex-1" style={{ background: "#ffffff" }}>
+                  <div>
+                    <h3 className="text-lg font-black" style={{ color: "#111827" }}>
+                      {member.name}
+                    </h3>
+                    <p className="text-sm font-semibold mt-0.5" style={{ color: accent }}>
+                      {member.role ?? ""} — {member.location ?? ""}
+                    </p>
+                  </div>
+                  <p className="text-sm leading-relaxed flex-1" style={{ color: "#4B5563" }}>
+                    {member.bio ?? ""}
                   </p>
                 </div>
-                <p className="text-sm leading-relaxed flex-1" style={{ color: '#4B5563' }}>
-                  {member.bio}
-                </p>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

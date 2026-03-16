@@ -1,0 +1,207 @@
+'use client'
+
+import Link from 'next/link'
+import { useEffect, useRef, useState } from 'react'
+
+export interface PricingPlan {
+  name: string
+  price: string
+  per: string
+  description: string
+  features: string[]
+  cta: string
+  accent: string
+  bg: string
+  border: string
+  featured: boolean
+}
+
+interface PricingClientProps {
+  badge: string
+  heading: string
+  subheading: string
+  plans: PricingPlan[]
+  disclaimer: string
+  ctaHref: string
+}
+
+export default function PricingClient({
+  badge,
+  heading,
+  subheading,
+  plans,
+  disclaimer,
+  ctaHref,
+}: PricingClientProps) {
+  const sectionRef = useRef<HTMLElement>(null)
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const obs = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) setVisible(true)
+      },
+      { threshold: 0.1 }
+    )
+    if (sectionRef.current) obs.observe(sectionRef.current)
+    return () => obs.disconnect()
+  }, [])
+
+  const reveal = (delay = 0): React.CSSProperties => ({
+    opacity: visible ? 1 : 0,
+    transform: visible ? 'translateY(0)' : 'translateY(28px)',
+    transition: `opacity 0.7s ease ${delay}ms, transform 0.7s ease ${delay}ms`,
+  })
+
+  return (
+    <section
+      ref={sectionRef}
+      className="relative z-10 py-24 px-6 lg:px-8"
+      style={{ background: '#080C18', borderTop: '1px solid rgba(255,255,255,0.05)' }}
+    >
+      <style>{`
+        @keyframes pricingPulse {
+          0%, 100% { box-shadow: 0 0 30px rgba(155,48,255,0.3); }
+          50%       { box-shadow: 0 0 55px rgba(155,48,255,0.55); }
+        }
+      `}</style>
+
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16" style={reveal(0)}>
+          <div
+            className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.25em]"
+            style={{
+              background: 'rgba(155,48,255,0.1)',
+              border: '1px solid rgba(155,48,255,0.25)',
+              color: '#9B30FF',
+            }}
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              className="w-3.5 h-3.5 shrink-0"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L9.568 3z"
+              />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 6h.008v.008H6V6z" />
+            </svg>
+            {badge}
+          </div>
+          <h2 className="text-3xl lg:text-5xl font-black text-white tracking-tight mb-4">
+            {heading}{' '}
+            <span
+              style={{
+                background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #FF2D78)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
+              pricing.
+            </span>
+          </h2>
+          <p className="text-base max-w-xl mx-auto" style={{ color: 'rgba(240,244,255,0.5)' }}>
+            {subheading}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+          {plans.map((plan, i) => (
+            <div
+              key={plan.name}
+              className={`p-8 rounded-2xl flex flex-col gap-6 ${!plan.featured ? 'card-hover' : ''}`}
+              style={{
+                background: plan.bg,
+                border: `1px solid ${plan.border}`,
+                animation: plan.featured ? 'pricingPulse 3s ease-in-out infinite' : 'none',
+                ...reveal(i * 120),
+              }}
+            >
+              {plan.featured && (
+                <div
+                  className="inline-flex self-start items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest"
+                  style={{
+                    background: `${plan.accent}22`,
+                    color: plan.accent,
+                    border: `1px solid ${plan.accent}40`,
+                  }}
+                >
+                  ✦ Most Popular
+                </div>
+              )}
+
+              <div>
+                <p
+                  className="text-xs font-bold uppercase tracking-[0.2em] mb-2"
+                  style={{ color: plan.accent }}
+                >
+                  {plan.name}
+                </p>
+                <div className="flex items-end gap-1 mb-3">
+                  <span className="text-4xl font-black text-white">{plan.price}</span>
+                  {plan.per && (
+                    <span className="text-sm mb-1" style={{ color: 'rgba(240,244,255,0.4)' }}>
+                      {plan.per}
+                    </span>
+                  )}
+                </div>
+                <p
+                  className="text-sm leading-relaxed"
+                  style={{ color: 'rgba(240,244,255,0.5)' }}
+                >
+                  {plan.description}
+                </p>
+              </div>
+
+              <ul className="flex flex-col gap-3 flex-1">
+                {plan.features.map((f, j) => (
+                  <li
+                    key={j}
+                    className="flex items-start gap-2.5 text-sm"
+                    style={{ color: 'rgba(240,244,255,0.7)' }}
+                  >
+                    <svg
+                      viewBox="0 0 20 20"
+                      fill={plan.accent}
+                      className="w-4 h-4 shrink-0 mt-0.5"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+
+              <Link
+                href={ctaHref}
+                className="w-full flex items-center justify-center px-6 py-3.5 text-sm font-bold text-white rounded-xl transition-all duration-300 hover:scale-[1.02]"
+                style={{
+                  background: plan.featured
+                    ? 'linear-gradient(135deg, #FF2D78, #9B30FF)'
+                    : `${plan.accent}22`,
+                  border: `1px solid ${plan.accent}`,
+                  color: plan.featured ? 'white' : plan.accent,
+                }}
+              >
+                {plan.cta}
+              </Link>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-center text-xs mt-8" style={{ color: 'rgba(240,244,255,0.3)' }}>
+          {disclaimer}
+        </p>
+      </div>
+    </section>
+  )
+}
