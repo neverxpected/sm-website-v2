@@ -89,15 +89,17 @@ export default function Hero() {
             </div>
 
             {/* Headline */}
-            <h1 className="font-black tracking-tight text-white leading-[0.95] mb-8" style={{ fontWeight: 800 }}>
+            <h1 className="font-black tracking-tight text-white leading-[1.1] mb-8" style={{ fontWeight: 800 }}>
+              <style>{`
+                @keyframes cheatCodeShimmer {
+                  0%   { background-position: 200% center; }
+                  100% { background-position: -200% center; }
+                }
+              `}</style>
               <span className="reveal block text-2xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-100">
-                THE{' '}
-                <style>{`
-                  @keyframes cheatCodeShimmer {
-                    0%   { background-position: 200% center; }
-                    100% { background-position: -200% center; }
-                  }
-                `}</style>
+                Your Business Is
+              </span>
+              <span className="reveal block text-2xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-200">
                 <span style={{
                   background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
                   WebkitBackgroundClip: 'text',
@@ -106,17 +108,23 @@ export default function Hero() {
                   backgroundSize: '200% auto',
                   animation: 'cheatCodeShimmer 4s linear infinite',
                   display: 'inline-block',
+                  paddingBottom: '0.15em',
                 }}>
-                  CHEAT CODE
+                  One System Away
                 </span>
               </span>
-              <span className="reveal block text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-200">
-                TO DIGITALLY SCALE
-              </span>
               <span className="reveal block text-2xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-300">
-                YOUR BUSINESS
+                From Never Chasing
+              </span>
+              <span className="reveal block text-2xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-400">
+                Growth Again
               </span>
             </h1>
+
+            {/* Sub-headline */}
+            <p className="reveal reveal-delay-500 max-w-2xl mx-auto text-xs sm:text-sm md:text-base mb-10" style={{ color: 'rgba(240,244,255,0.55)', lineHeight: 1.7 }}>
+              Most businesses don&apos;t have a marketing problem. They have a systems problem. I come in, find where the revenue is leaking, and build the AI-powered infrastructure that fills it — so you can scale predictably instead of guessing every month.
+            </p>
 
             {/* Stats bar — above CTAs */}
             <div className="reveal reveal-delay-400 hidden sm:flex flex-nowrap items-center justify-center gap-3 sm:gap-8 mb-3">
@@ -156,10 +164,7 @@ export default function Hero() {
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl transition-transform duration-300 hover:scale-105 active:scale-100 whitespace-nowrap"
                 style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', animation: 'ctaGlowPink 3s ease-in-out infinite' }}
               >
-                Book a Strategy Call
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4 ml-2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
+                Let&apos;s Figure Out What&apos;s Holding You Back →
               </Link>
             </div>
 
