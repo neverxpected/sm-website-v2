@@ -42,40 +42,40 @@ const services = [
 
 const technical = [
   {
-    title: "Quality Score Engineering",
+    title: "Scores That Save You Money",
     description:
-      "Ad relevance, expected CTR, and landing page experience are optimized in tandem to drive Quality Scores above 7. Higher scores lower cost-per-click and improve ad rank without increasing spend.",
+      "We optimize ad relevance, expected CTR, and landing page experience to push Quality Scores above 7. Higher scores mean lower cost-per-click and better ad placement without spending more.",
   },
   {
-    title: "Negative Keyword Mapping",
+    title: "Blocking What Wastes Budget",
     description:
-      "Systematic negative keyword lists are built at campaign and ad group level to block irrelevant traffic. This protects budget, improves conversion rates, and sharpens the signal data sent to Google's bidding system.",
+      "We build systematic negative keyword lists at campaign and ad group level to stop irrelevant clicks before they happen. Every blocked search term is money that stays in your account.",
   },
   {
-    title: "Strategic Bid Management",
+    title: "Bidding That Gets Smarter Over Time",
     description:
-      "Bidding strategies are selected and adjusted based on campaign maturity and conversion volume. We move between manual CPC, Target CPA, and Target ROAS intelligently as campaigns accumulate sufficient data to support automation.",
+      "We move between manual CPC, Target CPA, and Target ROAS as campaigns mature and data accumulates. The strategy evolves with your account so you're never stuck on settings that made sense six months ago.",
   },
 ];
 
 const process = [
   {
     step: "01",
-    title: "Market Audit",
+    title: "We Audit What's Actually Happening",
     description:
-      "We analyze your competitive landscape, existing account structure, keyword opportunity, and current spend efficiency. This produces a clear baseline and identifies the highest-priority revenue gaps to address.",
+      "We look at your competitive landscape, existing account structure, keyword opportunities, and where your current budget is being wasted. You get a clear picture of what's broken and what it would take to fix it.",
   },
   {
     step: "02",
-    title: "Campaign Infrastructure",
+    title: "We Build the Right Foundation",
     description:
-      "Campaigns are built from a clean structure: segmented ad groups, tightly themed keyword clusters, dedicated landing pages, and full conversion tracking implementation before a single dollar is spent.",
+      "Clean campaign structure, tightly themed keyword groups, dedicated landing pages, and full conversion tracking set up before a single dollar of your budget is spent. We don't launch until everything is right.",
   },
   {
     step: "03",
-    title: "Continuous Optimization",
+    title: "We Optimize Every Single Week",
     description:
-      "We operate on a weekly optimization cadence: search term reviews, bid adjustments, A/B testing of ad copy, quality score monitoring, and audience layer refinement. Performance compounds over time through structured iteration.",
+      "Search term reviews, bid adjustments, ad copy testing, quality score monitoring, audience refinement. We don't set it and forget it. Every week the account gets better and your cost per lead goes down.",
   },
 ];
 
@@ -98,7 +98,7 @@ export default function GoogleAdsPage() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-7xl font-black tracking-tight leading-[1] mb-8 text-white">
-            High-Intent Google Search<br />
+            When Someone Searches for What You Sell,<br />
             <style>{`
               @keyframes googleAdsShimmer {
                 0%   { background-position: 200% center; }
@@ -114,12 +114,12 @@ export default function GoogleAdsPage() {
               animation: 'googleAdsShimmer 4s linear infinite',
               display: 'inline-block',
               paddingBottom: '0.1em',
-            }}>and Performance Advertising.</span>
+            }}>Are You the First Thing They See?</span>
           </h1>
 
           <p className="text-lg lg:text-xl max-w-3xl leading-relaxed mb-12"
             style={{ color: 'rgba(240,244,255,0.55)' }}>
-            We architect Google Ads ecosystems that capture buyers at the exact moment of intent. Our systems are designed to dominate search rankings and maximize conversion value through technical precision.
+            If not you&apos;re handing ready-to-buy customers directly to your competitors. Google Ads done right puts you in front of people who are already looking for exactly what you offer, at the exact moment they&apos;re ready to spend. We&apos;ve been building and managing Google campaigns personally for 8 years across service businesses, ecommerce, local, and everything in between.
           </p>
 
           <Link
@@ -127,11 +127,11 @@ export default function GoogleAdsPage() {
             className="inline-flex items-center justify-center px-10 py-4 text-white font-bold text-base rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap"
             style={{ background: 'linear-gradient(135deg, #4285F4, #9B30FF)', boxShadow: '0 0 30px rgba(66,133,244,0.35)' }}
           >
-            Book a Strategy Call
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4 ml-2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </svg>
+            See If Google Ads Is Right for You &rarr;
           </Link>
+          <p className="text-sm mt-4" style={{ color: 'rgba(240,244,255,0.4)' }}>
+            Free audit. We&apos;ll tell you honestly what we see in your market and whether Google is the right channel right now.
+          </p>
         </div>
       </section>
 
@@ -170,11 +170,14 @@ export default function GoogleAdsPage() {
         <div className="max-w-5xl mx-auto pt-24">
           <div className="mb-12">
             <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: 'rgba(155,48,255,0.8)' }}>
-              Technical Execution
+              What We Run
             </p>
-            <h2 className="text-3xl lg:text-4xl font-black text-white">
-              How we protect your spend.
+            <h2 className="text-3xl lg:text-4xl font-black text-white mb-3">
+              How We Actually Protect Your Budget.
             </h2>
+            <p className="text-base leading-relaxed" style={{ color: 'rgba(240,244,255,0.5)' }}>
+              Most Google Ads budgets have money leaking out of them right now. Here&apos;s how we find it and stop it.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -194,11 +197,14 @@ export default function GoogleAdsPage() {
         <div className="max-w-5xl mx-auto pt-24">
           <div className="mb-12">
             <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: 'rgba(66,133,244,0.8)' }}>
-              Our Process
+              From Audit to Results
             </p>
-            <h2 className="text-3xl lg:text-4xl font-black text-white">
-              From audit to results.
+            <h2 className="text-3xl lg:text-4xl font-black text-white mb-3">
+              How We Get Your Google Ads Working.
             </h2>
+            <p className="text-base leading-relaxed" style={{ color: 'rgba(240,244,255,0.5)' }}>
+              Three steps. No wasted spend at the start. No guessing in the middle. No mystery about what&apos;s working at the end.
+            </p>
           </div>
 
           <div className="flex flex-col gap-0">
@@ -226,24 +232,24 @@ export default function GoogleAdsPage() {
         <div className="max-w-3xl mx-auto text-center">
           <div className="p-12 rounded-3xl" style={{ background: 'rgba(66,133,244,0.06)', border: '1px solid rgba(66,133,244,0.15)' }}>
             <p className="text-xs font-bold uppercase tracking-[0.25em] mb-4" style={{ color: 'rgba(66,133,244,0.8)' }}>
-              Ready to Capture Intent
+              Your Competitors Are Already Here
             </p>
             <h2 className="text-3xl lg:text-4xl font-black text-white mb-4">
-              Start with a Google Ads Audit.
+              Your Competitors Are Showing Up on Google Right Now.<br /> Are You?
             </h2>
             <p className="text-base mb-10" style={{ color: 'rgba(240,244,255,0.5)' }}>
-              We review your current account structure, identify wasted spend, and map a path to scalable search dominance. No obligation.
+              We&apos;ll look at your current Google presence, identify exactly where budget is being wasted, and tell you what we&apos;d do differently. No obligation. No pitch. Just an honest look at where you stand.
             </p>
             <Link
               href="/strategy-call"
               className="inline-flex items-center justify-center px-10 py-4 text-white font-bold text-base rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap"
               style={{ background: 'linear-gradient(135deg, #4285F4, #9B30FF)', boxShadow: '0 0 30px rgba(66,133,244,0.35)' }}
             >
-              Book a Strategy Call
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4 ml-2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
+              Get a Free Google Ads Audit &rarr;
             </Link>
+            <p className="text-sm mt-4" style={{ color: 'rgba(240,244,255,0.4)' }}>
+              We look at your real account data and tell you exactly what we&apos;d fix first.
+            </p>
           </div>
         </div>
       </section>
