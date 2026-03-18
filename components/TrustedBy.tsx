@@ -19,17 +19,17 @@ export default function TrustedBy() {
     <section
       className="relative pt-4 pb-10 sm:py-10 overflow-hidden"
       style={{
-        background: 'transparent',
+        background: '#ffffff',
       }}
     >
       {/* Left + right fade masks */}
       <div className="absolute inset-y-0 left-0 w-24 z-10 pointer-events-none"
-        style={{ background: 'linear-gradient(to right, #000000, transparent)' }} />
+        style={{ background: 'linear-gradient(to right, #ffffff, transparent)' }} />
       <div className="absolute inset-y-0 right-0 w-24 z-10 pointer-events-none"
-        style={{ background: 'linear-gradient(to left, #000000, transparent)' }} />
+        style={{ background: 'linear-gradient(to left, #ffffff, transparent)' }} />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-8 text-center">
-        <p className="text-xl uppercase tracking-[0.35em]" style={{ color: '#ffffff', fontFamily: 'var(--font-orbitron), sans-serif', fontWeight: 500 }}>
+        <p className="text-xl uppercase tracking-[0.35em]" style={{ color: '#0d0c0c', fontFamily: 'var(--font-orbitron), sans-serif', fontWeight: 500 }}>
           Trusted By
         </p>
       </div>
@@ -58,7 +58,7 @@ export default function TrustedBy() {
                     width: 'auto',
                     height: 'auto',
                     objectFit: 'contain',
-                    filter: 'invert(1) brightness(2) contrast(1.4)',
+                    filter: 'brightness(0)',
                     opacity: 1,
                     display: 'block',
                   }}

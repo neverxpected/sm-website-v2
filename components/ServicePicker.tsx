@@ -39,7 +39,7 @@ export default function ServicePicker() {
                             key={service}
                             type="button"
                             onClick={() => toggle(service)}
-                            className="px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200"
+                            className="px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200 cursor-pointer"
                             style={{
                                 background: active
                                     ? "linear-gradient(135deg, rgba(255,45,120,0.15), rgba(155,48,255,0.15))"

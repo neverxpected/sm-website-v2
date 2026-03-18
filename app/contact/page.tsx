@@ -224,7 +224,8 @@ export default function ContactPage() {
                                         <select required name="budget" className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none transition-all appearance-none cursor-pointer"
                                             style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(240,244,255,0.5)', paddingRight: '2.5rem' }}>
                                             <option value="">Select budget</option>
-                                            <option>Under $5,000/mo</option>
+                                            <option>Under $2,500/mo</option>
+                                            <option>$2,500 – $5,000/mo</option>
                                             <option>$5,000 – $10,000/mo</option>
                                             <option>$10,000 – $25,000/mo</option>
                                             <option>$25,000+/mo</option>

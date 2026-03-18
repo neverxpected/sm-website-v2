@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const paidAdsLinks = [
@@ -103,7 +103,7 @@ function DesktopDropdown({ label, links }: { label: string; links: NavLink[] }) 
       onMouseLeave={() => setOpen(false)}
     >
       <button
-        className="flex items-center gap-1 text-sm font-medium text-white/70 hover:text-[#FF2D78] transition-colors cursor-pointer"
+        className="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-black transition-colors cursor-pointer"
         aria-expanded={open}
         aria-haspopup="true"
       >
@@ -118,25 +118,25 @@ function DesktopDropdown({ label, links }: { label: string; links: NavLink[] }) 
 
       {open && (
         <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50">
-          <ul className="min-w-[260px] bg-zinc-900 border border-white/10 rounded-2xl shadow-2xl overflow-hidden py-2">
+          <ul className="min-w-[260px] bg-white border border-gray-200 rounded-2xl shadow-xl overflow-hidden py-2">
             {links.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
                   className="flex items-start gap-4 px-5 py-4 transition-colors group"
                   style={{ background: 'transparent' }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'linear-gradient(135deg, rgba(255,45,120,0.85), rgba(155,48,255,0.85))'; (e.currentTarget as HTMLElement).style.color = 'white'; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'transparent'; (e.currentTarget as HTMLElement).style.color = ''; }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = '#f3f4f6'; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'transparent'; }}
                   onClick={() => setOpen(false)}
                 >
-                  <span className="mt-0.5 text-white/40 group-hover:text-white transition-colors shrink-0">
+                  <span className="mt-0.5 text-gray-400 group-hover:text-gray-600 transition-colors shrink-0">
                     {link.icon}
                   </span>
                   <span>
-                    <span className="block text-sm font-bold text-white group-hover:text-white transition-colors">
+                    <span className="block text-sm font-bold text-gray-900 group-hover:text-gray-900 transition-colors">
                       {link.label}
                     </span>
-                    <span className="block text-xs text-white/40 mt-0.5 leading-relaxed">
+                    <span className="block text-xs text-gray-400 mt-0.5 leading-relaxed">
                       {link.description}
                     </span>
                   </span>
@@ -154,9 +154,9 @@ function MobileAccordion({ label, links, onClose }: { label: string; links: NavL
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border-b border-white/10">
+    <div className="border-b border-gray-200">
       <button
-        className="w-full flex items-center justify-between py-4 text-base font-medium text-white"
+        className="w-full flex items-center justify-between py-4 text-base font-medium text-gray-900"
         onClick={() => setOpen(!open)}
       >
         {label}
@@ -173,15 +173,15 @@ function MobileAccordion({ label, links, onClose }: { label: string; links: NavL
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="flex items-start gap-3 px-2 py-3 rounded-xl hover:bg-white/5 transition-colors group"
+                className="flex items-start gap-3 px-2 py-3 rounded-xl hover:bg-gray-100 transition-colors group"
                 onClick={onClose}
               >
-                <span className="mt-0.5 text-white/40 group-hover:text-white/70 transition-colors shrink-0">
+                <span className="mt-0.5 text-gray-400 group-hover:text-gray-600 transition-colors shrink-0">
                   {link.icon}
                 </span>
                 <span>
-                  <span className="block text-sm font-bold text-white">{link.label}</span>
-                  <span className="block text-xs text-white/40 mt-0.5 leading-relaxed">{link.description}</span>
+                  <span className="block text-sm font-bold text-gray-900">{link.label}</span>
+                  <span className="block text-xs text-gray-400 mt-0.5 leading-relaxed">{link.description}</span>
                 </span>
               </Link>
             </li>
@@ -194,44 +194,72 @@ function MobileAccordion({ label, links, onClose }: { label: string; links: NavL
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+
+    handleScroll(); // run on mount
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <nav className="fixed w-full z-50 backdrop-blur-md" style={{ background: "transparent", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <nav
+      className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'pt-3 px-4 lg:px-8' : ''}`}
+      style={{ background: 'transparent' }}
+    >
+      <div
+        className={`transition-all duration-500 flex items-center justify-between ${scrolled ? 'max-w-5xl mx-auto backdrop-blur-xl rounded-full px-6' : 'max-w-7xl mx-auto px-6 lg:px-16'}`}
+        style={{
+          background: scrolled ? 'rgba(255,255,255,0.85)' : 'transparent',
+          border: scrolled ? '1px solid rgba(0,0,0,0.08)' : 'none',
+          boxShadow: scrolled ? '0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04)' : 'none',
+          height: scrolled ? '56px' : '80px',
+        }}>
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <span className="rounded-xl flex items-center justify-center shrink-0 p-1 transition-all duration-300 group-hover:scale-110"
-            style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)' }}>
-            <Image
-              src="/images/logo/sm-logo.png"
-              alt="Switch Media Marketing Logo"
-              width={40}
-              height={40}
-              className="h-8 w-auto object-contain"
-            />
-          </span>
-          <span className="text-base font-bold tracking-tight text-white">
-            Switch Media <span className="text-white/40">Marketing</span>
-          </span>
+        <Link href="/" className="flex items-center group">
+          <Image
+            src="/images/logo/Switch Media logo horizontal.png"
+            alt="Switch Media Marketing Logo"
+            width={240}
+            height={60}
+            className="h-10 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+            style={{ filter: 'brightness(0)' }}
+          />
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-6 text-white">
+        <div className="hidden md:flex items-center gap-6">
           <DesktopDropdown label="Paid Ads" links={paidAdsLinks} />
           <DesktopDropdown label="AI Automations" links={aiAutomationLinks} />
 
-          <Link href="/about" className="text-sm font-medium text-white/70 hover:text-[#FF2D78] transition-colors">
+          <Link href="/about" className="text-sm font-medium text-gray-600 hover:text-black transition-colors">
             About
           </Link>
-          <Link href="/contact" className="text-sm font-medium text-white/70 hover:text-[#FF2D78] transition-colors">
+          <Link href="/contact" className="text-sm font-medium text-gray-600 hover:text-black transition-colors">
             Contact
           </Link>
           <Link
             href="/strategy-call"
-            className="relative px-6 py-2.5 text-sm font-bold rounded-full text-white transition-all duration-300 hover:scale-105 overflow-hidden whitespace-nowrap"
-            style={{ background: "linear-gradient(135deg, #FF2D78, #9B30FF)", boxShadow: "0 0 20px rgba(255,45,120,0.35)" }}
+            className="group relative inline-flex items-center justify-center"
           >
-            Book a Strategy Call
+            <span
+              className="absolute -inset-[3px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              style={{
+                background: 'linear-gradient(135deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
+                backgroundSize: '300% 300%',
+                animation: 'heroBorderSpin 3s linear infinite',
+              }}
+            />
+            <span
+              className="relative px-6 py-2.5 text-sm font-bold rounded-full text-white transition-all duration-300 whitespace-nowrap"
+              style={{ background: '#000000' }}
+            >
+              Book a Strategy Call
+            </span>
           </Link>
         </div>
 
@@ -242,15 +270,15 @@ export default function Navbar() {
           aria-label="Toggle menu"
           aria-expanded={mobileOpen}
         >
-          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-2" : ""}`} />
-          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${mobileOpen ? "opacity-0" : ""}`} />
-          <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+          <span className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-2" : ""}`} />
+          <span className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ${mobileOpen ? "opacity-0" : ""}`} />
+          <span className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-2" : ""}`} />
         </button>
       </div>
 
       {/* Mobile menu panel */}
       {mobileOpen && (
-        <div className="md:hidden px-6 pb-6" style={{ background: "rgba(11,11,12,0.85)", backdropFilter: "blur(12px)", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+        <div className="md:hidden px-6 pb-6" style={{ background: '#ffffff', borderTop: '1px solid #e5e7eb' }}>
           <div className="flex flex-col">
             <MobileAccordion
               label="Paid Ads"
@@ -262,19 +290,19 @@ export default function Navbar() {
               links={aiAutomationLinks}
               onClose={() => setMobileOpen(false)}
             />
-            <div className="border-b border-white/10">
+            <div className="border-b border-gray-200">
               <Link
                 href="/about"
-                className="block w-full text-left py-4 text-base font-medium text-white"
+                className="block w-full text-left py-4 text-base font-medium text-gray-900"
                 onClick={() => setMobileOpen(false)}
               >
                 About Us
               </Link>
             </div>
-            <div className="border-b border-white/10">
+            <div className="border-b border-gray-200">
               <Link
                 href="/contact"
-                className="block w-full text-left py-4 text-base font-medium text-white"
+                className="block w-full text-left py-4 text-base font-medium text-gray-900"
                 onClick={() => setMobileOpen(false)}
               >
                 Contact Us
@@ -286,7 +314,7 @@ export default function Navbar() {
             <Link
               href="/strategy-call"
               className="block w-full text-center px-6 py-3.5 text-sm font-bold rounded-full text-white transition-all whitespace-nowrap"
-              style={{ background: "linear-gradient(135deg, #FF2D78, #9B30FF)" }}
+              style={{ background: "#000000" }}
               onClick={() => setMobileOpen(false)}
             >
               Book a Strategy Call
