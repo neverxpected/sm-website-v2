@@ -66,7 +66,7 @@ export default function Testimonials() {
     const [featured, ...side] = testimonials;
 
     return (
-        <section ref={sectionRef} className="relative z-10 py-24 px-6 lg:px-8" style={{ background: '#000000' }}>
+        <section ref={sectionRef} className="relative z-10 py-12 lg:py-16 px-6 lg:px-8" style={{ background: '#000000' }}>
             <div className="max-w-6xl mx-auto">
 
                 {/* Header */}

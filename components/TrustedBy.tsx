@@ -19,7 +19,7 @@ export default function TrustedBy() {
     <section
       className="relative pt-4 pb-10 sm:py-10 overflow-hidden"
       style={{
-        background: 'transparent',
+        background: '#ffffff',
       }}
     >
       {/* Left + right fade masks */}

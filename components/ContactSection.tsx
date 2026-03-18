@@ -40,7 +40,7 @@ export default function ContactSection() {
   const labelClass = "block text-xs font-semibold mb-1.5" as const;
 
   return (
-    <section className="py-24 lg:py-32 px-6 lg:px-8 relative overflow-hidden" style={{ background: '#ffffff' }}>
+    <section className="py-12 lg:py-16 px-6 lg:px-8 relative overflow-hidden" style={{ background: '#ffffff' }}>
       {/* Ambient orbs */}
       <div className="absolute top-0 right-1/4 w-[600px] h-[600px] rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(circle, rgba(255,45,120,0.08) 0%, transparent 70%)' }} />
@@ -68,7 +68,7 @@ export default function ContactSection() {
                   100% { background-position: -200% center; }
                 }
               `}</style>
-              <span style={{ background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #FF2D78)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', backgroundSize: '200% auto', animation: 'letsTalkShimmer 4s linear infinite', display: 'inline-block' }}>
+              <span style={{ color: '#000000' }}>
                 Let&apos;s Talk.
               </span>
             </h2>
@@ -160,7 +160,8 @@ export default function ContactSection() {
                     <div className="relative">
                       <select required name="budget" className={inputClass} style={{ ...inputStyle, color: '#374151', paddingRight: '2.5rem' }}>
                         <option value="">Select budget</option>
-                        <option>Under $5,000/mo</option>
+                        <option>Under $2,500/mo</option>
+                        <option>$2,500 – $5,000/mo</option>
                         <option>$5,000 – $10,000/mo</option>
                         <option>$10,000 – $25,000/mo</option>
                         <option>$25,000+/mo</option>
@@ -172,16 +173,26 @@ export default function ContactSection() {
                     <label className={labelClass} style={{ color: '#374151' }}>Message</label>
                     <textarea name="message" rows={4} placeholder="Tell us about your business and goals..." className={inputClass + " resize-none"} style={inputStyle} />
                   </div>
-                  <button
-                    type="submit"
-                    className="w-full flex items-center justify-center gap-2 px-6 py-4 text-white text-sm font-black rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-100"
-                    style={{ background: '#000000' }}
-                  >
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
-                    </svg>
-                    Send Message
-                  </button>
+                  <div className="group relative w-full">
+                    <span
+                      className="absolute -inset-[3px] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      style={{
+                        background: 'linear-gradient(135deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
+                        backgroundSize: '300% 300%',
+                        animation: 'heroBorderSpin 3s linear infinite',
+                      }}
+                    />
+                    <button
+                      type="submit"
+                      className="relative w-full flex items-center justify-center gap-2 px-6 py-4 text-white text-sm font-black rounded-xl transition-all duration-300 group-hover:scale-[1.01] active:scale-100"
+                      style={{ background: '#000000' }}
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                      </svg>
+                      Send Message
+                    </button>
+                  </div>
                 </form>
               )}
             </div>

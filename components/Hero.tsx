@@ -32,7 +32,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="grain" ref={heroRef}>
+    <div className="grain" ref={heroRef} style={{ background: '#ffffff' }}>
 
       {/* ── HERO + TRUSTED BY — one unified section ─────────── */}
       <section
@@ -58,43 +58,26 @@ export default function Hero() {
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 lg:pt-40 pb-8 sm:pb-16">
           <div className="max-w-7xl mx-auto text-center">
 
-            {/* Eyebrow */}
-            <div className="reveal reveal-delay-100 inline-flex items-center gap-2 mb-8 px-3 py-2 rounded-full text-[8px] sm:text-[10px] md:text-xs font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-center leading-tight"
-              style={{
-                background: 'rgba(255,45,120,0.1)',
-                border: '1px solid rgba(255,45,120,0.35)',
-                color: '#FF2D78',
-                animation: 'eyebrowGlowPink 3s ease-in-out infinite',
-              }}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-3.5 h-3.5 shrink-0 animate-pulse">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-              </svg>
-              A HOUSTON BASED DIGITAL MARKETING &amp; AI AGENCY
-            </div>
+
 
             {/* Headline */}
-            <h1 className="font-black tracking-tight leading-[1.1] mb-8" style={{ fontWeight: 800, color: '#1a1a2e' }}>
+            <h1 className="font-black tracking-tight leading-[1.1] mb-8" style={{ fontWeight: 800, color: '#000000' }}>
               <style>{`
                 @keyframes cheatCodeShimmer {
                   0%   { background-position: 200% center; }
                   100% { background-position: -200% center; }
+                }
+                @keyframes heroBorderSpin {
+                  0%   { background-position: 0% 50%; }
+                  50%  { background-position: 100% 50%; }
+                  100% { background-position: 0% 50%; }
                 }
               `}</style>
               <span className="reveal block text-2xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-100">
                 Your Business Is
               </span>
               <span className="reveal block text-2xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-200">
-                <span style={{
-                  background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  backgroundSize: '200% auto',
-                  animation: 'cheatCodeShimmer 4s linear infinite',
-                  display: 'inline-block',
-                  paddingBottom: '0.15em',
-                }}>
+                <span style={{ color: '#000000' }}>
                   One System Away
                 </span>
               </span>
@@ -108,7 +91,7 @@ export default function Hero() {
 
             {/* Sub-headline */}
             <p className="reveal reveal-delay-500 hidden sm:block max-w-2xl mx-auto text-xs sm:text-sm md:text-base mb-10" style={{ color: 'rgba(26,26,46,0.6)', lineHeight: 1.7 }}>
-              Most businesses don&apos;t have a marketing problem. They have a systems problem. I come in, find where the revenue is leaking, and build the AI-powered infrastructure that fills it — so you can scale predictably instead of guessing every month.
+              Most businesses don&apos;t have a marketing problem. They have a systems problem. WE come in, find where revenue is leak &amp; build ads + AI-powered systems that fill gap so you can scale predictably every month.
             </p>
 
 
@@ -118,10 +101,24 @@ export default function Hero() {
             <div className="reveal reveal-delay-600 flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <Link
                 href="/strategy-call"
-                className="inline-flex items-center justify-center px-5 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-white rounded-xl transition-transform duration-300 hover:scale-105 active:scale-100 text-center"
-                style={{ background: '#000000' }}
+                className="group relative inline-flex items-center justify-center text-center"
               >
-                Let&apos;s Figure Out What&apos;s Holding You Back →
+                {/* Gradient border layer — visible on hover */}
+                <span
+                  className="absolute -inset-[4px] rounded-[16px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{
+                    background: 'linear-gradient(135deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
+                    backgroundSize: '300% 300%',
+                    animation: 'heroBorderSpin 3s linear infinite',
+                  }}
+                />
+                {/* Inner button */}
+                <span
+                  className="relative inline-flex items-center justify-center px-5 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-white rounded-xl transition-transform duration-300 group-hover:scale-[1.01] active:scale-100"
+                  style={{ background: '#000000' }}
+                >
+                  Ready To Scale? Let&apos;s Talk 👉
+                </span>
               </Link>
             </div>
 
@@ -130,12 +127,8 @@ export default function Hero() {
 
       </section>
 
-      {/* ── TRUSTED BY — light standalone section ─────────── */}
-      <section style={{ background: '#ffffff' }}>
-        <div className="relative z-10">
-          <TrustedBy />
-        </div>
-      </section>
+      {/* ── TRUSTED BY ─────────── */}
+      <TrustedBy />
 
       {/* ── REST OF PAGE ─────────────────────────────────── */}
       <ServiceGrid />

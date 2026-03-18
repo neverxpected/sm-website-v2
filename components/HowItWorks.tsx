@@ -85,7 +85,7 @@ export default function HowItWorks() {
     return (
         <section
             ref={sectionRef}
-            className="relative z-10 py-28 px-6 lg:px-8 overflow-hidden"
+            className="relative z-10 py-12 lg:py-16 px-6 lg:px-8 overflow-hidden"
             style={{ background: '#000000' }}
         >
             <style>{`

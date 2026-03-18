@@ -111,7 +111,7 @@ function ParticleBg({ color }: { color: string }) {
 
 export default function MeetTheTeam() {
   return (
-    <section className="relative py-24 lg:py-32" style={{ background: '#000000' }}>
+    <section className="relative py-12 lg:py-16" style={{ background: '#000000' }}>
       <div className="absolute inset-0 pointer-events-none" style={{
         backgroundImage: 'none',
         backgroundSize: '60px 60px',
