@@ -107,9 +107,9 @@ export default function CaseStudies() {
                     className="absolute inset-0 w-full h-full object-cover"
                     style={{ objectPosition: 'center top' }}
                   />
-                  {/* Gradient bleed toward content side */}
+                  {/* Gradient bleed toward content side (desktop only) */}
                   <div
-                    className="absolute inset-0"
+                    className="absolute inset-0 hidden lg:block"
                     style={{
                       background: isReversed
                         ? 'linear-gradient(to left, rgba(0,0,0,0.85) 0%, transparent 50%)'
