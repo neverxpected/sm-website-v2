@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const paidAdsLinks = [
@@ -194,9 +194,33 @@ function MobileAccordion({ label, links, onClose }: { label: string; links: NavL
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [overHero, setOverHero] = useState(true); // true = over the light hero section
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show dark navbar bg when over the light hero section
+      const heroSection = document.querySelector('.grain > section:first-child') as HTMLElement;
+      if (heroSection) {
+        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+        setOverHero(window.scrollY < heroBottom - 80);
+      } else {
+        setOverHero(false);
+      }
+    };
+
+    handleScroll(); // run on mount
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <nav className="fixed w-full z-50 backdrop-blur-md" style={{ background: "transparent", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
+    <nav
+      className="fixed w-full z-50 backdrop-blur-md transition-colors duration-300"
+      style={{
+        background: overHero ? "rgba(0,0,0,0.85)" : "transparent",
+        borderBottom: overHero ? "1px solid rgba(255,255,255,0.1)" : "1px solid rgba(255,255,255,0.07)",
+      }}
+    >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
@@ -216,7 +240,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-6 text-white">
+        <div className="hidden md:flex items-center gap-6">
           <DesktopDropdown label="Paid Ads" links={paidAdsLinks} />
           <DesktopDropdown label="AI Automations" links={aiAutomationLinks} />
 

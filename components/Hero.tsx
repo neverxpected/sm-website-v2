@@ -37,12 +37,12 @@ export default function Hero() {
       {/* ── HERO + TRUSTED BY — one unified section ─────────── */}
       <section
         className="relative overflow-hidden"
-        style={{ background: '#000000' }}
+        style={{ background: '#FFFFFF' }}
       >
 
 
         {/* Light rays */}
-        <div className="absolute inset-0 pointer-events-none" style={{ opacity: 0.55, zIndex: 1 }}>
+        <div className="absolute inset-0 pointer-events-none" style={{ opacity: 0.15, zIndex: 1 }}>
           <LightRays
             raysOrigin="top-center"
             raysColor="#FF2D78"
@@ -89,7 +89,7 @@ export default function Hero() {
             </div>
 
             {/* Headline */}
-            <h1 className="font-black tracking-tight text-white leading-[1.1] mb-8" style={{ fontWeight: 800 }}>
+            <h1 className="font-black tracking-tight leading-[1.1] mb-8" style={{ fontWeight: 800, color: '#1a1a2e' }}>
               <style>{`
                 @keyframes cheatCodeShimmer {
                   0%   { background-position: 200% center; }
@@ -122,7 +122,7 @@ export default function Hero() {
             </h1>
 
             {/* Sub-headline */}
-            <p className="reveal reveal-delay-500 hidden sm:block max-w-2xl mx-auto text-xs sm:text-sm md:text-base mb-10" style={{ color: 'rgba(240,244,255,0.55)', lineHeight: 1.7 }}>
+            <p className="reveal reveal-delay-500 hidden sm:block max-w-2xl mx-auto text-xs sm:text-sm md:text-base mb-10" style={{ color: 'rgba(26,26,46,0.6)', lineHeight: 1.7 }}>
               Most businesses don&apos;t have a marketing problem. They have a systems problem. I come in, find where the revenue is leaking, and build the AI-powered infrastructure that fills it — so you can scale predictably instead of guessing every month.
             </p>
 
@@ -138,7 +138,7 @@ export default function Hero() {
                     style={{ background: 'linear-gradient(90deg, #FF2D78, #9B30FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                     {stat.value}
                   </p>
-                  <p className="text-[7px] sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-widest" style={{ color: 'rgba(240,244,255,0.4)' }}>{stat.label}</p>
+                  <p className="text-[7px] sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-widest" style={{ color: 'rgba(26,26,46,0.5)' }}>{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -150,8 +150,8 @@ export default function Hero() {
                 'Results in 30 days',
                 'Free strategy session',
               ].map((badge) => (
-                <span key={badge} className="flex items-center gap-1.5 text-[10px] sm:text-sm font-medium whitespace-nowrap" style={{ color: 'rgba(240,244,255,0.55)' }}>
-                  <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#00E5FF', boxShadow: '0 0 6px rgba(0,229,255,0.7)' }} />
+                <span key={badge} className="flex items-center gap-1.5 text-[10px] sm:text-sm font-medium whitespace-nowrap" style={{ color: 'rgba(26,26,46,0.55)' }}>
+                  <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#FF2D78', boxShadow: '0 0 6px rgba(255,45,120,0.5)' }} />
                   {badge}
                 </span>
               ))}
@@ -171,13 +171,13 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── TRUSTED BY ─────────────────────────────────── */}
+      </section>
+
+      {/* ── TRUSTED BY — dark standalone section ─────────── */}
+      <section style={{ background: '#000000' }}>
         <div className="relative z-10">
           <TrustedBy />
         </div>
-
-
-
       </section>
 
       {/* ── REST OF PAGE ─────────────────────────────────── */}
