@@ -124,7 +124,7 @@ export default function Testimonials() {
                             <span className="absolute top-5 right-7 text-8xl font-black leading-none select-none"
                                 style={{ color: `${featured.accent}18`, fontFamily: 'Georgia, serif' }}>&ldquo;</span>
                             <p className="text-base lg:text-lg leading-relaxed font-medium relative z-10"
-                                style={{ color: '#111827' }}>
+                                style={{ color: '#374151' }}>
                                 &ldquo;{featured.quote}&rdquo;
                             </p>
                         </div>
