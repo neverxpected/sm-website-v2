@@ -90,7 +90,7 @@ const aiPlatforms = [
 
 export default function ServiceGrid() {
   return (
-    <section className="py-12 lg:py-16 px-6 lg:px-8 sg-section" style={{ background: '#ffffff' }}>
+    <section className="py-12 lg:py-16 px-4 lg:px-8 sg-section" style={{ background: '#ffffff' }}>
       <style>{`
         @keyframes sgBorderGlow {
           0%   { background-position: 0% 50%; }

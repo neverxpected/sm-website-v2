@@ -67,7 +67,7 @@ export default function Testimonials() {
     const [featured, ...side] = testimonials;
 
     return (
-        <section ref={sectionRef} className="relative z-10 py-12 lg:py-16 px-6 lg:px-8" style={{ background: '#000000' }}>
+        <section ref={sectionRef} className="relative z-10 py-12 lg:py-16 px-4 lg:px-8" style={{ background: '#000000' }}>
             <ParticleField count={50} />
             <div className="max-w-6xl mx-auto">
 
@@ -92,7 +92,7 @@ export default function Testimonials() {
                         </span>
                     </h2>
                     <p className="text-base max-w-xl mx-auto" style={{ color: 'rgba(240,244,255,0.5)' }}>
-                        Real feedback from real clients we&apos;ve worked with
+                        Real feedback from real clients<br className="sm:hidden" /> we&apos;ve worked with.
                     </p>
                 </div>
 
