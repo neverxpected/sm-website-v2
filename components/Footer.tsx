@@ -11,6 +11,7 @@ const columns = [
       { label: "Google Ads", href: "/services/google-ads" },
       { label: "TikTok Ads", href: "/services/tiktok-ads" },
       { label: "Bing Ads", href: "/services/digital-advertising" },
+      { label: "Nextdoor Ads", href: "/services/nextdoor-ads" },
     ],
   },
   {
