@@ -173,8 +173,8 @@ export default function Hero() {
 
       </section>
 
-      {/* ── TRUSTED BY — dark standalone section ─────────── */}
-      <section style={{ background: '#000000' }}>
+      {/* ── TRUSTED BY — light standalone section ─────────── */}
+      <section style={{ background: '#ffffff' }}>
         <div className="relative z-10">
           <TrustedBy />
         </div>
