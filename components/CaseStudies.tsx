@@ -78,7 +78,7 @@ export default function CaseStudies() {
               Agencies Do.
             </span>
           </h2>
-          <p className="reveal reveal-delay-200 text-base max-w-xl mx-auto leading-relaxed" style={{ color: 'rgba(240,244,255,0.5)' }}>
+          <p className="reveal reveal-delay-200 text-base max-w-2xl mx-auto leading-relaxed" style={{ color: 'rgba(240,244,255,0.5)' }}>
             Here&apos;s what actually happened<br className="sm:hidden" /> when real businesses<br className="sm:hidden" />{' '}trusted us with their growth.
           </p>
         </div>

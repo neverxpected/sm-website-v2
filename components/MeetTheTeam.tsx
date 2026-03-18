@@ -150,7 +150,7 @@ export default function MeetTheTeam() {
               Your Campaigns.
             </span>
           </h2>
-          <p className="reveal reveal-delay-200 text-base sm:text-lg max-w-2xl mx-auto" style={{ color: 'rgba(240,244,255,0.45)' }}>
+          <p className="reveal reveal-delay-200 text-base sm:text-lg max-w-3xl mx-auto" style={{ color: 'rgba(240,244,255,0.45)' }}>
             No account managers between you and the work. No juniors figuring it out on your budget. Just a small focused team that treats your business like it&apos;s their own.
           </p>
         </div>

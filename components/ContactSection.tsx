@@ -86,8 +86,7 @@ export default function ContactSection() {
               `}</style>
               <span style={{ color: '#000000' }}>
                 Good.
-              </span>
-              <br />
+              </span>{' '}
               <span style={{ color: '#000000' }}>
                 Let&apos;s Fix That.
               </span>

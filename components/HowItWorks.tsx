@@ -227,7 +227,7 @@ export default function HowItWorks() {
 
                             {/* Connector between cards */}
                             {i < steps.length - 1 && (
-                                <div className="flex items-start justify-center shrink-0 pt-[2.6rem]" style={{ width: '3rem' }}>
+                                <div className="flex items-center justify-center shrink-0" style={{ width: '3rem' }}>
                                     <div className="w-full h-[2px]" style={{
                                         background: `linear-gradient(90deg, ${step.accent}, ${steps[i + 1].accent})`,
                                         backgroundSize: '200% 100%',
