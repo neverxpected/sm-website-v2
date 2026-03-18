@@ -150,7 +150,7 @@ export default function CaseStudies() {
                   </div>
 
                   {/* CTA link */}
-                  <div>
+                  <div className="text-right sm:text-left">
                     <Link
                       href={c.href}
                       className="inline-flex items-center gap-2 text-sm font-bold transition-all duration-300 hover:gap-3"
