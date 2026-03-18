@@ -124,7 +124,7 @@ export default function GoogleAdsPage() {
 
           <Link
             href="/strategy-call"
-            className="inline-flex items-center justify-center px-10 py-4 text-white font-bold text-base rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap"
+            className="inline-flex items-center justify-center px-6 sm:px-10 py-4 text-white font-bold text-sm sm:text-base rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap"
             style={{ background: 'linear-gradient(135deg, #4285F4, #9B30FF)', boxShadow: '0 0 30px rgba(66,133,244,0.35)' }}
           >
             See If Google Ads Is Right for You &rarr;
@@ -230,11 +230,11 @@ export default function GoogleAdsPage() {
       {/* CTA */}
       <section id="contact" className="px-6 lg:px-8 pb-32">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="p-12 rounded-3xl" style={{ background: 'rgba(66,133,244,0.06)', border: '1px solid rgba(66,133,244,0.15)' }}>
+          <div className="p-6 sm:p-12 rounded-3xl" style={{ background: 'rgba(66,133,244,0.06)', border: '1px solid rgba(66,133,244,0.15)' }}>
             <p className="text-xs font-bold uppercase tracking-[0.25em] mb-4" style={{ color: 'rgba(66,133,244,0.8)' }}>
               Your Competitors Are Already Here
             </p>
-            <h2 className="text-3xl lg:text-4xl font-black text-white mb-4">
+            <h2 className="text-2xl lg:text-4xl font-black text-white mb-4">
               Your Competitors Are Showing Up on Google Right Now.<br /> Are You?
             </h2>
             <p className="text-base mb-10" style={{ color: 'rgba(240,244,255,0.5)' }}>
@@ -242,7 +242,7 @@ export default function GoogleAdsPage() {
             </p>
             <Link
               href="/strategy-call"
-              className="inline-flex items-center justify-center px-10 py-4 text-white font-bold text-base rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap"
+              className="inline-flex items-center justify-center px-6 sm:px-10 py-4 text-white font-bold text-sm sm:text-base rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap"
               style={{ background: 'linear-gradient(135deg, #4285F4, #9B30FF)', boxShadow: '0 0 30px rgba(66,133,244,0.35)' }}
             >
               Get a Free Google Ads Audit &rarr;
