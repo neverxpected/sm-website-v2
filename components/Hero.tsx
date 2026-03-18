@@ -41,21 +41,6 @@ export default function Hero() {
       >
 
 
-        {/* Light rays */}
-        <div className="absolute inset-0 pointer-events-none" style={{ opacity: 0.15, zIndex: 1 }}>
-          <LightRays
-            raysOrigin="top-center"
-            raysColor="#FF2D78"
-            raysSpeed={1.1}
-            lightSpread={0.5}
-            rayLength={3}
-            followMouse={true}
-            mouseInfluence={0.1}
-            pulsating={false}
-            fadeDistance={1}
-            saturation={1}
-          />
-        </div>
 
         {/* CTA glow keyframe */}
         <style>{`
@@ -126,43 +111,15 @@ export default function Hero() {
               Most businesses don&apos;t have a marketing problem. They have a systems problem. I come in, find where the revenue is leaking, and build the AI-powered infrastructure that fills it — so you can scale predictably instead of guessing every month.
             </p>
 
-            {/* Stats bar — above CTAs */}
-            <div className="reveal reveal-delay-400 hidden sm:flex flex-nowrap items-center justify-center gap-3 sm:gap-8 mb-3">
-              {[
-                { value: '$20M+', label: 'Revenue Generated' },
-                { value: '50+', label: 'Businesses Worked With' },
-                { value: '7 Years', label: 'In Business' },
-              ].map((stat, i) => (
-                <div key={stat.label} className="text-center min-w-0 flex-1 sm:flex-none">
-                  <p className="text-lg sm:text-3xl font-black mb-1 whitespace-nowrap"
-                    style={{ background: 'linear-gradient(90deg, #FF2D78, #9B30FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-                    {stat.value}
-                  </p>
-                  <p className="text-[7px] sm:text-xs font-semibold uppercase tracking-[0.08em] sm:tracking-widest" style={{ color: 'rgba(26,26,46,0.5)' }}>{stat.label}</p>
-                </div>
-              ))}
-            </div>
 
-            {/* Trust badges — one row */}
-            <div className="reveal reveal-delay-500 hidden sm:flex flex-nowrap items-center justify-center gap-3 sm:gap-6 mb-6">
-              {[
-                'No long-term contracts',
-                'Results in 30 days',
-                'Free strategy session',
-              ].map((badge) => (
-                <span key={badge} className="flex items-center gap-1.5 text-[10px] sm:text-sm font-medium whitespace-nowrap" style={{ color: 'rgba(26,26,46,0.55)' }}>
-                  <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#FF2D78', boxShadow: '0 0 6px rgba(255,45,120,0.5)' }} />
-                  {badge}
-                </span>
-              ))}
-            </div>
+
 
             {/* CTAs */}
             <div className="reveal reveal-delay-600 flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <Link
                 href="/strategy-call"
                 className="inline-flex items-center justify-center px-5 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-white rounded-xl transition-transform duration-300 hover:scale-105 active:scale-100 text-center"
-                style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', animation: 'ctaGlowPink 3s ease-in-out infinite' }}
+                style={{ background: '#000000' }}
               >
                 Let&apos;s Figure Out What&apos;s Holding You Back →
               </Link>

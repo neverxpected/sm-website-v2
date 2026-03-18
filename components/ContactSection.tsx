@@ -40,7 +40,7 @@ export default function ContactSection() {
   const labelClass = "block text-xs font-semibold mb-1.5" as const;
 
   return (
-    <section className="py-24 lg:py-32 px-6 lg:px-8 relative overflow-hidden" style={{ background: '#000000' }}>
+    <section className="py-24 lg:py-32 px-6 lg:px-8 relative overflow-hidden" style={{ background: '#ffffff' }}>
       {/* Ambient orbs */}
       <div className="absolute top-0 right-1/4 w-[600px] h-[600px] rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(circle, rgba(255,45,120,0.08) 0%, transparent 70%)' }} />
@@ -59,7 +59,7 @@ export default function ContactSection() {
               </svg>
               Get In Touch
             </div>
-            <h2 className="reveal reveal-delay-100 text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight mb-6">
+            <h2 className="reveal reveal-delay-100 text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-6" style={{ color: '#111827' }}>
               Ready to Scale?
               <br />
               <style>{`
@@ -103,11 +103,11 @@ export default function ContactSection() {
                     </svg>
                   </span>
                   <div>
-                    <p className="text-xs mb-0.5" style={{ color: 'rgba(240,244,255,0.35)' }}>{item.label}</p>
+                    <p className="text-xs mb-0.5" style={{ color: '#9CA3AF' }}>{item.label}</p>
                     {item.href ? (
-                      <a href={item.href} className="text-sm font-semibold text-white hover:text-white/70 transition-colors">{item.value}</a>
+                      <a href={item.href} className="text-sm font-semibold transition-colors" style={{ color: '#111827' }}>{item.value}</a>
                     ) : (
-                      <p className="text-sm font-semibold text-white">{item.value}</p>
+                      <p className="text-sm font-semibold" style={{ color: '#111827' }}>{item.value}</p>
                     )}
                   </div>
                 </div>
@@ -175,7 +175,7 @@ export default function ContactSection() {
                   <button
                     type="submit"
                     className="w-full flex items-center justify-center gap-2 px-6 py-4 text-white text-sm font-black rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-100"
-                    style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', boxShadow: '0 0 30px rgba(255,45,120,0.3)' }}
+                    style={{ background: '#000000' }}
                   >
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
@@ -212,11 +212,11 @@ export default function ContactSection() {
                     </svg>
                   </span>
                   <div>
-                    <p className="text-xs mb-0.5" style={{ color: 'rgba(240,244,255,0.35)' }}>{item.label}</p>
+                    <p className="text-xs mb-0.5" style={{ color: '#9CA3AF' }}>{item.label}</p>
                     {item.href ? (
-                      <a href={item.href} className="text-sm font-semibold text-white hover:text-white/70 transition-colors">{item.value}</a>
+                      <a href={item.href} className="text-sm font-semibold transition-colors" style={{ color: '#111827' }}>{item.value}</a>
                     ) : (
-                      <p className="text-sm font-semibold text-white">{item.value}</p>
+                      <p className="text-sm font-semibold" style={{ color: '#111827' }}>{item.value}</p>
                     )}
                   </div>
                 </div>

@@ -90,21 +90,21 @@ const aiPlatforms = [
 
 export default function ServiceGrid() {
   return (
-    <section className="py-20 px-6 lg:px-8 bg-white lg:bg-black">
+    <section className="py-20 px-6 lg:px-8" style={{ background: '#ffffff' }}>
       <div className="max-w-6xl mx-auto">
 
         {/* Section header */}
         <div className="text-center mb-14">
-          <h2 className="text-3xl lg:text-4xl font-black text-[#111827] lg:text-white mb-4">
+          <h2 className="text-3xl lg:text-4xl font-black mb-4" style={{ color: '#111827' }}>
             What We <span style={{ background: 'linear-gradient(90deg, #FF2D78, #9B30FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Do Best</span>
           </h2>
-          <p className="text-base max-w-xl mx-auto text-gray-500 lg:text-[rgba(220,230,255,0.5)]">
+          <p className="text-base max-w-xl mx-auto" style={{ color: '#6B7280' }}>
             Two powerhouse service lines built to grow your business predictably.
           </p>
         </div>
 
-        {/* Dark container on mobile, transparent on desktop */}
-        <div className="rounded-3xl p-4 lg:p-0 lg:rounded-none" style={{ background: '#000000' }}>
+        {/* Dark container on mobile only */}
+        <div>
         {/* Two big cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 

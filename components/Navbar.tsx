@@ -118,7 +118,7 @@ function DesktopDropdown({ label, links }: { label: string; links: NavLink[] }) 
 
       {open && (
         <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50">
-          <ul className="min-w-[260px] bg-zinc-900 border border-white/10 rounded-2xl shadow-2xl overflow-hidden py-2">
+          <ul className="min-w-[260px] bg-black border border-white/10 rounded-2xl shadow-2xl overflow-hidden py-2">
             {links.map((link) => (
               <li key={link.href}>
                 <Link
@@ -217,7 +217,7 @@ export default function Navbar() {
     <nav
       className="fixed w-full z-50 backdrop-blur-md transition-colors duration-300"
       style={{
-        background: overHero ? "rgba(0,0,0,0.85)" : "transparent",
+        background: overHero ? "rgba(0,0,0,1)" : "transparent",
         borderBottom: overHero ? "1px solid rgba(255,255,255,0.1)" : "1px solid rgba(255,255,255,0.07)",
       }}
     >
@@ -253,7 +253,7 @@ export default function Navbar() {
           <Link
             href="/strategy-call"
             className="relative px-6 py-2.5 text-sm font-bold rounded-full text-white transition-all duration-300 hover:scale-105 overflow-hidden whitespace-nowrap"
-            style={{ background: "linear-gradient(135deg, #FF2D78, #9B30FF)", boxShadow: "0 0 20px rgba(255,45,120,0.35)" }}
+            style={{ background: "#000000" }}
           >
             Book a Strategy Call
           </Link>
@@ -310,7 +310,7 @@ export default function Navbar() {
             <Link
               href="/strategy-call"
               className="block w-full text-center px-6 py-3.5 text-sm font-bold rounded-full text-white transition-all whitespace-nowrap"
-              style={{ background: "linear-gradient(135deg, #FF2D78, #9B30FF)" }}
+              style={{ background: "#000000" }}
               onClick={() => setMobileOpen(false)}
             >
               Book a Strategy Call

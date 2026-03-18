@@ -538,21 +538,19 @@ h6 {
   0%,
   100% {
     box-shadow:
-      0 0 20px rgba(0, 229, 255, 0.4),
-      0 0 50px rgba(0, 229, 255, 0.2),
-      0 0 90px rgba(0, 229, 255, 0.1);
+      0 0 8px rgba(0, 229, 255, 0.12),
+      0 0 20px rgba(0, 229, 255, 0.06);
   }
 
   50% {
     box-shadow:
-      0 0 35px rgba(0, 229, 255, 0.7),
-      0 0 80px rgba(0, 229, 255, 0.4),
-      0 0 130px rgba(0, 229, 255, 0.2);
+      0 0 14px rgba(0, 229, 255, 0.2),
+      0 0 30px rgba(0, 229, 255, 0.08);
   }
 }
 
 .contact-gold-frame {
-  border: 1.5px solid #00E5FF;
+  border: 1px solid rgba(0, 229, 255, 0.4);
   animation: goldGlow 3s ease-in-out infinite;
 }
 
