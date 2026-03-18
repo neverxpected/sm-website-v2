@@ -39,9 +39,9 @@ const caseStudies = [
 
 const capabilities = [
   {
-    title: "Advanced Targeting Architecture",
+    title: "Targeting That Finds Buyers",
     description:
-      "Custom audience stacks built from first-party data, lookalikes, and behavioral signals. We layer interest, intent, and retargeting pools to minimize wasted spend and maximize qualified reach.",
+      "We build custom audience stacks using first-party data, lookalikes, and behavioral signals. We layer interest, intent, and retargeting pools to put your ads in front of people who are actually ready to spend money.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c4.97 0 9 4.03 9 9s-4.03 9-9 9-9-4.03-9-9 4.03-9 9-9z" />
@@ -51,9 +51,9 @@ const capabilities = [
     ),
   },
   {
-    title: "Creative Strategy & Testing",
+    title: "Creative That Converts",
     description:
-      "We develop and test ad creative at volume. Static, video, and UGC formats are cycled through structured A/B frameworks to identify the highest-converting angles at every funnel stage.",
+      "We develop and test static, video, and UGC ad creative at volume. Every format is cycled through structured A/B frameworks to find what converts at each stage of your funnel -- then we scale the winners.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -62,9 +62,9 @@ const capabilities = [
     ),
   },
   {
-    title: "Technical Conversion Tracking (CAPI)",
+    title: "Tracking That Works",
     description:
-      "Server-side Conversions API implementation paired with pixel-based tracking to recover signal lost to iOS restrictions and ad blockers. Full attribution visibility across every conversion event.",
+      "Server-side Conversions API paired with pixel-based tracking recovers signal lost to iOS restrictions and ad blockers. You get full attribution visibility across every conversion event so you know exactly what's working.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
@@ -92,7 +92,7 @@ export default function MetaAdsPage() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-7xl font-black tracking-tight leading-[1] mb-8 text-white">
-            Precision Meta Advertising<br />
+            Your Customers Are on Facebook and Instagram Right Now.<br />
             <style>{`
               @keyframes metaAdsShimmer {
                 0%   { background-position: 200% center; }
@@ -108,12 +108,12 @@ export default function MetaAdsPage() {
               animation: 'metaAdsShimmer 4s linear infinite',
               display: 'inline-block',
               paddingBottom: '0.1em',
-            }}>for High-Ticket Brands.</span>
+            }}>The Question Is Whether They&apos;re Seeing You or Your Competitor.</span>
           </h1>
 
           <p className="text-lg lg:text-xl max-w-3xl leading-relaxed mb-12"
             style={{ color: 'rgba(240,244,255,0.55)' }}>
-            We build high-performance Facebook and Instagram engines that convert passive scrollers into predictable revenue. We specialize in scaling high-ticket aesthetics, healthcare, and wellness brands globally.
+            We&apos;ve run Meta campaigns across 13 different industries, med spas, plastic surgeons, gyms, restaurants, ecommerce, pest control and more. The platforms change. The principles don&apos;t. We know what makes people stop scrolling, click, and buy. And we build campaigns around that knowledge personally. Not someone who just passed a certification exam, not an outsourced team halfway across the world. Us.
           </p>
 
           <Link
@@ -121,11 +121,11 @@ export default function MetaAdsPage() {
             className="inline-flex items-center justify-center px-10 py-4 text-white font-bold text-base rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap"
             style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', boxShadow: '0 0 30px rgba(255,45,120,0.35)' }}
           >
-            Book a Strategy Call
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4 ml-2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </svg>
+            See If We&apos;re the Right Fit &rarr;
           </Link>
+          <p className="text-sm mt-4" style={{ color: 'rgba(240,244,255,0.4)' }}>
+            Free strategy call. We&apos;ll tell you honestly if Meta is right for your business right now.
+          </p>
         </div>
       </section>
 
@@ -134,11 +134,14 @@ export default function MetaAdsPage() {
         <div className="max-w-5xl mx-auto">
           <div className="mb-10">
             <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: 'rgba(255,45,120,0.8)' }}>
-              Verified Client Results
+              Real Results. Real Businesses.
             </p>
-            <h2 className="text-3xl lg:text-4xl font-black text-white">
-              Numbers that close.
+            <h2 className="text-3xl lg:text-4xl font-black text-white mb-3">
+              What Happens When Meta Is Done Right.
             </h2>
+            <p className="text-base leading-relaxed" style={{ color: 'rgba(240,244,255,0.5)' }}>
+              Across 13 industries and millions in managed spend, these are the kinds of numbers that change what a business can afford to dream about.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
@@ -183,11 +186,14 @@ export default function MetaAdsPage() {
         <div className="max-w-5xl mx-auto pt-24">
           <div className="mb-12">
             <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: 'rgba(155,48,255,0.8)' }}>
-              Core Capabilities
+              No Black Box. No Mystery.
             </p>
-            <h2 className="text-3xl lg:text-4xl font-black text-white">
-              What we execute.
+            <h2 className="text-3xl lg:text-4xl font-black text-white mb-3">
+              How We Actually Run Your Campaigns.
             </h2>
+            <p className="text-base leading-relaxed" style={{ color: 'rgba(240,244,255,0.5)' }}>
+              No mystery. No black box reporting. Here&apos;s exactly what we do and why it works.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -210,27 +216,27 @@ export default function MetaAdsPage() {
 
       {/* CTA */}
       <section id="contact" className="px-6 lg:px-8 pb-32">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center">
           <div className="p-12 rounded-3xl" style={{ background: 'rgba(255,45,120,0.06)', border: '1px solid rgba(255,45,120,0.15)' }}>
             <p className="text-xs font-bold uppercase tracking-[0.25em] mb-4" style={{ color: 'rgba(255,45,120,0.8)' }}>
-              Ready to Scale
+              Heard This Before?
             </p>
             <h2 className="text-3xl lg:text-4xl font-black text-white mb-4">
-              Start with a Strategy Audit.
+              Tired of Paying Meta<br /> and Wondering Where the Money Went?
             </h2>
             <p className="text-base mb-10" style={{ color: 'rgba(240,244,255,0.5)' }}>
-              We review your current ad account, identify revenue leaks, and map a path to scalable ROAS. No obligation.
+              That&apos;s the most common thing we hear on the first call. Budgets burning, results inconsistent, agency blame-shifting the algorithm. We come in, audit what&apos;s actually happening inside your account, and tell you the truth about what needs to change. No obligation. No pitch. Just clarity.
             </p>
             <Link
               href="/strategy-call"
               className="inline-flex items-center justify-center px-10 py-4 text-white font-bold text-base rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap"
               style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', boxShadow: '0 0 30px rgba(255,45,120,0.35)' }}
             >
-              Book a Strategy Call
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4 ml-2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
+              Get a Free Meta Account Audit &rarr;
             </Link>
+            <p className="text-sm mt-4" style={{ color: 'rgba(240,244,255,0.4)' }}>
+              We look at your real account data and tell you exactly what we&apos;d fix first.
+            </p>
           </div>
         </div>
       </section>
