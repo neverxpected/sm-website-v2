@@ -88,6 +88,28 @@ const aiPlatforms = [
   },
 ];
 
+/* All 9 services combined for the mobile 3x3 grid */
+const allServices = [
+  paidPlatforms[0],  // Meta Ads (blue)
+  paidPlatforms[1],  // Google Ads (green)
+  paidPlatforms[2],  // TikTok Ads (pink)
+  {                  // Nextdoor Ads (green) — under Meta
+    label: "Nextdoor Ads",
+    href: "/services/nextdoor-ads",
+    iconBg: "bg-green-600",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
+      </svg>
+    ),
+  },
+  paidPlatforms[3],  // Bing Ads (orange) — center
+  aiPlatforms[0],    // AI Receptionists (violet) — far right
+  aiPlatforms[1],    // AI Integrations (cyan)
+  aiPlatforms[2],    // AI Lead Nurturing (rose)
+  aiPlatforms[3],    // Custom AI Solutions (purple)
+];
+
 export default function ServiceGrid() {
   return (
     <section className="py-12 lg:py-16 px-4 lg:px-8 sg-section" style={{ background: '#ffffff' }}>
@@ -147,8 +169,37 @@ export default function ServiceGrid() {
           </p>
         </div>
 
-        {/* Dark container on mobile only */}
-        <div>
+        {/* ═══════ MOBILE: 3×3 ClickUp-style icon grid ═══════ */}
+        <div className="lg:hidden">
+          <div className="grid grid-cols-3 rounded-2xl overflow-hidden"
+            style={{ border: '1px solid rgba(0,0,0,0.08)', background: '#ffffff' }}>
+            {allServices.map((s, i) => (
+              <Link
+                key={s.href}
+                href={s.href}
+                className="flex flex-col items-center justify-center gap-2 py-5 px-2 transition-colors duration-150 active:bg-gray-50"
+                style={{
+                  borderRight: (i % 3 !== 2) ? '1px solid rgba(0,0,0,0.06)' : 'none',
+                  borderBottom: i < 6 ? '1px solid rgba(0,0,0,0.06)' : 'none',
+                }}
+              >
+                <span className={`w-11 h-11 rounded-2xl ${s.iconBg} text-white flex items-center justify-center`}>
+                  {s.icon}
+                </span>
+                <span className="text-[11px] font-semibold text-center leading-tight" style={{ color: '#374151' }}>
+                  {s.label}
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          <p className="text-sm leading-relaxed text-center mt-6 px-2" style={{ color: '#6B7280' }}>
+            8 years. Millions in managed spend. From paid ads to AI automation, we build the systems that drive real growth for service businesses.
+          </p>
+        </div>
+
+        {/* ═══════ DESKTOP: Original two-card layout ═══════ */}
+        <div className="hidden lg:block">
           {/* Two big cards */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sg-cards">
 
