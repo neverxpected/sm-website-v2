@@ -81,9 +81,6 @@ export default function Hero() {
                 padding: 0.5rem 1rem 0.25rem !important;
                 padding-top: 0.5rem !important;
               }
-              .hero-grid {
-                display: none !important;
-              }
               .hero-headline-main {
                 display: none !important;
               }
