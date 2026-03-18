@@ -48,10 +48,10 @@ export default function ContactSection() {
         style={{ background: 'radial-gradient(circle, rgba(155,48,255,0.07) 0%, transparent 70%)' }} />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid lg:grid-cols-[2fr_3fr] gap-16 items-start">
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5%', alignItems: 'flex-start' }}>
 
           {/* Left */}
-          <div>
+          <div className="contact-left" style={{ flex: '0 0 40%', maxWidth: '40%' }}>
             <div className="reveal inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.25em]"
               style={{ background: 'rgba(255,45,120,0.1)', border: '1px solid rgba(255,45,120,0.25)', color: '#FF2D78' }}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-3.5 h-3.5 shrink-0">
@@ -59,21 +59,41 @@ export default function ContactSection() {
               </svg>
               Get In Touch
             </div>
-            <h2 className="reveal reveal-delay-100 text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-6" style={{ color: '#111827' }}>
-              Ready to Scale?
+            <h2 className="reveal reveal-delay-100 font-black tracking-tight mb-6 contact-headline" style={{ color: '#111827', fontSize: '2rem', lineHeight: 1.15 }}>
+              Done Watching Your Competitors Pull Ahead?
               <br />
               <style>{`
                 @keyframes letsTalkShimmer {
                   0%   { background-position: 200% center; }
                   100% { background-position: -200% center; }
                 }
+                @media (max-width: 767px) {
+                  .contact-headline {
+                    font-size: 1.5rem !important;
+                    line-height: 1.2 !important;
+                  }
+                  .contact-left, .contact-right {
+                    flex: 0 0 100% !important;
+                    max-width: 100% !important;
+                  }
+                  .contact-subline {
+                    margin-bottom: 1.5rem !important;
+                  }
+                  .contact-btn {
+                    font-size: 14px !important;
+                  }
+                }
               `}</style>
               <span style={{ color: '#000000' }}>
-                Let&apos;s Talk.
+                Good.
+              </span>
+              <br />
+              <span style={{ color: '#000000' }}>
+                Let&apos;s Fix That.
               </span>
             </h2>
-            <p className="reveal reveal-delay-200 text-base leading-relaxed mb-10 max-w-md" style={{ color: '#374151' }}>
-              Book a free strategy call with our team. We&apos;ll analyze your current marketing efforts and show you exactly how we can help you reach your goals.
+            <p className="reveal reveal-delay-200 text-base leading-relaxed mb-10 max-w-md contact-subline" style={{ color: '#374151' }}>
+              This isn&apos;t a sales call. It&apos;s a straight conversation about where your business actually stands and what it would take to change it. No pitch. No pressure. Just an honest look with someone who&apos;s seen this before and knows exactly what to do about it.
             </p>
 
             {/* Contact info — desktop only */}
@@ -116,7 +136,7 @@ export default function ContactSection() {
           </div>
 
           {/* Right — form */}
-          <div className="reveal reveal-delay-200">
+          <div className="reveal reveal-delay-200 contact-right" style={{ flex: '0 0 55%', maxWidth: '55%' }}>
             <div className="contact-gold-frame rounded-2xl p-8"
               style={{
                 background: '#ffffff',
@@ -134,7 +154,10 @@ export default function ContactSection() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="grid grid-cols-2 gap-4">
+                  <p className="text-xs italic" style={{ color: '#9CA3AF' }}>
+                    We read every submission personally. No automated responses. No spam.
+                  </p>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                     <div>
                       <label className={labelClass} style={{ color: '#374151' }}>Name <span style={{ color: '#FF2D78' }}>*</span></label>
                       <input required name="name" type="text" placeholder="John Smith" className={inputClass} style={inputStyle} />
@@ -144,7 +167,7 @@ export default function ContactSection() {
                       <input required name="email" type="email" placeholder="john@company.com" className={inputClass} style={inputStyle} />
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                     <div>
                       <label className={labelClass} style={{ color: '#374151' }}>Company <span style={{ color: '#FF2D78' }}>*</span></label>
                       <input required name="company" type="text" placeholder="Company name" className={inputClass} style={inputStyle} />
@@ -171,7 +194,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <label className={labelClass} style={{ color: '#374151' }}>Message</label>
-                    <textarea name="message" rows={4} placeholder="Tell us about your business and goals..." className={inputClass + " resize-none"} style={inputStyle} />
+                    <textarea name="message" rows={4} placeholder="What's the biggest thing holding your business back right now?" className={inputClass + " resize-none"} style={inputStyle} />
                   </div>
                   <div className="group relative w-full">
                     <span
@@ -184,15 +207,18 @@ export default function ContactSection() {
                     />
                     <button
                       type="submit"
-                      className="relative w-full flex items-center justify-center gap-2 px-6 py-4 text-white text-sm font-black rounded-xl transition-all duration-300 group-hover:scale-[1.01] active:scale-100"
-                      style={{ background: '#000000' }}
+                      className="contact-btn relative w-full flex items-center justify-center gap-2 px-6 py-4 text-white font-black rounded-xl transition-all duration-300 group-hover:scale-[1.01] active:scale-100"
+                      style={{ background: '#000000', whiteSpace: 'nowrap', fontSize: '15px' }}
                     >
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
                       </svg>
-                      Send Message
+                      Book Your Free Strategy Call &rarr;
                     </button>
                   </div>
+                  <p className="text-center text-xs mt-3" style={{ color: '#9CA3AF' }}>
+                    15 minutes. Charles picks up the phone himself.
+                  </p>
                 </form>
               )}
             </div>

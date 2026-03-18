@@ -59,7 +59,7 @@ export default function TrustedBy() {
                     height: 'auto',
                     objectFit: 'contain',
                     filter: 'brightness(0)',
-                    opacity: 1,
+                    opacity: 0.4,
                     display: 'block',
                   }}
                 />

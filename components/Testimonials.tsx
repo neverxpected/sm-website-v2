@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import ParticleField from './ParticleField';
 
 const testimonials = [
     {
@@ -67,6 +68,7 @@ export default function Testimonials() {
 
     return (
         <section ref={sectionRef} className="relative z-10 py-12 lg:py-16 px-6 lg:px-8" style={{ background: '#000000' }}>
+            <ParticleField count={50} />
             <div className="max-w-6xl mx-auto">
 
                 {/* Header */}

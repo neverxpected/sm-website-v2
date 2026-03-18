@@ -23,6 +23,14 @@ export const metadata: Metadata = {
   },
   description:
     "Houston AI Agency delivers expert digital advertising and AI system integration services to grow your business.",
+  icons: {
+    icon: [
+      { url: '/images/favicon/favicon.ico', sizes: 'any' },
+      { url: '/images/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/images/favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/images/favicon/apple-touch-icon.png',
+  },
 };
 
 export default function RootLayout({

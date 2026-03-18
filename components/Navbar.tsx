@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
@@ -81,6 +82,16 @@ const aiAutomationLinks = [
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Custom AI Solutions",
+    href: "/services/custom-ai",
+    description: "Bespoke AI systems built around your exact workflows, data, and goals.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-5 h-5">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM19 8l.5-1.5L21 6l-1.5-.5L19 4l-.5 1.5L17 6l1.5.5L19 8z" />
       </svg>
     ),
   },
@@ -195,6 +206,8 @@ function MobileAccordion({ label, links, onClose }: { label: string; links: NavL
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -208,19 +221,22 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'pt-3 px-4 lg:px-8' : ''}`}
-      style={{ background: 'transparent' }}
+      className={`fixed w-full z-[1000] transition-all duration-500`}
+      style={{
+        background: scrolled ? 'transparent' : (isHome ? 'transparent' : '#ffffff'),
+      }}
     >
       <div
-        className={`transition-all duration-500 flex items-center justify-between ${scrolled ? 'max-w-5xl mx-auto backdrop-blur-xl rounded-full px-6' : 'max-w-7xl mx-auto px-6 lg:px-16'}`}
+        className={`transition-all duration-500 flex items-center justify-between ${scrolled ? 'mx-auto backdrop-blur-xl rounded-full px-5 mt-3' : 'max-w-7xl mx-auto px-6'}`}
         style={{
-          background: scrolled ? 'rgba(255,255,255,0.85)' : 'transparent',
+          background: scrolled ? 'rgba(255,255,255,0.95)' : 'transparent',
           border: scrolled ? '1px solid rgba(0,0,0,0.08)' : 'none',
           boxShadow: scrolled ? '0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04)' : 'none',
           height: scrolled ? '56px' : '80px',
+          ...(scrolled ? { width: 'fit-content', maxWidth: '92vw', padding: '0.5rem 1.25rem' } : {}),
         }}>
         {/* Logo */}
-        <Link href="/" className="flex items-center group">
+        <Link href="/" className="flex items-center group ml-2 lg:ml-4">
           <Image
             src="/images/logo/Switch Media logo horizontal.png"
             alt="Switch Media Marketing Logo"
