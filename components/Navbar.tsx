@@ -232,11 +232,11 @@ export default function Navbar() {
           background: scrolled ? 'rgba(255,255,255,0.95)' : 'transparent',
           border: scrolled ? '1px solid rgba(0,0,0,0.08)' : 'none',
           boxShadow: scrolled ? '0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04)' : 'none',
-          height: scrolled ? '56px' : '80px',
-          ...(scrolled ? { width: 'fit-content', maxWidth: '92vw', padding: '0.5rem 1.25rem' } : {}),
+          height: scrolled ? '48px' : '80px',
+          ...(scrolled ? { width: '95vw', maxWidth: '860px', padding: '0.35rem 1rem' } : {}),
         }}>
         {/* Logo */}
-        <Link href="/" className="flex items-center group ml-2 lg:ml-4">
+        <Link href="/" className={`flex items-center group ${scrolled ? 'ml-0' : 'ml-2 lg:ml-4'}`}>
           <Image
             src="/images/logo/Switch Media logo horizontal.png"
             alt="Switch Media Marketing Logo"

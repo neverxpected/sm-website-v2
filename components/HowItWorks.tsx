@@ -168,8 +168,6 @@ export default function HowItWorks() {
                         <div key={step.number}
                             className="relative flex flex-col items-center text-center p-8 rounded-2xl"
                             style={{ background: '#000000', border: `1px solid ${step.accent}66`, boxShadow: `0 0 30px ${step.glow.replace('0.35', '0.45')}, 0 0 80px ${step.glow.replace('0.35', '0.15')}, 0 0 160px ${step.glow.replace('0.35', '0.06')}`, ...reveal(300 + i * 150) }}>
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full"
-                                style={{ background: step.accent, boxShadow: `0 0 8px ${step.accent}` }} />
                             <div className="relative w-16 h-16 mb-6 shrink-0">
                                 <div className="absolute inset-0 rounded-full" style={{ border: `2px solid ${step.accent}`, animation: `ringPing 2s ease-out infinite`, animationDelay: `${i * 0.5}s` }} />
                                 <div className="absolute inset-0 rounded-full border-2 flex items-center justify-center font-black text-xl z-10"
@@ -207,9 +205,6 @@ export default function HowItWorks() {
                                     (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 28px ${step.glow.replace('0.35', '0.2')}, 0 4px 16px rgba(0,0,0,0.4)`;
                                 }}
                             >
-                                {/* Accent dot at top */}
-                                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full"
-                                    style={{ background: step.accent, boxShadow: `0 0 8px ${step.accent}` }} />
 
                                 {/* Badge with ping ring */}
                                 <div className="relative w-16 h-16 mb-6 shrink-0">

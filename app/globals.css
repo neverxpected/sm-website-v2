@@ -587,3 +587,56 @@ select option {
   background-color: #1a1f2e;
   color: #f0f4ff;
 }
+
+/* ─── Global mobile spacing system ─────────────────── */
+
+@media (max-width: 640px) {
+
+  /* Universal section padding on mobile */
+  section:not(.grain > section),
+  .section,
+  [class*="Section"],
+  [class*="section"] {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  /* Hero section keeps its own padding */
+  .grain > section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Universal section vertical rhythm */
+  section,
+  .section,
+  [class*="Section"] {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  /* Hero section gets tighter top padding */
+  .hero,
+  .hero > section,
+  [class*="hero"],
+  [class*="Hero"] {
+    padding-top: 0rem !important;
+  }
+
+  /* Universal gap between sections */
+  section + section,
+  .section + .section {
+    margin-top: 0 !important;
+  }
+
+  /* Universal max-width for text blocks on mobile */
+  p, h1, h2, h3, h4 {
+    max-width: 100% !important;
+  }
+
+  /* Prevent any horizontal overflow on mobile */
+  body, html {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+}
