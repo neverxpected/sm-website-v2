@@ -122,7 +122,7 @@ export default function Hero() {
             </h1>
 
             {/* Sub-headline */}
-            <p className="reveal reveal-delay-500 max-w-2xl mx-auto text-xs sm:text-sm md:text-base mb-10" style={{ color: 'rgba(240,244,255,0.55)', lineHeight: 1.7 }}>
+            <p className="reveal reveal-delay-500 hidden sm:block max-w-2xl mx-auto text-xs sm:text-sm md:text-base mb-10" style={{ color: 'rgba(240,244,255,0.55)', lineHeight: 1.7 }}>
               Most businesses don&apos;t have a marketing problem. They have a systems problem. I come in, find where the revenue is leaking, and build the AI-powered infrastructure that fills it — so you can scale predictably instead of guessing every month.
             </p>
 
@@ -161,7 +161,7 @@ export default function Hero() {
             <div className="reveal reveal-delay-600 flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <Link
                 href="/strategy-call"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white rounded-xl transition-transform duration-300 hover:scale-105 active:scale-100 whitespace-nowrap"
+                className="inline-flex items-center justify-center px-5 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-white rounded-xl transition-transform duration-300 hover:scale-105 active:scale-100 text-center"
                 style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', animation: 'ctaGlowPink 3s ease-in-out infinite' }}
               >
                 Let&apos;s Figure Out What&apos;s Holding You Back →
