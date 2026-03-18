@@ -217,19 +217,19 @@ export default function MetaAdsPage() {
       {/* CTA */}
       <section id="contact" className="px-6 lg:px-8 pb-32">
         <div className="max-w-5xl mx-auto text-center">
-          <div className="p-12 rounded-3xl" style={{ background: 'rgba(255,45,120,0.06)', border: '1px solid rgba(255,45,120,0.15)' }}>
+          <div className="p-6 sm:p-12 rounded-3xl" style={{ background: 'rgba(255,45,120,0.06)', border: '1px solid rgba(255,45,120,0.15)' }}>
             <p className="text-xs font-bold uppercase tracking-[0.25em] mb-4" style={{ color: 'rgba(255,45,120,0.8)' }}>
               Heard This Before?
             </p>
             <h2 className="text-3xl lg:text-4xl font-black text-white mb-4">
-              Tired of Paying Meta<br /> and Wondering Where the Money Went?
+              Tired of <span style={{ whiteSpace: 'nowrap' }}>Paying Meta</span><br /> and Wondering Where the Money Went?
             </h2>
             <p className="text-base mb-10" style={{ color: 'rgba(240,244,255,0.5)' }}>
               That&apos;s the most common thing we hear on the first call. Budgets burning, results inconsistent, agency blame-shifting the algorithm. We come in, audit what&apos;s actually happening inside your account, and tell you the truth about what needs to change. No obligation. No pitch. Just clarity.
             </p>
             <Link
               href="/strategy-call"
-              className="inline-flex items-center justify-center px-10 py-4 text-white font-bold text-base rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap"
+              className="inline-flex items-center justify-center px-6 sm:px-10 py-4 text-white font-bold text-sm sm:text-base rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap"
               style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', boxShadow: '0 0 30px rgba(255,45,120,0.35)' }}
             >
               Get a Free Meta Account Audit &rarr;
