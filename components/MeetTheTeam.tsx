@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import ParticleField from './ParticleField';
 
 const team = [
   {
@@ -112,6 +113,7 @@ function ParticleBg({ color }: { color: string }) {
 export default function MeetTheTeam() {
   return (
     <section className="relative py-12 lg:py-16" style={{ background: '#000000' }}>
+      <ParticleField count={60} />
       <div className="absolute inset-0 pointer-events-none" style={{
         backgroundImage: 'none',
         backgroundSize: '60px 60px',
@@ -134,7 +136,7 @@ export default function MeetTheTeam() {
             }
           `}</style>
           <h2 className="reveal reveal-delay-100 text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
-            Meet The{' '}
+            The People Actually Running{' '}
             <span style={{
               background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #FF2D78)',
               WebkitBackgroundClip: 'text',
@@ -143,12 +145,13 @@ export default function MeetTheTeam() {
               backgroundSize: '200% auto',
               animation: 'teamShimmer 4s linear infinite',
               display: 'inline-block',
+              paddingBottom: '0.1em',
             }}>
-              Team
+              Your Campaigns.
             </span>
           </h2>
           <p className="reveal reveal-delay-200 text-base sm:text-lg max-w-2xl mx-auto" style={{ color: 'rgba(240,244,255,0.45)' }}>
-            Small team. Big output. Every client gets direct access to the people actually running their campaigns.
+            No account managers between you and the work. No juniors figuring it out on your budget. Just a small focused team that treats your business like it&apos;s their own.
           </p>
         </div>
 

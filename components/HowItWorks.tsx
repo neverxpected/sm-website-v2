@@ -1,16 +1,14 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import ParticleField from './ParticleField';
 
 const steps = [
     {
         number: '01',
-        title: 'Strategy Call',
+        title: 'Honest Strategy Call',
         bullets: [
-            'Audit your current marketing infrastructure',
-            'Identify revenue gaps & missed opportunities',
-            'Map a precision growth plan',
-            'Tailored to your business model',
+            'We ask the questions nobody else asks. We look at your offer, your follow up, your current presence. We tell you exactly what we see. Even if it\'s uncomfortable. Especially then.',
         ],
         accent: '#FF2D78',
         glow: 'rgba(255,45,120,0.35)',
@@ -18,12 +16,9 @@ const steps = [
     },
     {
         number: '02',
-        title: 'Build & Launch',
+        title: 'Build and Launch',
         bullets: [
-            'Engineer custom ad campaigns',
-            'Build AI systems & automations',
-            'Workflows built from the ground up',
-            'Built to convert from day one',
+            'We build your ad campaigns and AI systems from the ground up. No templates. No guessing. Everything is engineered around your specific business, your offer, and your customer.',
         ],
         accent: '#9B30FF',
         glow: 'rgba(155,48,255,0.35)',
@@ -31,12 +26,9 @@ const steps = [
     },
     {
         number: '03',
-        title: 'Scale & Optimize',
+        title: 'Scale and Stay',
         bullets: [
-            'Weekly performance data analysis',
-            'Double down on what works',
-            'Cut what doesn\'t convert',
-            'Systematically scale month over month',
+            'We don\'t hand you off. We stay in, watch the data weekly, cut what isn\'t working, and double down on what is. Growth compounds when someone is actually paying attention.',
         ],
         accent: '#00E5FF',
         glow: 'rgba(0,229,255,0.35)',
@@ -88,6 +80,7 @@ export default function HowItWorks() {
             className="relative z-10 py-12 lg:py-16 px-6 lg:px-8 overflow-hidden"
             style={{ background: '#000000' }}
         >
+            <ParticleField count={60} />
             <style>{`
         @keyframes howItWorksShimmer {
           0%   { background-position: 200% center; }
@@ -104,6 +97,11 @@ export default function HowItWorks() {
         @keyframes connectorFlow {
           0%   { background-position: -200% 0; }
           100% { background-position:  200% 0; }
+        }
+        @media (max-width: 767px) {
+          .hiw-headline {
+            font-size: clamp(1.6rem, 6.5vw, 2.2rem) !important;
+          }
         }
       `}</style>
 
@@ -141,10 +139,10 @@ export default function HowItWorks() {
                     </div>
 
                     <h2
-                        className="text-3xl lg:text-5xl font-black text-white tracking-tight mb-4"
+                        className="text-3xl lg:text-5xl font-black text-white tracking-tight mb-4 hiw-headline"
                         style={reveal(100)}
                     >
-                        From zero to{' '}
+                        No Fluff. No Handoffs.<br />Here&apos;s Exactly{' '}
                         <span style={{
                             background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
                             WebkitBackgroundClip: 'text',
@@ -155,12 +153,12 @@ export default function HowItWorks() {
                             display: 'inline-block',
                             paddingBottom: '0.05em',
                         }}>
-                            results.
+                            How We Work.
                         </span>
                     </h2>
 
                     <p className="text-base max-w-xl mx-auto" style={{ color: 'rgba(240,244,255,0.5)', ...reveal(200) }}>
-                        Three steps. No fluff. Just a repeatable system that gets your business growing faster than you thought possible.
+                        No mystery. No 90 day onboarding. Three steps and you&apos;ll know exactly where you stand and what happens next.
                     </p>
                 </div>
 
@@ -180,16 +178,9 @@ export default function HowItWorks() {
                                 </div>
                             </div>
                             <h3 className="text-lg font-black text-white mb-4">{step.title}</h3>
-                            <ul className="text-left space-y-2 w-full">
-                                {step.bullets.map((b) => (
-                                    <li key={b} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(240,244,255,0.65)' }}>
-                                        <svg viewBox="0 0 24 24" fill="none" className="w-3.5 h-3.5 mt-0.5 shrink-0" stroke={step.accent} strokeWidth={2.5}>
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                        {b}
-                                    </li>
-                                ))}
-                            </ul>
+                            <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.65)' }}>
+                                {step.bullets[0]}
+                            </p>
                         </div>
                     ))}
                 </div>
@@ -234,16 +225,9 @@ export default function HowItWorks() {
                                 </div>
 
                                 <h3 className="text-lg font-black text-white mb-4">{step.title}</h3>
-                                <ul className="text-left space-y-2 w-full">
-                                    {step.bullets.map((b) => (
-                                        <li key={b} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(240,244,255,0.65)' }}>
-                                            <svg viewBox="0 0 24 24" fill="none" className="w-3.5 h-3.5 mt-0.5 shrink-0" stroke={step.accent} strokeWidth={2.5}>
-                                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>
-                                            {b}
-                                        </li>
-                                    ))}
-                                </ul>
+                                <p className="text-sm leading-relaxed text-left" style={{ color: 'rgba(240,244,255,0.65)' }}>
+                                    {step.bullets[0]}
+                                </p>
                             </div>
 
                             {/* Connector between cards */}

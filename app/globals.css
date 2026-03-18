@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-padding-top: 72px;
+}
+
 :root {
   --navy: #0A0F1C;
   --navy-mid: #0D1526;

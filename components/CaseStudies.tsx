@@ -1,12 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import ParticleField from './ParticleField';
 
 const cases = [
   {
     category: "Med Spa",
     name: "Radiant with Rebecca",
-    description: "We've worked with Rebecca at Radiant Med Spa since early 2021 when she was still a \"Mobile Med Spa\". Our main focus was Meta Ads and we helped grow her first spa so much that she eventually opened a 2nd location a few years later.",
+    description: "Rebecca came to us in 2021 running a mobile med spa out of a van. We built her Meta ad campaigns from scratch and focused on building a real patient pipeline. Over the next few years those ads helped generate over $1M in added revenue and enough demand that she opened a second location. She is still a client today.",
     href: "/contact",
     photo: "/images/client-results/radiant med spa olathe kansas.webp",
     accentHex: "#FF2D78",
@@ -19,27 +20,27 @@ const cases = [
   {
     category: "Fitness",
     name: "illumiNate Heights Fitness",
-    description: "Owners Nate and Jourdan have been absolutely awesome to work with! Plus their 19,000+ sqft two sided gym is probably one of the dopest gyms in Houston! Definitely check them out if you're ever in the Heights area of Houston.",
+    description: "Nate and Jourdan run one of the best gyms in Houston and they needed a lead pipeline that matched their ambition. Over 5 years we've generated more than 5,000 qualified leads for their membership programs. Their gym keeps growing and so does our partnership.",
     href: "/contact",
     photo: "/images/client-results/illuminate heights fitness.webp",
     accentHex: "#00C8FF",
     accentHex2: "#9B30FF",
     stats: [
-      { emoji: "⏱️", label: "Worked Together", value: "5+ Years" },
+      { emoji: "⏱️", label: "Worked Together", value: "4+ Years" },
       { emoji: "👥", label: "Leads Generated", value: "5,000+" },
     ],
   },
   {
     category: "Plastic Surgery",
     name: "The Oaks Plastic Surgery",
-    description: "We started working with Dr. Wijay & Dr. Andry since early 2022 and it's been a fun journey. When you have two of the top surgeons in Houston it's much easier to win big! Now partnered with Elite Dermatology, their practices keep growing and we're excited to grow with them.",
+    description: "Dr. Wijay and Dr. Andry are two of Houston's top plastic surgeons. Since 2022 we've helped them book over 5,000 consultations through paid advertising -- for procedures like liposuction, breast augmentations, tummy tucks and Semaglutide. They've since partnered with Elite Dermatology and we've scaled with them every step of the way.",
     href: "/contact",
     photo: "/images/client-results/oaks plastic surgery.webp",
     accentHex: "#9B30FF",
     accentHex2: "#FF2D78",
     stats: [
       { emoji: "⏱️", label: "Worked Together", value: "4+ Years" },
-      { emoji: "👥", label: "Consultations Booked", value: "5,000+" },
+      { emoji: "👥", label: "Leads Generated", value: "5,000+" },
     ],
   },
 ];
@@ -47,6 +48,7 @@ const cases = [
 export default function CaseStudies() {
   return (
     <section className="py-12 lg:py-16 px-6 lg:px-8 relative overflow-hidden" style={{ background: '#000000' }}>
+      <ParticleField count={50} />
       {/* Ambient orbs */}
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(circle, rgba(255,45,120,0.06) 0%, transparent 70%)' }} />
@@ -71,13 +73,13 @@ export default function CaseStudies() {
             }
           `}</style>
           <h2 className="reveal reveal-delay-100 text-4xl lg:text-5xl font-black text-white tracking-tight mb-5">
-            Real Results.{' '}
-            <span style={{ background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #FF2D78)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', backgroundSize: '200% auto', animation: 'realGrowthShimmer 4s linear infinite', display: 'inline-block' }}>
-              Real Growth.
+            Numbers Don&apos;t Lie.{' '}
+            <span style={{ background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #FF2D78)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', backgroundSize: '200% auto', animation: 'realGrowthShimmer 4s linear infinite', display: 'inline-block', paddingBottom: '0.1em' }}>
+              Agencies Do.
             </span>
           </h2>
           <p className="reveal reveal-delay-200 text-base max-w-xl mx-auto leading-relaxed" style={{ color: 'rgba(240,244,255,0.5)' }}>
-            See how we&apos;ve helped service-based businesses generate predictable leads and scale revenue with our proven systems.
+            Here&apos;s what actually happened when real businesses<br />trusted us with their growth.
           </p>
         </div>
 

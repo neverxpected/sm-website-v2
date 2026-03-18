@@ -58,7 +58,7 @@ const aiPlatforms = [
   },
   {
     label: "AI Integrations",
-    href: "/services/ai-integrations",
+    href: "/services/ai-system-integration",
     iconBg: "bg-cyan-500",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="w-5 h-5">
@@ -90,110 +90,156 @@ const aiPlatforms = [
 
 export default function ServiceGrid() {
   return (
-    <section className="py-12 lg:py-16 px-6 lg:px-8" style={{ background: '#ffffff' }}>
+    <section className="py-12 lg:py-16 px-6 lg:px-8 sg-section" style={{ background: '#ffffff' }}>
+      <style>{`
+        @keyframes sgBorderGlow {
+          0%   { background-position: 0% 50%; }
+          50%  { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        @media (max-width: 767px) {
+          .sg-section {
+            padding-top: 4rem !important;
+          }
+          .sg-headline {
+            font-size: clamp(1.6rem, 6vw, 2.2rem) !important;
+          }
+          .sg-header {
+            margin-bottom: 1.75rem !important;
+          }
+          .sg-cards {
+            gap: 0.75rem !important;
+          }
+          .sg-pill {
+            font-size: 12px !important;
+            padding: 0.4rem 0.75rem !important;
+          }
+          .sg-card {
+            position: relative;
+          }
+          .sg-card::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 1.75rem;
+            background: linear-gradient(135deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78);
+            background-size: 300% 300%;
+            animation: sgBorderGlow 3s linear infinite;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+          }
+          .sg-card:active::after {
+            opacity: 1;
+          }
+        }
+      `}</style>
       <div className="max-w-6xl mx-auto">
 
         {/* Section header */}
-        <div className="text-center mb-14">
-          <h2 className="text-3xl lg:text-4xl font-black mb-4" style={{ color: '#111827' }}>
-            What We <span style={{ color: '#000000' }}>Do Best</span>
+        <div className="text-center mb-14 sg-header">
+          <h2 className="text-3xl lg:text-4xl font-black mb-4 sg-headline" style={{ color: '#111827' }}>
+            The Ads Bring Them In. <span style={{ color: '#000000' }}>The AI Keeps Them.</span>
           </h2>
           <p className="text-base max-w-xl mx-auto" style={{ color: '#6B7280' }}>
-            Two powerhouse service lines built to grow your business predictably.
+            Most agencies pick a lane. We built both because one without the other only solves half the problem.
           </p>
         </div>
 
         {/* Dark container on mobile only */}
         <div>
           {/* Two big cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sg-cards">
 
             {/* ── Paid Advertising Card ─────────────────────── */}
-            <div className="reveal rounded-3xl p-8 flex flex-col gap-6"
+            <div className="reveal sg-card rounded-3xl overflow-hidden flex flex-col"
               style={{
-                background: '#ffffff',
                 border: '1px solid rgba(0,0,0,0.08)',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.04)',
               }}>
-              {/* Header */}
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0"
-                  style={{ background: 'linear-gradient(135deg, #2563EB, #059669)' }}>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={2} className="w-6 h-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-xl font-black" style={{ color: '#111827' }}>Paid Advertising</h3>
-                  <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: '#2563EB' }}>Meta · Google · TikTok · Bing</p>
+              {/* Black header */}
+              <div className="p-8 pb-6" style={{ background: '#000000' }}>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0"
+                    style={{ background: 'linear-gradient(135deg, #2563EB, #059669)' }}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={2} className="w-6 h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-black" style={{ color: '#ffffff' }}>Paid Advertising</h3>
+                  </div>
                 </div>
               </div>
 
-              <p className="text-sm leading-relaxed" style={{ color: '#4B5563' }}>
-                We run high-ROI ad campaigns across every major platform — turning ad spend into booked clients, leads, and real revenue for service-based businesses.
-              </p>
+              {/* White body */}
+              <div className="p-8 pt-6 flex flex-col gap-6" style={{ background: '#ffffff' }}>
+                {/* Platform pills */}
+                <div className="grid grid-cols-2 gap-3">
+                  {paidPlatforms.map((p) => (
+                    <Link key={p.href} href={p.href}
+                      className="sg-pill flex items-center justify-center gap-2 rounded-xl text-xs font-semibold transition-all duration-200 hover:scale-105"
+                      style={{ background: '#F3F4F6', border: '1px solid rgba(0,0,0,0.1)', color: '#374151', padding: '0.65rem 1rem' }}>
+                      <span className={`w-6 h-6 rounded-lg ${p.iconBg} text-white flex items-center justify-center shrink-0`}>
+                        {p.icon}
+                      </span>
+                      {p.label}
+                    </Link>
+                  ))}
+                </div>
 
-              <hr style={{ borderColor: 'rgba(0,0,0,0.08)' }} />
+                <hr style={{ borderColor: 'rgba(0,0,0,0.08)' }} />
 
-              {/* Platform pills */}
-              <div className="grid grid-cols-2 gap-3">
-                {paidPlatforms.map((p) => (
-                  <Link key={p.href} href={p.href}
-                    className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold transition-all duration-200 hover:scale-105"
-                    style={{ background: '#F3F4F6', border: '1px solid rgba(0,0,0,0.1)', color: '#374151' }}>
-                    <span className={`w-6 h-6 rounded-lg ${p.iconBg} text-white flex items-center justify-center shrink-0`}>
-                      {p.icon}
-                    </span>
-                    {p.label}
-                  </Link>
-                ))}
+                <p className="text-sm leading-relaxed" style={{ color: '#4B5563' }}>
+                  Most agencies hand your account to a junior who just finished a YouTube course. We built our entire process around one rule. Nobody touches a campaign until they know exactly what they&apos;re doing. 8 years. Millions in managed spend. A track record across med spas, fitness, surgery, and local service businesses that speaks for itself.
+                </p>
               </div>
-
-
             </div>
 
-            {/* ── AI Automation Card ────────────────────────── */}
-            <div className="reveal reveal-delay-100 rounded-3xl p-8 flex flex-col gap-6"
+            {/* ── AI Systems Card ────────────────────────── */}
+            <div className="reveal reveal-delay-100 sg-card rounded-3xl overflow-hidden flex flex-col"
               style={{
-                background: '#ffffff',
                 border: '1px solid rgba(0,0,0,0.08)',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.04)',
               }}>
-              {/* Header */}
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0"
-                  style={{ background: 'linear-gradient(135deg, #7C3AED, #EC4899)' }}>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={2} className="w-6 h-6">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-xl font-black" style={{ color: '#111827' }}>AI Automation</h3>
-                  <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: '#7C3AED' }}>Receptionist · Integrations · Lead Nurturing</p>
+              {/* Black header */}
+              <div className="p-8 pb-6" style={{ background: '#000000' }}>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0"
+                    style={{ background: 'linear-gradient(135deg, #7C3AED, #EC4899)' }}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={2} className="w-6 h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-black" style={{ color: '#ffffff' }}>AI Systems</h3>
+                  </div>
                 </div>
               </div>
 
-              <p className="text-sm leading-relaxed" style={{ color: '#4B5563' }}>
-                Let AI handle the follow-up, booking, and outreach so your team can focus on closing. Our automation systems work 24/7 to qualify and convert leads automatically.
-              </p>
+              {/* White body */}
+              <div className="p-8 pt-6 flex flex-col gap-6" style={{ background: '#ffffff' }}>
+                {/* Platform pills */}
+                <div className="grid grid-cols-2 gap-3">
+                  {aiPlatforms.map((p) => (
+                    <Link key={p.href} href={p.href}
+                      className="sg-pill flex items-center justify-center gap-2 rounded-xl text-xs font-semibold transition-all duration-200 hover:scale-105"
+                      style={{ background: '#F3F4F6', border: '1px solid rgba(0,0,0,0.1)', color: '#374151', padding: '0.65rem 1rem' }}>
+                      <span className={`w-6 h-6 rounded-lg ${p.iconBg} text-white flex items-center justify-center shrink-0`}>
+                        {p.icon}
+                      </span>
+                      {p.label}
+                    </Link>
+                  ))}
+                </div>
 
-              <hr style={{ borderColor: 'rgba(0,0,0,0.08)' }} />
+                <hr style={{ borderColor: 'rgba(0,0,0,0.08)' }} />
 
-              {/* Platform pills */}
-              <div className="grid grid-cols-2 gap-3">
-                {aiPlatforms.map((p) => (
-                  <Link key={p.href} href={p.href}
-                    className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold transition-all duration-200 hover:scale-105"
-                    style={{ background: '#F3F4F6', border: '1px solid rgba(0,0,0,0.1)', color: '#374151' }}>
-                    <span className={`w-6 h-6 rounded-lg ${p.iconBg} text-white flex items-center justify-center shrink-0`}>
-                      {p.icon}
-                    </span>
-                    {p.label}
-                  </Link>
-                ))}
+                <p className="text-sm leading-relaxed" style={{ color: '#4B5563' }}>
+                  You&apos;re probably sitting on 5 problems right now that AI could solve and you don&apos;t even know it yet. We build custom AI receptionists, chatbots, and automation workflows that eliminate the repetitive work draining your team and your margins. Your competitors are already moving on this. The question is whether you will too.
+                </p>
               </div>
-
-
             </div>
 
           </div>

@@ -39,9 +39,6 @@ export default function Hero() {
         className="relative overflow-hidden"
         style={{ background: '#FFFFFF' }}
       >
-
-
-
         {/* CTA glow keyframe */}
         <style>{`
               @keyframes ctaGlowPink {
@@ -54,51 +51,107 @@ export default function Hero() {
               }
             `}</style>
 
-        {/* Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 lg:pt-40 pb-8 sm:pb-16">
-          <div className="max-w-7xl mx-auto text-center">
+        {/* Graph paper grid background */}
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `repeating-linear-gradient(0deg, rgba(0,0,0,0.04) 0px, rgba(0,0,0,0.04) 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, rgba(0,0,0,0.04) 0px, rgba(0,0,0,0.04) 1px, transparent 1px, transparent 40px)`,
+            backgroundSize: '40px 40px',
+          }}
+        />
+        {/* Bottom fade to white */}
+        <div
+          className="absolute inset-0 z-[1]"
+          style={{
+            background: 'linear-gradient(to bottom, transparent 40%, white 100%)',
+            pointerEvents: 'none',
+          }}
+        />
 
-
+        {/* Content — fully centered */}
+        <div className="relative z-10 w-full" style={{ padding: '5rem 2rem 2rem', paddingTop: '9rem' }}>
+          <style>{`
+            @keyframes heroBorderSpin {
+              0%   { background-position: 0% 50%; }
+              50%  { background-position: 100% 50%; }
+              100% { background-position: 0% 50%; }
+            }
+            @media (max-width: 767px) {
+              .hero-center-wrap {
+                padding: 0.5rem 1.5rem 0.25rem !important;
+                padding-top: 1.25rem !important;
+              }
+              .hero-headline-main {
+                display: none !important;
+              }
+              .hero-headline-mobile {
+                display: block !important;
+              }
+              .hero-subline-br {
+                display: none;
+              }
+              .hero-subline {
+                font-size: 13px !important;
+                line-height: 1.6 !important;
+                max-width: 100% !important;
+                margin-top: 0.75rem !important;
+                margin-bottom: 1.25rem !important;
+              }
+              .hero-cta-inner {
+                padding: 0.65rem 1.5rem !important;
+                width: auto !important;
+                display: inline-flex !important;
+              }
+              .hero-cta-wrap {
+                margin-bottom: 0.5rem !important;
+              }
+              .hero-qualifier {
+                margin-bottom: 0 !important;
+                font-size: 12px !important;
+              }
+            }
+          `}</style>
+          <div className="hero-center-wrap" style={{ margin: '0 auto', textAlign: 'center' }}>
 
             {/* Headline */}
-            <h1 className="font-black tracking-tight leading-[1.1] mb-8" style={{ fontWeight: 800, color: '#000000' }}>
-              <style>{`
-                @keyframes cheatCodeShimmer {
-                  0%   { background-position: 200% center; }
-                  100% { background-position: -200% center; }
-                }
-                @keyframes heroBorderSpin {
-                  0%   { background-position: 0% 50%; }
-                  50%  { background-position: 100% 50%; }
-                  100% { background-position: 0% 50%; }
-                }
-              `}</style>
-              <span className="reveal block text-2xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-100">
-                Your Business Is
-              </span>
-              <span className="reveal block text-2xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-200">
-                <span style={{ color: '#000000' }}>
-                  One System Away
-                </span>
-              </span>
-              <span className="reveal block text-2xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-300">
-                From Never Chasing
-              </span>
-              <span className="reveal block text-2xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-400">
-                Growth Again
-              </span>
+            <h1
+              className="reveal reveal-delay-100 tracking-tight hero-headline-main"
+              style={{
+                fontWeight: 700,
+                color: '#000000',
+                fontSize: 'clamp(2.8rem, 7vw, 6rem)',
+                lineHeight: 1.1,
+                textAlign: 'center',
+              }}
+            >
+              We Don&apos;t Level<br />
+              <span className="hero-nowrap" style={{ whiteSpace: 'nowrap' }}>the Playing Field.</span><br />
+              <em>We Tilt It.</em>
+            </h1>
+
+            {/* Mobile-only headline — 2 clean lines */}
+            <h1
+              className="reveal reveal-delay-100 tracking-tight hero-headline-mobile"
+              style={{
+                display: 'none',
+                fontWeight: 700,
+                color: '#000000',
+                fontSize: 'clamp(1.9rem, 7vw, 2.6rem)',
+                lineHeight: 1.15,
+                textAlign: 'center',
+              }}
+            >
+              We Don&apos;t Level the Playing Field.<br />
+              <em>We Tilt It.</em>
             </h1>
 
             {/* Sub-headline */}
-            <p className="reveal reveal-delay-500 hidden sm:block max-w-2xl mx-auto text-xs sm:text-sm md:text-base mb-10" style={{ color: 'rgba(26,26,46,0.6)', lineHeight: 1.7 }}>
-              Most businesses don&apos;t have a marketing problem. They have a systems problem. WE come in, find where revenue is leak &amp; build ads + AI-powered systems that fill gap so you can scale predictably every month.
+            <p className="reveal reveal-delay-300 hero-subline" style={{ maxWidth: '600px', margin: '1.5rem auto 2.5rem', fontSize: '16px', lineHeight: 1.85, color: 'rgba(26,26,46,0.55)', textAlign: 'center' }}>
+              Paid Ads &amp; AI Systems That Make<br className="hero-subline-br" /> Competing Against You Genuinely Frustrating.
             </p>
 
-
-
-
-            {/* CTAs */}
-            <div className="reveal reveal-delay-600 flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+            {/* CTA */}
+            <div className="reveal reveal-delay-400 hero-cta-wrap" style={{ textAlign: 'center', marginBottom: '1rem' }}>
               <Link
                 href="/strategy-call"
                 className="group relative inline-flex items-center justify-center text-center"
@@ -114,13 +167,18 @@ export default function Hero() {
                 />
                 {/* Inner button */}
                 <span
-                  className="relative inline-flex items-center justify-center px-5 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-white rounded-xl transition-transform duration-300 group-hover:scale-[1.01] active:scale-100"
-                  style={{ background: '#000000' }}
+                  className="hero-cta-inner relative inline-flex items-center justify-center text-sm sm:text-base font-bold text-white rounded-xl transition-transform duration-300 group-hover:scale-[1.01] active:scale-100"
+                  style={{ background: '#000000', padding: '0.85rem 2rem', whiteSpace: 'nowrap' }}
                 >
-                  Ready To Scale? Let&apos;s Talk 👉
+                  Let&apos;s Build Your Unfair Advantage →
                 </span>
               </Link>
             </div>
+
+            {/* Qualifier */}
+            <p className="reveal reveal-delay-500 text-xs italic hero-qualifier" style={{ color: 'rgba(26,26,46,0.4)', textAlign: 'center' }}>
+              Free strategy call. No pitch. Just an honest look at your business.
+            </p>
 
           </div>
         </div>
