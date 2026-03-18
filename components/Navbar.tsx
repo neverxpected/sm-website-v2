@@ -236,7 +236,7 @@ export default function Navbar() {
           ...(scrolled ? { width: 'fit-content', maxWidth: '92vw', padding: '0.5rem 1.25rem' } : {}),
         }}>
         {/* Logo */}
-        <Link href="/" className="flex items-center group ml-2 lg:ml-4">
+        <Link href="/" className={`flex items-center group ${scrolled ? 'ml-0' : 'ml-2 lg:ml-4'}`}>
           <Image
             src="/images/logo/Switch Media logo horizontal.png"
             alt="Switch Media Marketing Logo"
