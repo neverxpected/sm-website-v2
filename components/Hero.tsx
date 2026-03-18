@@ -69,7 +69,7 @@ export default function Hero() {
         />
 
         {/* Content — fully centered */}
-        <div className="relative z-10 w-full" style={{ padding: '5rem 2rem 2rem', paddingTop: '9rem' }}>
+        <div className="relative z-10 w-full hero-content-wrap" style={{ padding: '5rem 2rem 2rem', paddingTop: '9rem' }}>
           <style>{`
             @keyframes heroBorderSpin {
               0%   { background-position: 0% 50%; }
@@ -79,7 +79,7 @@ export default function Hero() {
             @media (max-width: 767px) {
               .hero-center-wrap {
                 padding: 0.5rem 1.5rem 0.25rem !important;
-                padding-top: 1.25rem !important;
+                padding-top: 0.75rem !important;
               }
               .hero-headline-main {
                 display: none !important;
@@ -108,6 +108,10 @@ export default function Hero() {
               .hero-qualifier {
                 margin-bottom: 0 !important;
                 font-size: 12px !important;
+                padding-bottom: 0 !important;
+              }
+              .hero-content-wrap {
+                padding-bottom: 0.5rem !important;
               }
             }
           `}</style>
@@ -136,7 +140,7 @@ export default function Hero() {
                 display: 'none',
                 fontWeight: 700,
                 color: '#000000',
-                fontSize: 'clamp(1.9rem, 7vw, 2.6rem)',
+                fontSize: 'clamp(2.1rem, 8.5vw, 2.8rem)',
                 lineHeight: 1.15,
                 textAlign: 'center',
               }}

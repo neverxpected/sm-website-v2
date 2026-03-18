@@ -72,9 +72,9 @@ export default function Footer() {
               ].map((s) => (
                 <a key={s.href} href={s.href} target="_blank" rel="noopener noreferrer"
                   className="w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110"
-                  style={{ background: s.color }}
+                  style={{ background: '#ffffff' }}
                 >
-                  <svg viewBox="0 0 24 24" fill="white" className="w-4 h-4">
+                  <svg viewBox="0 0 24 24" fill="#000000" className="w-4 h-4">
                     <path d={s.path} />
                   </svg>
                 </a>
@@ -85,7 +85,12 @@ export default function Footer() {
           {/* Link columns */}
           {columns.map((col) => (
             <div key={col.heading} className="text-center md:text-left md:pt-3">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] mb-5" style={{ color: 'rgba(240,244,255,0.35)' }}>{col.heading}</p>
+              <style>{`
+                @media (max-width: 767px) {
+                  .footer-col-heading { color: #ffffff !important; }
+                }
+              `}</style>
+              <p className="footer-col-heading text-xs font-bold uppercase tracking-[0.2em] mb-5" style={{ color: 'rgba(240,244,255,0.35)' }}>{col.heading}</p>
               <ul className="space-y-3">
                 {col.links.map((link) => (
                   <li key={link.label}>
