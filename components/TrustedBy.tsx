@@ -17,7 +17,7 @@ const logos = [
 export default function TrustedBy() {
   return (
     <section
-      className="trusted-by-section relative pt-4 pb-10 sm:py-10 overflow-hidden"
+      className="trusted-by-section relative pt-4 pb-4 sm:py-10 overflow-hidden"
       style={{
         background: '#ffffff',
       }}
@@ -43,7 +43,7 @@ export default function TrustedBy() {
           }
         }
       `}</style>
-      <div className="trusted-by-label-wrap max-w-7xl mx-auto px-6 lg:px-8 mb-8 text-center">
+      <div className="trusted-by-label-wrap max-w-7xl mx-auto px-4 lg:px-8 mb-8 text-center">
         <p className="trusted-by-label text-xl uppercase tracking-[0.35em]" style={{ color: '#0d0c0c', fontFamily: 'var(--font-orbitron), sans-serif', fontWeight: 500 }}>
           Trusted By
         </p>

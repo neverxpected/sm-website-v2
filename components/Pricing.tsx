@@ -77,7 +77,7 @@ export default function Pricing() {
     });
 
     return (
-        <section ref={sectionRef} className="relative z-10 py-24 px-6 lg:px-8" style={{ background: '#080C18', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <section ref={sectionRef} className="relative z-10 py-24 px-4 lg:px-8" style={{ background: '#080C18', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
             <style>{`
         @keyframes pricingPulse {
           0%, 100% { box-shadow: 0 0 30px rgba(155,48,255,0.3); }

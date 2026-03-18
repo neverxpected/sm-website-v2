@@ -47,7 +47,7 @@ const cases = [
 
 export default function CaseStudies() {
   return (
-    <section className="py-12 lg:py-16 px-6 lg:px-8 relative overflow-hidden" style={{ background: '#000000' }}>
+    <section className="py-12 lg:py-16 px-4 lg:px-8 relative overflow-hidden" style={{ background: '#000000' }}>
       <ParticleField count={50} />
       {/* Ambient orbs */}
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full pointer-events-none"
@@ -79,7 +79,7 @@ export default function CaseStudies() {
             </span>
           </h2>
           <p className="reveal reveal-delay-200 text-base max-w-xl mx-auto leading-relaxed" style={{ color: 'rgba(240,244,255,0.5)' }}>
-            Here&apos;s what actually happened when real businesses<br />trusted us with their growth.
+            Here&apos;s what actually happened<br className="sm:hidden" /> when real businesses<br className="sm:hidden" />{' '}trusted us with their growth.
           </p>
         </div>
 

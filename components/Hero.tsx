@@ -53,7 +53,7 @@ export default function Hero() {
 
         {/* Graph paper grid background */}
         <div
-          className="absolute inset-0 z-0"
+          className="hero-grid absolute inset-0 z-0"
           style={{
             backgroundImage: `repeating-linear-gradient(0deg, rgba(0,0,0,0.04) 0px, rgba(0,0,0,0.04) 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, rgba(0,0,0,0.04) 0px, rgba(0,0,0,0.04) 1px, transparent 1px, transparent 40px)`,
             backgroundSize: '40px 40px',
@@ -78,8 +78,11 @@ export default function Hero() {
             }
             @media (max-width: 767px) {
               .hero-center-wrap {
-                padding: 0.5rem 1.5rem 0.25rem !important;
-                padding-top: 0.75rem !important;
+                padding: 0.5rem 1rem 0.25rem !important;
+                padding-top: 0.5rem !important;
+              }
+              .hero-grid {
+                display: none !important;
               }
               .hero-headline-main {
                 display: none !important;
@@ -106,12 +109,14 @@ export default function Hero() {
                 margin-bottom: 0.5rem !important;
               }
               .hero-qualifier {
-                margin-bottom: 0 !important;
-                font-size: 12px !important;
+                font-size: 10px !important;
+                white-space: nowrap !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis !important;
                 padding-bottom: 0 !important;
               }
               .hero-content-wrap {
-                padding-bottom: 0.5rem !important;
+                padding-bottom: 1.5rem !important;
               }
             }
           `}</style>
@@ -140,12 +145,12 @@ export default function Hero() {
                 display: 'none',
                 fontWeight: 700,
                 color: '#000000',
-                fontSize: 'clamp(2.1rem, 8.5vw, 2.8rem)',
+                fontSize: 'clamp(2.2rem, 8.5vw, 2.8rem)',
                 lineHeight: 1.15,
                 textAlign: 'center',
               }}
             >
-              We Don&apos;t Level the Playing Field.<br />
+              We Don&apos;t Level<br /><span style={{ whiteSpace: 'nowrap' }}>the Playing Field.</span><br />
               <em>We Tilt It.</em>
             </h1>
 
@@ -181,7 +186,7 @@ export default function Hero() {
 
             {/* Qualifier */}
             <p className="reveal reveal-delay-500 text-xs italic hero-qualifier" style={{ color: 'rgba(26,26,46,0.4)', textAlign: 'center' }}>
-              Free strategy call. No pitch. Just an honest look at your business.
+              Free strategy call. No pitch.<br className="sm:hidden" /> Just an honest look at your business.
             </p>
 
           </div>

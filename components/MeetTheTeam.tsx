@@ -119,7 +119,7 @@ export default function MeetTheTeam() {
         backgroundSize: '60px 60px',
       }} />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 lg:px-8">
 
         <div className="text-center mb-16">
           <div className="reveal inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.25em]"
@@ -136,7 +136,7 @@ export default function MeetTheTeam() {
             }
           `}</style>
           <h2 className="reveal reveal-delay-100 text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
-            The People Actually Running{' '}
+            The People<br className="sm:hidden" /> Actually Running{' '}
             <span style={{
               background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #FF2D78)',
               WebkitBackgroundClip: 'text',

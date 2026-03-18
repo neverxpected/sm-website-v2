@@ -42,7 +42,7 @@ const columns = [
 export default function Footer() {
   return (
     <footer style={{ background: '#000000', borderTop: '1px solid rgba(255,45,120,0.15)' }}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-8 pb-16">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 pt-8 pb-16">
 
         {/* Main grid */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-10 mb-14">
