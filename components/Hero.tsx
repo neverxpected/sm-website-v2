@@ -131,7 +131,14 @@ export default function Hero() {
               }}
             >
               Stop Guessing.<br />
-              Start Scaling.
+              <span style={{
+                background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                backgroundSize: '200% auto',
+                animation: 'heroBorderSpin 3s linear infinite',
+              }}>Start Scaling.</span>
             </h1>
 
             {/* Mobile-only headline — 2 clean lines */}
@@ -147,7 +154,14 @@ export default function Hero() {
               }}
             >
               Stop Guessing.<br />
-              Start Scaling.
+              <span style={{
+                background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                backgroundSize: '200% auto',
+                animation: 'heroBorderSpin 3s linear infinite',
+              }}>Start Scaling.</span>
             </h1>
 
             {/* Sub-headline */}
