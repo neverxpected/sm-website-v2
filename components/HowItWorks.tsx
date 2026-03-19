@@ -158,7 +158,7 @@ export default function HowItWorks() {
                     </h2>
 
                     <p className="text-base max-w-xl mx-auto" style={{ color: 'rgba(240,244,255,0.5)', ...reveal(200) }}>
-                        No mystery. No 90 day onboarding. Three steps and you&apos;ll know exactly where you stand and what happens next.
+                        Three steps and you&apos;ll know exactly where you stand and what happens next.
                     </p>
                 </div>
 

@@ -162,7 +162,7 @@ export default function ServiceGrid() {
         {/* Section header */}
         <div className="text-center mb-14 sg-header">
           <h2 className="text-3xl lg:text-4xl font-black mb-4 sg-headline" style={{ color: '#111827' }}>
-            The Ads Bring Them In. <span style={{ color: '#000000' }}>The AI Keeps Them.</span>
+            Digital Ads<br /> & AI Systems
           </h2>
           <p className="text-base max-w-xl mx-auto" style={{ color: '#6B7280' }}>
             Most agencies pick a lane. We built both because one without the other only solves half the problem.
@@ -192,10 +192,6 @@ export default function ServiceGrid() {
               </Link>
             ))}
           </div>
-
-          <p className="text-sm leading-relaxed text-center mt-6 px-2" style={{ color: '#6B7280' }}>
-            8 years. Millions in managed spend. From paid ads to AI automation, we build the systems that drive real growth for service businesses.
-          </p>
         </div>
 
         {/* ═══════ DESKTOP: Original two-card layout ═══════ */}
