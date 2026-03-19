@@ -100,7 +100,7 @@ export default function HowItWorks() {
         }
         @media (max-width: 767px) {
           .hiw-headline {
-            font-size: clamp(1.6rem, 6.5vw, 2.2rem) !important;
+            font-size: clamp(2rem, 8.5vw, 2.8rem) !important;
           }
         }
       `}</style>
@@ -139,7 +139,7 @@ export default function HowItWorks() {
                     </div>
 
                     <h2
-                        className="text-3xl lg:text-5xl font-black text-white tracking-tight mb-4 hiw-headline"
+                        className="text-4xl lg:text-5xl font-black text-white tracking-tight mb-4 hiw-headline"
                         style={reveal(100)}
                     >
                         Here&apos;s Exactly{' '}
