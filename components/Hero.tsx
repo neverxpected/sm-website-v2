@@ -82,7 +82,7 @@ export default function Hero() {
                 padding-top: 0.5rem !important;
               }
               .hero-headline-main {
-                font-size: clamp(2.2rem, 9vw, 3rem) !important;
+                font-size: clamp(2rem, 7.5vw, 3rem) !important;
               }
               .hero-mobile-br {
                 display: inline !important;
@@ -118,7 +118,7 @@ export default function Hero() {
               }
             }
           `}</style>
-          <div className="hero-center-wrap" style={{ margin: '0 auto', textAlign: 'center', position: 'relative', maxWidth: '700px' }}>
+          <div className="hero-center-wrap" style={{ margin: '0 auto', textAlign: 'center', position: 'relative', maxWidth: '900px' }}>
 
 
 
@@ -129,20 +129,37 @@ export default function Hero() {
               style={{
                 fontWeight: 700,
                 color: '#000000',
-                fontSize: 'clamp(2.8rem, 7vw, 6rem)',
+                fontSize: 'clamp(2.2rem, 7vw, 5.8rem)',
                 lineHeight: 1.1,
                 textAlign: 'center',
+                width: 'fit-content',
+                margin: '0 auto',
+                overflow: 'visible',
               }}
             >
-              Stop Guessing.<br />
+              <span style={{ display: 'block', whiteSpace: 'nowrap', padding: '0 0.1em' }}>Stop Guessing.</span>
               <span style={{
+                display: 'block',
+                whiteSpace: 'nowrap',
+                padding: '0 0.1em',
                 background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
                 backgroundSize: '200% auto',
                 animation: 'heroBorderSpin 3s linear infinite',
-              }}>Start Printing Revenue.</span>
+              }}>Start Printing</span>
+              <span style={{
+                display: 'block',
+                whiteSpace: 'nowrap',
+                padding: '0 0.1em',
+                background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                backgroundSize: '200% auto',
+                animation: 'heroBorderSpin 3s linear infinite',
+              }}>Revenue.</span>
             </h1>
 
 
