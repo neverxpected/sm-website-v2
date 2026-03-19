@@ -60,6 +60,9 @@ export default function Footer() {
               />
             </Link>
 
+            <p className="text-sm font-bold text-center md:text-left uppercase tracking-widest -mt-3 md:-mt-1 md:whitespace-nowrap" style={{ color: '#ffffff' }}>
+              SWITCH MEDIA MARKETING
+            </p>
             <p className="text-sm leading-relaxed text-center md:text-left" style={{ color: 'rgba(240,244,255,0.35)' }}>
               &ldquo;Psalm 127:1 ~ Unless the LORD builds a house, its builders labor over it in vain&rdquo;
             </p>

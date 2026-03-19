@@ -278,10 +278,20 @@ export default function ServiceGrid() {
                     borderRight: (i < 8) ? '1px solid rgba(0,0,0,0.06)' : 'none',
                   }}
                   onMouseEnter={e => {
-                    (e.currentTarget as HTMLElement).style.boxShadow = `inset 0 0 30px ${glow}, inset 0 0 60px ${glow.replace('0.35', '0.1')}`;
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.background = glow.replace('0.35', '0.08');
+                    el.style.boxShadow = `0 0 20px ${glow}, 0 8px 24px ${glow.replace('0.35', '0.15')}`;
+                    el.style.transform = 'translateY(-4px) scale(1.03)';
+                    const icon = el.querySelector('span') as HTMLElement;
+                    if (icon) icon.style.transform = 'scale(1.15)';
                   }}
                   onMouseLeave={e => {
-                    (e.currentTarget as HTMLElement).style.boxShadow = 'none';
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.background = 'transparent';
+                    el.style.boxShadow = 'none';
+                    el.style.transform = 'translateY(0) scale(1)';
+                    const icon = el.querySelector('span') as HTMLElement;
+                    if (icon) icon.style.transform = 'scale(1)';
                   }}
                 >
                   <span className={`w-12 h-12 rounded-2xl ${s.iconBg} text-white flex items-center justify-center`}>

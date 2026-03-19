@@ -85,14 +85,11 @@ export default function ContactSection() {
                 }
               `}</style>
               <span style={{ color: '#000000' }}>
-                Good.
-              </span>{' '}
-              <span style={{ color: '#000000' }}>
                 Let&apos;s Fix That.
               </span>
             </h2>
             <p className="reveal reveal-delay-200 text-base leading-relaxed mb-10 max-w-md contact-subline" style={{ color: '#374151' }}>
-              This isn&apos;t a sales call. It&apos;s a straight conversation about where your business actually stands and what it would take to change it. No pitch. No pressure. Just an honest look with someone who&apos;s seen this before and knows exactly what to do about it.
+              This isn&apos;t a sales call, it&apos;s an honest conversation about where your business currently stands and what it would take to move the needle. No high pressure pitch, just a meeting to find out if you&apos;re a good fit for our services.
             </p>
 
             {/* Contact info — desktop only */}

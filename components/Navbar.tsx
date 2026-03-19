@@ -246,7 +246,7 @@ export default function Navbar() {
           ...(scrolled ? { width: '95vw', maxWidth: '860px', padding: '0.35rem 1rem' } : {}),
         }}>
         {/* Logo */}
-        <Link href="/" className={`flex items-center group ${scrolled ? 'ml-0' : 'ml-2 lg:ml-4'}`}>
+        <Link href="/" className={`flex items-center gap-2 group ${scrolled ? 'ml-0 flex-1 justify-center md:flex-initial md:justify-start' : 'ml-2 lg:ml-4'}`}>
           <Image
             src="/images/logo/Switch Media logo horizontal.png"
             alt="Switch Media Marketing Logo"
@@ -255,9 +255,13 @@ export default function Navbar() {
             className="h-10 w-auto object-contain transition-all duration-300 group-hover:scale-105"
             style={{ filter: 'brightness(0)' }}
           />
+          <span className={`font-bold text-gray-900 whitespace-nowrap transition-all duration-300 ${scrolled ? 'text-xs' : 'text-sm'}`}>
+            Switch Media Marketing
+          </span>
         </Link>
 
         {/* Desktop nav */}
+        {scrolled && <div className="hidden md:block w-px h-5 bg-gray-300 mx-1" />}
         <div className="hidden md:flex items-center gap-6">
           <DesktopDropdown label="Paid Ads" links={paidAdsLinks} />
           <DesktopDropdown label="AI Automations" links={aiAutomationLinks} />
