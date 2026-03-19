@@ -5,7 +5,7 @@ import ParticleField from './ParticleField';
 
 const steps = [
     {
-        number: '01',
+        number: 'Step 1',
         title: 'Honest Strategy Call',
         bullets: [
             'We ask the questions nobody else asks. We look at your offer, your follow up, your current presence. We tell you exactly what we see. Even if it\'s uncomfortable. Especially then.',
@@ -15,7 +15,7 @@ const steps = [
         orbColor: 'rgba(255,45,120,0.09)',
     },
     {
-        number: '02',
+        number: 'Step 2',
         title: 'Build and Launch',
         bullets: [
             'We build your ad campaigns and AI systems from the ground up. No templates. No guessing. Everything is engineered around your specific business, your offer, and your customer.',
@@ -25,7 +25,7 @@ const steps = [
         orbColor: 'rgba(155,48,255,0.09)',
     },
     {
-        number: '03',
+        number: 'Step 3',
         title: 'Scale and Stay',
         bullets: [
             'We don\'t hand you off. We stay in, watch the data weekly, cut what isn\'t working, and double down on what is. Growth compounds when someone is actually paying attention.',
@@ -157,7 +157,7 @@ export default function HowItWorks() {
                         </span>
                     </h2>
 
-                    <p className="text-base max-w-xl mx-auto" style={{ color: 'rgba(240,244,255,0.5)', ...reveal(200) }}>
+                    <p className="text-base max-w-xl lg:max-w-none mx-auto" style={{ color: 'rgba(240,244,255,0.5)', ...reveal(200) }}>
                         Three steps and you&apos;ll know exactly where you stand and what happens next.
                     </p>
                 </div>
@@ -170,7 +170,7 @@ export default function HowItWorks() {
                             style={{ background: '#000000', border: `1px solid ${step.accent}66`, boxShadow: `0 0 30px ${step.glow.replace('0.35', '0.45')}, 0 0 80px ${step.glow.replace('0.35', '0.15')}, 0 0 160px ${step.glow.replace('0.35', '0.06')}`, ...reveal(300 + i * 150) }}>
                             <div className="relative w-16 h-16 mb-6 shrink-0">
                                 <div className="absolute inset-0 rounded-full" style={{ border: `2px solid ${step.accent}`, animation: `ringPing 2s ease-out infinite`, animationDelay: `${i * 0.5}s` }} />
-                                <div className="absolute inset-0 rounded-full border-2 flex items-center justify-center font-black text-xl z-10"
+                                <div className="absolute inset-0 rounded-full border-2 flex items-center justify-center font-black text-xs z-10"
                                     style={{ borderColor: step.accent, color: step.accent, background: `${step.accent}12`, boxShadow: `0 0 18px ${step.glow}` }}>
                                     {step.number}
                                 </div>
@@ -213,7 +213,7 @@ export default function HowItWorks() {
                                         animation: `ringPing 2s ease-out infinite`,
                                         animationDelay: `${i * 0.5}s`,
                                     }} />
-                                    <div className="absolute inset-0 rounded-full border-2 flex items-center justify-center font-black text-xl z-10"
+                                    <div className="absolute inset-0 rounded-full border-2 flex items-center justify-center font-black text-xs z-10"
                                         style={{ borderColor: step.accent, color: step.accent, background: `${step.accent}12`, boxShadow: `0 0 18px ${step.glow}` }}>
                                         {step.number}
                                     </div>

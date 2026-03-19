@@ -60,8 +60,8 @@ export default function Footer() {
               />
             </Link>
 
-            <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.35)' }}>
-              <em>&ldquo;Psalm 127:1 ~ Unless the LORD builds a house,<br className="sm:hidden" /> its builders labor over it in vain&rdquo;</em>
+            <p className="text-sm leading-relaxed text-center md:text-left" style={{ color: 'rgba(240,244,255,0.35)' }}>
+              &ldquo;Psalm 127:1 ~ Unless the LORD builds a house, its builders labor over it in vain&rdquo;
             </p>
 
             {/* Social icons */}
@@ -121,7 +121,7 @@ export default function Footer() {
             className="group relative inline-flex items-center justify-center order-1 sm:order-2"
           >
             <span
-              className="absolute -inset-[3px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              className="absolute -inset-[3px] rounded-full transition-opacity duration-300"
               style={{
                 background: 'linear-gradient(135deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
                 backgroundSize: '300% 300%',

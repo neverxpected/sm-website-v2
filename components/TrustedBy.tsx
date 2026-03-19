@@ -22,12 +22,6 @@ export default function TrustedBy() {
         background: '#ffffff',
       }}
     >
-      {/* Left + right fade masks */}
-      <div className="absolute inset-y-0 left-0 w-24 z-10 pointer-events-none"
-        style={{ background: 'linear-gradient(to right, #ffffff, transparent)' }} />
-      <div className="absolute inset-y-0 right-0 w-24 z-10 pointer-events-none"
-        style={{ background: 'linear-gradient(to left, #ffffff, transparent)' }} />
-
       <style>{`
         @media (max-width: 767px) {
           .trusted-by-section {
@@ -49,39 +43,46 @@ export default function TrustedBy() {
         </p>
       </div>
 
-      {/* Marquee — two identical tracks for seamless loop */}
-      <div className="flex overflow-hidden">
-        {[0, 1].map((trackIdx) => (
-          <div
-            key={trackIdx}
-            className="animate-marquee flex shrink-0 items-center"
-            aria-hidden={trackIdx === 1}
-          >
-            {logos.map((logo, i) => (
-              <div
-                key={i}
-                className="inline-flex items-center justify-center mx-3 shrink-0"
-                style={{ width: 160, height: 90 }}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  style={{
-                    maxWidth: '200px',
-                    maxHeight: '80px',
-                    width: 'auto',
-                    height: 'auto',
-                    objectFit: 'contain',
-                    filter: 'brightness(0)',
-                    opacity: 0.4,
-                    display: 'block',
-                  }}
-                />
-              </div>
-            ))}
-          </div>
-        ))}
+      {/* Marquee — constrained to same max-w-6xl as ServiceGrid cards */}
+      <div className="max-w-6xl mx-auto">
+        <div className="flex overflow-hidden"
+          style={{
+            maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
+          }}
+        >
+          {[0, 1].map((trackIdx) => (
+            <div
+              key={trackIdx}
+              className="animate-marquee flex shrink-0 items-center"
+              aria-hidden={trackIdx === 1}
+            >
+              {logos.map((logo, i) => (
+                <div
+                  key={i}
+                  className="inline-flex items-center justify-center mx-3 shrink-0"
+                  style={{ width: 160, height: 90 }}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    style={{
+                      maxWidth: '200px',
+                      maxHeight: '80px',
+                      width: 'auto',
+                      height: 'auto',
+                      objectFit: 'contain',
+                      filter: 'brightness(0)',
+                      opacity: 0.4,
+                      display: 'block',
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
