@@ -112,7 +112,9 @@ function ParticleBg({ color }: { color: string }) {
 
 export default function MeetTheTeam() {
   return (
-    <section className="relative py-12 lg:py-16" style={{ background: '#000000' }}>
+    <section className="relative py-12 lg:pt-16 lg:pb-32" style={{ background: '#000000' }}>
+      {/* White bottom portion on desktop */}
+      <div className="hidden lg:block absolute bottom-0 left-0 right-0 h-[30%]" style={{ background: '#ffffff' }} />
       <ParticleField count={60} />
       <div className="absolute inset-0 pointer-events-none" style={{
         backgroundImage: 'none',

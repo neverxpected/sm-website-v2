@@ -112,7 +112,9 @@ const allServices = [
 
 export default function ServiceGrid() {
   return (
-    <section className="py-12 lg:py-16 px-4 lg:px-8 sg-section" style={{ background: '#ffffff' }}>
+    <section className="relative px-4 lg:px-8 sg-section pt-12 lg:pt-16 pb-12 lg:pb-32" style={{ background: '#ffffff' }}>
+      {/* Black bottom half on desktop */}
+      <div className="hidden lg:block absolute bottom-0 left-0 right-0 h-[40%]" style={{ background: '#000000' }} />
       <style>{`
         @keyframes sgBorderGlow {
           0%   { background-position: 0% 50%; }
@@ -157,7 +159,7 @@ export default function ServiceGrid() {
           }
         }
       `}</style>
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto relative z-10">
 
         {/* Section header */}
         <div className="text-center mb-14 sg-header">
