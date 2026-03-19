@@ -134,7 +134,7 @@ export default function Hero() {
                 textAlign: 'center',
               }}
             >
-              Stop<br className="hero-mobile-br hidden" /> Guessing.<br />
+              Stop Guessing.<br />
               <span style={{
                 background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
                 WebkitBackgroundClip: 'text',
@@ -142,7 +142,7 @@ export default function Hero() {
                 backgroundClip: 'text',
                 backgroundSize: '200% auto',
                 animation: 'heroBorderSpin 3s linear infinite',
-              }}>Start Scaling.</span>
+              }}>Start Printing Revenue.</span>
             </h1>
 
 

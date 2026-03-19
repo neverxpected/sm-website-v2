@@ -255,7 +255,7 @@ export default function Navbar() {
             className="h-10 w-auto object-contain transition-all duration-300 group-hover:scale-105"
             style={{ filter: 'brightness(0)' }}
           />
-          <span className={`font-bold text-gray-900 whitespace-nowrap transition-all duration-300 ${scrolled ? 'text-xs hidden md:inline' : 'text-sm'}`}>
+          <span className={`font-bold text-gray-600 whitespace-nowrap transition-all duration-300 ${scrolled ? 'text-xs hidden md:inline' : 'text-sm'}`}>
             Switch Media Marketing
           </span>
         </Link>
