@@ -16,7 +16,7 @@ const steps = [
     },
     {
         number: 'Step 2',
-        title: 'Build and Launch',
+        title: 'Build & Launch',
         bullets: [
             'We build your ad campaigns and AI systems from the ground up. No templates. No guessing. Everything is engineered around your specific business, your offer, and your customer.',
         ],
@@ -26,7 +26,7 @@ const steps = [
     },
     {
         number: 'Step 3',
-        title: 'Scale and Stay',
+        title: 'Scale & Stay',
         bullets: [
             'We don\'t hand you off. We stay in, watch the data weekly, cut what isn\'t working, and double down on what is. Growth compounds when someone is actually paying attention.',
         ],
@@ -142,7 +142,7 @@ export default function HowItWorks() {
                         className="text-3xl lg:text-5xl font-black text-white tracking-tight mb-4 hiw-headline"
                         style={reveal(100)}
                     >
-                        No Fluff. No Handoffs.<br />Here&apos;s Exactly{' '}
+                        Here&apos;s Exactly{' '}
                         <span style={{
                             background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
                             WebkitBackgroundClip: 'text',
@@ -166,19 +166,25 @@ export default function HowItWorks() {
                 <div className="flex flex-col gap-6 lg:hidden">
                     {steps.map((step, i) => (
                         <div key={step.number}
-                            className="relative flex flex-col items-center text-center p-8 rounded-2xl"
-                            style={{ background: '#000000', border: `1px solid ${step.accent}66`, boxShadow: `0 0 30px ${step.glow.replace('0.35', '0.45')}, 0 0 80px ${step.glow.replace('0.35', '0.15')}, 0 0 160px ${step.glow.replace('0.35', '0.06')}`, ...reveal(300 + i * 150) }}>
-                            <div className="relative w-16 h-16 mb-6 shrink-0">
-                                <div className="absolute inset-0 rounded-full" style={{ border: `2px solid ${step.accent}`, animation: `ringPing 2s ease-out infinite`, animationDelay: `${i * 0.5}s` }} />
-                                <div className="absolute inset-0 rounded-full border-2 flex items-center justify-center font-black text-xs z-10"
-                                    style={{ borderColor: step.accent, color: step.accent, background: `${step.accent}12`, boxShadow: `0 0 18px ${step.glow}` }}>
-                                    {step.number}
+                            className="relative flex flex-col rounded-2xl overflow-hidden"
+                            style={{ border: `1px solid ${step.accent}66`, boxShadow: `0 0 30px ${step.glow.replace('0.35', '0.45')}, 0 0 80px ${step.glow.replace('0.35', '0.15')}, 0 0 160px ${step.glow.replace('0.35', '0.06')}`, ...reveal(300 + i * 150) }}>
+                            {/* Top: badge area (black) */}
+                            <div className="flex items-center justify-center py-8" style={{ background: '#000000' }}>
+                                <div className="relative w-16 h-16 shrink-0">
+                                    <div className="absolute inset-0 rounded-full" style={{ border: `2px solid ${step.accent}`, animation: `ringPing 2s ease-out infinite`, animationDelay: `${i * 0.5}s` }} />
+                                    <div className="absolute inset-0 rounded-full border-2 flex items-center justify-center font-black text-xs z-10"
+                                        style={{ borderColor: step.accent, color: step.accent, background: `${step.accent}12`, boxShadow: `0 0 18px ${step.glow}` }}>
+                                        {step.number}
+                                    </div>
                                 </div>
                             </div>
-                            <h3 className="text-lg font-black text-white mb-4">{step.title}</h3>
-                            <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.65)' }}>
-                                {step.bullets[0]}
-                            </p>
+                            {/* Bottom: text area (white) */}
+                            <div className="flex-1 p-6 text-center" style={{ background: '#ffffff' }}>
+                                <h3 className="text-lg font-black mb-3" style={{ color: '#111827' }}>{step.title}</h3>
+                                <p className="text-sm leading-relaxed" style={{ color: '#4B5563' }}>
+                                    {step.bullets[0]}
+                                </p>
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -188,10 +194,9 @@ export default function HowItWorks() {
                     {steps.map((step, i) => (
                         <>
                             <div key={step.number}
-                                className="relative flex flex-col items-center text-center p-8 rounded-2xl transition-all duration-300"
+                                className="relative flex flex-col rounded-2xl overflow-hidden transition-all duration-300"
                                 style={{
                                     flex: 1,
-                                    background: '#000000',
                                     border: `1px solid ${step.accent}66`,
                                     boxShadow: `0 0 30px ${step.glow.replace('0.35', '0.45')}, 0 0 80px ${step.glow.replace('0.35', '0.15')}, 0 0 160px ${step.glow.replace('0.35', '0.06')}`,
                                     ...reveal(300 + i * 150),
@@ -205,24 +210,28 @@ export default function HowItWorks() {
                                     (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 28px ${step.glow.replace('0.35', '0.2')}, 0 4px 16px rgba(0,0,0,0.4)`;
                                 }}
                             >
-
-                                {/* Badge with ping ring */}
-                                <div className="relative w-16 h-16 mb-6 shrink-0">
-                                    <div className="absolute inset-0 rounded-full" style={{
-                                        border: `2px solid ${step.accent}`,
-                                        animation: `ringPing 2s ease-out infinite`,
-                                        animationDelay: `${i * 0.5}s`,
-                                    }} />
-                                    <div className="absolute inset-0 rounded-full border-2 flex items-center justify-center font-black text-xs z-10"
-                                        style={{ borderColor: step.accent, color: step.accent, background: `${step.accent}12`, boxShadow: `0 0 18px ${step.glow}` }}>
-                                        {step.number}
+                                {/* Top: badge area (black) */}
+                                <div className="flex items-center justify-center py-8" style={{ background: '#000000' }}>
+                                    <div className="relative w-16 h-16 shrink-0">
+                                        <div className="absolute inset-0 rounded-full" style={{
+                                            border: `2px solid ${step.accent}`,
+                                            animation: `ringPing 2s ease-out infinite`,
+                                            animationDelay: `${i * 0.5}s`,
+                                        }} />
+                                        <div className="absolute inset-0 rounded-full border-2 flex items-center justify-center font-black text-xs z-10"
+                                            style={{ borderColor: step.accent, color: step.accent, background: `${step.accent}12`, boxShadow: `0 0 18px ${step.glow}` }}>
+                                            {step.number}
+                                        </div>
                                     </div>
                                 </div>
 
-                                <h3 className="text-lg font-black text-white mb-4">{step.title}</h3>
-                                <p className="text-sm leading-relaxed text-left" style={{ color: 'rgba(240,244,255,0.65)' }}>
-                                    {step.bullets[0]}
-                                </p>
+                                {/* Bottom: text area (white) */}
+                                <div className="flex-1 p-6 text-center" style={{ background: '#ffffff' }}>
+                                    <h3 className="text-lg font-black mb-3" style={{ color: '#111827' }}>{step.title}</h3>
+                                    <p className="text-sm leading-relaxed text-left" style={{ color: '#4B5563' }}>
+                                        {step.bullets[0]}
+                                    </p>
+                                </div>
                             </div>
 
                             {/* Connector between cards */}

@@ -153,7 +153,7 @@ export default function MeetTheTeam() {
             </span>
           </h2>
           <p className="reveal reveal-delay-200 text-base sm:text-lg max-w-3xl mx-auto" style={{ color: 'rgba(240,244,255,0.45)' }}>
-            Just a small focused team that treats your business like it&apos;s their own.
+            Tight team. High standards.<br />Your business gets treated like it&apos;s ours.
           </p>
         </div>
 
