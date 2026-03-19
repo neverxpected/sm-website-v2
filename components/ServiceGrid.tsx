@@ -161,11 +161,11 @@ export default function ServiceGrid() {
 
         {/* Section header */}
         <div className="text-center mb-14 sg-header">
-          <h2 className="text-3xl lg:text-4xl font-black mb-4 sg-headline" style={{ color: '#111827' }}>
-            Digital Ads<br /> & AI Systems
+          <h2 className="text-3xl lg:text-5xl font-black mb-4 sg-headline" style={{ color: '#111827' }}>
+            Digital Ads <span className="hidden lg:inline">&amp;</span><br className="lg:hidden" /><span className="lg:hidden">&amp;</span> AI Systems
           </h2>
           <p className="text-base max-w-xl mx-auto" style={{ color: '#6B7280' }}>
-            Most agencies pick a lane. We built both because one without the other only solves half the problem.
+            Pick your service &amp; let&apos;s get to work.
           </p>
         </div>
 
@@ -194,103 +194,104 @@ export default function ServiceGrid() {
           </div>
         </div>
 
-        {/* ═══════ DESKTOP: Original two-card layout ═══════ */}
+        {/* ═══════ DESKTOP: 9-icon row ═══════ */}
         <div className="hidden lg:block">
-          {/* Two big cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sg-cards">
+          <style>{`
+            .sg-desktop-grid {
+              box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+            }
+            .sg-grid-cell {
+              transition: all 0.25s ease;
+            }
+            .sg-grid-cell:hover {
+              background: rgba(0,0,0,0.015);
+              transform: translateY(-2px);
+            }
+          `}</style>
+          <div className="sg-desktop-grid grid grid-cols-9 rounded-2xl overflow-hidden"
+            style={{ border: '1px solid rgba(0,0,0,0.08)', background: '#ffffff' }}>
 
-            {/* ── Paid Advertising Card ─────────────────────── */}
-            <div className="reveal sg-card rounded-3xl overflow-hidden flex flex-col"
+            {/* ── Header row ── */}
+            <div className="flex items-center justify-center gap-2 py-3 relative"
               style={{
-                border: '1px solid rgba(0,0,0,0.08)',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.04)',
+                gridColumn: 'span 5',
+                borderRight: '1px solid rgba(0,0,0,0.06)',
+                borderBottom: '1px solid rgba(0,0,0,0.06)',
+                background: '#fafafa',
               }}>
-              {/* Black header */}
-              <div className="p-8 pb-6" style={{ background: '#000000' }}>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0"
-                    style={{ background: 'linear-gradient(135deg, #2563EB, #059669)' }}>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={2} className="w-6 h-6">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-black" style={{ color: '#ffffff' }}>Paid Advertising</h3>
-                  </div>
-                </div>
+              <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
+                style={{ background: 'linear-gradient(135deg, #2563EB, #059669)' }}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={2} className="w-3.5 h-3.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+                </svg>
               </div>
-
-              {/* White body */}
-              <div className="p-8 pt-6 flex flex-col gap-6" style={{ background: '#ffffff' }}>
-                {/* Platform pills */}
-                <div className="grid grid-cols-2 gap-3">
-                  {paidPlatforms.map((p) => (
-                    <Link key={p.href} href={p.href}
-                      className="sg-pill flex items-center justify-center gap-2 rounded-xl text-xs font-semibold transition-all duration-200 hover:scale-105"
-                      style={{ background: '#F3F4F6', border: '1px solid rgba(0,0,0,0.1)', color: '#374151', padding: '0.65rem 1rem' }}>
-                      <span className={`w-6 h-6 rounded-lg ${p.iconBg} text-white flex items-center justify-center shrink-0`}>
-                        {p.icon}
-                      </span>
-                      {p.label}
-                    </Link>
-                  ))}
-                </div>
-
-                <hr style={{ borderColor: 'rgba(0,0,0,0.08)' }} />
-
-                <p className="text-sm leading-relaxed" style={{ color: '#4B5563' }}>
-                  Most agencies hand your account to a junior who just finished a YouTube course. We built our entire process around one rule. Nobody touches a campaign until they know exactly what they&apos;re doing. 8 years. Millions in managed spend. A track record across med spas, fitness, surgery, and local service businesses that speaks for itself.
-                </p>
-              </div>
+              <span className="text-sm font-bold uppercase tracking-widest" style={{ color: '#111827' }}>
+                Paid Advertising
+              </span>
+              {/* Gradient accent bar */}
+              <div className="absolute bottom-0 left-4 right-4 h-[2px]"
+                style={{ background: 'linear-gradient(90deg, #2563EB, #059669)', borderRadius: 2, opacity: 0.5 }} />
             </div>
 
-            {/* ── AI Systems Card ────────────────────────── */}
-            <div className="reveal reveal-delay-100 sg-card rounded-3xl overflow-hidden flex flex-col"
+            <div className="flex items-center justify-center gap-2 py-3 relative"
               style={{
-                border: '1px solid rgba(0,0,0,0.08)',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.04)',
+                gridColumn: 'span 4',
+                borderBottom: '1px solid rgba(0,0,0,0.06)',
+                background: '#fafafa',
               }}>
-              {/* Black header */}
-              <div className="p-8 pb-6" style={{ background: '#000000' }}>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0"
-                    style={{ background: 'linear-gradient(135deg, #7C3AED, #EC4899)' }}>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={2} className="w-6 h-6">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-black" style={{ color: '#ffffff' }}>AI Systems</h3>
-                  </div>
-                </div>
+              <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
+                style={{ background: 'linear-gradient(135deg, #7C3AED, #EC4899)' }}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={2} className="w-3.5 h-3.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                </svg>
               </div>
-
-              {/* White body */}
-              <div className="p-8 pt-6 flex flex-col gap-6" style={{ background: '#ffffff' }}>
-                {/* Platform pills */}
-                <div className="grid grid-cols-2 gap-3">
-                  {aiPlatforms.map((p) => (
-                    <Link key={p.href} href={p.href}
-                      className="sg-pill flex items-center justify-center gap-2 rounded-xl text-xs font-semibold transition-all duration-200 hover:scale-105"
-                      style={{ background: '#F3F4F6', border: '1px solid rgba(0,0,0,0.1)', color: '#374151', padding: '0.65rem 1rem' }}>
-                      <span className={`w-6 h-6 rounded-lg ${p.iconBg} text-white flex items-center justify-center shrink-0`}>
-                        {p.icon}
-                      </span>
-                      {p.label}
-                    </Link>
-                  ))}
-                </div>
-
-                <hr style={{ borderColor: 'rgba(0,0,0,0.08)' }} />
-
-                <p className="text-sm leading-relaxed" style={{ color: '#4B5563' }}>
-                  You&apos;re probably sitting on 5 problems right now that AI could solve and you don&apos;t even know it yet. We build custom AI receptionists, chatbots, and automation workflows that eliminate the repetitive work draining your team and your margins. Your competitors are already moving on this. The question is whether you will too.
-                </p>
-              </div>
+              <span className="text-sm font-bold uppercase tracking-widest" style={{ color: '#111827' }}>
+                AI Systems
+              </span>
+              {/* Gradient accent bar */}
+              <div className="absolute bottom-0 left-4 right-4 h-[2px]"
+                style={{ background: 'linear-gradient(90deg, #7C3AED, #EC4899)', borderRadius: 2, opacity: 0.5 }} />
             </div>
 
+            {/* ── Icon row ── */}
+            {allServices.map((s, i) => {
+              const glowColors: Record<string, string> = {
+                'bg-blue-600': 'rgba(37,99,235,0.35)',
+                'bg-emerald-500': 'rgba(16,185,129,0.35)',
+                'bg-pink-500': 'rgba(236,72,153,0.35)',
+                'bg-green-600': 'rgba(22,163,74,0.35)',
+                'bg-orange-500': 'rgba(249,115,22,0.35)',
+                'bg-violet-500': 'rgba(139,92,246,0.35)',
+                'bg-cyan-500': 'rgba(6,182,212,0.35)',
+                'bg-rose-500': 'rgba(244,63,94,0.35)',
+                'bg-purple-500': 'rgba(168,85,247,0.35)',
+              };
+              const glow = glowColors[s.iconBg] || 'rgba(0,0,0,0.1)';
+              return (
+                <Link
+                  key={s.href}
+                  href={s.href}
+                  className="sg-grid-cell flex flex-col items-center justify-center gap-3 py-7 px-2"
+                  style={{
+                    borderRight: (i < 8) ? '1px solid rgba(0,0,0,0.06)' : 'none',
+                  }}
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLElement).style.boxShadow = `inset 0 0 30px ${glow}, inset 0 0 60px ${glow.replace('0.35', '0.1')}`;
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLElement).style.boxShadow = 'none';
+                  }}
+                >
+                  <span className={`w-12 h-12 rounded-2xl ${s.iconBg} text-white flex items-center justify-center`}>
+                    {s.icon}
+                  </span>
+                  <span className="text-xs font-semibold text-center leading-tight" style={{ color: '#374151' }}>
+                    {s.label}
+                  </span>
+                </Link>
+              );
+            })}
           </div>
-
         </div>
       </div>
     </section>
