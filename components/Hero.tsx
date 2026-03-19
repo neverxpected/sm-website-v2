@@ -82,11 +82,12 @@ export default function Hero() {
                 padding-top: 0.5rem !important;
               }
               .hero-headline-main {
-                display: none !important;
+                font-size: clamp(2rem, 7.5vw, 3rem) !important;
               }
-              .hero-headline-mobile {
-                display: block !important;
+              .hero-mobile-br {
+                display: inline !important;
               }
+
               .hero-subline-br {
                 display: none;
               }
@@ -117,7 +118,10 @@ export default function Hero() {
               }
             }
           `}</style>
-          <div className="hero-center-wrap" style={{ margin: '0 auto', textAlign: 'center' }}>
+          <div className="hero-center-wrap" style={{ margin: '0 auto', textAlign: 'center', position: 'relative', maxWidth: '900px' }}>
+
+
+
 
             {/* Headline */}
             <h1
@@ -125,30 +129,40 @@ export default function Hero() {
               style={{
                 fontWeight: 700,
                 color: '#000000',
-                fontSize: 'clamp(2.8rem, 7vw, 6rem)',
+                fontSize: 'clamp(2.2rem, 7vw, 5.8rem)',
                 lineHeight: 1.1,
                 textAlign: 'center',
+                width: 'fit-content',
+                margin: '0 auto',
+                overflow: 'visible',
               }}
             >
-              Stop Guessing.<br />
-              Start Scaling.
+              <span style={{ display: 'block', whiteSpace: 'nowrap', padding: '0 0.1em' }}>Stop Guessing.</span>
+              <span style={{
+                display: 'block',
+                whiteSpace: 'nowrap',
+                padding: '0 0.1em',
+                background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                backgroundSize: '200% auto',
+                animation: 'heroBorderSpin 3s linear infinite',
+              }}>Start Printing</span>
+              <span style={{
+                display: 'block',
+                whiteSpace: 'nowrap',
+                padding: '0 0.1em',
+                background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                backgroundSize: '200% auto',
+                animation: 'heroBorderSpin 3s linear infinite',
+              }}>Revenue.</span>
             </h1>
 
-            {/* Mobile-only headline — 2 clean lines */}
-            <h1
-              className="reveal reveal-delay-100 tracking-tight hero-headline-mobile"
-              style={{
-                display: 'none',
-                fontWeight: 700,
-                color: '#000000',
-                fontSize: 'clamp(2.2rem, 8.5vw, 2.8rem)',
-                lineHeight: 1.15,
-                textAlign: 'center',
-              }}
-            >
-              Stop Guessing.<br />
-              Start Scaling.
-            </h1>
+
 
             {/* Sub-headline */}
             <p className="reveal reveal-delay-300 hero-subline" style={{ maxWidth: '600px', margin: '1.5rem auto 2.5rem', fontSize: '16px', lineHeight: 1.85, color: 'rgba(26,26,46,0.55)', textAlign: 'center' }}>

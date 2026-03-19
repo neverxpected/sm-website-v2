@@ -8,7 +8,7 @@ const steps = [
         number: 'Step 1',
         title: 'Honest Strategy Call',
         bullets: [
-            'We ask the questions nobody else asks. We look at your offer, your follow up, your current presence. We tell you exactly what we see. Even if it\'s uncomfortable. Especially then.',
+            'We ask the questions nobody else asks. We look at your offer, your follow up, your current presence. We tell you exactly what we see. Even if it\'s uncomfortable.',
         ],
         accent: '#FF2D78',
         glow: 'rgba(255,45,120,0.35)',
@@ -18,7 +18,7 @@ const steps = [
         number: 'Step 2',
         title: 'Build & Launch',
         bullets: [
-            'We build your ad campaigns and AI systems from the ground up. No templates. No guessing. Everything is engineered around your specific business, your offer, and your customer.',
+            'We build your ad campaigns and AI systems from the ground up so there is no guessing. Everything is engineered around your specific business, your offer, and your customer.',
         ],
         accent: '#9B30FF',
         glow: 'rgba(155,48,255,0.35)',
@@ -100,7 +100,7 @@ export default function HowItWorks() {
         }
         @media (max-width: 767px) {
           .hiw-headline {
-            font-size: clamp(1.6rem, 6.5vw, 2.2rem) !important;
+            font-size: clamp(2rem, 8.5vw, 2.8rem) !important;
           }
         }
       `}</style>
@@ -139,7 +139,7 @@ export default function HowItWorks() {
                     </div>
 
                     <h2
-                        className="text-3xl lg:text-5xl font-black text-white tracking-tight mb-4 hiw-headline"
+                        className="text-4xl lg:text-5xl font-black text-white tracking-tight mb-4 hiw-headline"
                         style={reveal(100)}
                     >
                         Here&apos;s Exactly{' '}

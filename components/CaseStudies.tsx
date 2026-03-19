@@ -7,7 +7,7 @@ const cases = [
   {
     category: "Med Spa",
     name: "Radiant with Rebecca",
-    description: "Rebecca came to us in 2021 running a mobile med spa out of a van. We built her Meta ad campaigns from scratch and focused on building a real patient pipeline. Over the next few years those ads helped generate over $1M in added revenue and enough demand that she opened a second location. She is still a client today.",
+    description: "Rebecca came to us in 2021 running a mobile med spa. We built her Meta ad campaigns from scratch and focused on building a real patient pipeline. Over the next few years those ads helped generate over $1M in added revenue and enough demand that she opened a second location. She is still a client today.",
     href: "/contact",
     photo: "/images/client-results/radiant med spa olathe kansas.webp",
     accentHex: "#FF2D78",
@@ -73,9 +73,9 @@ export default function CaseStudies() {
             }
           `}</style>
           <h2 className="reveal reveal-delay-100 text-3xl lg:text-5xl font-black text-white tracking-tight mb-5">
-            Numbers Don&apos;t Lie.<br className="lg:hidden" />{' '}
+            We Let the Numbers<br className="lg:hidden" />{' '}
             <span style={{ background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #FF2D78)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', backgroundSize: '200% auto', animation: 'realGrowthShimmer 4s linear infinite', display: 'inline-block', paddingBottom: '0.1em' }}>
-              Agencies Do.
+              Do the Talking.
             </span>
           </h2>
           <p className="reveal reveal-delay-200 text-base max-w-2xl mx-auto leading-relaxed" style={{ color: 'rgba(240,244,255,0.5)' }}>
