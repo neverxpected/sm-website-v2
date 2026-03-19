@@ -130,9 +130,8 @@ export default function Hero() {
                 textAlign: 'center',
               }}
             >
-              We Don&apos;t Level<br />
-              <span className="hero-nowrap" style={{ whiteSpace: 'nowrap' }}>the Playing Field.</span><br />
-              <em>We Tilt It.</em>
+              Stop Guessing.<br />
+              Start Scaling.
             </h1>
 
             {/* Mobile-only headline — 2 clean lines */}
@@ -147,8 +146,8 @@ export default function Hero() {
                 textAlign: 'center',
               }}
             >
-              We Don&apos;t Level<br /><span style={{ whiteSpace: 'nowrap' }}>the Playing Field.</span><br />
-              <em>We Tilt It.</em>
+              Stop Guessing.<br />
+              Start Scaling.
             </h1>
 
             {/* Sub-headline */}
@@ -164,7 +163,7 @@ export default function Hero() {
               >
                 {/* Gradient border layer — visible on hover */}
                 <span
-                  className="absolute -inset-[4px] rounded-[16px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute -inset-[4px] rounded-[16px] opacity-100 transition-opacity duration-300"
                   style={{
                     background: 'linear-gradient(135deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
                     backgroundSize: '300% 300%',
