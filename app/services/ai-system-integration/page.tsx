@@ -224,8 +224,8 @@ export default function AISystemIntegrationPage() {
       </section>
 
       {/* Process */}
-      <section ref={processRef} className="relative z-10 px-6 lg:px-8 pb-24" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="max-w-5xl mx-auto pt-24">
+      <section ref={processRef} className="relative z-10 px-6 lg:px-8 pb-24">
+        <div className="max-w-5xl mx-auto pt-8">
           <div className="mb-12" style={reveal(processVisible, 0)}>
             <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: 'rgba(255,45,120,0.8)' }}>
               Our Process
@@ -275,8 +275,8 @@ export default function AISystemIntegrationPage() {
       </section>
 
       {/* Capabilities */}
-      <section ref={capRef} className="relative z-10 px-6 lg:px-8 pb-24" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="max-w-5xl mx-auto pt-24">
+      <section ref={capRef} className="relative z-10 px-6 lg:px-8 pb-24">
+        <div className="max-w-5xl mx-auto pt-8">
           <div className="mb-12" style={reveal(capVisible, 0)}>
             <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: 'rgba(0,229,255,0.7)' }}>
               Core Capabilities

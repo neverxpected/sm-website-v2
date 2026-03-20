@@ -31,7 +31,7 @@ const services = [
   {
     title: "Conversion Tracking and Attribution",
     description:
-      "Every campaign is wired with enhanced conversion tracking via Google Tag Manager. Phone calls, form fills, purchases, and micro-conversions are all measured and fed back into the bidding algorithm for continuous performance improvement.",
+      "It's always important to dial in properly tracking and attribution. Whether you're looking for more Phone calls, form fills or purchases we'll check your setup to give you a clear picture of what is and isn't working so your campaign runs smoothly.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -45,16 +45,31 @@ const technical = [
     title: "Scores That Save You Money",
     description:
       "We optimize ad relevance, expected CTR, and landing page experience to push Quality Scores above 7. Higher scores mean lower cost-per-click and better ad placement without spending more.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+      </svg>
+    ),
   },
   {
     title: "Blocking What Wastes Budget",
     description:
       "We build systematic negative keyword lists at campaign and ad group level to stop irrelevant clicks before they happen. Every blocked search term is money that stays in your account.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+      </svg>
+    ),
   },
   {
     title: "Bidding That Gets Smarter Over Time",
     description:
       "We move between manual CPC, Target CPA, and Target ROAS as campaigns mature and data accumulates. The strategy evolves with your account so you're never stuck on settings that made sense six months ago.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+      </svg>
+    ),
   },
 ];
 
@@ -81,7 +96,13 @@ const process = [
 
 export default function GoogleAdsPage() {
   return (
-    <main className="min-h-screen text-white" style={{ background: '#0A0F1C' }}>
+    <main className="relative min-h-screen text-white" style={{ background: '#0A0F1C' }}>
+
+      {/* Grid */}
+      <div className="absolute inset-0 pointer-events-none z-0" style={{
+        backgroundImage: 'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)',
+        backgroundSize: '64px 64px',
+      }} />
 
       {/* Hero */}
       <section className="relative pt-40 pb-24 px-6 lg:px-8 overflow-hidden">
@@ -98,7 +119,7 @@ export default function GoogleAdsPage() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-[46px] font-black tracking-tight leading-[1] mb-8 text-white">
-            When Someone Searches for What You Sell,<br />
+            When someone searches on Google,{' '}
             <style>{`
               @keyframes googleAdsShimmer {
                 0%   { background-position: 200% center; }
@@ -119,7 +140,7 @@ export default function GoogleAdsPage() {
 
           <p className="text-lg lg:text-xl max-w-3xl leading-relaxed mb-12"
             style={{ color: 'rgba(240,244,255,0.55)' }}>
-            If not you&apos;re handing ready-to-buy customers directly to your competitors. Google Ads done right puts you in front of people who are already looking for exactly what you offer, at the exact moment they&apos;re ready to spend. We&apos;ve been building and managing Google campaigns personally for 8 years across service businesses, ecommerce, local, and everything in between.
+            If not you&apos;re handing ready-to-buy customers directly to your competitors. Google Ads done right puts you in front of people who are already looking for exactly what you offer, at the exact moment they&apos;re ready to spend.
           </p>
 
           <Link
@@ -136,8 +157,8 @@ export default function GoogleAdsPage() {
       </section>
 
       {/* Service Sections */}
-      <section className="px-6 lg:px-8 pb-24" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="max-w-5xl mx-auto pt-24">
+      <section className="px-6 lg:px-8 pb-24">
+        <div className="max-w-5xl mx-auto pt-8">
           <div className="mb-12">
             <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: 'rgba(66,133,244,0.8)' }}>
               Service Coverage
@@ -166,8 +187,8 @@ export default function GoogleAdsPage() {
       </section>
 
       {/* Technical Features */}
-      <section className="px-6 lg:px-8 pb-24" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="max-w-5xl mx-auto pt-24">
+      <section className="px-6 lg:px-8 pb-24">
+        <div className="max-w-5xl mx-auto pt-8">
           <div className="mb-12">
             <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: 'rgba(155,48,255,0.8)' }}>
               What We Run
@@ -182,10 +203,16 @@ export default function GoogleAdsPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {technical.map((t) => (
-              <div key={t.title} className="p-8 rounded-2xl flex flex-col gap-4"
+              <div key={t.title} className="p-8 rounded-2xl flex flex-col gap-5"
                 style={{ background: 'rgba(13,21,38,0.6)', border: '1px solid rgba(255,255,255,0.07)', backdropFilter: 'blur(16px)' }}>
-                <h3 className="text-base font-bold text-white">{t.title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.45)' }}>{t.description}</p>
+                <span className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+                  style={{ background: 'rgba(155,48,255,0.15)', color: '#9B30FF' }}>
+                  {t.icon}
+                </span>
+                <div>
+                  <h3 className="text-base font-bold text-white mb-3">{t.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.45)' }}>{t.description}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -193,8 +220,8 @@ export default function GoogleAdsPage() {
       </section>
 
       {/* 3-Step Process */}
-      <section className="px-6 lg:px-8 pb-24" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="max-w-5xl mx-auto pt-24">
+      <section className="px-6 lg:px-8 pb-24">
+        <div className="max-w-5xl mx-auto pt-8">
           <div className="mb-12">
             <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: 'rgba(66,133,244,0.8)' }}>
               From Audit to Results

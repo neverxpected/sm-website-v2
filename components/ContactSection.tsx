@@ -144,9 +144,7 @@ export default function ContactSection() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
-                  <p className="text-xs italic" style={{ color: '#9CA3AF' }}>
-                    We read every submission personally. No automated responses. No spam.
-                  </p>
+
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                     <div>
                       <label className={labelClass} style={{ color: '#374151' }}>Name <span style={{ color: '#FF2D78' }}>*</span></label>
@@ -206,8 +204,9 @@ export default function ContactSection() {
                       Book Your Free Strategy Call &rarr;
                     </button>
                   </div>
-                  <p className="text-center text-xs mt-3" style={{ color: '#9CA3AF' }}>
-                    15 minutes. Charles picks up the phone himself.
+
+                  <p className="text-center text-xs mt-2 italic" style={{ color: '#9CA3AF' }}>
+                    We read every submission personally. No automated responses. No spam.
                   </p>
                 </form>
               )}

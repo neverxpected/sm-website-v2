@@ -91,7 +91,7 @@ export default function Testimonials() {
                             word for it.
                         </span>
                     </h2>
-                    <p className="text-base max-w-xl mx-auto" style={{ color: 'rgba(240,244,255,0.5)' }}>
+                    <p className="text-base lg:text-lg max-w-xl mx-auto" style={{ color: 'rgba(240,244,255,0.5)' }}>
                         Real feedback from real clients<br className="sm:hidden" /> we&apos;ve worked with.
                     </p>
                 </div>
@@ -107,15 +107,15 @@ export default function Testimonials() {
                             ...reveal(100),
                         }}>
                         {/* Top: author + stars (dark) */}
-                        <div className="p-6 flex items-center gap-4" style={{ background: '#000000', borderBottom: `1px solid ${featured.accent}22` }}>
-                            <div className="w-14 h-14 rounded-2xl overflow-hidden shrink-0"
+                        <div className="p-6 flex items-center gap-4" style={{ background: `repeating-linear-gradient(45deg, #000000, #000000 8px, ${featured.accent}15 8px, ${featured.accent}15 9px)`, borderBottom: `1px solid ${featured.accent}22` }}>
+                            <div className="w-20 h-20 rounded-2xl overflow-hidden shrink-0"
                                 style={{ border: `2px solid ${featured.accent}60` }}>
                                 <img src={featured.image} alt={featured.name} className="w-full h-full object-cover object-top" />
                             </div>
                             <div className="flex-1">
                                 <p className="text-sm font-bold text-white">{featured.name}</p>
                                 <p className="text-xs" style={{ color: featured.accent }}>{featured.title}</p>
-                                <p className="text-xs mt-0.5" style={{ color: 'rgba(240,244,255,0.35)' }}>{featured.location}</p>
+
                                 <div className="mt-1.5"><Stars count={featured.stars} color={featured.accent} /></div>
                             </div>
                         </div>
@@ -140,8 +140,8 @@ export default function Testimonials() {
                                     ...reveal(200 + i * 120),
                                 }}>
                                 {/* Top: author + stars (dark) */}
-                                <div className="p-4 flex items-center gap-3" style={{ background: '#000000', borderBottom: `1px solid ${t.accent}22` }}>
-                                    <div className="w-10 h-10 rounded-xl overflow-hidden shrink-0"
+                                <div className="p-4 flex items-center gap-3" style={{ background: `repeating-linear-gradient(45deg, #000000, #000000 8px, ${t.accent}18 8px, ${t.accent}18 9px)`, borderBottom: `1px solid ${t.accent}22` }}>
+                                    <div className="w-14 h-14 rounded-xl overflow-hidden shrink-0"
                                         style={{ border: `2px solid ${t.accent}50` }}>
                                         <img src={t.image} alt={t.name} className="w-full h-full object-cover object-top" />
                                     </div>
