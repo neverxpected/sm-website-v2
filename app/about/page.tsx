@@ -36,7 +36,7 @@ const milestones = [
 const stats = [
     { value: 50, suffix: '+', label: 'Businesses Served' },
     { value: 20, prefix: '$', suffix: 'M+', label: 'Revenue Generated' },
-    { value: 12, suffix: '+', label: 'Industries Worked In' },
+    { value: 13, suffix: '', label: 'Industries Worked In' },
 ];
 
 // Animated counter hook

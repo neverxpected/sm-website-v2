@@ -81,7 +81,13 @@ const process = [
 
 export default function AiReceptionistPage() {
   return (
-    <main className="min-h-screen text-white" style={{ background: '#0A0F1C' }}>
+    <main className="relative min-h-screen text-white" style={{ background: '#0A0F1C' }}>
+
+      {/* Grid */}
+      <div className="absolute inset-0 pointer-events-none z-0" style={{
+        backgroundImage: 'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)',
+        backgroundSize: '64px 64px',
+      }} />
 
       {/* Hero */}
       <section className="relative pt-40 pb-24 px-6 lg:px-8 overflow-hidden">
@@ -155,8 +161,8 @@ export default function AiReceptionistPage() {
       </section>
 
       {/* Service Sections */}
-      <section className="px-6 lg:px-8 pb-24" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="max-w-5xl mx-auto pt-24">
+      <section className="px-6 lg:px-8 pb-24">
+        <div className="max-w-5xl mx-auto pt-8">
           <div className="mb-12">
             <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: 'rgba(155,48,255,0.8)' }}>
               Service Coverage
@@ -185,8 +191,8 @@ export default function AiReceptionistPage() {
       </section>
 
       {/* Technical Features */}
-      <section className="px-6 lg:px-8 pb-24" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="max-w-5xl mx-auto pt-24">
+      <section className="px-6 lg:px-8 pb-24">
+        <div className="max-w-5xl mx-auto pt-8">
           <div className="mb-12">
             <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: 'rgba(0,229,255,0.7)' }}>
               Technical Architecture
@@ -209,8 +215,8 @@ export default function AiReceptionistPage() {
       </section>
 
       {/* 3-Step Process */}
-      <section className="px-6 lg:px-8 pb-24" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="max-w-5xl mx-auto pt-24">
+      <section className="px-6 lg:px-8 pb-24">
+        <div className="max-w-5xl mx-auto pt-8">
           <div className="mb-12">
             <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: 'rgba(155,48,255,0.8)' }}>
               Deployment Process

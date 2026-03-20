@@ -175,7 +175,7 @@ export default function HowItWorks() {
                         </span>
                     </h2>
 
-                    <p className="text-base max-w-xl lg:max-w-none mx-auto" style={{ color: 'rgba(240,244,255,0.5)', ...reveal(200) }}>
+                    <p className="text-base lg:text-lg max-w-xl lg:max-w-none mx-auto" style={{ color: 'rgba(240,244,255,0.5)', ...reveal(200) }}>
                         Three steps and you&apos;ll know exactly where you stand and what happens next.
                     </p>
                 </div>

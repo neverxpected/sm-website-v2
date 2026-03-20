@@ -136,8 +136,8 @@ export default function DigitalAdsPage() {
       </section>
 
       {/* Service Sections */}
-      <section className="px-6 lg:px-8 pb-24" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="max-w-5xl mx-auto pt-24">
+      <section className="px-6 lg:px-8 pb-24">
+        <div className="max-w-5xl mx-auto pt-8">
           <div className="mb-12">
             <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: 'rgba(0,120,212,0.8)' }}>
               Service Coverage
@@ -166,8 +166,8 @@ export default function DigitalAdsPage() {
       </section>
 
       {/* Technical Features */}
-      <section className="px-6 lg:px-8 pb-24" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="max-w-5xl mx-auto pt-24">
+      <section className="px-6 lg:px-8 pb-24">
+        <div className="max-w-5xl mx-auto pt-8">
           <div className="mb-12">
             <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: 'rgba(155,48,255,0.8)' }}>
               Technical Execution
@@ -190,8 +190,8 @@ export default function DigitalAdsPage() {
       </section>
 
       {/* 3-Step Process */}
-      <section className="px-6 lg:px-8 pb-24" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="max-w-5xl mx-auto pt-24">
+      <section className="px-6 lg:px-8 pb-24">
+        <div className="max-w-5xl mx-auto pt-8">
           <div className="mb-12">
             <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: 'rgba(0,120,212,0.8)' }}>
               Our Process

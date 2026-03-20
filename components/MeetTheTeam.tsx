@@ -153,57 +153,59 @@ export default function MeetTheTeam() {
             </span>
           </h2>
           <p className="reveal reveal-delay-200 text-base sm:text-lg max-w-3xl mx-auto" style={{ color: 'rgba(240,244,255,0.45)' }}>
-            Tight team. High standards.<br />Your business gets treated like it&apos;s ours.
+            Tight team. High standards.<br className="lg:hidden" /> Your business gets treated like it&apos;s ours.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-8 mt-8">
           {team.map((member, i) => (
             <div
               key={member.name}
-              className={`reveal reveal-delay-${(i + 2) * 100} card-neon rounded-2xl overflow-hidden flex flex-col`}
-              style={{ background: '#000000', border: `1px solid ${member.accent}88`, backdropFilter: 'blur(12px)', boxShadow: `0 0 30px ${member.accent}55, 0 0 80px ${member.accent}20, 0 0 160px ${member.accent}08` }}
+              className={`reveal reveal-delay-${(i + 2) * 100} relative pt-24`}
             >
-              {/* Photo area */}
-              <div
-                className="relative h-64 flex items-center justify-center overflow-hidden"
-                style={{ background: `linear-gradient(160deg, ${member.gradientFrom}14 0%, ${member.gradientTo}0a 100%)` }}
-              >
-                {/* Particle animation */}
-                <ParticleBg color={member.accent} />
-
-                {/* Soft radial glow behind photo */}
-                <div className="absolute inset-0 z-10 pointer-events-none"
-                  style={{ background: `radial-gradient(circle at 50% 55%, ${member.accent}18 0%, transparent 60%)` }} />
-
-                {/* Circular photo */}
-                <div
-                  className="relative w-52 h-52 rounded-full overflow-hidden z-20"
+              {/* Circular photo — overlapping above the card */}
+              <div className="absolute left-1/2 -translate-x-1/2 top-0 z-30">
+                <div className="relative w-44 h-44 rounded-full overflow-hidden"
                   style={{
-                    boxShadow: `0 0 0 3px ${member.accent}60, 0 0 25px ${member.accent}50, 0 0 55px ${member.accent}25`,
-                  }}
-                >
+                    boxShadow: `0 0 0 4px #000000, 0 0 0 6px ${member.accent}80, 0 0 30px ${member.accent}50, 0 0 60px ${member.accent}25`,
+                  }}>
                   <Image
                     src={member.photo}
                     alt={member.name}
                     fill
                     className="object-cover"
-                    sizes="208px"
+                    sizes="176px"
                   />
                 </div>
               </div>
 
-              {/* Info */}
-              <div className="p-6 flex flex-col gap-3 flex-1" style={{ background: '#ffffff' }}>
-                <div>
-                  <h3 className="text-lg font-black" style={{ color: '#111827' }}>{member.name}</h3>
-                  <p className="text-sm font-semibold mt-0.5" style={{ color: member.accent }}>
-                    {member.role} — {member.location}
+              {/* Card body */}
+              <div
+                className="card-neon rounded-2xl overflow-hidden flex flex-col"
+                style={{ background: '#000000', border: `1px solid ${member.accent}88`, backdropFilter: 'blur(12px)', boxShadow: `0 0 30px ${member.accent}55, 0 0 80px ${member.accent}20, 0 0 160px ${member.accent}08` }}
+              >
+                {/* Gradient area behind where photo overlaps */}
+                <div
+                  className="relative h-28 overflow-hidden"
+                  style={{ background: `linear-gradient(160deg, ${member.gradientFrom}14 0%, ${member.gradientTo}0a 100%)` }}
+                >
+                  <ParticleBg color={member.accent} />
+                  <div className="absolute inset-0 pointer-events-none"
+                    style={{ background: `radial-gradient(circle at 50% 20%, ${member.accent}18 0%, transparent 60%)` }} />
+                </div>
+
+                {/* Info */}
+                <div className="p-6 flex flex-col gap-3 flex-1 text-center" style={{ background: '#ffffff' }}>
+                  <div>
+                    <h3 className="text-lg font-black" style={{ color: '#111827' }}>{member.name}</h3>
+                    <p className="text-sm font-semibold mt-0.5" style={{ color: member.accent }}>
+                      {member.role} — {member.location}
+                    </p>
+                  </div>
+                  <p className="text-sm leading-relaxed flex-1" style={{ color: '#4B5563' }}>
+                    {member.bio}
                   </p>
                 </div>
-                <p className="text-sm leading-relaxed flex-1" style={{ color: '#4B5563' }}>
-                  {member.bio}
-                </p>
               </div>
             </div>
           ))}

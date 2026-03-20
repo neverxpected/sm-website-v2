@@ -138,7 +138,7 @@ export default function CaseStudies() {
               Do the Talking.
             </span>
           </h2>
-          <p className="reveal reveal-delay-200 text-base max-w-2xl mx-auto leading-relaxed" style={{ color: 'rgba(240,244,255,0.5)' }}>
+          <p className="reveal reveal-delay-200 text-base lg:text-lg max-w-2xl lg:max-w-none mx-auto leading-relaxed" style={{ color: 'rgba(240,244,255,0.5)' }}>
             Here&apos;s what actually happened when real businesses trusted us with their growth.
           </p>
 

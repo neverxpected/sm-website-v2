@@ -90,7 +90,13 @@ const sequence = [
 
 export default function AILeadNurturingPage() {
     return (
-        <main style={{ background: "#0A0F1C", color: "#F0F4FF" }} className="min-h-screen">
+        <main style={{ background: "#0A0F1C", color: "#F0F4FF" }} className="relative min-h-screen">
+
+            {/* Grid */}
+            <div className="absolute inset-0 pointer-events-none z-0" style={{
+                backgroundImage: 'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)',
+                backgroundSize: '64px 64px',
+            }} />
 
             {/* Hero */}
             <section className="pt-32 pb-20 px-6 lg:px-8 relative overflow-hidden">
