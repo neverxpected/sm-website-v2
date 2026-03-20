@@ -144,27 +144,38 @@ export default function CaseStudies() {
 
           {/* Business summary stats */}
           {/* Mobile: card with title */}
-          <div className="reveal reveal-delay-300 lg:hidden mt-10 rounded-2xl py-6 px-5"
+          <div className="reveal reveal-delay-300 lg:hidden mt-10 relative rounded-2xl py-8 pt-10 px-3"
             style={{
-              background: 'rgba(255,255,255,0.03)',
-              border: '1px solid rgba(255,45,120,0.25)',
-              boxShadow: '0 0 30px rgba(255,45,120,0.06), 0 0 60px rgba(155,48,255,0.04)',
+              background: 'rgba(255,45,120,0.04)',
+              border: '1px solid rgba(255,45,120,0.35)',
             }}>
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-center mb-5" style={{ color: 'rgba(240,244,255,0.35)' }}>
+            <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-[9px] font-bold uppercase tracking-[0.2em] whitespace-nowrap"
+              style={{ background: '#ffffff', color: '#000000' }}>
               Our Track Record
-            </p>
-            <div className="flex items-center justify-center gap-2">
+            </span>
+            <div className="grid grid-cols-3 gap-0">
               {[
                 { value: '$20M+', label: 'In Client Sales' },
                 { value: '50+', label: 'Businesses Scaled' },
                 { value: '7', label: 'Years in Business' },
               ].map((stat, idx) => (
-                <div key={stat.label} className="flex items-center">
+                <div key={stat.label} className="text-center relative px-1">
                   {idx > 0 && (
-                    <div className="w-px h-10 mx-3 shrink-0"
+                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-px h-10"
                       style={{ background: 'linear-gradient(to bottom, transparent, rgba(255,45,120,0.5), rgba(155,48,255,0.5), transparent)' }} />
                   )}
-                  <CountUpStat value={stat.value} label={stat.label} />
+                  <p className="font-black text-2xl leading-none mb-2" style={{
+                    background: 'linear-gradient(135deg, #FF2D78, #9B30FF)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    filter: 'drop-shadow(0 0 20px rgba(255,45,120,0.5))',
+                  }}>
+                    {stat.value}
+                  </p>
+                  <p className="text-[7px] uppercase tracking-[0.1em] font-bold whitespace-nowrap" style={{ color: 'rgba(240,244,255,0.4)' }}>
+                    {stat.label}
+                  </p>
                 </div>
               ))}
             </div>
@@ -172,19 +183,28 @@ export default function CaseStudies() {
 
           {/* Desktop: bare stats */}
           <div className="reveal reveal-delay-300 hidden lg:flex items-center justify-center mt-10">
-            {[
-              { value: '$20M+', label: 'In Client Sales' },
-              { value: '50+', label: 'Businesses Scaled' },
-              { value: '7', label: 'Years in Business' },
-            ].map((stat, idx) => (
-              <div key={stat.label} className="flex items-center">
-                {idx > 0 && (
-                  <div className="w-px h-16 mx-12 shrink-0"
-                    style={{ background: 'linear-gradient(to bottom, transparent, rgba(255,45,120,0.3), rgba(155,48,255,0.3), transparent)' }} />
-                )}
-                <CountUpStat value={stat.value} label={stat.label} />
-              </div>
-            ))}
+            <div className="relative flex items-center justify-center px-12 py-8 pt-10 rounded-2xl"
+              style={{ border: '1px solid rgba(255,45,120,0.35)', background: 'rgba(255,45,120,0.04)' }}>
+              <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-5 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] whitespace-nowrap"
+                style={{ background: '#ffffff', color: '#000000' }}>
+                Our Track Record
+              </span>
+              {[
+                { value: '$20M+', label: 'In Client Sales' },
+                { value: '50+', label: 'Businesses Scaled' },
+                { value: '7', label: 'Years in Business' },
+              ].map((stat, idx) => (
+                <div key={stat.label} className="flex items-center">
+                  {idx > 0 && (
+                    <div className="w-px h-16 mx-8 shrink-0"
+                      style={{ background: 'linear-gradient(to bottom, transparent, rgba(255,45,120,0.3), rgba(155,48,255,0.3), transparent)' }} />
+                  )}
+                  <div className="min-w-[160px] text-center">
+                    <CountUpStat value={stat.value} label={stat.label} />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
