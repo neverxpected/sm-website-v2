@@ -198,7 +198,7 @@ export default function AboutPage() {
                     <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
                     About the Founder
                 </div>
-                <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black tracking-tight leading-tight mb-6"
+                <h1 className="text-[28px] sm:text-[36px] lg:text-[46px] font-black tracking-tight leading-tight mb-6"
                     style={reveal(heroVisible, 100)}>
                     This isn&apos;t an agency that discovered digital last year.{' '}
                     <span style={{
@@ -223,7 +223,8 @@ export default function AboutPage() {
                 <div style={{
                     borderRadius: '1rem',
                     overflow: 'hidden',
-                    boxShadow: photoVisible ? '0 0 60px rgba(155,48,255,0.2), 0 0 120px rgba(255,45,120,0.1)' : 'none',
+                    border: '1px solid rgba(155,48,255,0.5)',
+                    boxShadow: photoVisible ? '0 0 30px rgba(155,48,255,0.35), 0 0 80px rgba(255,45,120,0.15), 0 0 160px rgba(155,48,255,0.08)' : 'none',
                     animation: photoVisible ? 'photoReveal 0.8s ease forwards' : 'none',
                     opacity: photoVisible ? 1 : 0,
                     transition: 'box-shadow 1s ease',
