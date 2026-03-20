@@ -6,30 +6,21 @@ import ServicePicker from "./ServicePicker";
 export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
-    const name = data.get('name') as string || '';
-    const email = data.get('email') as string || '';
-    const company = data.get('company') as string || '';
-    const phone = data.get('phone') as string || '';
-    const services = data.getAll('service_interest').join(', ') || 'None selected';
-    const budget = data.get('budget') as string || '';
-    const message = data.get('message') as string || '';
 
-    const body = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      `Company: ${company}`,
-      `Phone: ${phone}`,
-      `Service Interest: ${services}`,
-      `Monthly Budget: ${budget}`,
-      `Message: ${message}`,
-    ].join('\n');
+    const res = await fetch("https://formspree.io/f/mzdjwpbn", {
+      method: "POST",
+      body: data,
+      headers: { Accept: "application/json" },
+    });
 
-    const mailto = `mailto:Charles@switchmediaco.com?subject=${encodeURIComponent('SM Web Inquiry')}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
-    setSubmitted(true);
+    if (res.ok) {
+      setSubmitted(true);
+    } else {
+      alert("Something went wrong. Please try again or email Charles@switchmediaco.com directly.");
+    }
   }
 
   const inputClass = "w-full px-4 py-3 rounded-xl text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none transition-all appearance-none";
