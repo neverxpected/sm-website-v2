@@ -63,30 +63,21 @@ export default function ContactPage() {
         transition: `opacity 0.7s ease ${delay}ms, transform 0.7s ease ${delay}ms`,
     });
 
-    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         const data = new FormData(e.currentTarget);
-        const name = data.get('name') as string || '';
-        const email = data.get('email') as string || '';
-        const company = data.get('company') as string || '';
-        const phone = data.get('phone') as string || '';
-        const services = data.getAll('service_interest').join(', ') || 'None selected';
-        const budget = data.get('budget') as string || '';
-        const message = data.get('message') as string || '';
 
-        const body = [
-            `Name: ${name}`,
-            `Email: ${email}`,
-            `Company: ${company}`,
-            `Phone: ${phone}`,
-            `Service Interest: ${services}`,
-            `Monthly Budget: ${budget}`,
-            `Message: ${message}`,
-        ].join('\n');
+        const res = await fetch("https://formspree.io/f/mzdjwpbn", {
+            method: "POST",
+            body: data,
+            headers: { Accept: "application/json" },
+        });
 
-        const mailto = `mailto:Charles@switchmediaco.com?subject=${encodeURIComponent('SM Web Inquiry')}&body=${encodeURIComponent(body)}`;
-        window.location.href = mailto;
-        setSubmitted(true);
+        if (res.ok) {
+            setSubmitted(true);
+        } else {
+            alert("Something went wrong. Please try again or email Charles@switchmediaco.com directly.");
+        }
     }
 
     return (
@@ -138,11 +129,13 @@ export default function ContactPage() {
                 {/* Pill badge */}
                 <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.25em]"
                     style={{ background: 'rgba(255,45,120,0.1)', border: '1px solid rgba(255,45,120,0.25)', color: '#FF2D78', ...reveal(heroVisible, 0) }}>
-                    <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-3.5 h-3.5 shrink-0">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+                    </svg>
                     Contact Us
                 </div>
 
-                <h1 className="text-2xl sm:text-4xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-tight max-w-3xl"
+                <h1 className="text-[28px] sm:text-[36px] lg:text-[46px] font-black tracking-tight text-white mb-6 leading-tight max-w-3xl"
                     style={reveal(heroVisible, 100)}>
                     You could be one<br />
                     <span style={{
@@ -170,10 +163,9 @@ export default function ContactPage() {
                 <div className="grid lg:grid-cols-[1fr_320px] gap-10 items-start">
 
                     {/* Contact form */}
-                    <div ref={formRef} className="contact-gold-frame rounded-2xl p-8"
+                    <div ref={formRef} className="contact-gold-frame rounded-2xl p-5 sm:p-8"
                         style={{
-                            background: 'rgba(13,21,38,0.97)',
-                            backdropFilter: 'blur(16px)',
+                            background: 'linear-gradient(135deg, rgba(255,45,120,0.1), rgba(155,48,255,0.1))',
                             ...reveal(formVisible, 0),
                         }}>
                         {submitted ? (
@@ -189,7 +181,8 @@ export default function ContactPage() {
                             </div>
                         ) : (
                             <form onSubmit={handleSubmit} className="space-y-5">
-                                <div className="grid grid-cols-2 gap-4">
+
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                                     <div>
                                         <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Name <span style={{ color: '#FF2D78' }}>*</span></label>
                                         <input required name="name" type="text" placeholder="John Smith"
@@ -203,7 +196,7 @@ export default function ContactPage() {
                                             style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)' }} />
                                     </div>
                                 </div>
-                                <div className="grid grid-cols-2 gap-4">
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                                     <div>
                                         <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Company <span style={{ color: '#FF2D78' }}>*</span></label>
                                         <input required name="company" type="text" placeholder="Company name"
@@ -235,20 +228,36 @@ export default function ContactPage() {
                                 </div>
                                 <div>
                                     <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Message</label>
-                                    <textarea name="message" rows={4} placeholder="Tell us about your business and goals..."
+                                    <textarea name="message" rows={4} placeholder="What's the biggest thing holding your business back right now?"
                                         className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder:text-white/20 focus:outline-none transition-all appearance-none resize-none"
                                         style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)' }} />
                                 </div>
-                                <button
-                                    type="submit"
-                                    className="w-full flex items-center justify-center gap-2 px-6 py-4 text-white text-sm font-black rounded-xl transition-all duration-300 hover:scale-[1.02] active:scale-100"
-                                    style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', animation: 'pulseSubmit 3s ease-in-out infinite' }}
-                                >
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
-                                    </svg>
-                                    Send Message
-                                </button>
+                                <div className="group relative w-full">
+                                    <span
+                                        className="absolute -inset-[3px] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                        style={{
+                                            background: 'linear-gradient(135deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
+                                            backgroundSize: '300% 300%',
+                                            animation: 'heroBorderSpin 3s linear infinite',
+                                        }}
+                                    />
+                                    <button
+                                        type="submit"
+                                        className="relative w-full flex items-center justify-center gap-2 px-6 py-4 text-white font-black rounded-xl transition-all duration-300 group-hover:scale-[1.01] active:scale-100"
+                                        style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', whiteSpace: 'nowrap', fontSize: '15px' }}
+                                    >
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-4 h-4">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                                        </svg>
+                                        Book Your Free Strategy Call &rarr;
+                                    </button>
+                                </div>
+                                <p className="text-center text-xs mt-3" style={{ color: 'rgba(240,244,255,0.35)' }}>
+                                    15 minutes. Charles picks up the phone himself.
+                                </p>
+                                <p className="text-center text-xs italic mt-2" style={{ color: 'rgba(240,244,255,0.25)' }}>
+                                    We read every submission personally. No automated responses. No spam.
+                                </p>
                             </form>
                         )}
                     </div>
@@ -258,10 +267,10 @@ export default function ContactPage() {
 
                         {/* Location */}
                         <div className="p-6 rounded-2xl flex gap-4 items-start"
-                            style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', ...reveal(sidebarVisible, 0) }}>
+                            style={{ background: 'linear-gradient(135deg, rgba(0,229,255,0.06), rgba(0,200,255,0.03))', border: '1px solid rgba(0,229,255,0.2)', ...reveal(sidebarVisible, 0) }}>
                             <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 mt-0.5"
-                                style={{ background: 'rgba(155,48,255,0.12)', border: '1px solid rgba(155,48,255,0.2)' }}>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#9B30FF" strokeWidth={1.5} className="w-4 h-4">
+                                style={{ background: 'rgba(0,229,255,0.12)', border: '1px solid rgba(0,229,255,0.25)' }}>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#00E5FF" strokeWidth={1.5} className="w-4 h-4">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                                 </svg>
@@ -272,48 +281,29 @@ export default function ContactPage() {
                             </div>
                         </div>
 
-                        {/* Email */}
-                        <div className="p-6 rounded-2xl flex gap-4 items-start"
-                            style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', ...reveal(sidebarVisible, 100) }}>
-                            <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 mt-0.5"
-                                style={{ background: 'rgba(155,48,255,0.12)', border: '1px solid rgba(155,48,255,0.2)' }}>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#9B30FF" strokeWidth={1.5} className="w-4 h-4">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                                </svg>
-                            </div>
-                            <div>
-                                <p className="text-xs font-bold uppercase tracking-[0.15em] mb-1" style={{ color: 'rgba(240,244,255,0.35)' }}>Email</p>
-                                <a href="mailto:charles@switchmediaco.com"
-                                    className="text-sm font-semibold transition-colors duration-200"
-                                    style={{ color: '#9B30FF' }}
-                                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = '#FF2D78'; }}
-                                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = '#9B30FF'; }}>
-                                    charles@switchmediaco.com
-                                </a>
-                            </div>
-                        </div>
+
 
                         {/* Book a Strategy Audit */}
                         <Link href="/strategy-call"
                             className="flex items-center justify-between p-6 rounded-2xl transition-all duration-300 group hover:scale-[1.02]"
                             style={{
-                                background: 'linear-gradient(135deg, rgba(255,45,120,0.1), rgba(155,48,255,0.1))',
-                                border: '1px solid rgba(255,45,120,0.2)',
+                                background: 'linear-gradient(135deg, rgba(0,229,255,0.06), rgba(0,200,255,0.03))',
+                                border: '1px solid rgba(0,229,255,0.2)',
                                 ...reveal(sidebarVisible, 200),
                             }}
                             onMouseEnter={e => {
-                                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,45,120,0.45)';
-                                (e.currentTarget as HTMLElement).style.boxShadow = '0 0 24px rgba(255,45,120,0.12)';
+                                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(0,229,255,0.5)';
+                                (e.currentTarget as HTMLElement).style.boxShadow = '0 0 24px rgba(0,229,255,0.15)';
                             }}
                             onMouseLeave={e => {
-                                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,45,120,0.2)';
+                                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(0,229,255,0.2)';
                                 (e.currentTarget as HTMLElement).style.boxShadow = 'none';
                             }}>
                             <div>
                                 <p className="text-xs font-bold uppercase tracking-[0.15em] mb-1" style={{ color: 'rgba(240,244,255,0.35)' }}>Direct Access</p>
                                 <p className="text-sm font-black text-white">Book a Strategy Audit</p>
                             </div>
-                            <svg viewBox="0 0 20 20" fill="#FF2D78" className="w-5 h-5 shrink-0 transition-transform duration-300 group-hover:translate-x-1">
+                            <svg viewBox="0 0 20 20" fill="#00E5FF" className="w-5 h-5 shrink-0 transition-transform duration-300 group-hover:translate-x-1">
                                 <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                             </svg>
                         </Link>

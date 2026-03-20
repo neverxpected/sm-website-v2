@@ -568,8 +568,8 @@ h6 {
 }
 
 .contact-gold-frame {
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(255, 45, 120, 0.2);
+  box-shadow: 0 0 30px rgba(255, 45, 120, 0.08), 0 0 60px rgba(155, 48, 255, 0.05);
 }
 
 .gold-border {
