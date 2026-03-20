@@ -91,7 +91,15 @@ export default function TestimonialsClient({
             {badge}
           </div>
           <h2 className="text-3xl lg:text-5xl font-black text-white tracking-tight mb-4">
-            {heading}
+            Don&apos;t take our<br className="sm:hidden" />{' '}
+            <span style={{
+              background: 'linear-gradient(90deg, #9B30FF, #FF2D78, #9B30FF)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}>
+              word for it.
+            </span>
           </h2>
           <p
             className="text-base max-w-xl mx-auto"

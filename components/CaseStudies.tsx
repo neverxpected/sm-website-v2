@@ -53,7 +53,7 @@ export function CaseStudies({ heading, subheading, badge, cases }: CaseStudiesPr
             }
           `}</style>
           <h2 className="reveal reveal-delay-100 text-4xl lg:text-5xl font-black text-white tracking-tight mb-5">
-            {heading}
+            Real Results.{' '}
             <span
               style={{
                 background: "linear-gradient(90deg, #FF2D78, #9B30FF, #FF2D78)",
@@ -115,21 +115,19 @@ export function CaseStudies({ heading, subheading, badge, cases }: CaseStudiesPr
                     }}
                   />
                   {/* Category badge */}
-                  {c.category && (
-                    <div className="absolute top-4 left-4 z-10">
-                      <span
-                        className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full"
-                        style={{
-                          background: "rgba(0,0,0,0.6)",
-                          backdropFilter: "blur(8px)",
-                          color: "rgba(240,244,255,0.9)",
-                          border: "1px solid rgba(255,255,255,0.15)",
-                        }}
-                      >
-                        {c.category}
-                      </span>
-                    </div>
-                  )}
+                  <div className="absolute top-4 left-4 z-10">
+                    <span
+                      className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full"
+                      style={{
+                        background: "rgba(0,0,0,0.6)",
+                        backdropFilter: "blur(8px)",
+                        color: "rgba(240,244,255,0.9)",
+                        border: "1px solid rgba(255,255,255,0.15)",
+                      }}
+                    >
+                      {c.category}
+                    </span>
+                  </div>
                 </div>
 
                 {/* Content */}
@@ -150,30 +148,28 @@ export function CaseStudies({ heading, subheading, badge, cases }: CaseStudiesPr
                   </div>
 
                   {/* Stats — horizontal pills */}
-                  {stats.length > 0 && (
-                    <div className="flex flex-nowrap gap-2">
-                      {stats.map((stat) => (
-                        <div
-                          key={stat.label}
-                          className="flex items-center gap-2 px-3 py-2 rounded-lg"
-                          style={{ background: "#F3F4F6", border: "1px solid rgba(0,0,0,0.08)" }}
-                        >
-                          <span className="text-sm">{stat.emoji}</span>
-                          <div>
-                            <p
-                              className="text-[9px] uppercase tracking-widest font-bold"
-                              style={{ color: "#6B7280" }}
-                            >
-                              {stat.label}
-                            </p>
-                            <p className="text-base font-black leading-tight" style={{ color: "#111827" }}>
-                              {stat.value}
-                            </p>
-                          </div>
+                  <div className="flex flex-nowrap gap-2">
+                    {stats.map((stat) => (
+                      <div
+                        key={stat.label}
+                        className="flex items-center gap-2 px-3 py-2 rounded-lg"
+                        style={{ background: "#F3F4F6", border: "1px solid rgba(0,0,0,0.08)" }}
+                      >
+                        <span className="text-sm">{stat.emoji}</span>
+                        <div>
+                          <p
+                            className="text-[9px] uppercase tracking-widest font-bold"
+                            style={{ color: "#6B7280" }}
+                          >
+                            {stat.label}
+                          </p>
+                          <p className="text-base font-black leading-tight" style={{ color: "#111827" }}>
+                            {stat.value}
+                          </p>
                         </div>
-                      ))}
-                    </div>
-                  )}
+                      </div>
+                    ))}
+                  </div>
 
                   {/* CTA link */}
                   <div>

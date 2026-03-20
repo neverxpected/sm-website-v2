@@ -39,19 +39,15 @@ export function FAQClient({ heading, subheading, badge, faqs }: FAQClientProps) 
             {badge}
           </div>
           <h2 className="text-3xl lg:text-5xl font-black text-white tracking-tight mb-4">
-            {heading.includes('Questions') ? (
-              <>
-                Common{' '}
-                <span style={{
-                  background: 'linear-gradient(90deg, #00E5FF, #9B30FF, #00E5FF)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}>
-                  Questions.
-                </span>
-              </>
-            ) : heading}
+            Common{' '}
+            <span style={{
+              background: 'linear-gradient(90deg, #00E5FF, #9B30FF, #00E5FF)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}>
+              Questions.
+            </span>
           </h2>
           <p className="text-base" style={{ color: 'rgba(240,244,255,0.5)' }}>
             {subheading}

@@ -31,9 +31,8 @@ export function StrategyCallPageClient({
     return () => window.removeEventListener('resize', calcHeight);
   }, []);
 
-  const calendlyEmbedUrl = calendlyUrl
-    ? `${calendlyUrl}?primary_color=00c2ff&layout=month_view`
-    : '';
+  const baseUrl = calendlyUrl || 'https://calendly.com/switchmediaco/strategy-call';
+  const calendlyEmbedUrl = `${baseUrl}?primary_color=00c2ff&layout=month_view`;
 
   return (
     <>
@@ -103,20 +102,18 @@ export function StrategyCallPageClient({
       </section>
 
       {/* Calendly embed */}
-      {calendlyEmbedUrl && (
-        <section className="relative z-10 pb-32 px-4 max-w-6xl mx-auto">
+      <section className="relative z-10 pb-32 px-4 max-w-6xl mx-auto">
+        <div
+          className="rounded-2xl overflow-hidden"
+          style={{ border: '1px solid rgba(255,255,255,0.07)', background: 'rgba(255,255,255,0.02)' }}
+        >
           <div
-            className="rounded-2xl overflow-hidden"
-            style={{ border: '1px solid rgba(255,255,255,0.07)', background: 'rgba(255,255,255,0.02)' }}
-          >
-            <div
-              className="calendly-inline-widget"
-              data-url={calendlyEmbedUrl}
-              style={{ minWidth: '320px', height: `${embedHeight}px` }}
-            />
-          </div>
-        </section>
-      )}
+            className="calendly-inline-widget"
+            data-url={calendlyEmbedUrl}
+            style={{ minWidth: '320px', height: `${embedHeight}px` }}
+          />
+        </div>
+      </section>
 
       <Script
         src="https://assets.calendly.com/assets/external/widget.js"

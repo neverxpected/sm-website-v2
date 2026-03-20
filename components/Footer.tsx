@@ -87,7 +87,7 @@ export default function Footer({
                   className="h-8 w-auto object-contain"
                 />
               </span>
-              <span className="text-base font-bold text-white tracking-tight">{siteName.split(' ')[0]}</span>
+              <span className="text-base font-bold text-white tracking-tight">{siteName.split(' ').slice(0, 2).join(' ')}</span>
             </Link>
 
             <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.35)' }}>

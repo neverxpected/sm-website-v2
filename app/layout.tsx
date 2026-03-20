@@ -82,7 +82,7 @@ export default async function RootLayout({
         {children}
         <Footer
           siteName={config.site_name ?? 'Switch Media Marketing'}
-          copyrightText={`© ${new Date().getFullYear()} ${config.site_name ?? 'Switch Media Marketing'} LLC. All rights reserved.`}
+          copyrightText={`\u00A9 2019\u2013${new Date().getFullYear()} | ${config.site_name ?? 'Switch Media Marketing'} | All rights reserved`}
           navItems={navItems}
         />
       </body>

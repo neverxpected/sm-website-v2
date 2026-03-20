@@ -289,23 +289,8 @@ export function OurWorkPageClient({
 
           <RevealSection delay={200}>
             <p className="text-lg lg:text-xl leading-relaxed max-w-2xl" style={{ color: 'rgba(240,244,255,0.55)' }}>
-              {subheading ? (
-                <>
-                  {subheading.split('Here is the data to prove it.')[0]}
-                  {subheading.includes('Here is the data to prove it.') && (
-                    <span style={{ color: 'rgba(240,244,255,0.85)', fontWeight: 600 }}>
-                      Here is the data to prove it.
-                    </span>
-                  )}
-                </>
-              ) : (
-                <>
-                  We don&apos;t just run ads. We build autonomous growth infrastructure.{' '}
-                  <span style={{ color: 'rgba(240,244,255,0.85)', fontWeight: 600 }}>
-                    Here is the data to prove it.
-                  </span>
-                </>
-              )}
+              We don&apos;t just run ads — we engineer measurable outcomes.{' '}
+              <strong className="text-white">Here is the data to prove it.</strong>
             </p>
           </RevealSection>
         </div>

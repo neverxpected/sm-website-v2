@@ -93,7 +93,10 @@ export function ServiceGrid({ heading, subheading, services }: ServiceGridProps)
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-14">
           <h2 className="text-3xl lg:text-4xl font-black text-white mb-4">
-            {heading}
+            What We{' '}
+            <span style={{ background: 'linear-gradient(90deg, #FF2D78, #9B30FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+              Do Best
+            </span>
           </h2>
           <p className="text-base max-w-xl mx-auto" style={{ color: 'rgba(220,230,255,0.5)' }}>
             {subheading}
@@ -135,30 +138,28 @@ export function ServiceGrid({ heading, subheading, services }: ServiceGridProps)
 
             <hr style={{ borderColor: 'rgba(0,0,0,0.08)' }} />
 
-            {paidPlatforms.length > 0 && (
-              <div className="grid grid-cols-2 gap-3">
-                {paidPlatforms.map((p) => {
-                  const { iconBg, icon } = getPaidIcon(p.name);
-                  return (
-                    <Link
-                      key={p.href}
-                      href={p.href}
-                      className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold transition-all duration-200 hover:scale-105"
-                      style={{
-                        background: '#F3F4F6',
-                        border: '1px solid rgba(0,0,0,0.1)',
-                        color: '#374151',
-                      }}
-                    >
-                      <span className={`w-6 h-6 rounded-lg ${iconBg} text-white flex items-center justify-center shrink-0`}>
-                        {icon}
-                      </span>
-                      {p.name}
-                    </Link>
-                  );
-                })}
-              </div>
-            )}
+            <div className="grid grid-cols-2 gap-3">
+              {paidPlatforms.map((p) => {
+                const { iconBg, icon } = getPaidIcon(p.name);
+                return (
+                  <Link
+                    key={p.href}
+                    href={p.href}
+                    className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold transition-all duration-200 hover:scale-105"
+                    style={{
+                      background: '#F3F4F6',
+                      border: '1px solid rgba(0,0,0,0.1)',
+                      color: '#374151',
+                    }}
+                  >
+                    <span className={`w-6 h-6 rounded-lg ${iconBg} text-white flex items-center justify-center shrink-0`}>
+                      {icon}
+                    </span>
+                    {p.name}
+                  </Link>
+                );
+              })}
+            </div>
           </div>
 
           {/* AI Automation Card */}
@@ -195,30 +196,28 @@ export function ServiceGrid({ heading, subheading, services }: ServiceGridProps)
 
             <hr style={{ borderColor: 'rgba(0,0,0,0.08)' }} />
 
-            {aiPlatforms.length > 0 && (
-              <div className="grid grid-cols-2 gap-3">
-                {aiPlatforms.map((p) => {
-                  const { iconBg, icon } = getAiIcon(p.name);
-                  return (
-                    <Link
-                      key={p.href}
-                      href={p.href}
-                      className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold transition-all duration-200 hover:scale-105"
-                      style={{
-                        background: '#F3F4F6',
-                        border: '1px solid rgba(0,0,0,0.1)',
-                        color: '#374151',
-                      }}
-                    >
-                      <span className={`w-6 h-6 rounded-lg ${iconBg} text-white flex items-center justify-center shrink-0`}>
-                        {icon}
-                      </span>
-                      {p.name}
-                    </Link>
-                  );
-                })}
-              </div>
-            )}
+            <div className="grid grid-cols-2 gap-3">
+              {aiPlatforms.map((p) => {
+                const { iconBg, icon } = getAiIcon(p.name);
+                return (
+                  <Link
+                    key={p.href}
+                    href={p.href}
+                    className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold transition-all duration-200 hover:scale-105"
+                    style={{
+                      background: '#F3F4F6',
+                      border: '1px solid rgba(0,0,0,0.1)',
+                      color: '#374151',
+                    }}
+                  >
+                    <span className={`w-6 h-6 rounded-lg ${iconBg} text-white flex items-center justify-center shrink-0`}>
+                      {icon}
+                    </span>
+                    {p.name}
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

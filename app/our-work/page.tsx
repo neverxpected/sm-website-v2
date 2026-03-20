@@ -34,7 +34,7 @@ export default async function OurWorkPage() {
         heading={headerSection?.heading ?? 'Our Work'}
         subheading={headerSection?.subheading ?? ''}
         caseStudies={caseStudies}
-        ctaHeading={ctaSection?.heading ?? "Ready to become our next success story?"}
+        ctaHeading={ctaSection?.heading ?? "Let's build your case study."}
         ctaText={ctaSection?.cta_text ?? 'Book a Strategy Call'}
         ctaUrl={ctaSection?.cta_url ?? '/strategy-call'}
       />

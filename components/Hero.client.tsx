@@ -9,9 +9,16 @@ export interface HeroStat {
   label: string;
 }
 
+export interface HeadlineLine {
+  text: string;
+  hasGradient: boolean;
+  className: string;
+  delay: number;
+}
+
 interface HeroClientProps {
   eyebrow: string;
-  headline: string;
+  headlineLines: HeadlineLine[];
   stats: HeroStat[];
   trustBadges: string[];
   ctaText: string;
@@ -20,7 +27,7 @@ interface HeroClientProps {
 
 export function HeroClient({
   eyebrow,
-  headline,
+  headlineLines,
   stats,
   trustBadges,
   ctaText,
@@ -107,31 +114,47 @@ export function HeroClient({
           </div>
 
           {/* Headline */}
+          <style>{`
+            @keyframes cheatCodeShimmer {
+              0%   { background-position: 200% center; }
+              100% { background-position: -200% center; }
+            }
+          `}</style>
           <h1
             className="font-black tracking-tight text-white leading-[0.95] mb-8"
             style={{ fontWeight: 800 }}
           >
-            <span className="reveal block text-2xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl reveal-delay-100">
-              <style>{`
-                @keyframes cheatCodeShimmer {
-                  0%   { background-position: 200% center; }
-                  100% { background-position: -200% center; }
-                }
-              `}</style>
+            {headlineLines.map((line, i) => (
               <span
-                style={{
-                  background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  backgroundSize: '200% auto',
-                  animation: 'cheatCodeShimmer 4s linear infinite',
-                  display: 'inline-block',
-                }}
+                key={i}
+                className={`reveal block ${line.className} reveal-delay-${line.delay}`}
               >
-                {headline}
+                {line.hasGradient ? (
+                  <>
+                    {line.text.split(/(\bCHEAT CODE\b)/i).map((part, j) =>
+                      /CHEAT CODE/i.test(part) ? (
+                        <span
+                          key={j}
+                          style={{
+                            background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
+                            WebkitBackgroundClip: 'text',
+                            WebkitTextFillColor: 'transparent',
+                            backgroundClip: 'text',
+                            backgroundSize: '200% auto',
+                            animation: 'cheatCodeShimmer 4s linear infinite',
+                            display: 'inline-block',
+                          }}
+                        >
+                          {part}
+                        </span>
+                      ) : part
+                    )}
+                  </>
+                ) : (
+                  line.text
+                )}
               </span>
-            </span>
+            ))}
           </h1>
 
           {/* Stats bar — above CTAs */}

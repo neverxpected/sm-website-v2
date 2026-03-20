@@ -86,6 +86,7 @@ export default async function HomePage() {
   const aiAdvantageTabs = (aiAdvantage?.content_data ?? []) as unknown as AIAdvantageTab[]
 
   return (
+    <div className="grain">
     <main className="relative min-h-screen overflow-hidden">
       <JsonLd data={page.seo.structured_data} />
 
@@ -189,5 +190,6 @@ export default async function HomePage() {
         logos={clientLogos.map((l) => ({ alt_text: l.alt_text, image_url: l.image_url }))}
       />
     </main>
+    </div>
   )
 }

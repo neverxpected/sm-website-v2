@@ -112,7 +112,7 @@ export default function MeetTheTeam({ heading, subheading, badge, teamMembers }:
             }
           `}</style>
           <h2 className="reveal reveal-delay-100 text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
-            {heading}{" "}
+            Meet The{' '}
             <span
               style={{
                 background: "linear-gradient(90deg, #FF2D78, #9B30FF, #FF2D78)",

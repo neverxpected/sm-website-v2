@@ -153,7 +153,19 @@ export function HowItWorksClient({
             className="text-3xl lg:text-5xl font-black text-white tracking-tight mb-4"
             style={reveal(100)}
           >
-            {heading}
+            From zero to{' '}
+            <span style={{
+              background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              backgroundSize: '200% auto',
+              animation: 'howItWorksShimmer 4s linear infinite',
+              display: 'inline-block',
+              paddingBottom: '0.05em',
+            }}>
+              results.
+            </span>
           </h2>
 
           <p

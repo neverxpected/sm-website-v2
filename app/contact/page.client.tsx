@@ -311,8 +311,10 @@ export function ContactPageClient({
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.15em] mb-1" style={{ color: 'rgba(240,244,255,0.35)' }}>Email</p>
                 <a href={`mailto:${contactEmail}`}
-                  className="text-sm font-semibold transition-colors duration-200 hover:opacity-70"
-                  style={{ color: '#9B30FF' }}>
+                  className="text-sm font-semibold transition-colors duration-200"
+                  style={{ color: '#9B30FF' }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = '#FF2D78'; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = '#9B30FF'; }}>
                   {contactEmail}
                 </a>
               </div>
@@ -325,6 +327,14 @@ export function ContactPageClient({
                 background: 'linear-gradient(135deg, rgba(255,45,120,0.1), rgba(155,48,255,0.1))',
                 border: '1px solid rgba(255,45,120,0.2)',
                 ...reveal(sidebarVisible, 200),
+              }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,45,120,0.45)';
+                (e.currentTarget as HTMLElement).style.boxShadow = '0 0 24px rgba(255,45,120,0.12)';
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,45,120,0.2)';
+                (e.currentTarget as HTMLElement).style.boxShadow = 'none';
               }}>
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.15em] mb-1" style={{ color: 'rgba(240,244,255,0.35)' }}>Direct Access</p>

@@ -177,7 +177,7 @@ export default function ServicePageTemplate({
       </section>
 
       {/* Services Section */}
-      {services && services.length > 0 && servicesSectionTitle && (
+      {services && services.length > 0 && (
         <section className="px-6 lg:px-8 pb-24" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
           <div className="max-w-5xl mx-auto pt-24">
             <div className="mb-12">
@@ -189,7 +189,7 @@ export default function ServicePageTemplate({
                   {servicesSectionBadge}
                 </p>
               )}
-              <h2 className="text-3xl lg:text-4xl font-black text-white">{servicesSectionTitle}</h2>
+              <h2 className="text-3xl lg:text-4xl font-black text-white">{servicesSectionTitle || 'Our Services'}</h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -222,7 +222,7 @@ export default function ServicePageTemplate({
       )}
 
       {/* Technical Features Section */}
-      {technicalFeatures && technicalFeatures.length > 0 && technicalSectionTitle && (
+      {technicalFeatures && technicalFeatures.length > 0 && (
         <section className="px-6 lg:px-8 pb-24" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
           <div className="max-w-5xl mx-auto pt-24">
             <div className="mb-12">
@@ -234,7 +234,7 @@ export default function ServicePageTemplate({
                   {technicalSectionBadge}
                 </p>
               )}
-              <h2 className="text-3xl lg:text-4xl font-black text-white">{technicalSectionTitle}</h2>
+              <h2 className="text-3xl lg:text-4xl font-black text-white">{technicalSectionTitle || 'Technical Features'}</h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -260,7 +260,7 @@ export default function ServicePageTemplate({
       )}
 
       {/* Process Timeline Section */}
-      {processSteps && processSteps.length > 0 && processSectionTitle && (
+      {processSteps && processSteps.length > 0 && (
         <section className="px-6 lg:px-8 pb-24" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
           <div className="max-w-5xl mx-auto pt-24">
             <div className="mb-12">
@@ -272,7 +272,7 @@ export default function ServicePageTemplate({
                   {processSectionBadge}
                 </p>
               )}
-              <h2 className="text-3xl lg:text-4xl font-black text-white">{processSectionTitle}</h2>
+              <h2 className="text-3xl lg:text-4xl font-black text-white">{processSectionTitle || 'Our Process'}</h2>
             </div>
 
             <div className="flex flex-col gap-0">

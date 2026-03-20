@@ -154,22 +154,18 @@ export function AboutPageClient({
         </div>
         <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black tracking-tight leading-tight mb-6"
           style={reveal(heroVisible, 100)}>
-          {heading.split(/We've been living it from the start\./i).length > 1 ? (
-            <>
-              {heading.split(/We've been living it from the start\./i)[0]}
-              <span style={{
-                background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                backgroundSize: '200% auto',
-                animation: 'aboutHeadlineShimmer 4s linear infinite',
-                display: 'inline',
-              }}>
-                We&apos;ve been living it from the start.
-              </span>
-            </>
-          ) : heading}
+          We didn&apos;t learn marketing from a textbook.{' '}
+          <span style={{
+            background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            backgroundSize: '200% auto',
+            animation: 'aboutHeadlineShimmer 4s linear infinite',
+            display: 'inline',
+          }}>
+            We&apos;ve been living it from the start.
+          </span>
         </h1>
         <p className="text-base leading-relaxed" style={{ color: 'rgba(240,244,255,0.5)', ...reveal(heroVisible, 200) }}>
           {subheading}
