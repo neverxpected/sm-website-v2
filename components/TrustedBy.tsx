@@ -38,7 +38,7 @@ export default function TrustedBy() {
         }
       `}</style>
       <div className="trusted-by-label-wrap max-w-7xl mx-auto px-4 lg:px-8 mb-8 text-center">
-        <p className="trusted-by-label text-xl uppercase tracking-[0.35em]" style={{ color: '#0d0c0c', fontFamily: 'var(--font-orbitron), sans-serif', fontWeight: 500 }}>
+        <p className="trusted-by-label text-xl uppercase tracking-[0.35em]" style={{ color: '#9CA3AF', fontFamily: 'var(--font-orbitron), sans-serif', fontWeight: 500 }}>
           Trusted By
         </p>
       </div>
@@ -60,7 +60,7 @@ export default function TrustedBy() {
               {logos.map((logo, i) => (
                 <div
                   key={i}
-                  className="inline-flex items-center justify-center mx-3 shrink-0"
+                  className="inline-flex items-center justify-center mx-1 sm:mx-3 shrink-0"
                   style={{ width: 160, height: 90 }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}

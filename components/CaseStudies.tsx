@@ -83,84 +83,92 @@ export default function CaseStudies() {
           </p>
         </div>
 
-        {/* Alternating rows */}
-        <div className="flex flex-col gap-6">
+        {/* Case study cards with hero stats */}
+        <style>{`
+          @keyframes statPulse {
+            0%, 100% { text-shadow: 0 0 20px currentColor; }
+            50% { text-shadow: 0 0 40px currentColor, 0 0 80px currentColor; }
+          }
+        `}</style>
+        <div className="flex flex-col gap-16">
           {cases.map((c, i) => {
             const isReversed = i % 2 === 1;
             return (
-              <div
-                key={c.name}
-                className={`reveal reveal-delay-${(i + 1) * 100} flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} rounded-3xl overflow-hidden`}
-                style={{
-                  background: '#000000',
-                  border: `1px solid ${c.accentHex}88`,
-                  boxShadow: `0 0 30px ${c.accentHex}55, 0 0 80px ${c.accentHex}20, 0 0 160px ${c.accentHex}08`,
-                  minHeight: '180px',
-                }}
-              >
-                {/* Photo */}
-                <div className="relative lg:w-[32%] shrink-0 overflow-hidden" style={{ minHeight: '140px' }}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={c.photo}
-                    alt={c.name}
-                    className="absolute inset-0 w-full h-full object-cover"
-                    style={{ objectPosition: 'center top' }}
-                  />
-                  {/* Gradient bleed toward content side (desktop only) */}
-                  <div
-                    className="absolute inset-0 hidden lg:block"
-                    style={{
-                      background: isReversed
-                        ? 'linear-gradient(to left, rgba(0,0,0,0.5) 0%, transparent 50%)'
-                        : 'linear-gradient(to right, rgba(0,0,0,0.5) 0%, transparent 50%)',
-                    }}
-                  />
-                  {/* Category badge */}
-                  <div className="absolute top-4 left-4 z-10">
-                    <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full"
-                      style={{ background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(8px)', color: 'rgba(240,244,255,0.9)', border: '1px solid rgba(255,255,255,0.15)' }}>
-                      {c.category}
-                    </span>
-                  </div>
+              <div key={c.name} className={`reveal reveal-delay-${(i + 1) * 100}`}>
+                {/* Hero Stats Banner */}
+                <div className="flex items-center justify-center gap-8 sm:gap-16 mb-6">
+                  {c.stats.map((stat) => (
+                    <div key={stat.label} className="text-center">
+                      <p className="text-4xl sm:text-5xl lg:text-6xl font-black" style={{
+                        background: `linear-gradient(135deg, ${c.accentHex}, ${c.accentHex2})`,
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        backgroundClip: 'text',
+                        filter: `drop-shadow(0 0 20px ${c.accentHex}60)`,
+                      }}>
+                        {stat.value}
+                      </p>
+                      <p className="text-[10px] sm:text-xs uppercase tracking-[0.2em] font-bold mt-1" style={{ color: 'rgba(240,244,255,0.4)' }}>
+                        {stat.label}
+                      </p>
+                    </div>
+                  ))}
                 </div>
 
-                {/* Content */}
-                <div className="flex flex-col justify-center gap-3 p-4 lg:p-6 flex-1" style={{ background: '#ffffff' }}>
-                  {/* Accent line */}
-                  <div className="w-10 h-0.5 rounded-full" style={{ background: `linear-gradient(90deg, ${c.accentHex}, ${c.accentHex2})` }} />
-
-                  <div>
-                    <h3 className="text-base lg:text-lg font-black mb-1" style={{ color: '#111827' }}>{c.name}</h3>
-                    <p className="text-xs leading-relaxed line-clamp-3" style={{ color: '#4B5563' }}>{c.description}</p>
+                {/* Card */}
+                <div
+                  className={`flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} rounded-3xl overflow-hidden`}
+                  style={{
+                    background: '#000000',
+                    border: `1px solid ${c.accentHex}88`,
+                    boxShadow: `0 0 30px ${c.accentHex}55, 0 0 80px ${c.accentHex}20, 0 0 160px ${c.accentHex}08`,
+                    minHeight: '180px',
+                  }}
+                >
+                  {/* Photo */}
+                  <div className="relative lg:w-[32%] shrink-0 overflow-hidden" style={{ minHeight: '140px' }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={c.photo}
+                      alt={c.name}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      style={{ objectPosition: 'center top' }}
+                    />
+                    <div
+                      className="absolute inset-0 hidden lg:block"
+                      style={{
+                        background: isReversed
+                          ? 'linear-gradient(to left, rgba(0,0,0,0.5) 0%, transparent 50%)'
+                          : 'linear-gradient(to right, rgba(0,0,0,0.5) 0%, transparent 50%)',
+                      }}
+                    />
+                    <div className="absolute top-4 left-4 z-10">
+                      <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full"
+                        style={{ background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(8px)', color: 'rgba(240,244,255,0.9)', border: '1px solid rgba(255,255,255,0.15)' }}>
+                        {c.category}
+                      </span>
+                    </div>
                   </div>
 
-                  {/* Stats — horizontal pills */}
-                  <div className="flex flex-nowrap gap-2">
-                    {c.stats.map((stat) => (
-                      <div key={stat.label} className="flex items-center gap-2 px-3 py-2 rounded-lg"
-                        style={{ background: '#F3F4F6', border: '1px solid rgba(0,0,0,0.08)' }}>
-                        <span className="text-sm">{stat.emoji}</span>
-                        <div>
-                          <p className="text-[9px] uppercase tracking-widest font-bold" style={{ color: '#6B7280' }}>{stat.label}</p>
-                          <p className="text-base font-black leading-tight" style={{ color: '#111827' }}>{stat.value}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* CTA link */}
-                  <div className="text-right sm:text-left">
-                    <Link
-                      href={c.href}
-                      className="inline-flex items-center gap-2 text-sm font-bold transition-all duration-300 hover:gap-3"
-                      style={{ color: c.accentHex }}
-                    >
-                      Work with us
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-4 h-4">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                      </svg>
-                    </Link>
+                  {/* Content */}
+                  <div className="flex flex-col justify-center gap-3 p-4 lg:p-6 flex-1" style={{ background: '#ffffff' }}>
+                    <div className="w-10 h-0.5 rounded-full" style={{ background: `linear-gradient(90deg, ${c.accentHex}, ${c.accentHex2})` }} />
+                    <div>
+                      <h3 className="text-base lg:text-lg font-black mb-1" style={{ color: '#111827' }}>{c.name}</h3>
+                      <p className="text-xs leading-relaxed line-clamp-3" style={{ color: '#4B5563' }}>{c.description}</p>
+                    </div>
+                    <div className="text-right sm:text-left">
+                      <Link
+                        href={c.href}
+                        className="inline-flex items-center gap-2 text-sm font-bold transition-all duration-300 hover:gap-3"
+                        style={{ color: c.accentHex }}
+                      >
+                        Work with us
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-4 h-4">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                        </svg>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>

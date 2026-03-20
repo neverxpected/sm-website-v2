@@ -76,7 +76,7 @@ export default function StrategyCallPage() {
                 </h1>
 
                 <p className="text-base leading-relaxed max-w-xl mx-auto" style={{ color: 'rgba(240,244,255,0.55)' }}>
-                    Pick a time that works for you. We&apos;ll review your current marketing, identify the biggest growth levers, and map out a precision plan — no fluff, no pressure.
+                    Pick a time that works for you. We&apos;ll review your current marketing, identify the biggest growth levers, and map out a precision plan. No fluff, no pressure.
                 </p>
             </section>
 
