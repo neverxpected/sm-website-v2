@@ -97,7 +97,7 @@ export default function GoogleAdsPage() {
             Google Advertising
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-7xl font-black tracking-tight leading-[1] mb-8 text-white">
+          <h1 className="text-3xl sm:text-4xl lg:text-[46px] font-black tracking-tight leading-[1] mb-8 text-white">
             When Someone Searches for What You Sell,<br />
             <style>{`
               @keyframes googleAdsShimmer {
@@ -105,7 +105,7 @@ export default function GoogleAdsPage() {
                 100% { background-position: -200% center; }
               }
             `}</style>
-            <span style={{
+            <span className="lg:text-[46px]" style={{
               background: 'linear-gradient(90deg, #4285F4, #9B30FF, #4285F4)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',

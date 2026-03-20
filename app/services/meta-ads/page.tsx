@@ -41,7 +41,7 @@ const capabilities = [
   {
     title: "Targeting That Finds Buyers",
     description:
-      "We build custom audience stacks using first-party data, lookalikes, and behavioral signals. We layer interest, intent, and retargeting pools to put your ads in front of people who are actually ready to spend money.",
+      "We build out a proper funnel from top to bottom so you're targeting people at each stage of the sales journey. Hitting that cold audience with interests based and lookalike audiences so we fill the pipeline and then retarget the warmer audience with specific retargeting ads is the framework we follow.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c4.97 0 9 4.03 9 9s-4.03 9-9 9-9-4.03-9-9 4.03-9 9-9z" />
@@ -53,7 +53,7 @@ const capabilities = [
   {
     title: "Creative That Converts",
     description:
-      "We develop and test static, video, and UGC ad creative at volume. Every format is cycled through structured A/B frameworks to find what converts at each stage of your funnel -- then we scale the winners.",
+      "Testing a variety of creative from static to video to UGC at volume is a critical move. Every format is battle tested to find what converts at each stage of your funnel and then we chop off the losers and scale the winners.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -64,7 +64,7 @@ const capabilities = [
   {
     title: "Tracking That Works",
     description:
-      "Server-side Conversions API paired with pixel-based tracking recovers signal lost to iOS restrictions and ad blockers. You get full attribution visibility across every conversion event so you know exactly what's working.",
+      "Since the iOS restrictions went into place years ago, getting proper attribution has been tough for everyone. Fortunately there are a few ways to still get quality attribution with the proper setup so everyone can be on the same page about what is working and what isn't.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
         <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
@@ -91,15 +91,15 @@ export default function MetaAdsPage() {
             Meta Advertising
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-7xl font-black tracking-tight leading-[1] mb-8 text-white">
-            Your Customers Are on Facebook and Instagram Right Now.<br />
+          <h1 className="text-3xl sm:text-4xl lg:text-[46px] font-black tracking-tight leading-[1] mb-8 text-white">
+            Your Customers Are on Meta Right Now.{' '}
             <style>{`
               @keyframes metaAdsShimmer {
                 0%   { background-position: 200% center; }
                 100% { background-position: -200% center; }
               }
             `}</style>
-            <span style={{
+            <span className="lg:text-[46px]" style={{
               background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #FF2D78)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
@@ -108,12 +108,12 @@ export default function MetaAdsPage() {
               animation: 'metaAdsShimmer 4s linear infinite',
               display: 'inline-block',
               paddingBottom: '0.1em',
-            }}>The Question Is Whether They&apos;re Seeing You or Your Competitor.</span>
+            }}>Are They Seeing You?</span>
           </h1>
 
           <p className="text-lg lg:text-xl max-w-3xl leading-relaxed mb-12"
             style={{ color: 'rgba(240,244,255,0.55)' }}>
-            We&apos;ve run Meta campaigns across 13 different industries, med spas, plastic surgeons, gyms, restaurants, ecommerce, pest control and more. The platforms change. The principles don&apos;t. We know what makes people stop scrolling, click, and buy. And we build campaigns around that knowledge personally. Not someone who just passed a certification exam, not an outsourced team halfway across the world. Us.
+            The platforms change, the principles don&apos;t. We know what makes people stop scrolling, click, and buy. And we build campaigns around that knowledge personally.
           </p>
 
           <Link
@@ -121,10 +121,10 @@ export default function MetaAdsPage() {
             className="inline-flex items-center justify-center px-10 py-4 text-white font-bold text-base rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap"
             style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', boxShadow: '0 0 30px rgba(255,45,120,0.35)' }}
           >
-            See If We&apos;re the Right Fit &rarr;
+            Get a Free Meta Account Audit &rarr;
           </Link>
           <p className="text-sm mt-4" style={{ color: 'rgba(240,244,255,0.4)' }}>
-            Free strategy call. We&apos;ll tell you honestly if Meta is right for your business right now.
+            We&apos;ll tell you honestly if Meta is right for your business.
           </p>
         </div>
       </section>
@@ -137,7 +137,7 @@ export default function MetaAdsPage() {
               Real Results. Real Businesses.
             </p>
             <h2 className="text-3xl lg:text-4xl font-black text-white mb-3">
-              What Happens When Meta Is Done Right.
+              Meta Ads Done Right.
             </h2>
             <p className="text-base leading-relaxed" style={{ color: 'rgba(240,244,255,0.5)' }}>
               Across 13 industries and millions in managed spend, these are the kinds of numbers that change what a business can afford to dream about.
@@ -189,10 +189,10 @@ export default function MetaAdsPage() {
               No Black Box. No Mystery.
             </p>
             <h2 className="text-3xl lg:text-4xl font-black text-white mb-3">
-              How We Actually Run Your Campaigns.
+              Our Meta Framework.
             </h2>
             <p className="text-base leading-relaxed" style={{ color: 'rgba(240,244,255,0.5)' }}>
-              No mystery. No black box reporting. Here&apos;s exactly what we do and why it works.
+              Here&apos;s exactly what we do and why it works.
             </p>
           </div>
 
@@ -222,7 +222,7 @@ export default function MetaAdsPage() {
               Heard This Before?
             </p>
             <h2 className="text-3xl lg:text-4xl font-black text-white mb-4">
-              Tired of <span style={{ whiteSpace: 'nowrap' }}>Paying Meta</span><br /> and Wondering Where the Money Went?
+              Tired of <span style={{ whiteSpace: 'nowrap' }}>Paying Meta</span><br /> &amp; Wondering Where the Money Went?
             </h2>
             <p className="text-base mb-10" style={{ color: 'rgba(240,244,255,0.5)' }}>
               That&apos;s the most common thing we hear on the first call. Budgets burning, results inconsistent, agency blame-shifting the algorithm. We come in, audit what&apos;s actually happening inside your account, and tell you the truth about what needs to change. No obligation. No pitch. Just clarity.

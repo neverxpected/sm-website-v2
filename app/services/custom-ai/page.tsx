@@ -165,10 +165,10 @@ export default function CustomAIPage() {
             Custom AI Solutions
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-7xl font-black tracking-tight leading-[1.05] mb-8 text-white"
+          <h1 className="text-3xl sm:text-4xl lg:text-[46px] font-black tracking-tight leading-[1.05] mb-8 text-white"
             style={reveal(heroVisible, 100)}>
             Your Business Is Unique.<br />
-            <span style={{
+            <span className="lg:text-[46px]" style={{
               background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
