@@ -129,7 +129,7 @@ export default function MeetTheTeam() {
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-3.5 h-3.5 shrink-0">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
             </svg>
-            The Crew Behind The Results
+            Meet the Team
           </div>
           <style>{`
             @keyframes teamShimmer {
@@ -138,7 +138,7 @@ export default function MeetTheTeam() {
             }
           `}</style>
           <h2 className="reveal reveal-delay-100 text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
-            The People<br className="sm:hidden" /> Actually Running{' '}
+            The Team Behind{' '}
             <span style={{
               background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #FF2D78)',
               WebkitBackgroundClip: 'text',
@@ -149,7 +149,7 @@ export default function MeetTheTeam() {
               display: 'inline-block',
               paddingBottom: '0.1em',
             }}>
-              Your Campaigns.
+              The Results.
             </span>
           </h2>
           <p className="reveal reveal-delay-200 text-base sm:text-lg max-w-3xl mx-auto" style={{ color: 'rgba(240,244,255,0.45)' }}>

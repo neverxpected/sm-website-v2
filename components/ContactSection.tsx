@@ -38,6 +38,14 @@ export default function ContactSection() {
       <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(circle, rgba(155,48,255,0.07) 0%, transparent 70%)' }} />
 
+      {/* Graph paper grid — fades from bottom (opaque) to top (transparent) */}
+      <div className="hidden lg:block absolute inset-0 pointer-events-none z-0" style={{
+        backgroundImage: 'linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px)',
+        backgroundSize: '64px 64px',
+        WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,1) 100%)',
+        maskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,1) 100%)',
+      }} />
+
       <div className="max-w-7xl mx-auto relative z-10">
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5%', alignItems: 'flex-start' }}>
 

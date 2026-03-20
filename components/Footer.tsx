@@ -116,7 +116,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-center sm:justify-end gap-4 sm:gap-6"
           style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
           <p className="text-xs text-center sm:text-left order-2 sm:order-1" style={{ color: 'rgba(240,244,255,0.25)' }}>
             &copy; 2019&ndash;{new Date().getFullYear()} | Switch Media Marketing | All rights reserved

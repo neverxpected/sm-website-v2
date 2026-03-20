@@ -141,7 +141,7 @@ export default function Hero() {
               <span style={{
                 display: 'block',
                 whiteSpace: 'nowrap',
-                padding: '0 0.1em',
+                padding: '0 0.15em 0.05em',
                 background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',

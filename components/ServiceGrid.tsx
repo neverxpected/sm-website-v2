@@ -174,7 +174,7 @@ export default function ServiceGrid() {
         {/* ═══════ MOBILE: 3×3 ClickUp-style icon grid ═══════ */}
         <div className="lg:hidden">
           <div className="grid grid-cols-3 rounded-2xl overflow-hidden"
-            style={{ border: '1px solid rgba(0,0,0,0.08)', background: '#ffffff' }}>
+            style={{ background: '#ffffff' }}>
             {allServices.map((s, i) => (
               <Link
                 key={s.href}
