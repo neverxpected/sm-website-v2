@@ -92,7 +92,7 @@ export default function NextdoorAdsPage() {
             Nextdoor Advertising
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-7xl font-black tracking-tight leading-[1] mb-8 text-white">
+          <h1 className="text-3xl sm:text-4xl lg:text-[46px] font-black tracking-tight leading-[1] mb-8 text-white">
             Your Neighbors Are Looking for<br />
             <style>{`
               @keyframes nextdoorShimmer {
@@ -100,7 +100,7 @@ export default function NextdoorAdsPage() {
                 100% { background-position: -200% center; }
               }
             `}</style>
-            <span style={{
+            <span className="lg:text-[46px]" style={{
               background: 'linear-gradient(90deg, #00B450, #00D4AA, #00B450)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
