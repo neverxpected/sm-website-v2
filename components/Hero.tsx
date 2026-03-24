@@ -160,7 +160,7 @@ export default function Hero() {
                 backgroundClip: 'text',
                 backgroundSize: '200% auto',
                 animation: 'heroBorderSpin 3s linear infinite',
-              }}>Revenue.</span>
+              }}>Money.</span>
             </h1>
 
 
