@@ -95,7 +95,7 @@ export default function Footer() {
                   .footer-col-heading { color: #ffffff !important; }
                 }
               `}</style>
-              <p className="footer-col-heading text-xs font-bold uppercase tracking-[0.2em] mb-5" style={{ color: 'rgba(240,244,255,0.35)' }}>{col.heading}</p>
+              <p className="footer-col-heading text-xs font-bold uppercase tracking-[0.2em] mb-5" style={{ color: '#ffffff' }}>{col.heading}</p>
               <ul className="space-y-3">
                 {col.links.map((link) => (
                   <li key={link.label}>
@@ -118,8 +118,8 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-center sm:justify-end gap-4 sm:gap-6"
           style={{ borderTop: '1px solid rgba(255,255,255,0.07)' }}>
-          <p className="text-xs text-center sm:text-left order-2 sm:order-1" style={{ color: 'rgba(240,244,255,0.25)' }}>
-            &copy; 2019&ndash;{new Date().getFullYear()} | Switch Media Marketing | All rights reserved
+          <p className="text-xs text-center sm:text-left order-2 sm:order-1" style={{ color: '#ffffff' }}>
+            Switch Media | &copy; 2019&ndash;{new Date().getFullYear()} All Rights Reserved
           </p>
           <Link
             href="/strategy-call"
