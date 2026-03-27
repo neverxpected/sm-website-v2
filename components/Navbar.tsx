@@ -124,8 +124,8 @@ function DesktopDropdown({ label, links, scrolled }: { label: string; links: Nav
       onMouseLeave={() => setOpen(false)}
     >
       <button
-        className="flex items-center gap-1 text-sm font-medium transition-colors cursor-pointer"
-        style={{ color: '#2fe8a2' }}
+        className="flex items-center gap-1 text-sm font-medium transition-colors duration-300 cursor-pointer"
+        style={{ color: scrolled ? '#ffffff' : '#2fe8a2' }}
         aria-expanded={open}
         aria-haspopup="true"
       >
@@ -268,10 +268,10 @@ export default function Navbar() {
           <DesktopDropdown label="Paid Ads" links={paidAdsLinks} scrolled={scrolled} />
           <DesktopDropdown label="AI Automations" links={aiAutomationLinks} scrolled={scrolled} />
 
-          <Link href="/about" className="text-sm font-medium transition-colors" style={{ color: '#2fe8a2' }}>
+          <Link href="/about" className="text-sm font-medium transition-colors duration-300" style={{ color: scrolled ? '#ffffff' : '#2fe8a2' }}>
             About
           </Link>
-          <Link href="/contact" className="text-sm font-medium transition-colors" style={{ color: '#2fe8a2' }}>
+          <Link href="/contact" className="text-sm font-medium transition-colors duration-300" style={{ color: scrolled ? '#ffffff' : '#2fe8a2' }}>
             Contact
           </Link>
           <Link
