@@ -11,7 +11,7 @@ const testimonials = [
         location: 'Houston, TX',
         image: '/images/client-reviews/nate bran illuminate heights fitness.webp',
         stars: 5,
-        accent: '#FF2D78',
+        accent: '#2fe8a2',
         featured: true,
     },
     {
@@ -21,7 +21,7 @@ const testimonials = [
         location: 'Olathe, KS',
         image: '/images/client-reviews/Radiant Shoot August 2025 (79) (1).webp',
         stars: 5,
-        accent: '#9B30FF',
+        accent: '#2fe8a2',
         featured: false,
     },
     {
@@ -31,7 +31,7 @@ const testimonials = [
         location: 'Houston, TX',
         image: '/images/client-reviews/Tracey Tyler - Makaan Investments.webp',
         stars: 5,
-        accent: '#00E5FF',
+        accent: '#2fe8a2',
         featured: false,
     },
 ];
@@ -74,7 +74,7 @@ export default function Testimonials() {
                 {/* Header */}
                 <div className="text-center mb-16" style={reveal(0)}>
                     <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.25em]"
-                        style={{ background: 'rgba(155,48,255,0.1)', border: '1px solid rgba(155,48,255,0.25)', color: '#9B30FF' }}>
+                    style={{ background: 'rgba(47,232,162,0.1)', border: '1px solid rgba(47,232,162,0.25)', color: '#2fe8a2' }}>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-3.5 h-3.5 shrink-0">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
                         </svg>
@@ -83,7 +83,7 @@ export default function Testimonials() {
                     <h2 className="text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
                         Don&apos;t take our<br className="sm:hidden" />{' '}
                         <span style={{
-                            background: 'linear-gradient(90deg, #9B30FF, #FF2D78, #9B30FF)',
+                            background: 'linear-gradient(90deg, #2fe8a2, #5fffc2, #2fe8a2)',
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
                             backgroundClip: 'text',
@@ -103,7 +103,7 @@ export default function Testimonials() {
                     <div className="lg:col-span-3 rounded-3xl flex flex-col overflow-hidden"
                         style={{
                             border: `1px solid ${featured.accent}55`,
-                            boxShadow: `0 0 30px ${featured.accent}55, 0 0 80px ${featured.accent}20, 0 0 160px ${featured.accent}08`,
+                            boxShadow: `0 0 14px ${featured.accent}28, 0 0 40px ${featured.accent}0e`,
                             ...reveal(100),
                         }}>
                         {/* Top: author + stars (dark) */}
@@ -136,7 +136,7 @@ export default function Testimonials() {
                             <div key={i} className="card-hover flex-1 rounded-3xl flex flex-col overflow-hidden"
                                 style={{
                                     border: `1px solid ${t.accent}66`,
-                                    boxShadow: `0 0 30px ${t.accent}55, 0 0 80px ${t.accent}20, 0 0 160px ${t.accent}08`,
+                                    boxShadow: `0 0 14px ${t.accent}28, 0 0 40px ${t.accent}0e`,
                                     ...reveal(200 + i * 120),
                                 }}>
                                 {/* Top: author + stars (dark) */}

@@ -11,8 +11,8 @@ const cases = [
     description: "Rebecca came to us in 2021 running a mobile med spa. We built her Meta ad campaigns from scratch and focused on building a real patient pipeline. Over the next few years those ads helped generate over $1M in added revenue and enough demand that she opened a second location. She is still a client today.",
     href: "/contact",
     photo: "/images/client-results/radiant med spa olathe kansas.webp",
-    accentHex: "#FF2D78",
-    accentHex2: "#9B30FF",
+    accentHex: "#2fe8a2",
+    accentHex2: "#5fffc2",
     stats: [
       { emoji: "⏱️", label: "Worked Together", value: "5+ Years" },
       { emoji: "💰", label: "Added Revenue", value: "$1M+" },
@@ -24,8 +24,8 @@ const cases = [
     description: "Nate and Jourdan run one of the best gyms in Houston and they needed a lead pipeline that matched their ambition. Over 5 years we've generated more than 5,000 qualified leads for their membership programs. Their gym keeps growing and so does our partnership.",
     href: "/contact",
     photo: "/images/client-results/illuminate heights fitness.webp",
-    accentHex: "#00C8FF",
-    accentHex2: "#9B30FF",
+    accentHex: "#2fe8a2",
+    accentHex2: "#5fffc2",
     stats: [
       { emoji: "⏱️", label: "Worked Together", value: "4+ Years" },
       { emoji: "👥", label: "Leads Generated", value: "5,000+" },
@@ -37,8 +37,8 @@ const cases = [
     description: "Dr. Wijay and Dr. Andry are two of Houston's top plastic surgeons. Since 2022 we've helped them book over 5,000 consultations through paid advertising -- for procedures like liposuction, breast augmentations, tummy tucks and Semaglutide. They've since partnered with Elite Dermatology and we've scaled with them every step of the way.",
     href: "/contact",
     photo: "/images/client-results/oaks plastic surgery.webp",
-    accentHex: "#9B30FF",
-    accentHex2: "#FF2D78",
+    accentHex: "#2fe8a2",
+    accentHex2: "#5fffc2",
     stats: [
       { emoji: "⏱️", label: "Worked Together", value: "4+ Years" },
       { emoji: "👥", label: "Leads Generated", value: "4,500+" },
@@ -90,11 +90,11 @@ function CountUpStat({ value, label }: { value: string; label: string }) {
       <p className="font-black" style={{
         fontSize: 'clamp(28px, 5vw, 48px)',
         lineHeight: 1,
-        background: 'linear-gradient(135deg, #FF2D78, #9B30FF)',
+        background: 'linear-gradient(135deg, #2fe8a2, #5fffc2)',
         WebkitBackgroundClip: 'text',
         WebkitTextFillColor: 'transparent',
         backgroundClip: 'text',
-        filter: 'drop-shadow(0 0 20px rgba(255,45,120,0.5))',
+        filter: 'drop-shadow(0 0 20px rgba(47,232,162,0.5))',
       }}>
         {display}
       </p>
@@ -120,7 +120,7 @@ export default function CaseStudies() {
         {/* Header */}
         <div className="text-center mb-20">
           <div className="reveal inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.25em]"
-            style={{ background: 'rgba(0,229,255,0.08)', border: '1px solid rgba(0,229,255,0.2)', color: '#00E5FF' }}>
+            style={{ background: 'rgba(47,232,162,0.08)', border: '1px solid rgba(47,232,162,0.2)', color: '#2fe8a2' }}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-3.5 h-3.5 shrink-0">
               <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0" />
             </svg>
@@ -134,7 +134,7 @@ export default function CaseStudies() {
           `}</style>
           <h2 className="reveal reveal-delay-100 text-3xl lg:text-5xl font-black text-white tracking-tight mb-5">
             We Let the Numbers<br className="lg:hidden" />{' '}
-            <span style={{ background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #FF2D78)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', backgroundSize: '200% auto', animation: 'realGrowthShimmer 4s linear infinite', display: 'inline-block', paddingBottom: '0.1em' }}>
+            <span style={{ background: 'linear-gradient(90deg, #2fe8a2, #5fffc2, #2fe8a2)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', backgroundSize: '200% auto', animation: 'realGrowthShimmer 4s linear infinite', display: 'inline-block', paddingBottom: '0.1em' }}>
               Do the Talking.
             </span>
           </h2>
@@ -146,11 +146,11 @@ export default function CaseStudies() {
           {/* Mobile: card with title */}
           <div className="reveal reveal-delay-300 lg:hidden mt-10 relative rounded-2xl py-8 pt-10 px-3"
             style={{
-              background: 'rgba(255,45,120,0.04)',
-              border: '1px solid rgba(255,45,120,0.35)',
+              background: 'rgba(47,232,162,0.04)',
+              border: '1px solid rgba(47,232,162,0.35)',
             }}>
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-[9px] font-bold uppercase tracking-[0.2em] whitespace-nowrap"
-              style={{ background: '#ffffff', color: '#000000' }}>
+              style={{ background: '#2fe8a2', color: '#000000' }}>
               Our Track Record
             </span>
             <div className="grid grid-cols-3 gap-0">
@@ -162,14 +162,14 @@ export default function CaseStudies() {
                 <div key={stat.label} className="text-center relative px-1">
                   {idx > 0 && (
                     <div className="absolute left-0 top-1/2 -translate-y-1/2 w-px h-10"
-                      style={{ background: 'linear-gradient(to bottom, transparent, rgba(255,45,120,0.5), rgba(155,48,255,0.5), transparent)' }} />
+                      style={{ background: 'linear-gradient(to bottom, transparent, rgba(47,232,162,0.5), rgba(47,232,162,0.5), transparent)' }} />
                   )}
                   <p className="font-black text-2xl leading-none mb-2" style={{
-                    background: 'linear-gradient(135deg, #FF2D78, #9B30FF)',
+                    background: 'linear-gradient(135deg, #2fe8a2, #5fffc2)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text',
-                    filter: 'drop-shadow(0 0 20px rgba(255,45,120,0.5))',
+                    filter: 'drop-shadow(0 0 20px rgba(47,232,162,0.5))',
                   }}>
                     {stat.value}
                   </p>
@@ -184,9 +184,9 @@ export default function CaseStudies() {
           {/* Desktop: bare stats */}
           <div className="reveal reveal-delay-300 hidden lg:flex items-center justify-center mt-10">
             <div className="relative flex items-center justify-center px-12 py-8 pt-10 rounded-2xl"
-              style={{ border: '1px solid rgba(255,45,120,0.35)', background: 'rgba(255,45,120,0.04)' }}>
+              style={{ border: '1px solid rgba(47,232,162,0.35)', background: 'rgba(47,232,162,0.04)' }}>
               <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-5 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] whitespace-nowrap"
-                style={{ background: '#ffffff', color: '#000000' }}>
+                style={{ background: '#2fe8a2', color: '#000000' }}>
                 Our Track Record
               </span>
               {[
@@ -197,7 +197,7 @@ export default function CaseStudies() {
                 <div key={stat.label} className="flex items-center">
                   {idx > 0 && (
                     <div className="w-px h-16 mx-8 shrink-0"
-                      style={{ background: 'linear-gradient(to bottom, transparent, rgba(255,45,120,0.3), rgba(155,48,255,0.3), transparent)' }} />
+                      style={{ background: 'linear-gradient(to bottom, transparent, rgba(47,232,162,0.3), rgba(47,232,162,0.3), transparent)' }} />
                   )}
                   <div className="min-w-[160px] text-center">
                     <CountUpStat value={stat.value} label={stat.label} />
@@ -220,7 +220,7 @@ export default function CaseStudies() {
                 <div className="lg:hidden overflow-hidden rounded-3xl"
                   style={{
                     border: `1px solid ${c.accentHex}88`,
-                    boxShadow: `0 0 30px ${c.accentHex}55, 0 0 80px ${c.accentHex}20`,
+                    boxShadow: `0 0 14px ${c.accentHex}28, 0 0 40px ${c.accentHex}0e`,
                   }}
                 >
                   {/* Stats panel on top */}
@@ -303,7 +303,7 @@ export default function CaseStudies() {
                       background: '#000000',
                       border: `1px solid ${c.accentHex}88`,
                       borderRadius: statsOnRight ? '1.5rem 0 0 1.5rem' : '0 1.5rem 1.5rem 0',
-                      boxShadow: `0 0 30px ${c.accentHex}55, 0 0 80px ${c.accentHex}20`,
+                      boxShadow: `0 0 14px ${c.accentHex}28, 0 0 40px ${c.accentHex}0e`,
                       minHeight: '180px',
                     }}
                   >
@@ -363,7 +363,7 @@ export default function CaseStudies() {
                       borderLeft: statsOnRight ? 'none' : `1px solid ${c.accentHex}88`,
                       borderRight: statsOnRight ? `1px solid ${c.accentHex}88` : 'none',
                       borderRadius: statsOnRight ? '0 1.5rem 1.5rem 0' : '1.5rem 0 0 1.5rem',
-                      boxShadow: `0 0 30px ${c.accentHex}55, 0 0 80px ${c.accentHex}20`,
+                      boxShadow: `0 0 14px ${c.accentHex}28, 0 0 40px ${c.accentHex}0e`,
                       minWidth: '180px',
                     }}
                   >

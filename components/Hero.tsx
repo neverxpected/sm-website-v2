@@ -32,39 +32,42 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="grain" ref={heroRef} style={{ background: '#ffffff' }}>
+    <div className="grain" ref={heroRef} style={{ background: '#000000' }}>
 
       {/* ── HERO + TRUSTED BY — one unified section ─────────── */}
       <section
         className="relative overflow-hidden"
-        style={{ background: '#FFFFFF' }}
+        style={{ background: '#000000' }}
       >
         {/* CTA glow keyframe */}
         <style>{`
-              @keyframes ctaGlowPink {
-                0%, 100% { box-shadow: 0 0 16px rgba(255,45,120,0.4), 0 0 44px rgba(155,48,255,0.18); }
-                50%       { box-shadow: 0 0 32px rgba(255,45,120,0.75), 0 0 80px rgba(155,48,255,0.38); }
+              @keyframes ctaGlowMint {
+                0%, 100% { box-shadow: 0 0 16px rgba(47,232,162,0.4), 0 0 44px rgba(47,232,162,0.18); }
+                50%       { box-shadow: 0 0 32px rgba(47,232,162,0.75), 0 0 80px rgba(47,232,162,0.38); }
               }
-              @keyframes eyebrowGlowPink {
-                0%, 100% { box-shadow: 0 0 8px rgba(255,45,120,0.20), 0 0 20px rgba(255,45,120,0.08); border-color: rgba(255,45,120,0.30); }
-                50%       { box-shadow: 0 0 16px rgba(255,45,120,0.50), 0 0 40px rgba(255,45,120,0.20); border-color: rgba(255,45,120,0.60); }
+              @keyframes eyebrowGlowMint {
+                0%, 100% { box-shadow: 0 0 8px rgba(47,232,162,0.20), 0 0 20px rgba(47,232,162,0.08); border-color: rgba(47,232,162,0.30); }
+                50%       { box-shadow: 0 0 16px rgba(47,232,162,0.50), 0 0 40px rgba(47,232,162,0.20); border-color: rgba(47,232,162,0.60); }
               }
             `}</style>
 
-        {/* Graph paper grid background */}
+        {/* Subtle radial glow behind headline */}
         <div
-          className="hero-grid absolute inset-0 z-0"
+          className="absolute inset-0 z-0"
           style={{
-            backgroundImage: `repeating-linear-gradient(0deg, rgba(0,0,0,0.04) 0px, rgba(0,0,0,0.04) 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, rgba(0,0,0,0.04) 0px, rgba(0,0,0,0.04) 1px, transparent 1px, transparent 40px)`,
-            backgroundSize: '40px 40px',
+            background: 'radial-gradient(ellipse 70% 50% at 50% 30%, rgba(47,232,162,0.07) 0%, transparent 70%)',
+            pointerEvents: 'none',
           }}
         />
-        {/* Bottom fade to white */}
+
+        {/* Mint green graph paper grid — desktop only, fades out at bottom */}
         <div
-          className="absolute inset-0 z-[1]"
+          className="absolute inset-0 z-0 pointer-events-none"
           style={{
-            background: 'linear-gradient(to bottom, transparent 40%, white 100%)',
-            pointerEvents: 'none',
+            backgroundImage: 'linear-gradient(rgba(47,232,162,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(47,232,162,0.18) 1px, transparent 1px)',
+            backgroundSize: '64px 64px',
+            WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,1) 50%, transparent 100%)',
+            maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,1) 50%, transparent 100%)',
           }}
         />
 
@@ -128,7 +131,7 @@ export default function Hero() {
               className="reveal reveal-delay-100 tracking-tight hero-headline-main"
               style={{
                 fontWeight: 700,
-                color: '#000000',
+                color: '#ffffff',
                 fontSize: 'clamp(2.2rem, 7vw, 5.8rem)',
                 lineHeight: 1.1,
                 textAlign: 'center',
@@ -142,7 +145,7 @@ export default function Hero() {
                 display: 'block',
                 whiteSpace: 'nowrap',
                 padding: '0 0.15em 0.05em',
-                background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
+                background: 'linear-gradient(90deg, #2fe8a2, #5fffc2, #2fe8a2)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -154,7 +157,7 @@ export default function Hero() {
                 whiteSpace: 'nowrap',
                 padding: '0 0.1em',
                 marginTop: '-0.1em',
-                background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
+                background: 'linear-gradient(90deg, #2fe8a2, #5fffc2, #2fe8a2)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -166,7 +169,7 @@ export default function Hero() {
 
 
             {/* Sub-headline */}
-            <p className="reveal reveal-delay-300 hero-subline" style={{ maxWidth: '600px', margin: '1.5rem auto 2.5rem', fontSize: '16px', lineHeight: 1.85, color: 'rgba(26,26,46,0.55)', textAlign: 'center' }}>
+            <p className="reveal reveal-delay-300 hero-subline" style={{ maxWidth: '600px', margin: '1.5rem auto 2.5rem', fontSize: '16px', lineHeight: 1.85, color: 'rgba(255,255,255,0.55)', textAlign: 'center' }}>
               Paid Ads &amp; AI Systems That Make<br className="hero-subline-br" /> Competing Against You Genuinely Frustrating.
             </p>
 
@@ -176,19 +179,19 @@ export default function Hero() {
                 href="/strategy-call"
                 className="group relative inline-flex items-center justify-center text-center"
               >
-                {/* Gradient border layer — visible on hover */}
+                {/* Mint green border layer */}
                 <span
                   className="absolute -inset-[4px] rounded-[16px] opacity-100 transition-opacity duration-300"
                   style={{
-                    background: 'linear-gradient(135deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
+                    background: 'linear-gradient(135deg, #2fe8a2, #5fffc2, #2fe8a2)',
                     backgroundSize: '300% 300%',
                     animation: 'heroBorderSpin 3s linear infinite',
                   }}
                 />
                 {/* Inner button */}
                 <span
-                  className="hero-cta-inner relative inline-flex items-center justify-center text-sm sm:text-base font-bold text-white rounded-xl transition-transform duration-300 group-hover:scale-[1.01] active:scale-100"
-                  style={{ background: '#000000', padding: '0.85rem 2rem', whiteSpace: 'nowrap' }}
+                  className="hero-cta-inner relative inline-flex items-center justify-center text-sm sm:text-base font-bold rounded-xl transition-transform duration-300 group-hover:scale-[1.01] active:scale-100"
+                  style={{ background: '#000000', color: '#2fe8a2', padding: '0.85rem 2rem', whiteSpace: 'nowrap', border: '1px solid rgba(47,232,162,0.2)' }}
                 >
                   Let&apos;s Build Your Unfair Advantage →
                 </span>
@@ -196,8 +199,8 @@ export default function Hero() {
             </div>
 
             {/* Qualifier */}
-            <p className="reveal reveal-delay-500 text-xs italic hero-qualifier" style={{ color: 'rgba(26,26,46,0.4)', textAlign: 'center' }}>
-              Free strategy call. No pitch.<br className="sm:hidden" /> Just an honest look at your business.
+            <p className="reveal reveal-delay-500 text-xs italic hero-qualifier" style={{ color: 'rgba(255,255,255,0.35)', textAlign: 'center' }}>
+              <span className="hidden sm:inline">Free strategy call. </span>No pitch. Just an honest look at your business.
             </p>
 
           </div>

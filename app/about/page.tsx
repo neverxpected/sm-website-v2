@@ -39,6 +39,8 @@ const stats = [
     { value: 13, suffix: '', label: 'Industries Worked In' },
 ];
 
+const MINT = '#2fe8a2';
+
 // Animated counter hook
 function useCounter(target: number, duration = 2000, started = false) {
     const [count, setCount] = useState(0);
@@ -60,12 +62,7 @@ function StatCard({ stat, started }: { stat: typeof stats[0]; started: boolean }
     const count = useCounter(stat.value, 1800, started);
     return (
         <div className="text-center">
-            <p className="text-xl sm:text-3xl font-black mb-1" style={{
-                background: 'linear-gradient(135deg, #FF2D78, #9B30FF)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-            }}>
+            <p className="text-xl sm:text-3xl font-black mb-1" style={{ color: MINT }}>
                 {stat.prefix ?? ''}{count}{stat.suffix}
             </p>
             <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest sm:tracking-widest" style={{ color: 'rgba(240,244,255,0.4)', letterSpacing: '0.1em' }}>
@@ -79,14 +76,12 @@ export default function AboutPage() {
     // Scroll reveal refs
     const heroRef = useRef<HTMLElement>(null);
     const photoRef = useRef<HTMLElement>(null);
-    const introRef = useRef<HTMLElement>(null);
     const timelineRef = useRef<HTMLElement>(null);
     const statsRef = useRef<HTMLElement>(null);
     const ctaRef = useRef<HTMLElement>(null);
 
     const [heroVisible, setHeroVisible] = useState(false);
     const [photoVisible, setPhotoVisible] = useState(false);
-    const [introVisible, setIntroVisible] = useState(false);
     const [timelineVisible, setTimelineVisible] = useState(false);
     const [statsVisible, setStatsVisible] = useState(false);
     const [ctaVisible, setCtaVisible] = useState(false);
@@ -103,7 +98,6 @@ export default function AboutPage() {
         const pairs: [React.RefObject<HTMLElement | null>, (v: boolean) => void][] = [
             [heroRef, setHeroVisible],
             [photoRef, setPhotoVisible],
-            [introRef, setIntroVisible],
             [timelineRef, setTimelineVisible],
             [statsRef, setStatsVisible],
             [ctaRef, setCtaVisible],
@@ -144,15 +138,20 @@ export default function AboutPage() {
     });
 
     return (
-        <main className="relative min-h-screen text-white overflow-hidden" style={{ background: '#0A0F1C' }}>
+        <main className="relative min-h-screen text-white overflow-hidden" style={{ background: '#000000' }}>
             <style>{`
         @keyframes aboutHeadlineShimmer {
           0%   { background-position: 200% center; }
           100% { background-position: -200% center; }
         }
-        @keyframes pulseCta {
-          0%, 100% { box-shadow: 0 0 30px rgba(255,45,120,0.35); }
-          50%       { box-shadow: 0 0 55px rgba(155,48,255,0.6); }
+        .about-shimmer {
+          background: linear-gradient(90deg, #2fe8a2, #5fffc2, #2fe8a2);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          background-size: 200% auto;
+          animation: aboutHeadlineShimmer 4s linear infinite;
+          display: inline;
         }
         @keyframes photoReveal {
           from { opacity: 0; transform: scale(0.96) translateY(24px); }
@@ -162,7 +161,7 @@ export default function AboutPage() {
 
             {/* Grid pattern */}
             <div className="absolute inset-0 pointer-events-none z-0" style={{
-                backgroundImage: 'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)',
+                backgroundImage: 'linear-gradient(rgba(47,232,162,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(47,232,162,0.06) 1px, transparent 1px)',
                 backgroundSize: '64px 64px',
             }} />
 
@@ -172,21 +171,21 @@ export default function AboutPage() {
                     top: '15%', left: '10%',
                     width: 480, height: 480,
                     borderRadius: '50%',
-                    background: 'radial-gradient(circle, rgba(255,45,120,0.09) 0%, transparent 65%)',
+                    background: 'radial-gradient(circle, rgba(47,232,162,0.08) 0%, transparent 65%)',
                     willChange: 'transform',
                 }} />
                 <div ref={orbRef2} className="absolute" style={{
                     top: '50%', right: '5%',
                     width: 520, height: 520,
                     borderRadius: '50%',
-                    background: 'radial-gradient(circle, rgba(155,48,255,0.1) 0%, transparent 65%)',
+                    background: 'radial-gradient(circle, rgba(47,232,162,0.06) 0%, transparent 65%)',
                     willChange: 'transform',
                 }} />
                 <div ref={orbRef3} className="absolute" style={{
                     bottom: '10%', left: '35%',
                     width: 400, height: 400,
                     borderRadius: '50%',
-                    background: 'radial-gradient(circle, rgba(0,229,255,0.07) 0%, transparent 65%)',
+                    background: 'radial-gradient(circle, rgba(47,232,162,0.05) 0%, transparent 65%)',
                     willChange: 'transform',
                 }} />
             </div>
@@ -194,22 +193,14 @@ export default function AboutPage() {
             {/* Hero / Header */}
             <section ref={heroRef} className="relative z-10 pt-40 pb-16 px-6 lg:px-8 max-w-3xl mx-auto">
                 <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.25em]"
-                    style={{ background: 'rgba(255,45,120,0.1)', border: '1px solid rgba(255,45,120,0.25)', color: '#FF2D78', ...reveal(heroVisible, 0) }}>
+                    style={{ background: 'rgba(47,232,162,0.1)', border: '1px solid rgba(47,232,162,0.3)', color: MINT, ...reveal(heroVisible, 0) }}>
                     <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
                     About the Founder
                 </div>
                 <h1 className="text-[28px] sm:text-[36px] lg:text-[46px] font-black tracking-tight leading-tight mb-6"
                     style={reveal(heroVisible, 100)}>
                     This isn&apos;t an agency that discovered digital last year.{' '}
-                    <span style={{
-                        background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        backgroundClip: 'text',
-                        backgroundSize: '200% auto',
-                        animation: 'aboutHeadlineShimmer 4s linear infinite',
-                        display: 'inline',
-                    }}>
+                    <span className="about-shimmer">
                         We&apos;ve been living it from the start.
                     </span>
                 </h1>
@@ -223,8 +214,8 @@ export default function AboutPage() {
                 <div style={{
                     borderRadius: '1rem',
                     overflow: 'hidden',
-                    border: '1px solid rgba(155,48,255,0.5)',
-                    boxShadow: photoVisible ? '0 0 30px rgba(155,48,255,0.35), 0 0 80px rgba(255,45,120,0.15), 0 0 160px rgba(155,48,255,0.08)' : 'none',
+                    border: '1px solid rgba(47,232,162,0.5)',
+                    boxShadow: photoVisible ? '0 0 30px rgba(47,232,162,0.15), 0 0 80px rgba(47,232,162,0.08)' : 'none',
                     animation: photoVisible ? 'photoReveal 0.8s ease forwards' : 'none',
                     opacity: photoVisible ? 1 : 0,
                     transition: 'box-shadow 1s ease',
@@ -253,9 +244,9 @@ export default function AboutPage() {
                 style={reveal(statsVisible, 0)}>
                 <div className="rounded-2xl p-6 sm:p-8 grid grid-cols-3 gap-4 sm:gap-8"
                     style={{
-                        background: 'rgba(255,255,255,0.03)',
-                        border: '1px solid rgba(255,255,255,0.07)',
-                        boxShadow: statsVisible ? '0 0 60px rgba(155,48,255,0.07)' : 'none',
+                        background: 'rgba(47,232,162,0.04)',
+                        border: '1px solid rgba(47,232,162,0.2)',
+                        boxShadow: statsVisible ? '0 0 40px rgba(47,232,162,0.06)' : 'none',
                         transition: 'box-shadow 1s ease',
                     }}>
                     {stats.map((stat) => (
@@ -270,19 +261,28 @@ export default function AboutPage() {
                 <p className="text-sm mb-8" style={{ color: 'rgba(240,244,255,0.45)' }}>
                     Ready to see what precision marketing and autonomous AI infrastructure can do for your business?
                 </p>
-                <Link
-                    href="/strategy-call"
-                    className="inline-flex items-center gap-2 px-8 py-4 text-sm font-bold text-white rounded-full transition-all duration-300 hover:scale-105"
-                    style={{
-                        background: 'linear-gradient(135deg, #FF2D78, #9B30FF)',
-                        animation: 'pulseCta 3s ease-in-out infinite',
-                    }}
-                >
-                    Let&apos;s Connect
-                    <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
-                        <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                    </svg>
-                </Link>
+                <div className="relative inline-flex items-center justify-center">
+                    <span className="absolute -inset-[4px] rounded-[16px]" style={{
+                        background: 'linear-gradient(135deg, #2fe8a2, #5fffc2, #2fe8a2)',
+                        backgroundSize: '300% 300%',
+                        animation: 'aboutHeadlineShimmer 3s linear infinite',
+                    }} />
+                    <Link
+                        href="/strategy-call"
+                        className="relative inline-flex items-center gap-2 px-8 py-4 text-sm font-bold text-base transition-all duration-300 hover:scale-105"
+                        style={{
+                            background: '#000000',
+                            color: MINT,
+                            borderRadius: '0.75rem',
+                            border: '1px solid rgba(47,232,162,0.2)'
+                        }}
+                    >
+                        Let&apos;s Connect
+                        <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
+                            <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                        </svg>
+                    </Link>
+                </div>
             </section>
 
         </main>

@@ -75,46 +75,49 @@ const capabilities = [
 
 export default function MetaAdsPage() {
   return (
-    <main className="relative min-h-screen text-white" style={{ background: '#0A0F1C' }}>
+    <main className="relative min-h-screen text-white" style={{ background: '#000000' }}>
 
-      {/* Grid */}
+      {/* Graph paper grid */}
       <div className="absolute inset-0 pointer-events-none z-0" style={{
-        backgroundImage: 'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)',
+        backgroundImage: 'linear-gradient(rgba(47,232,162,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(47,232,162,0.06) 1px, transparent 1px)',
         backgroundSize: '64px 64px',
       }} />
 
       {/* Hero */}
       <section className="relative pt-40 pb-24 px-6 lg:px-8 overflow-hidden">
+        {/* Mint glow orbs */}
         <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full pointer-events-none"
-          style={{ background: 'radial-gradient(circle, rgba(255,45,120,0.12) 0%, transparent 70%)' }} />
+          style={{ background: 'radial-gradient(circle, rgba(47,232,162,0.1) 0%, transparent 70%)' }} />
         <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] rounded-full pointer-events-none"
-          style={{ background: 'radial-gradient(circle, rgba(155,48,255,0.1) 0%, transparent 70%)' }} />
+          style={{ background: 'radial-gradient(circle, rgba(47,232,162,0.07) 0%, transparent 70%)' }} />
 
         <div className="relative z-10 max-w-5xl mx-auto">
+          {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 text-xs font-bold uppercase tracking-[0.25em]"
-            style={{ background: 'rgba(255,45,120,0.1)', border: '1px solid rgba(255,45,120,0.25)', color: '#FF2D78' }}>
+            style={{ background: 'rgba(47,232,162,0.1)', border: '1px solid rgba(47,232,162,0.3)', color: '#2fe8a2' }}>
             <span className="w-1.5 h-1.5 rounded-full bg-current" />
             Meta Advertising
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-[46px] font-black tracking-tight leading-[1] mb-8 text-white">
+          <h1 className="text-3xl sm:text-4xl lg:text-[46px] font-black tracking-tight leading-[1.1] mb-8 text-white">
             Your Customers Are on Meta Right Now.{' '}
             <style>{`
               @keyframes metaAdsShimmer {
                 0%   { background-position: 200% center; }
                 100% { background-position: -200% center; }
               }
+              .meta-shimmer-text {
+                background: linear-gradient(90deg, #2fe8a2, #5fffc2, #2fe8a2);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                background-size: 200% auto;
+                animation: metaAdsShimmer 4s linear infinite;
+                display: inline-block;
+                padding-bottom: 0.1em;
+              }
             `}</style>
-            <span className="lg:text-[46px]" style={{
-              background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #FF2D78)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              backgroundSize: '200% auto',
-              animation: 'metaAdsShimmer 4s linear infinite',
-              display: 'inline-block',
-              paddingBottom: '0.1em',
-            }}>Are They Seeing You?</span>
+            <span className="meta-shimmer-text lg:text-[46px]">Are They Seeing You?</span>
           </h1>
 
           <p className="text-lg lg:text-xl max-w-3xl leading-relaxed mb-12"
@@ -122,13 +125,21 @@ export default function MetaAdsPage() {
             The platforms change, the principles don&apos;t. We know what makes people stop scrolling, click, and buy. And we build campaigns around that knowledge personally.
           </p>
 
-          <Link
-            href="/strategy-call"
-            className="inline-flex items-center justify-center px-10 py-4 text-white font-bold text-base rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap"
-            style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', boxShadow: '0 0 30px rgba(255,45,120,0.35)' }}
-          >
-            Get a Free Meta Account Audit &rarr;
-          </Link>
+          {/* CTA button — animated mint glow border matching home page */}
+          <div className="relative inline-flex items-center justify-center">
+            <span className="absolute -inset-[4px] rounded-[16px]" style={{
+              background: 'linear-gradient(135deg, #2fe8a2, #5fffc2, #2fe8a2)',
+              backgroundSize: '300% 300%',
+              animation: 'metaAdsShimmer 3s linear infinite',
+            }} />
+            <Link
+              href="/strategy-call"
+              className="relative inline-flex items-center justify-center px-10 py-4 font-bold text-base transition-all duration-300 hover:scale-105 whitespace-nowrap"
+              style={{ background: '#000000', color: '#2fe8a2', borderRadius: '0.75rem', border: '1px solid rgba(47,232,162,0.2)' }}
+            >
+              Get a Free Meta Account Audit &rarr;
+            </Link>
+          </div>
           <p className="text-sm mt-4" style={{ color: 'rgba(240,244,255,0.4)' }}>
             We&apos;ll tell you honestly if Meta is right for your business.
           </p>
@@ -139,7 +150,7 @@ export default function MetaAdsPage() {
       <section className="px-6 lg:px-8 pb-24">
         <div className="max-w-5xl mx-auto">
           <div className="mb-10">
-            <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: 'rgba(255,45,120,0.8)' }}>
+            <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: '#2fe8a2' }}>
               Real Results. Real Businesses.
             </p>
             <h2 className="text-3xl lg:text-4xl font-black text-white mb-3">
@@ -153,7 +164,11 @@ export default function MetaAdsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {caseStudies.map((s) => (
               <div key={s.client} className="p-8 rounded-2xl flex flex-col gap-4"
-                style={{ background: 'rgba(255,45,120,0.06)', border: '1px solid rgba(255,45,120,0.15)' }}>
+                style={{
+                  background: 'rgba(47,232,162,0.04)',
+                  border: '1px solid rgba(47,232,162,0.2)',
+                  boxShadow: '0 0 20px rgba(47,232,162,0.05)',
+                }}>
                 <div>
                   <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: 'rgba(240,244,255,0.35)' }}>
                     {s.niche} &middot; {s.location}
@@ -161,8 +176,7 @@ export default function MetaAdsPage() {
                   <p className="text-sm font-bold text-white">{s.client}</p>
                 </div>
                 <div>
-                  <p className="text-4xl font-black"
-                    style={{ background: 'linear-gradient(90deg, #FF2D78, #9B30FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+                  <p className="text-4xl font-black" style={{ color: '#2fe8a2' }}>
                     {s.stat}
                   </p>
                   <p className="text-xs font-semibold mt-1" style={{ color: 'rgba(240,244,255,0.45)' }}>
@@ -170,10 +184,10 @@ export default function MetaAdsPage() {
                   </p>
                 </div>
                 <div className="inline-flex items-center gap-1.5 w-fit px-3 py-1 rounded-full text-xs font-bold"
-                  style={{ background: 'rgba(155,48,255,0.15)', color: '#9B30FF', border: '1px solid rgba(155,48,255,0.25)' }}>
+                  style={{ background: 'rgba(47,232,162,0.12)', color: '#2fe8a2', border: '1px solid rgba(47,232,162,0.25)' }}>
                   {s.duration}
                 </div>
-                <div className="flex flex-wrap gap-1.5 mt-auto pt-2" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+                <div className="flex flex-wrap gap-1.5 mt-auto pt-2" style={{ borderTop: '1px solid rgba(47,232,162,0.1)' }}>
                   {s.services.map((svc) => (
                     <span key={svc} className="text-xs px-2.5 py-0.5 rounded-full"
                       style={{ color: 'rgba(240,244,255,0.4)', border: '1px solid rgba(255,255,255,0.08)' }}>
@@ -191,7 +205,7 @@ export default function MetaAdsPage() {
       <section className="px-6 lg:px-8 pb-24">
         <div className="max-w-5xl mx-auto pt-8">
           <div className="mb-12">
-            <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: 'rgba(155,48,255,0.8)' }}>
+            <p className="text-xs font-bold uppercase tracking-[0.25em] mb-3" style={{ color: '#2fe8a2' }}>
               No Black Box. No Mystery.
             </p>
             <h2 className="text-3xl lg:text-4xl font-black text-white mb-3">
@@ -205,9 +219,13 @@ export default function MetaAdsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {capabilities.map((c) => (
               <div key={c.title} className="p-8 rounded-2xl flex flex-col gap-5"
-                style={{ background: 'rgba(13,21,38,0.6)', border: '1px solid rgba(255,255,255,0.07)', backdropFilter: 'blur(16px)' }}>
+                style={{
+                  background: 'rgba(47,232,162,0.03)',
+                  border: '1px solid rgba(47,232,162,0.15)',
+                  backdropFilter: 'blur(16px)',
+                }}>
                 <span className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
-                  style={{ background: 'rgba(155,48,255,0.15)', color: '#9B30FF' }}>
+                  style={{ background: '#2fe8a2', color: '#000000' }}>
                   {c.icon}
                 </span>
                 <div>
@@ -223,8 +241,12 @@ export default function MetaAdsPage() {
       {/* CTA */}
       <section id="contact" className="px-6 lg:px-8 pb-32">
         <div className="max-w-5xl mx-auto text-center">
-          <div className="p-6 sm:p-12 rounded-3xl" style={{ background: 'rgba(255,45,120,0.06)', border: '1px solid rgba(255,45,120,0.15)' }}>
-            <p className="text-xs font-bold uppercase tracking-[0.25em] mb-4" style={{ color: 'rgba(255,45,120,0.8)' }}>
+          <div className="p-6 sm:p-12 rounded-3xl" style={{
+            background: 'rgba(47,232,162,0.04)',
+            border: '1px solid rgba(47,232,162,0.2)',
+            boxShadow: '0 0 40px rgba(47,232,162,0.06)',
+          }}>
+            <p className="text-xs font-bold uppercase tracking-[0.25em] mb-4" style={{ color: '#2fe8a2' }}>
               Heard This Before?
             </p>
             <h2 className="text-3xl lg:text-4xl font-black text-white mb-4">
@@ -233,13 +255,20 @@ export default function MetaAdsPage() {
             <p className="text-base mb-10" style={{ color: 'rgba(240,244,255,0.5)' }}>
               That&apos;s the most common thing we hear on the first call. Budgets burning, results inconsistent, agency blame-shifting the algorithm. We come in, audit what&apos;s actually happening inside your account, and tell you the truth about what needs to change. No obligation. No pitch. Just clarity.
             </p>
-            <Link
-              href="/strategy-call"
-              className="inline-flex items-center justify-center px-6 sm:px-10 py-4 text-white font-bold text-sm sm:text-base rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap"
-              style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)', boxShadow: '0 0 30px rgba(255,45,120,0.35)' }}
-            >
-              Get a Free Meta Account Audit &rarr;
-            </Link>
+            <div className="relative inline-flex items-center justify-center">
+              <span className="absolute -inset-[4px] rounded-[16px]" style={{
+                background: 'linear-gradient(135deg, #2fe8a2, #5fffc2, #2fe8a2)',
+                backgroundSize: '300% 300%',
+                animation: 'metaAdsShimmer 3s linear infinite',
+              }} />
+              <Link
+                href="/strategy-call"
+                className="relative inline-flex items-center justify-center px-6 sm:px-10 py-4 font-bold text-sm sm:text-base transition-all duration-300 hover:scale-105 whitespace-nowrap"
+                style={{ background: '#000000', color: '#2fe8a2', borderRadius: '0.75rem', border: '1px solid rgba(47,232,162,0.2)' }}
+              >
+                Get a Free Meta Account Audit &rarr;
+              </Link>
+            </div>
             <p className="text-sm mt-4" style={{ color: 'rgba(240,244,255,0.4)' }}>
               We look at your real account data and tell you exactly what we&apos;d fix first.
             </p>

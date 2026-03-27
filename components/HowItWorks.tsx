@@ -10,9 +10,9 @@ const steps = [
         bullets: [
             'We ask the questions nobody else asks. We look at your offer, your follow up, your current presence. We tell you exactly what we see. Even if it\'s uncomfortable.',
         ],
-        accent: '#FF2D78',
-        glow: 'rgba(255,45,120,0.35)',
-        orbColor: 'rgba(255,45,120,0.09)',
+        accent: '#2fe8a2',
+        glow: 'rgba(47,232,162,0.35)',
+        orbColor: 'rgba(47,232,162,0.09)',
         bgIcons: [
             { d: 'M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z', top: '8%', left: '18%', size: 44, rotate: -15 },
             { d: 'M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z', top: '15%', right: '8%', size: 36, rotate: 12 },
@@ -26,9 +26,9 @@ const steps = [
         bullets: [
             'We build your ad campaigns and AI systems from the ground up so there is no guessing. Everything is engineered around your specific business, your offer, and your customer.',
         ],
-        accent: '#9B30FF',
-        glow: 'rgba(155,48,255,0.35)',
-        orbColor: 'rgba(155,48,255,0.09)',
+        accent: '#2fe8a2',
+        glow: 'rgba(47,232,162,0.35)',
+        orbColor: 'rgba(47,232,162,0.09)',
         bgIcons: [
             { d: 'M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z', top: '10%', left: '20%', size: 42, rotate: -20 },
             { d: 'M11.42 15.17l-5.3-5.3a.75.75 0 010-1.06l5.3-5.3m-4.24 5.66h11.31M21 12a9 9 0 11-18 0 9 9 0 0118 0z', top: '5%', right: '10%', size: 32, rotate: 25 },
@@ -42,9 +42,9 @@ const steps = [
         bullets: [
             'We don\'t hand you off. We stay in, watch the data weekly, cut what isn\'t working, and double down on what is. Growth compounds when someone is actually paying attention.',
         ],
-        accent: '#00E5FF',
-        glow: 'rgba(0,229,255,0.35)',
-        orbColor: 'rgba(0,229,255,0.07)',
+        accent: '#2fe8a2',
+        glow: 'rgba(47,232,162,0.35)',
+        orbColor: 'rgba(47,232,162,0.07)',
         bgIcons: [
             { d: 'M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941', top: '10%', left: '18%', size: 44, rotate: 0 },
             { d: 'M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z', top: '8%', right: '8%', size: 38, rotate: 10 },
@@ -127,12 +127,12 @@ export default function HowItWorks() {
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <div ref={orbRef1} className="absolute" style={{
                     top: '10%', left: '0%', width: 480, height: 480, borderRadius: '50%',
-                    background: 'radial-gradient(circle, rgba(255,45,120,0.08) 0%, transparent 65%)',
+                    background: 'radial-gradient(circle, rgba(47,232,162,0.08) 0%, transparent 65%)',
                     willChange: 'transform',
                 }} />
                 <div ref={orbRef2} className="absolute" style={{
                     bottom: '5%', right: '5%', width: 440, height: 440, borderRadius: '50%',
-                    background: 'radial-gradient(circle, rgba(0,229,255,0.07) 0%, transparent 65%)',
+                    background: 'radial-gradient(circle, rgba(47,232,162,0.06) 0%, transparent 65%)',
                     willChange: 'transform',
                 }} />
             </div>
@@ -144,9 +144,9 @@ export default function HowItWorks() {
                     <div
                         className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.25em]"
                         style={{
-                            background: 'rgba(255,45,120,0.1)',
-                            border: '1px solid rgba(255,45,120,0.25)',
-                            color: '#FF2D78',
+                            background: 'rgba(47,232,162,0.1)',
+                            border: '1px solid rgba(47,232,162,0.25)',
+                            color: '#2fe8a2',
                             ...reveal(0),
                         }}
                     >
@@ -162,7 +162,7 @@ export default function HowItWorks() {
                     >
                         Here&apos;s Exactly{' '}
                         <span style={{
-                            background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
+                            background: 'linear-gradient(90deg, #2fe8a2, #5fffc2, #2fe8a2)',
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
                             backgroundClip: 'text',
@@ -185,7 +185,7 @@ export default function HowItWorks() {
                     {steps.map((step, i) => (
                         <div key={step.number}
                             className="relative flex flex-col rounded-2xl overflow-hidden"
-                            style={{ border: `1px solid ${step.accent}66`, boxShadow: `0 0 30px ${step.glow.replace('0.35', '0.45')}, 0 0 80px ${step.glow.replace('0.35', '0.15')}, 0 0 160px ${step.glow.replace('0.35', '0.06')}`, ...reveal(300 + i * 150) }}>
+                            style={{ border: `1px solid ${step.accent}44`, boxShadow: `0 0 18px ${step.glow.replace('0.35', '0.18')}, 0 0 50px ${step.glow.replace('0.35', '0.07')}`, ...reveal(300 + i * 150) }}>
                             {/* Top: badge area with gradient + diamond pattern */}
                             <div className="relative flex items-center justify-center py-8 overflow-hidden" style={{ background: `linear-gradient(145deg, #0A0F1C 0%, #000000 50%, ${step.accent}30 100%)` }}>
                                 {/* Themed watermark icons */}
@@ -231,16 +231,16 @@ export default function HowItWorks() {
                                 style={{
                                     flex: 1,
                                     border: `1px solid ${step.accent}66`,
-                                    boxShadow: `0 0 30px ${step.glow.replace('0.35', '0.45')}, 0 0 80px ${step.glow.replace('0.35', '0.15')}, 0 0 160px ${step.glow.replace('0.35', '0.06')}`,
+                                    boxShadow: `0 0 18px ${step.glow.replace('0.35', '0.18')}, 0 0 50px ${step.glow.replace('0.35', '0.07')}`,
                                     ...reveal(300 + i * 150),
                                 }}
                                 onMouseEnter={e => {
                                     (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-4px)';
-                                    (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 45px ${step.glow}, 0 14px 40px rgba(0,0,0,0.5)`;
+                                    (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 28px ${step.glow.replace('0.35','0.28')}, 0 10px 30px rgba(0,0,0,0.4)`;
                                 }}
                                 onMouseLeave={e => {
                                     (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)';
-                                    (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 28px ${step.glow.replace('0.35', '0.2')}, 0 4px 16px rgba(0,0,0,0.4)`;
+                                    (e.currentTarget as HTMLDivElement).style.boxShadow = `0 0 18px ${step.glow.replace('0.35', '0.18')}, 0 0 50px ${step.glow.replace('0.35', '0.07')}`;
                                 }}
                             >
                                 {/* Top: badge area with gradient + diamond pattern */}

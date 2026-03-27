@@ -114,7 +114,7 @@ type NavLink = {
   icon: React.ReactNode;
 };
 
-function DesktopDropdown({ label, links }: { label: string; links: NavLink[] }) {
+function DesktopDropdown({ label, links, scrolled }: { label: string; links: NavLink[]; scrolled: boolean }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -124,7 +124,8 @@ function DesktopDropdown({ label, links }: { label: string; links: NavLink[] }) 
       onMouseLeave={() => setOpen(false)}
     >
       <button
-        className="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-black transition-colors cursor-pointer"
+        className="flex items-center gap-1 text-sm font-medium transition-colors cursor-pointer"
+        style={{ color: '#2fe8a2' }}
         aria-expanded={open}
         aria-haspopup="true"
       >
@@ -175,9 +176,9 @@ function MobileAccordion({ label, links, onClose }: { label: string; links: NavL
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border-b border-gray-200">
+    <div className="border-b border-white/10">
       <button
-        className="w-full flex items-center justify-between py-4 text-base font-medium text-gray-900"
+        className="w-full flex items-center justify-between py-4 text-base font-medium text-white"
         onClick={() => setOpen(!open)}
       >
         {label}
@@ -194,15 +195,15 @@ function MobileAccordion({ label, links, onClose }: { label: string; links: NavL
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="flex items-start gap-3 px-2 py-3 rounded-xl hover:bg-gray-100 transition-colors group"
+                className="flex items-start gap-3 px-2 py-3 rounded-xl hover:bg-white/5 transition-colors group"
                 onClick={onClose}
               >
-                <span className="mt-0.5 text-gray-400 group-hover:text-gray-600 transition-colors shrink-0">
+                <span className="mt-0.5 transition-colors shrink-0" style={{ color: '#2fe8a2' }}>
                   {link.icon}
                 </span>
                 <span>
-                  <span className="block text-sm font-bold text-gray-900">{link.label}</span>
-                  <span className="block text-xs text-gray-400 mt-0.5 leading-relaxed">{link.description}</span>
+                  <span className="block text-sm font-bold text-white">{link.label}</span>
+                  <span className="block text-xs mt-0.5 leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>{link.description}</span>
                 </span>
               </Link>
             </li>
@@ -233,15 +234,15 @@ export default function Navbar() {
     <nav
       className={`fixed w-full z-[1000] transition-all duration-500`}
       style={{
-        background: scrolled ? 'transparent' : (isHome ? 'transparent' : '#ffffff'),
+        background: 'transparent',
       }}
     >
       <div
         className={`transition-all duration-500 flex items-center justify-between ${scrolled ? 'mx-auto backdrop-blur-xl rounded-full px-5 mt-3' : 'max-w-7xl mx-auto px-6'}`}
         style={{
-          background: scrolled ? 'rgba(255,255,255,0.95)' : 'transparent',
-          border: scrolled ? '1px solid rgba(0,0,0,0.08)' : 'none',
-          boxShadow: scrolled ? '0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04)' : 'none',
+          background: scrolled ? 'rgba(0,0,0,0.96)' : 'transparent',
+          border: scrolled ? '1px solid rgba(47,232,162,0.25)' : 'none',
+          boxShadow: scrolled ? '0 0 24px rgba(47,232,162,0.1), 0 4px 16px rgba(0,0,0,0.4)' : 'none',
           height: scrolled ? '48px' : '80px',
           ...(scrolled ? { width: '95vw', maxWidth: '860px', padding: '0.35rem 1rem' } : {}),
         }}>
@@ -253,23 +254,23 @@ export default function Navbar() {
             width={240}
             height={60}
             className="h-10 w-auto object-contain transition-all duration-300 group-hover:scale-105"
-            style={{ filter: 'brightness(0)' }}
+            style={{ filter: 'brightness(0) invert(1)' }}
           />
-          <span className={`font-bold text-gray-600 whitespace-nowrap transition-all duration-300 ${scrolled ? 'text-xs hidden md:inline' : 'text-sm'}`}>
+          <span className={`font-bold whitespace-nowrap transition-all duration-300 ${scrolled ? 'text-xs hidden md:inline' : 'text-sm'}`} style={{ color: '#2fe8a2' }}>
             Switch Media Marketing
           </span>
         </Link>
 
         {/* Desktop nav */}
-        {scrolled && <div className="hidden md:block w-px h-5 bg-gray-300 mx-1" />}
+        {scrolled && <div className="hidden md:block w-px h-5 mx-1" style={{ background: 'rgba(47,232,162,0.4)' }} />}
         <div className="hidden md:flex items-center gap-6">
-          <DesktopDropdown label="Paid Ads" links={paidAdsLinks} />
-          <DesktopDropdown label="AI Automations" links={aiAutomationLinks} />
+          <DesktopDropdown label="Paid Ads" links={paidAdsLinks} scrolled={scrolled} />
+          <DesktopDropdown label="AI Automations" links={aiAutomationLinks} scrolled={scrolled} />
 
-          <Link href="/about" className="text-sm font-medium text-gray-600 hover:text-black transition-colors">
+          <Link href="/about" className="text-sm font-medium transition-colors" style={{ color: '#2fe8a2' }}>
             About
           </Link>
-          <Link href="/contact" className="text-sm font-medium text-gray-600 hover:text-black transition-colors">
+          <Link href="/contact" className="text-sm font-medium transition-colors" style={{ color: '#2fe8a2' }}>
             Contact
           </Link>
           <Link
@@ -277,16 +278,21 @@ export default function Navbar() {
             className="group relative inline-flex items-center justify-center"
           >
             <span
-              className="absolute -inset-[3px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              className="absolute -inset-[4px] rounded-[16px] opacity-100"
               style={{
-                background: 'linear-gradient(135deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
+                background: 'linear-gradient(135deg, #2fe8a2, #5fffc2, #2fe8a2)',
                 backgroundSize: '300% 300%',
                 animation: 'heroBorderSpin 3s linear infinite',
               }}
             />
             <span
-              className="relative px-6 py-2.5 text-sm font-bold rounded-full text-white transition-all duration-300 whitespace-nowrap"
-              style={{ background: '#000000' }}
+              className="relative px-6 py-2.5 text-sm font-bold transition-all duration-300 whitespace-nowrap"
+              style={{
+                background: '#000000',
+                color: '#2fe8a2',
+                borderRadius: '0.75rem',
+                border: '1px solid rgba(47,232,162,0.2)',
+              }}
             >
               Book a Strategy Call
             </span>
@@ -300,15 +306,15 @@ export default function Navbar() {
           aria-label="Toggle menu"
           aria-expanded={mobileOpen}
         >
-          <span className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-2" : ""}`} />
-          <span className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ${mobileOpen ? "opacity-0" : ""}`} />
-          <span className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+          <span className={`block w-6 h-0.5 transition-all duration-300 ${mobileOpen ? "rotate-45 translate-y-2" : ""}`} style={{ background: '#2fe8a2' }} />
+          <span className={`block w-6 h-0.5 transition-all duration-300 ${mobileOpen ? "opacity-0" : ""}`} style={{ background: '#2fe8a2' }} />
+          <span className={`block w-6 h-0.5 transition-all duration-300 ${mobileOpen ? "-rotate-45 -translate-y-2" : ""}`} style={{ background: '#2fe8a2' }} />
         </button>
       </div>
 
       {/* Mobile menu panel */}
       {mobileOpen && (
-        <div className="md:hidden px-6 pb-6" style={{ background: '#ffffff', borderTop: '1px solid #e5e7eb' }}>
+        <div className="md:hidden px-6 pb-6" style={{ background: '#000000', borderTop: '1px solid rgba(47,232,162,0.2)' }}>
           <div className="flex flex-col">
             <MobileAccordion
               label="Paid Ads"
@@ -320,19 +326,19 @@ export default function Navbar() {
               links={aiAutomationLinks}
               onClose={() => setMobileOpen(false)}
             />
-            <div className="border-b border-gray-200">
+            <div className="border-b border-white/10">
               <Link
                 href="/about"
-                className="block w-full text-left py-4 text-base font-medium text-gray-900"
+                className="block w-full text-left py-4 text-base font-medium text-white"
                 onClick={() => setMobileOpen(false)}
               >
                 About Us
               </Link>
             </div>
-            <div className="border-b border-gray-200">
+            <div className="border-b border-white/10">
               <Link
                 href="/contact"
-                className="block w-full text-left py-4 text-base font-medium text-gray-900"
+                className="block w-full text-left py-4 text-base font-medium text-white"
                 onClick={() => setMobileOpen(false)}
               >
                 Contact Us
@@ -343,8 +349,8 @@ export default function Navbar() {
           <div className="pt-6">
             <Link
               href="/strategy-call"
-              className="block w-full text-center px-6 py-3.5 text-sm font-bold rounded-full text-white transition-all whitespace-nowrap"
-              style={{ background: "#000000" }}
+              className="block w-full text-center px-6 py-3.5 text-sm font-bold rounded-xl transition-all whitespace-nowrap"
+              style={{ background: '#000000', color: '#2fe8a2', border: '1px solid #2fe8a2', boxShadow: '0 0 12px rgba(47,232,162,0.15)' }}
               onClick={() => setMobileOpen(false)}
             >
               Book a Strategy Call
