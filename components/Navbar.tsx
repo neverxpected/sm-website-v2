@@ -245,7 +245,7 @@ export default function Navbar() {
           border: scrolled ? '1px solid rgba(47,232,162,0.25)' : 'none',
           boxShadow: scrolled ? '0 0 24px rgba(47,232,162,0.1), 0 4px 16px rgba(0,0,0,0.4)' : 'none',
           height: scrolled ? '48px' : '80px',
-          ...(scrolled ? { width: '95vw', maxWidth: '860px', padding: '0.35rem 1rem' } : {}),
+          ...(scrolled ? { width: '95vw', maxWidth: '860px', padding: '0.35rem 1.25rem' } : {}),
         }}>
         {/* Logo */}
         <Link href="/" className={`flex items-center gap-2 group ${scrolled ? 'ml-0' : 'ml-2 lg:ml-4'}`}>
@@ -279,7 +279,7 @@ export default function Navbar() {
             className="group relative inline-flex items-center justify-center"
           >
             <span
-              className="absolute -inset-[4px] rounded-[16px] opacity-100"
+              className={`absolute rounded-[14px] opacity-100 ${scrolled ? '-inset-[1px]' : '-inset-[2px]'}`}
               style={{
                 background: 'linear-gradient(135deg, #2fe8a2, #5fffc2, #2fe8a2)',
                 backgroundSize: '300% 300%',
@@ -287,7 +287,7 @@ export default function Navbar() {
               }}
             />
             <span
-              className="relative px-6 py-2.5 text-sm font-bold transition-all duration-300 whitespace-nowrap"
+              className={`relative font-bold transition-all duration-300 whitespace-nowrap ${scrolled ? 'px-4 py-1.5 text-xs' : 'px-6 py-2.5 text-sm'}`}
               style={{
                 background: '#000000',
                 color: '#2fe8a2',
