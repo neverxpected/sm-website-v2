@@ -595,3 +595,32 @@ select option {
   background-color: #1a1f2e;
   color: #f0f4ff;
 }
+
+/* ─── Mobile Section Spacing — Industry Standard ─────── */
+/* Target: ~48-64px gaps on mobile, ~80-128px on desktop  */
+@media (max-width: 767px) {
+  /* Hero top padding: 160px → 120px on mobile */
+  section.pt-40 {
+    padding-top: 7.5rem !important;
+  }
+
+  /* Inter-section bottom: 96px → 56px on mobile */
+  section.pb-24 {
+    padding-bottom: 3.5rem !important;
+  }
+
+  /* Inter-section bottom (about/legal): 64px → 40px on mobile */
+  section.pb-16 {
+    padding-bottom: 2.5rem !important;
+  }
+
+  /* Final section bottom: 128px → 80px on mobile */
+  section.pb-32 {
+    padding-bottom: 5rem !important;
+  }
+
+  /* Strategy call hero spacing */
+  section.pb-10 {
+    padding-bottom: 1.5rem !important;
+  }
+}
