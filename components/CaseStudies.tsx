@@ -164,18 +164,7 @@ export default function CaseStudies() {
                     <div className="absolute left-0 top-1/2 -translate-y-1/2 w-px h-10"
                       style={{ background: 'linear-gradient(to bottom, transparent, rgba(47,232,162,0.5), rgba(47,232,162,0.5), transparent)' }} />
                   )}
-                  <p className="font-black text-2xl leading-none mb-2" style={{
-                    background: 'linear-gradient(135deg, #2fe8a2, #5fffc2)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                    filter: 'drop-shadow(0 0 20px rgba(47,232,162,0.5))',
-                  }}>
-                    {stat.value}
-                  </p>
-                  <p className="text-[7px] uppercase tracking-[0.1em] font-bold whitespace-nowrap" style={{ color: 'rgba(240,244,255,0.4)' }}>
-                    {stat.label}
-                  </p>
+                  <CountUpStat value={stat.value} label={stat.label} />
                 </div>
               ))}
             </div>
