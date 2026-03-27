@@ -107,7 +107,7 @@ export default function Testimonials() {
                             ...reveal(100),
                         }}>
                         {/* Top: author + stars (dark) */}
-                        <div className="p-6 flex items-center gap-4" style={{ background: `repeating-linear-gradient(45deg, #000000, #000000 8px, ${featured.accent}15 8px, ${featured.accent}15 9px)`, borderBottom: `1px solid ${featured.accent}22` }}>
+                        <div className="p-6 flex items-center gap-4" style={{ background: '#000000', borderBottom: `1px solid ${featured.accent}22` }}>
                             <div className="w-20 h-20 rounded-2xl overflow-hidden shrink-0"
                                 style={{ border: `2px solid ${featured.accent}60` }}>
                                 <img src={featured.image} alt={featured.name} className="w-full h-full object-cover object-top" />
@@ -140,7 +140,7 @@ export default function Testimonials() {
                                     ...reveal(200 + i * 120),
                                 }}>
                                 {/* Top: author + stars (dark) */}
-                                <div className="p-4 flex items-center gap-3" style={{ background: `repeating-linear-gradient(45deg, #000000, #000000 8px, ${t.accent}18 8px, ${t.accent}18 9px)`, borderBottom: `1px solid ${t.accent}22` }}>
+                                <div className="p-4 flex items-center gap-3" style={{ background: '#000000', borderBottom: `1px solid ${t.accent}22` }}>
                                     <div className="w-14 h-14 rounded-xl overflow-hidden shrink-0"
                                         style={{ border: `2px solid ${t.accent}50` }}>
                                         <img src={t.image} alt={t.name} className="w-full h-full object-cover object-top" />

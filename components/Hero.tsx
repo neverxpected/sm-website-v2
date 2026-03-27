@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import ServiceGrid from './ServiceGrid';
 import AIAdvantage from './AIAdvantage';
 import CaseStudies from './CaseStudies';
@@ -15,6 +15,15 @@ import Testimonials from './Testimonials';
 
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
+  const ROTATING_WORDS = ['More Leads', 'More Bookings', 'More Revenue', 'More ROI', 'More Calls', 'More Traffic'];
+  const [wordIndex, setWordIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWordIndex((prev) => (prev + 1) % ROTATING_WORDS.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, [ROTATING_WORDS.length]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -66,8 +75,8 @@ export default function Hero() {
           style={{
             backgroundImage: 'linear-gradient(rgba(47,232,162,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(47,232,162,0.18) 1px, transparent 1px)',
             backgroundSize: '64px 64px',
-            WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,1) 50%, transparent 100%)',
-            maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,1) 50%, transparent 100%)',
+            WebkitMaskImage: 'radial-gradient(ellipse 70% 65% at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.3) 60%, transparent 80%)',
+            maskImage: 'radial-gradient(ellipse 70% 65% at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.3) 60%, transparent 80%)',
           }}
         />
 
@@ -140,30 +149,36 @@ export default function Hero() {
                 overflow: 'visible',
               }}
             >
+              <style>{`
+                @keyframes heroWordSlideIn {
+                  0%   { opacity: 0; transform: translateY(20px); }
+                  15%  { opacity: 1; transform: translateY(0); }
+                  85%  { opacity: 1; transform: translateY(0); }
+                  100% { opacity: 0; transform: translateY(-20px); }
+                }
+              `}</style>
               <span style={{ display: 'block', whiteSpace: 'nowrap', padding: '0 0.1em' }}>Stop Guessing.</span>
               <span style={{
                 display: 'block',
                 whiteSpace: 'nowrap',
                 padding: '0 0.15em 0.05em',
-                background: 'linear-gradient(90deg, #2fe8a2, #5fffc2, #2fe8a2)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                backgroundSize: '200% auto',
-                animation: 'heroBorderSpin 3s linear infinite',
-              }}>Start Printing</span>
-              <span style={{
-                display: 'block',
-                whiteSpace: 'nowrap',
-                padding: '0 0.1em',
-                marginTop: '-0.1em',
-                background: 'linear-gradient(90deg, #2fe8a2, #5fffc2, #2fe8a2)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                backgroundSize: '200% auto',
-                animation: 'heroBorderSpin 3s linear infinite',
-              }}>Money.</span>
+                color: 'rgba(255,255,255,0.85)',
+              }}>Start Getting</span>
+              <span
+                key={wordIndex}
+                style={{
+                  display: 'block',
+                  whiteSpace: 'nowrap',
+                  padding: '0 0.1em',
+                  marginTop: '-0.05em',
+                  background: 'linear-gradient(90deg, #2fe8a2, #5fffc2, #2fe8a2)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  backgroundSize: '200% auto',
+                  animation: 'heroWordSlideIn 2.5s ease-in-out forwards, heroBorderSpin 3s linear infinite',
+                }}
+              >{ROTATING_WORDS[wordIndex]}</span>
             </h1>
 
 
@@ -200,7 +215,7 @@ export default function Hero() {
 
             {/* Qualifier */}
             <p className="reveal reveal-delay-500 text-xs italic hero-qualifier" style={{ color: 'rgba(255,255,255,0.35)', textAlign: 'center' }}>
-              <span className="hidden sm:inline">Free strategy call. </span>No pitch. Just an honest look at your business.
+              <span className="hidden sm:inline">Free call. </span>No pitch. We tell you exactly what&apos;s broken and how to fix it.
             </p>
 
           </div>

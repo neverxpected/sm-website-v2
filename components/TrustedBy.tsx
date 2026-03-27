@@ -38,7 +38,7 @@ export default function TrustedBy() {
         }
       `}</style>
       <div className="trusted-by-label-wrap max-w-7xl mx-auto px-4 lg:px-8 mb-4 text-center">
-        <p className="trusted-by-label text-xl uppercase tracking-[0.35em]" style={{ color: 'rgba(255,255,255,0.3)', fontFamily: 'var(--font-orbitron), sans-serif', fontWeight: 500 }}>
+        <p className="trusted-by-label text-xl uppercase tracking-[0.35em]" style={{ color: '#ffffff', fontFamily: 'var(--font-orbitron), sans-serif', fontWeight: 500 }}>
           Trusted By
         </p>
       </div>

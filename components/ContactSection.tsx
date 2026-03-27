@@ -42,8 +42,8 @@ export default function ContactSection() {
       <div className="hidden lg:block absolute inset-0 pointer-events-none z-0" style={{
         backgroundImage: 'linear-gradient(rgba(47,232,162,0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(47,232,162,0.25) 1px, transparent 1px)',
         backgroundSize: '64px 64px',
-        WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 20%, rgba(0,0,0,1) 100%)',
-        maskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 20%, rgba(0,0,0,1) 100%)',
+        WebkitMaskImage: 'radial-gradient(ellipse 70% 65% at 50% 65%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.3) 60%, transparent 80%)',
+        maskImage: 'radial-gradient(ellipse 70% 65% at 50% 65%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.3) 60%, transparent 80%)',
       }} />
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -129,47 +129,47 @@ export default function ContactSection() {
           <div className="reveal reveal-delay-200 contact-right" style={{ flex: '0 0 55%', maxWidth: '55%' }}>
             <div className="contact-gold-frame rounded-2xl p-8"
               style={{
-                background: '#ffffff',
-                border: '1px solid rgba(47,232,162,0.55)',
-                boxShadow: '0 0 30px rgba(47,232,162,0.33), 0 0 80px rgba(47,232,162,0.13), 0 0 160px rgba(47,232,162,0.06)',
+                background: 'rgba(47,232,162,0.06)',
+                border: '1px solid rgba(47,232,162,0.3)',
+                boxShadow: 'inset 0 0 60px rgba(47,232,162,0.08), inset 0 0 120px rgba(47,232,162,0.04), 0 0 40px rgba(47,232,162,0.1)',
               }}>
               {submitted ? (
                 <div className="flex flex-col items-center justify-center py-16 text-center gap-4">
                   <span className="w-14 h-14 rounded-full flex items-center justify-center"
-                    style={{ background: 'linear-gradient(135deg, #FF2D78, #9B30FF)' }}>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={2.5} className="w-7 h-7">
+                    style={{ background: '#2fe8a2' }}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#000000" strokeWidth={2.5} className="w-7 h-7">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
                   </span>
-                  <h3 className="text-xl font-black" style={{ color: '#111827' }}>Message Sent!</h3>
-                  <p className="text-sm" style={{ color: '#6B7280' }}>We&apos;ll be in touch shortly.</p>
+                  <h3 className="text-xl font-black text-white">Message Sent!</h3>
+                  <p className="text-sm" style={{ color: 'rgba(240,244,255,0.5)' }}>We&apos;ll be in touch shortly.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
 
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                     <div>
-                      <label className={labelClass} style={{ color: '#374151' }}>Name <span style={{ color: '#2fe8a2' }}>*</span></label>
+                      <label className={labelClass} style={{ color: '#ffffff' }}>Name <span style={{ color: '#2fe8a2' }}>*</span></label>
                       <input required name="name" type="text" placeholder="John Smith" className={inputClass} style={inputStyle} />
                     </div>
                     <div>
-                      <label className={labelClass} style={{ color: '#374151' }}>Email <span style={{ color: '#2fe8a2' }}>*</span></label>
+                      <label className={labelClass} style={{ color: '#ffffff' }}>Email <span style={{ color: '#2fe8a2' }}>*</span></label>
                       <input required name="email" type="email" placeholder="john@company.com" className={inputClass} style={inputStyle} />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                     <div>
-                      <label className={labelClass} style={{ color: '#374151' }}>Company <span style={{ color: '#2fe8a2' }}>*</span></label>
+                      <label className={labelClass} style={{ color: '#ffffff' }}>Company <span style={{ color: '#2fe8a2' }}>*</span></label>
                       <input required name="company" type="text" placeholder="Company name" className={inputClass} style={inputStyle} />
                     </div>
                     <div>
-                      <label className={labelClass} style={{ color: '#374151' }}>Phone <span style={{ color: '#2fe8a2' }}>*</span></label>
+                      <label className={labelClass} style={{ color: '#ffffff' }}>Phone <span style={{ color: '#2fe8a2' }}>*</span></label>
                       <input required name="phone" type="tel" placeholder="+1 (555) 000-0000" className={inputClass} style={inputStyle} />
                     </div>
                   </div>
                   <ServicePicker />
                   <div>
-                    <label className={labelClass} style={{ color: '#374151' }}>Monthly Budget <span style={{ color: '#2fe8a2' }}>*</span></label>
+                    <label className={labelClass} style={{ color: '#ffffff' }}>Monthly Budget <span style={{ color: '#2fe8a2' }}>*</span></label>
                     <div className="relative">
                       <select required name="budget" className={inputClass} style={{ ...inputStyle, color: '#374151', paddingRight: '2.5rem' }}>
                         <option value="">Select budget</option>
@@ -183,7 +183,7 @@ export default function ContactSection() {
                     </div>
                   </div>
                   <div>
-                    <label className={labelClass} style={{ color: '#374151' }}>Message</label>
+                    <label className={labelClass} style={{ color: '#ffffff' }}>Message</label>
                     <textarea name="message" rows={4} placeholder="What's the biggest thing holding your business back right now?" className={inputClass + " resize-none"} style={inputStyle} />
                   </div>
                   <div className="group relative w-full">
