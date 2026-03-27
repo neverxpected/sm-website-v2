@@ -117,7 +117,7 @@ const allServices = [
 
 export default function ServiceGrid() {
   return (
-    <section className="relative px-4 lg:px-8 sg-section pt-12 lg:pt-16 pb-12 lg:pb-32" style={{ background: '#000000' }}>
+    <section className="relative px-4 lg:px-8 sg-section pt-10 lg:pt-16 pb-10 lg:pb-32" style={{ background: '#000000' }}>
       <div className="hidden lg:block absolute bottom-0 left-0 right-0 h-[40%]" style={{ background: '#000000' }} />
       <style>{`
         @keyframes sgBorderGlow {
@@ -127,7 +127,8 @@ export default function ServiceGrid() {
         }
         @media (max-width: 767px) {
           .sg-section {
-            padding-top: 4rem !important;
+            padding-top: 2.5rem !important;
+            padding-bottom: 2.5rem !important;
           }
           .sg-headline {
             font-size: clamp(1.6rem, 6vw, 2.2rem) !important;

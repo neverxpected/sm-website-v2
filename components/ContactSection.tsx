@@ -31,7 +31,7 @@ export default function ContactSection() {
   const labelClass = "block text-xs font-semibold mb-1.5" as const;
 
   return (
-    <section className="py-12 lg:py-16 px-4 lg:px-8 relative overflow-hidden" style={{ background: '#000000' }}>
+    <section className="py-10 lg:py-16 px-4 lg:px-8 relative overflow-hidden" style={{ background: '#000000' }}>
       {/* Ambient orbs */}
       <div className="absolute top-0 right-1/4 w-[600px] h-[600px] rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(circle, rgba(47,232,162,0.07) 0%, transparent 70%)' }} />
@@ -42,6 +42,7 @@ export default function ContactSection() {
       <div className="hidden lg:block absolute inset-0 pointer-events-none z-0" style={{
         backgroundImage: 'linear-gradient(rgba(47,232,162,0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(47,232,162,0.25) 1px, transparent 1px)',
         backgroundSize: '64px 64px',
+        backgroundPosition: '32px 32px',
         WebkitMaskImage: 'radial-gradient(ellipse 70% 65% at 50% 65%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.3) 60%, transparent 80%)',
         maskImage: 'radial-gradient(ellipse 70% 65% at 50% 65%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.3) 60%, transparent 80%)',
       }} />

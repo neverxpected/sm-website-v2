@@ -89,6 +89,9 @@ export default function Hero() {
               100% { background-position: 0% 50%; }
             }
             @media (max-width: 767px) {
+              .hero-content-wrap {
+                padding-top: 5.5rem !important;
+              }
               .hero-center-wrap {
                 padding: 0.5rem 1rem 0.25rem !important;
                 padding-top: 0.5rem !important;
@@ -157,7 +160,7 @@ export default function Hero() {
                   100% { opacity: 0; transform: translateY(-20px); }
                 }
               `}</style>
-              <span style={{ display: 'block', whiteSpace: 'nowrap', padding: '0 0.1em' }}>Stop Guessing.</span>
+              <span style={{ display: 'block', whiteSpace: 'nowrap', padding: '0 0.1em' }}>Stop Guessing</span>
               <span style={{
                 display: 'block',
                 whiteSpace: 'nowrap',
