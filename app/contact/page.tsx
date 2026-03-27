@@ -151,8 +151,8 @@ export default function ContactPage() {
                     You could be one<br />
                     <span className="contact-shimmer">
                         honest conversation
-                    </span><br />
-                    away from real growth.
+                    </span>{' '}
+                    <span style={{ whiteSpace: 'nowrap' }}>away from real growth.</span>
                 </h1>
 
                 <p className="text-base leading-relaxed max-w-xl"
