@@ -72,17 +72,22 @@ const aiPlatforms = [
     iconBg: "bg-rose-500",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="w-5 h-5">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 01-.659 1.591l-5.432 5.432a2.25 2.25 0 00-.659 1.591v2.927a2.25 2.25 0 01-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 00-.659-1.591L3.659 7.409A2.25 2.25 0 013 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0112 3z" />
       </svg>
     ),
   },
   {
-    label: "Custom AI Solutions",
+    label: "Custom AI",
     href: "/services/custom-ai",
     iconBg: "bg-purple-500",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="w-5 h-5">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8V4H8" />
+        <rect strokeLinecap="round" strokeLinejoin="round" width="16" height="12" x="4" y="8" rx="2" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2 14h2" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M20 14h2" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15 13v2" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 13v2" />
       </svg>
     ),
   },
@@ -112,8 +117,7 @@ const allServices = [
 
 export default function ServiceGrid() {
   return (
-    <section className="relative px-4 lg:px-8 sg-section pt-12 lg:pt-16 pb-12 lg:pb-32" style={{ background: '#ffffff' }}>
-      {/* Black bottom half on desktop */}
+    <section className="relative px-4 lg:px-8 sg-section pt-12 lg:pt-16 pb-12 lg:pb-32" style={{ background: '#000000' }}>
       <div className="hidden lg:block absolute bottom-0 left-0 right-0 h-[40%]" style={{ background: '#000000' }} />
       <style>{`
         @keyframes sgBorderGlow {
@@ -163,10 +167,10 @@ export default function ServiceGrid() {
 
         {/* Section header */}
         <div className="text-center mb-14 sg-header">
-          <h2 className="text-3xl lg:text-5xl font-black mb-4 sg-headline" style={{ color: '#111827' }}>
-            Digital Ads <span className="hidden lg:inline">&amp;</span><br className="lg:hidden" /><span className="lg:hidden">&amp;</span> AI Systems
+          <h2 className="text-3xl lg:text-5xl font-black mb-4 sg-headline" style={{ color: '#ffffff' }}>
+            Digital Ads <span className="hidden lg:inline" style={{ color: '#2fe8a2' }}>&amp;</span><br className="lg:hidden" /><span className="lg:hidden" style={{ color: '#2fe8a2' }}>&amp;</span> <span style={{ color: '#2fe8a2' }}>AI Systems</span>
           </h2>
-          <p className="text-base max-w-xl mx-auto" style={{ color: '#6B7280' }}>
+          <p className="text-base max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.5)' }}>
             Pick your service &amp; let&apos;s get to work.
           </p>
         </div>
@@ -174,21 +178,21 @@ export default function ServiceGrid() {
         {/* ═══════ MOBILE: 3×3 ClickUp-style icon grid ═══════ */}
         <div className="lg:hidden">
           <div className="grid grid-cols-3 rounded-2xl overflow-hidden"
-            style={{ background: '#ffffff' }}>
+            style={{ background: 'transparent', border: 'none' }}>
             {allServices.map((s, i) => (
               <Link
                 key={s.href}
                 href={s.href}
-                className="flex flex-col items-center justify-center gap-2 py-5 px-2 transition-colors duration-150 active:bg-gray-50"
+                className="flex flex-col items-center justify-center gap-2 py-5 px-2 transition-colors duration-150 active:bg-white/5"
                 style={{
-                  borderRight: (i % 3 !== 2) ? '1px solid rgba(0,0,0,0.06)' : 'none',
-                  borderBottom: i < 6 ? '1px solid rgba(0,0,0,0.06)' : 'none',
+                  borderRight: (i % 3 !== 2) ? '1px solid rgba(47,232,162,0.2)' : 'none',
+                  borderBottom: i < 6 ? '1px solid rgba(47,232,162,0.2)' : 'none',
                 }}
               >
-                <span className={`w-11 h-11 rounded-2xl ${s.iconBg} text-white flex items-center justify-center`}>
+                <span className="w-11 h-11 rounded-2xl flex items-center justify-center" style={{ background: '#2fe8a2', color: '#ffffff' }}>
                   {s.icon}
                 </span>
-                <span className="text-[11px] font-semibold text-center leading-tight" style={{ color: '#374151' }}>
+                <span className="text-[11px] font-semibold text-center leading-tight" style={{ color: 'rgba(255,255,255,0.7)' }}>
                   {s.label}
                 </span>
               </Link>
@@ -211,48 +215,48 @@ export default function ServiceGrid() {
             }
           `}</style>
           <div className="sg-desktop-grid grid grid-cols-9 rounded-2xl overflow-hidden"
-            style={{ border: '1px solid rgba(0,0,0,0.08)', background: '#ffffff' }}>
+            style={{ border: '1px solid rgba(47,232,162,0.35)', background: '#0d0d0d', boxShadow: '0 0 0 1px rgba(47,232,162,0.08), 0 0 24px rgba(47,232,162,0.06)' }}>
 
             {/* ── Header row ── */}
             <div className="flex items-center justify-center gap-2 py-3 relative"
               style={{
                 gridColumn: 'span 5',
-                borderRight: '1px solid rgba(255,255,255,0.08)',
-                borderBottom: '1px solid rgba(0,0,0,0.06)',
+                borderRight: '1px solid rgba(47,232,162,0.2)',
+                borderBottom: '1px solid rgba(47,232,162,0.15)',
                 background: '#000000',
               }}>
               <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
-                style={{ background: 'linear-gradient(135deg, #2563EB, #059669)' }}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={2} className="w-3.5 h-3.5">
+                style={{ background: '#2fe8a2' }}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#000000" strokeWidth={2} className="w-3.5 h-3.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
                 </svg>
               </div>
-              <span className="text-sm font-bold uppercase tracking-widest" style={{ color: '#ffffff' }}>
+              <span className="text-sm font-bold uppercase tracking-widest" style={{ color: '#2fe8a2' }}>
                 Paid Advertising
               </span>
-              {/* Gradient accent bar */}
+              {/* Mint accent bar */}
               <div className="absolute bottom-0 left-4 right-4 h-[2px]"
-                style={{ background: 'linear-gradient(90deg, #2563EB, #059669)', borderRadius: 2, opacity: 0.7 }} />
+                style={{ background: '#2fe8a2', borderRadius: 2, opacity: 0.6 }} />
             </div>
 
             <div className="flex items-center justify-center gap-2 py-3 relative"
               style={{
                 gridColumn: 'span 4',
-                borderBottom: '1px solid rgba(0,0,0,0.06)',
+                borderBottom: '1px solid rgba(47,232,162,0.15)',
                 background: '#000000',
               }}>
               <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
-                style={{ background: 'linear-gradient(135deg, #7C3AED, #EC4899)' }}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={2} className="w-3.5 h-3.5">
+                style={{ background: '#2fe8a2' }}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#000000" strokeWidth={2} className="w-3.5 h-3.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
                 </svg>
               </div>
-              <span className="text-sm font-bold uppercase tracking-widest" style={{ color: '#ffffff' }}>
+              <span className="text-sm font-bold uppercase tracking-widest" style={{ color: '#2fe8a2' }}>
                 AI Systems
               </span>
-              {/* Gradient accent bar */}
+              {/* Mint accent bar */}
               <div className="absolute bottom-0 left-4 right-4 h-[2px]"
-                style={{ background: 'linear-gradient(90deg, #7C3AED, #EC4899)', borderRadius: 2, opacity: 0.7 }} />
+                style={{ background: '#2fe8a2', borderRadius: 2, opacity: 0.6 }} />
             </div>
 
             {/* ── Icon row ── */}
@@ -297,7 +301,7 @@ export default function ServiceGrid() {
                   <span className={`w-12 h-12 rounded-2xl ${s.iconBg} text-white flex items-center justify-center`}>
                     {s.icon}
                   </span>
-                  <span className="text-xs font-semibold text-center leading-tight" style={{ color: '#374151' }}>
+                  <span className="text-xs font-semibold text-center leading-tight" style={{ color: 'rgba(255,255,255,0.65)' }}>
                     {s.label}
                   </span>
                 </Link>

@@ -9,9 +9,9 @@ const team = [
     role: "Founder",
     location: "Houston, Texas",
     bio: "Father of 3 beautiful girls and a proud Baylor University graduate with a passion for all things digital. When he's not building growth systems for clients, you'll likely find him enjoying the open road on his motorcycle.",
-    accent: "#FF2D78",
-    gradientFrom: "#FF2D78",
-    gradientTo: "#9B30FF",
+    accent: "#2fe8a2",
+    gradientFrom: "#2fe8a2",
+    gradientTo: "#5fffc2",
     photo: "/images/team/charles.webp",
   },
   {
@@ -19,9 +19,9 @@ const team = [
     role: "CIO",
     location: "Houston, Texas",
     bio: "A cyber security expert with serious IT depth, Chris is the sharpest technical mind on the team. His credentials are impeccable — though we're still holding a grudge about the time he talked us out of buying Bitcoin at $300. The jury's still out on his investment advice.",
-    accent: "#00E5FF",
-    gradientFrom: "#00E5FF",
-    gradientTo: "#9B30FF",
+    accent: "#2fe8a2",
+    gradientFrom: "#2fe8a2",
+    gradientTo: "#5fffc2",
     photo: "/images/team/chris.webp",
   },
   {
@@ -29,9 +29,9 @@ const team = [
     role: "CSO",
     location: "Houston, Texas",
     bio: "Probably one of the nicest and most genuine people you'll ever meet. Thomas is a proud dad to 2 smart kiddos and a TCU Graduate. When he's not closing deals, you might find him deep in a League of Legends match.",
-    accent: "#9B30FF",
-    gradientFrom: "#9B30FF",
-    gradientTo: "#FF2D78",
+    accent: "#2fe8a2",
+    gradientFrom: "#2fe8a2",
+    gradientTo: "#5fffc2",
     photo: "/images/team/thomas.webp",
   },
 ];
@@ -113,8 +113,7 @@ function ParticleBg({ color }: { color: string }) {
 export default function MeetTheTeam() {
   return (
     <section className="relative py-12 lg:pt-16 lg:pb-32" style={{ background: '#000000' }}>
-      {/* White bottom portion on desktop */}
-      <div className="hidden lg:block absolute bottom-0 left-0 right-0 h-[30%]" style={{ background: '#ffffff' }} />
+      <div className="hidden lg:block absolute bottom-0 left-0 right-0 h-[30%]" style={{ background: '#000000' }} />
       <ParticleField count={60} />
       <div className="absolute inset-0 pointer-events-none" style={{
         backgroundImage: 'none',
@@ -125,7 +124,7 @@ export default function MeetTheTeam() {
 
         <div className="text-center mb-16">
           <div className="reveal inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-[0.25em]"
-            style={{ background: 'rgba(155,48,255,0.1)', border: '1px solid rgba(155,48,255,0.25)', color: '#9B30FF' }}>
+            style={{ background: 'rgba(47,232,162,0.1)', border: '1px solid rgba(47,232,162,0.25)', color: '#2fe8a2' }}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-3.5 h-3.5 shrink-0">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
             </svg>
@@ -140,7 +139,7 @@ export default function MeetTheTeam() {
           <h2 className="reveal reveal-delay-100 text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
             The Team Behind{' '}
             <span style={{
-              background: 'linear-gradient(90deg, #FF2D78, #9B30FF, #FF2D78)',
+              background: 'linear-gradient(90deg, #2fe8a2, #5fffc2, #2fe8a2)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -182,7 +181,7 @@ export default function MeetTheTeam() {
               {/* Card body */}
               <div
                 className="card-neon rounded-2xl overflow-hidden flex flex-col"
-                style={{ background: '#000000', border: `1px solid ${member.accent}88`, backdropFilter: 'blur(12px)', boxShadow: `0 0 30px ${member.accent}55, 0 0 80px ${member.accent}20, 0 0 160px ${member.accent}08` }}
+                style={{ background: '#000000', border: `1px solid ${member.accent}44`, backdropFilter: 'blur(12px)', boxShadow: `0 0 14px ${member.accent}22, 0 0 40px ${member.accent}0c` }}
               >
                 {/* Gradient area behind where photo overlaps */}
                 <div
@@ -198,7 +197,7 @@ export default function MeetTheTeam() {
                 <div className="p-6 flex flex-col gap-3 flex-1 text-center" style={{ background: '#ffffff' }}>
                   <div>
                     <h3 className="text-lg font-black" style={{ color: '#111827' }}>{member.name}</h3>
-                    <p className="text-sm font-semibold mt-0.5" style={{ color: member.accent }}>
+                    <p className="text-sm font-semibold mt-0.5" style={{ color: '#374151' }}>
                       {member.role} — {member.location}
                     </p>
                   </div>

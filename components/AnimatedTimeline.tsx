@@ -36,10 +36,8 @@ function TimelineItem({
         return () => observer.disconnect();
     }, []);
 
-    const accentColor = isLast ? "#FF2D78" : "#9B30FF";
-    const yearColor = isLast
-        ? "rgba(255,45,120,0.7)"
-        : "rgba(155,48,255,0.7)";
+    const accentColor = "#2fe8a2";
+    const yearColor = "rgba(47,232,162,0.7)";
 
     return (
         <div
@@ -107,7 +105,7 @@ function TimelineItem({
                         className="w-px mt-2 origin-top"
                         style={{
                             background:
-                                "linear-gradient(to bottom, rgba(155,48,255,0.4), rgba(155,48,255,0.05))",
+                                "linear-gradient(to bottom, rgba(47,232,162,0.4), rgba(47,232,162,0.05))",
                             minHeight: "60px",
                             flex: 1,
                             transform: visible ? "scaleY(1)" : "scaleY(0)",

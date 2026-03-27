@@ -42,14 +42,15 @@ const columns = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#000000', borderTop: '1px solid rgba(255,45,120,0.15)' }}>
+    <footer style={{ background: '#000000' }}>
+      <style>{`@keyframes heroBorderSpin { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }`}</style>
       <div className="max-w-7xl mx-auto px-4 lg:px-8 pt-8 pb-16">
 
         {/* Main layout */}
         <div className="flex flex-col md:flex-row gap-10 mb-14">
 
           {/* Brand col */}
-          <div className="space-y-2 text-center md:min-w-[220px] md:shrink-0 md:border-r md:pr-10" style={{ borderColor: 'rgba(255,255,255,0.15)' }}>
+          <div className="space-y-2 text-center md:min-w-[220px] md:shrink-0 md:border-r md:pr-10" style={{ borderColor: 'rgba(47,232,162,0.3)' }}>
             <Link href="/" className="flex items-center justify-center group">
               <Image
                 src="/images/logo/Switch Media logo horizontal.png"
@@ -60,7 +61,7 @@ export default function Footer() {
               />
             </Link>
 
-            <p className="text-sm font-bold text-center uppercase tracking-widest -mt-3 md:-mt-1 md:whitespace-nowrap" style={{ color: '#ffffff' }}>
+            <p className="text-sm font-bold text-center uppercase tracking-widest -mt-3 md:-mt-1 md:whitespace-nowrap" style={{ color: '#2fe8a2' }}>
               SWITCH MEDIA MARKETING
             </p>
             <p className="text-sm leading-relaxed text-center mx-auto" style={{ color: 'rgba(240,244,255,0.35)', maxWidth: '220px' }}>
@@ -92,17 +93,17 @@ export default function Footer() {
             <div key={col.heading} className="text-center md:text-left md:pt-3">
               <style>{`
                 @media (max-width: 767px) {
-                  .footer-col-heading { color: #ffffff !important; }
-                }
+                .footer-col-heading { color: #2fe8a2 !important; }
+              }
               `}</style>
-              <p className="footer-col-heading text-xs font-bold uppercase tracking-[0.2em] mb-5" style={{ color: '#ffffff' }}>{col.heading}</p>
+              <p className="footer-col-heading text-xs font-bold uppercase tracking-[0.2em] mb-5" style={{ color: '#2fe8a2' }}>{col.heading}</p>
               <ul className="space-y-3">
                 {col.links.map((link) => (
                   <li key={link.label}>
                     <Link href={link.href}
                       className="text-sm transition-colors duration-200"
                       style={{ color: 'rgba(240,244,255,0.5)' }}
-                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#FF2D78'; }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = '#ffffff'; }}
                       onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = 'rgba(240,244,255,0.5)'; }}
                     >
                       {link.label}
@@ -126,16 +127,16 @@ export default function Footer() {
             className="group relative inline-flex items-center justify-center order-1 sm:order-2"
           >
             <span
-              className="absolute -inset-[3px] rounded-full transition-opacity duration-300"
+              className="absolute -inset-[4px] rounded-[16px] opacity-100"
               style={{
-                background: 'linear-gradient(135deg, #FF2D78, #9B30FF, #00E5FF, #FF2D78)',
+                background: 'linear-gradient(135deg, #2fe8a2, #5fffc2, #2fe8a2)',
                 backgroundSize: '300% 300%',
                 animation: 'heroBorderSpin 3s linear infinite',
               }}
             />
             <span
-              className="relative inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold rounded-full transition-all duration-300 group-hover:scale-[1.01] whitespace-nowrap"
-              style={{ background: '#DADADA', color: '#111827' }}
+              className="relative inline-flex items-center justify-center px-6 py-2.5 text-sm font-bold rounded-xl transition-all duration-300 group-hover:scale-[1.01] whitespace-nowrap"
+              style={{ background: '#000000', color: '#2fe8a2', border: '1px solid rgba(47,232,162,0.2)' }}
             >
               Book a Strategy Call
             </span>

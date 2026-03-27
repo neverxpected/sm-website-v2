@@ -36,8 +36,8 @@ export default function ParticleBackground() {
       vx: (Math.random() - 0.5) * 0.4,
       vy: (Math.random() - 0.5) * 0.4,
       radius: Math.random() * 2 + 0.8,
-      opacity: Math.random() * 0.6 + 0.2,
-      opacityDelta: (Math.random() - 0.5) * 0.004,
+      opacity: Math.random() * 0.7 + 0.3,
+      opacityDelta: (Math.random() - 0.5) * 0.005,
     });
 
     resize();
@@ -54,7 +54,7 @@ export default function ParticleBackground() {
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < 120) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(139,92,246,${0.25 * (1 - dist / 120)})`;
+            ctx.strokeStyle = `rgba(47,232,162,${0.35 * (1 - dist / 120)})`;
             ctx.lineWidth = 0.5;
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
@@ -71,11 +71,11 @@ export default function ParticleBackground() {
 
         if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
         if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-        if (p.opacity < 0.05 || p.opacity > 0.45) p.opacityDelta *= -1;
+        if (p.opacity < 0.1 || p.opacity > 0.7) p.opacityDelta *= -1;
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(139,92,246,${p.opacity})`;
+        ctx.fillStyle = `rgba(47,232,162,${p.opacity})`;
         ctx.fill();
       }
 

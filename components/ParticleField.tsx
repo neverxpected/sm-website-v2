@@ -46,7 +46,7 @@ export default function ParticleField({ count = 48 }: { count?: number }) {
           r: Math.random() * 1.8 + 0.5,
           vx: (Math.random() - 0.5) * 0.25,
           vy: -(Math.random() * 0.25 + 0.05),
-          opacity: Math.random() * 0.5 + 0.2,
+          opacity: Math.random() * 0.6 + 0.3,
           pulse: Math.random() * Math.PI * 2,
           pulseSpeed: Math.random() * 0.01 + 0.004,
         };
@@ -70,7 +70,7 @@ export default function ParticleField({ count = 48 }: { count?: number }) {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(220,200,255,${alpha})`;
+        ctx.fillStyle = `rgba(47,232,162,${alpha})`;
         ctx.fill();
       }
 

@@ -19,7 +19,7 @@ export default function TrustedBy() {
     <section
       className="trusted-by-section relative pt-4 pb-4 sm:py-10 overflow-hidden"
       style={{
-        background: '#ffffff',
+        background: '#000000',
       }}
     >
       <style>{`
@@ -38,7 +38,7 @@ export default function TrustedBy() {
         }
       `}</style>
       <div className="trusted-by-label-wrap max-w-7xl mx-auto px-4 lg:px-8 mb-4 text-center">
-        <p className="trusted-by-label text-xl uppercase tracking-[0.35em]" style={{ color: '#9CA3AF', fontFamily: 'var(--font-orbitron), sans-serif', fontWeight: 500 }}>
+        <p className="trusted-by-label text-xl uppercase tracking-[0.35em]" style={{ color: 'rgba(255,255,255,0.3)', fontFamily: 'var(--font-orbitron), sans-serif', fontWeight: 500 }}>
           Trusted By
         </p>
       </div>
@@ -73,8 +73,8 @@ export default function TrustedBy() {
                       width: 'auto',
                       height: 'auto',
                       objectFit: 'contain',
-                      filter: 'brightness(0)',
-                      opacity: 0.4,
+                      filter: 'brightness(0) invert(1)',
+                      opacity: 1,
                       display: 'block',
                     }}
                   />
