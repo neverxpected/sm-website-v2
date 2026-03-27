@@ -168,9 +168,9 @@ export default function ContactPage() {
                     {/* Contact form */}
                     <div ref={formRef} className="rounded-2xl p-5 sm:p-8 relative"
                         style={{
-                            background: 'rgba(47,232,162,0.03)',
-                            border: '1px solid rgba(47,232,162,0.2)',
-                            boxShadow: '0 0 40px rgba(47,232,162,0.06)',
+                            background: 'rgba(47,232,162,0.06)',
+                            border: '1px solid rgba(47,232,162,0.3)',
+                            boxShadow: 'inset 0 0 60px rgba(47,232,162,0.08), inset 0 0 120px rgba(47,232,162,0.04), 0 0 40px rgba(47,232,162,0.1)',
                             ...reveal(formVisible, 0),
                         }}>
                         {submitted ? (
@@ -189,13 +189,13 @@ export default function ContactPage() {
 
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                                     <div>
-                                        <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Name <span style={{ color: MINT }}>*</span></label>
+                                        <label className="block text-xs font-semibold mb-1.5" style={{ color: '#ffffff' }}>Name <span style={{ color: MINT }}>*</span></label>
                                         <input required name="name" type="text" placeholder="John Smith"
                                             className="w-full px-4 py-3 rounded-xl text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#2fe8a2] transition-all appearance-none"
                                             style={{ background: '#ffffff', border: '1px solid rgba(0,0,0,0.1)' }} />
                                     </div>
                                     <div>
-                                        <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Email <span style={{ color: MINT }}>*</span></label>
+                                        <label className="block text-xs font-semibold mb-1.5" style={{ color: '#ffffff' }}>Email <span style={{ color: MINT }}>*</span></label>
                                         <input required name="email" type="email" placeholder="john@company.com"
                                             className="w-full px-4 py-3 rounded-xl text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#2fe8a2] transition-all appearance-none"
                                             style={{ background: '#ffffff', border: '1px solid rgba(0,0,0,0.1)' }} />
@@ -203,13 +203,13 @@ export default function ContactPage() {
                                 </div>
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                                     <div>
-                                        <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Company <span style={{ color: MINT }}>*</span></label>
+                                        <label className="block text-xs font-semibold mb-1.5" style={{ color: '#ffffff' }}>Company <span style={{ color: MINT }}>*</span></label>
                                         <input required name="company" type="text" placeholder="Company name"
                                             className="w-full px-4 py-3 rounded-xl text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#2fe8a2] transition-all appearance-none"
                                             style={{ background: '#ffffff', border: '1px solid rgba(0,0,0,0.1)' }} />
                                     </div>
                                     <div>
-                                        <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Phone <span style={{ color: MINT }}>*</span></label>
+                                        <label className="block text-xs font-semibold mb-1.5" style={{ color: '#ffffff' }}>Phone <span style={{ color: MINT }}>*</span></label>
                                         <input required name="phone" type="tel" placeholder="+1 (555) 000-0000"
                                             className="w-full px-4 py-3 rounded-xl text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#2fe8a2] transition-all appearance-none"
                                             style={{ background: '#ffffff', border: '1px solid rgba(0,0,0,0.1)' }} />
@@ -217,7 +217,7 @@ export default function ContactPage() {
                                 </div>
                                 <ServicePicker />
                                 <div>
-                                    <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Monthly Budget <span style={{ color: MINT }}>*</span></label>
+                                    <label className="block text-xs font-semibold mb-1.5" style={{ color: '#ffffff' }}>Monthly Budget <span style={{ color: MINT }}>*</span></label>
                                     <div className="relative">
                                         <select required name="budget" className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-[#2fe8a2] transition-all appearance-none cursor-pointer"
                                             style={{ background: '#ffffff', border: '1px solid rgba(0,0,0,0.1)', color: '#374151', paddingRight: '2.5rem' }}>
@@ -232,7 +232,7 @@ export default function ContactPage() {
                                     </div>
                                 </div>
                                 <div>
-                                    <label className="block text-xs font-semibold mb-1.5" style={{ color: 'rgba(240,244,255,0.45)' }}>Message</label>
+                                    <label className="block text-xs font-semibold mb-1.5" style={{ color: '#ffffff' }}>Message</label>
                                     <textarea name="message" rows={4} placeholder="What's the biggest thing holding your business back right now?"
                                         className="w-full px-4 py-3 rounded-xl text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#2fe8a2] transition-all appearance-none resize-none"
                                         style={{ background: '#ffffff', border: '1px solid rgba(0,0,0,0.1)' }} />

@@ -47,23 +47,25 @@ const standalone = [
 
 export default function CookiePolicyPage() {
   return (
-    <main className="relative min-h-screen text-white" style={{ background: '#0A0F1C' }}>
+    <main className="relative min-h-screen text-white" style={{ background: '#000000' }}>
 
       {/* Grid */}
       <div className="absolute inset-0 pointer-events-none z-0" style={{
-        backgroundImage: 'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)',
+        backgroundImage: 'linear-gradient(rgba(47,232,162,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(47,232,162,0.12) 1px, transparent 1px)',
         backgroundSize: '64px 64px',
+        WebkitMaskImage: 'radial-gradient(ellipse 70% 65% at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 50%, transparent 80%)',
+        maskImage: 'radial-gradient(ellipse 70% 65% at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 50%, transparent 80%)',
       }} />
 
       {/* Ambient glow */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="absolute top-1/3 left-1/3 w-[500px] h-[500px] rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(155,48,255,0.07) 0%, transparent 65%)' }} />
+          style={{ background: 'radial-gradient(circle, rgba(47,232,162,0.07) 0%, transparent 65%)' }} />
       </div>
 
       {/* Header */}
       <section className="relative z-10 pt-40 pb-16 px-6 lg:px-8 max-w-3xl mx-auto">
-        <p className="text-xs font-bold uppercase tracking-[0.25em] mb-6" style={{ color: 'rgba(155,48,255,0.8)' }}>
+        <p className="text-xs font-bold uppercase tracking-[0.25em] mb-6" style={{ color: '#2fe8a2' }}>
           Legal
         </p>
         <h1 className="text-4xl lg:text-5xl font-black tracking-tight text-white mb-6">
@@ -76,7 +78,7 @@ export default function CookiePolicyPage() {
 
       {/* Intro */}
       <section className="relative z-10 pb-12 px-6 lg:px-8 max-w-3xl mx-auto">
-        <div className="p-8 rounded-2xl" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
+        <div className="p-8 rounded-2xl" style={{ background: 'rgba(47,232,162,0.03)', border: '1px solid rgba(47,232,162,0.15)' }}>
           <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.6)' }}>
             This Cookie Policy explains how Switch Media Marketing LLC uses cookies and similar tracking technologies to provide, optimize, and secure our autonomous infrastructure and marketing services.
           </p>
@@ -85,7 +87,7 @@ export default function CookiePolicyPage() {
 
       {/* Standalone sections rendered before the bulleted list */}
       <section className="relative z-10 pb-10 px-6 lg:px-8 max-w-3xl mx-auto flex flex-col gap-8">
-        <div className="p-8 rounded-2xl" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
+        <div className="p-8 rounded-2xl" style={{ background: 'rgba(47,232,162,0.03)', border: '1px solid rgba(47,232,162,0.15)' }}>
           <h2 className="text-base font-black text-white mb-3">{standalone[0].heading}</h2>
           <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.55)' }}>
             {standalone[0].body}
@@ -98,13 +100,13 @@ export default function CookiePolicyPage() {
         {sections.map((s) => (
           <div key={s.heading}>
             <h2 className="text-lg font-black text-white mb-5 pb-4"
-              style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+              style={{ borderBottom: '1px solid rgba(47,232,162,0.15)' }}>
               {s.heading}
             </h2>
             <ul className="flex flex-col gap-5">
               {s.items.map((item) => (
                 <li key={item.label} className="flex gap-4">
-                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#9B30FF' }} />
+                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#2fe8a2' }} />
                   <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.55)' }}>
                     <span className="font-bold text-white">{item.label}:</span>{" "}{item.body}
                   </p>
@@ -119,14 +121,14 @@ export default function CookiePolicyPage() {
       <section className="relative z-10 pb-32 px-6 lg:px-8 max-w-3xl mx-auto flex flex-col gap-8">
         {standalone.slice(1).map((s) => (
           <div key={s.heading} className="p-8 rounded-2xl"
-            style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
+            style={{ background: 'rgba(47,232,162,0.03)', border: '1px solid rgba(47,232,162,0.15)' }}>
             <h2 className="text-base font-black text-white mb-3">{s.heading}</h2>
             <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.55)' }}>
               {s.heading === "Contact" ? (
                 <>For questions regarding our cookie usage, contact{" "}
                   <a href="mailto:charles@switchmediaco.com"
                     className="underline transition-colors duration-200"
-                    style={{ color: '#9B30FF' }}>
+                    style={{ color: '#2fe8a2' }}>
                     charles@switchmediaco.com
                   </a>.
                 </>

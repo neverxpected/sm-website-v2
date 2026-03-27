@@ -189,7 +189,7 @@ export default function ServiceGrid() {
                   borderBottom: i < 6 ? '1px solid rgba(47,232,162,0.2)' : 'none',
                 }}
               >
-                <span className="w-11 h-11 rounded-2xl flex items-center justify-center" style={{ background: '#2fe8a2', color: '#ffffff' }}>
+                <span className="w-11 h-11 rounded-2xl flex items-center justify-center" style={{ background: '#2fe8a2', color: '#000000' }}>
                   {s.icon}
                 </span>
                 <span className="text-[11px] font-semibold text-center leading-tight" style={{ color: 'rgba(255,255,255,0.7)' }}>
@@ -215,7 +215,7 @@ export default function ServiceGrid() {
             }
           `}</style>
           <div className="sg-desktop-grid grid grid-cols-9 rounded-2xl overflow-hidden"
-            style={{ border: '1px solid rgba(47,232,162,0.35)', background: '#0d0d0d', boxShadow: '0 0 0 1px rgba(47,232,162,0.08), 0 0 24px rgba(47,232,162,0.06)' }}>
+            style={{ border: '1px solid rgba(47,232,162,0.35)', background: 'transparent', boxShadow: '0 0 0 1px rgba(47,232,162,0.08), 0 0 24px rgba(47,232,162,0.06)' }}>
 
             {/* ── Header row ── */}
             <div className="flex items-center justify-center gap-2 py-3 relative"
@@ -223,7 +223,7 @@ export default function ServiceGrid() {
                 gridColumn: 'span 5',
                 borderRight: '1px solid rgba(47,232,162,0.2)',
                 borderBottom: '1px solid rgba(47,232,162,0.15)',
-                background: '#000000',
+                background: 'transparent',
               }}>
               <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
                 style={{ background: '#2fe8a2' }}>
@@ -243,7 +243,7 @@ export default function ServiceGrid() {
               style={{
                 gridColumn: 'span 4',
                 borderBottom: '1px solid rgba(47,232,162,0.15)',
-                background: '#000000',
+                background: 'transparent',
               }}>
               <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
                 style={{ background: '#2fe8a2' }}>
@@ -261,18 +261,7 @@ export default function ServiceGrid() {
 
             {/* ── Icon row ── */}
             {allServices.map((s, i) => {
-              const glowColors: Record<string, string> = {
-                'bg-blue-600': 'rgba(37,99,235,0.35)',
-                'bg-emerald-500': 'rgba(16,185,129,0.35)',
-                'bg-pink-500': 'rgba(236,72,153,0.35)',
-                'bg-green-600': 'rgba(22,163,74,0.35)',
-                'bg-orange-500': 'rgba(249,115,22,0.35)',
-                'bg-violet-500': 'rgba(139,92,246,0.35)',
-                'bg-cyan-500': 'rgba(6,182,212,0.35)',
-                'bg-rose-500': 'rgba(244,63,94,0.35)',
-                'bg-purple-500': 'rgba(168,85,247,0.35)',
-              };
-              const glow = glowColors[s.iconBg] || 'rgba(0,0,0,0.1)';
+              const glow = 'rgba(47,232,162,0.35)';
               return (
                 <Link
                   key={s.href}
@@ -298,7 +287,7 @@ export default function ServiceGrid() {
                     if (icon) icon.style.transform = 'scale(1)';
                   }}
                 >
-                  <span className={`w-12 h-12 rounded-2xl ${s.iconBg} text-white flex items-center justify-center`}>
+                  <span className="w-12 h-12 rounded-2xl flex items-center justify-center" style={{ background: '#2fe8a2', color: '#000000' }}>
                     {s.icon}
                   </span>
                   <span className="text-xs font-semibold text-center leading-tight" style={{ color: 'rgba(255,255,255,0.65)' }}>

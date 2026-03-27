@@ -41,11 +41,11 @@ export default function ServicePicker() {
         <div>
             <label
                 className="block text-xs font-semibold mb-2"
-                style={{ color: "#374151" }}
+                style={{ color: "#ffffff" }}
             >
                 Service Interest{" "}
-                <span style={{ color: "#FF2D78" }}>*</span>{" "}
-                <span style={{ color: "#6B7280", fontWeight: 400 }}>(select all that apply)</span>
+                <span style={{ color: "#2fe8a2" }}>*</span>{" "}
+                <span style={{ color: "rgba(255,255,255,0.5)", fontWeight: 400 }}>(select all that apply)</span>
             </label>
 
             {/* Mobile: 2 category buttons */}
@@ -60,17 +60,17 @@ export default function ServicePicker() {
                             className="px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200 cursor-pointer"
                             style={{
                                 background: active
-                                    ? "linear-gradient(135deg, rgba(255,45,120,0.15), rgba(155,48,255,0.15))"
-                                    : "#F3F4F6",
+                                    ? "rgba(47,232,162,0.15)"
+                                    : "transparent",
                                 border: active
-                                    ? "1px solid rgba(255,45,120,0.55)"
-                                    : "1px solid rgba(0,0,0,0.15)",
-                                color: active ? "#FF2D78" : "#374151",
-                                boxShadow: active ? "0 0 12px rgba(255,45,120,0.15)" : "none",
+                                    ? "1px solid rgba(47,232,162,0.55)"
+                                    : "1px solid rgba(255,255,255,0.2)",
+                                color: active ? "#2fe8a2" : "rgba(255,255,255,0.7)",
+                                boxShadow: active ? "0 0 12px rgba(47,232,162,0.15)" : "none",
                             }}
                         >
                             {active && (
-                                <span className="mr-1.5" style={{ color: "#FF2D78" }}>
+                                <span className="mr-1.5" style={{ color: "#2fe8a2" }}>
                                     ✓
                                 </span>
                             )}
@@ -92,17 +92,17 @@ export default function ServicePicker() {
                             className="px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200 cursor-pointer"
                             style={{
                                 background: active
-                                    ? "linear-gradient(135deg, rgba(255,45,120,0.15), rgba(155,48,255,0.15))"
-                                    : "#F3F4F6",
+                                    ? "rgba(47,232,162,0.15)"
+                                    : "transparent",
                                 border: active
-                                    ? "1px solid rgba(255,45,120,0.55)"
-                                    : "1px solid rgba(0,0,0,0.15)",
-                                color: active ? "#FF2D78" : "#374151",
-                                boxShadow: active ? "0 0 12px rgba(255,45,120,0.15)" : "none",
+                                    ? "1px solid rgba(47,232,162,0.55)"
+                                    : "1px solid rgba(255,255,255,0.2)",
+                                color: active ? "#2fe8a2" : "rgba(255,255,255,0.7)",
+                                boxShadow: active ? "0 0 12px rgba(47,232,162,0.15)" : "none",
                             }}
                         >
                             {active && (
-                                <span className="mr-1.5" style={{ color: "#FF2D78" }}>
+                                <span className="mr-1.5" style={{ color: "#2fe8a2" }}>
                                     ✓
                                 </span>
                             )}

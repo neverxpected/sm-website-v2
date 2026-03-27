@@ -96,23 +96,25 @@ const terms = [
 
 export default function TermsOfServicePage() {
   return (
-    <main className="relative min-h-screen text-white" style={{ background: '#0A0F1C' }}>
+    <main className="relative min-h-screen text-white" style={{ background: '#000000' }}>
 
       {/* Grid */}
       <div className="absolute inset-0 pointer-events-none z-0" style={{
-        backgroundImage: 'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)',
+        backgroundImage: 'linear-gradient(rgba(47,232,162,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(47,232,162,0.12) 1px, transparent 1px)',
         backgroundSize: '64px 64px',
+        WebkitMaskImage: 'radial-gradient(ellipse 70% 65% at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 50%, transparent 80%)',
+        maskImage: 'radial-gradient(ellipse 70% 65% at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 50%, transparent 80%)',
       }} />
 
       {/* Ambient glow */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="absolute top-1/3 right-1/3 w-[500px] h-[500px] rounded-full"
-          style={{ background: 'radial-gradient(circle, rgba(155,48,255,0.07) 0%, transparent 65%)' }} />
+          style={{ background: 'radial-gradient(circle, rgba(47,232,162,0.07) 0%, transparent 65%)' }} />
       </div>
 
       {/* Header */}
       <section className="relative z-10 pt-40 pb-16 px-6 lg:px-8 max-w-3xl mx-auto">
-        <p className="text-xs font-bold uppercase tracking-[0.25em] mb-6" style={{ color: 'rgba(155,48,255,0.8)' }}>
+        <p className="text-xs font-bold uppercase tracking-[0.25em] mb-6" style={{ color: '#2fe8a2' }}>
           Legal
         </p>
         <h1 className="text-4xl lg:text-5xl font-black tracking-tight text-white mb-6">
@@ -125,7 +127,7 @@ export default function TermsOfServicePage() {
 
       {/* Intro */}
       <section className="relative z-10 pb-12 px-6 lg:px-8 max-w-3xl mx-auto">
-        <div className="p-8 rounded-2xl" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
+        <div className="p-8 rounded-2xl" style={{ background: 'rgba(47,232,162,0.03)', border: '1px solid rgba(47,232,162,0.15)' }}>
           <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.6)' }}>
             Welcome to Switch Media Marketing LLC. By accessing our services, you agree to these Terms of Service.
           </p>
@@ -136,12 +138,12 @@ export default function TermsOfServicePage() {
       <section className="relative z-10 pb-32 px-6 lg:px-8 max-w-3xl mx-auto flex flex-col gap-6">
         {terms.map((t) => (
           <div key={t.number} className="p-8 rounded-2xl"
-            style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
+            style={{ background: 'rgba(47,232,162,0.03)', border: '1px solid rgba(47,232,162,0.15)' }}>
 
             {/* Section heading */}
             <div className="flex items-start gap-4 mb-4">
               <span className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-black"
-                style={{ background: 'rgba(155,48,255,0.15)', border: '1px solid rgba(155,48,255,0.3)', color: '#9B30FF' }}>
+                style={{ background: 'rgba(47,232,162,0.15)', border: '1px solid rgba(47,232,162,0.3)', color: '#2fe8a2' }}>
                 {t.number}
               </span>
               <h2 className="text-base font-black text-white pt-0.5">{t.heading}</h2>
@@ -159,7 +161,7 @@ export default function TermsOfServicePage() {
               <ul className="pl-11 flex flex-col gap-4">
                 {t.items.map((item) => (
                   <li key={item.label} className="flex gap-3">
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#9B30FF' }} />
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#2fe8a2' }} />
                     <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,244,255,0.55)' }}>
                       <span className="font-bold text-white">{item.label}:</span>{" "}{item.text}
                     </p>
@@ -173,7 +175,7 @@ export default function TermsOfServicePage() {
               <p className="text-sm pl-11" style={{ color: 'rgba(240,244,255,0.55)' }}>
                 <a href="mailto:charles@switchmediaco.com"
                   className="underline"
-                  style={{ color: '#9B30FF' }}>
+                  style={{ color: '#2fe8a2' }}>
                   charles@switchmediaco.com
                 </a>
               </p>

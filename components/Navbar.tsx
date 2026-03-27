@@ -140,25 +140,26 @@ function DesktopDropdown({ label, links, scrolled }: { label: string; links: Nav
 
       {open && (
         <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50">
-          <ul className="min-w-[260px] bg-white border border-gray-200 rounded-2xl shadow-xl overflow-hidden py-2">
+          <ul className="min-w-[260px] rounded-2xl overflow-hidden py-2"
+            style={{ background: 'rgba(0,0,0,0.96)', border: '1px solid rgba(47,232,162,0.25)', boxShadow: '0 0 24px rgba(47,232,162,0.1), 0 8px 32px rgba(0,0,0,0.5)', backdropFilter: 'blur(16px)' }}>
             {links.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
                   className="flex items-start gap-4 px-5 py-4 transition-colors group"
                   style={{ background: 'transparent' }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = '#f3f4f6'; }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = 'rgba(47,232,162,0.08)'; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = 'transparent'; }}
                   onClick={() => setOpen(false)}
                 >
-                  <span className="mt-0.5 text-gray-400 group-hover:text-gray-600 transition-colors shrink-0">
+                  <span className="mt-0.5 shrink-0 transition-colors" style={{ color: '#2fe8a2' }}>
                     {link.icon}
                   </span>
                   <span>
-                    <span className="block text-sm font-bold text-gray-900 group-hover:text-gray-900 transition-colors">
+                    <span className="block text-sm font-bold text-white transition-colors">
                       {link.label}
                     </span>
-                    <span className="block text-xs text-gray-400 mt-0.5 leading-relaxed">
+                    <span className="block text-xs mt-0.5 leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>
                       {link.description}
                     </span>
                   </span>
@@ -256,7 +257,7 @@ export default function Navbar() {
             className="h-10 w-auto object-contain transition-all duration-300 group-hover:scale-105"
             style={{ filter: 'brightness(0) invert(1)' }}
           />
-          <span className={`font-bold whitespace-nowrap transition-all duration-300 ${scrolled ? 'text-xs hidden md:inline' : 'text-sm'}`} style={{ color: '#2fe8a2' }}>
+          <span className={`font-bold whitespace-nowrap transition-all duration-300 hidden md:inline ${scrolled ? 'text-xs' : 'text-sm'}`} style={{ color: '#ffffff' }}>
             Switch Media Marketing
           </span>
         </Link>
